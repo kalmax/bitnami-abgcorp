@@ -22,7 +22,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'abgcorp-bitnami']]
+      BucketName: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 's3-abgcorp-bitnami']]
 
   # Create Access Role for CodePipeLine
   CodePipeLineExecutionRole:
@@ -91,7 +91,7 @@ Resources:
     DependsOn: S3Bucket
     Properties: 
       ArtifactStore: 
-        Location: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 's3bucket']]
+        Location: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 's3-abgcorp-bitnami']]
         Type: S3
       Name: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'CodePipeLine']]
       RestartExecutionOnUpdate: False
