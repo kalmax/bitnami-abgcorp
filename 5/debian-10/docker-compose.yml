@@ -16,6 +16,8 @@ services:
       - '443:8443'
     volumes:
       - 'wordpress_data:/bitnami/wordpress'
+      - ./src/plugins:/bitnami/wordpress/wp-content/plugins
+      - ./src/themes:/bitnami/wordpress/wp-content/themes
     depends_on:
       - mariadb
     environment:

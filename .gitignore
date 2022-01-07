@@ -1,0 +1,33 @@
+.env
+.env.*
+db
+.DS_Store
+.idea
+uploads
+
+# Ignore src dir node_modules
+src/*/*/node_modules
+
+
+# Ignore everything under "src/plugins"
+src/plugins/*
+# But don't ignore needed plugins
+!src/plugins/akismet
+!src/plugins/disable-wordpress-updates
+!src/plugins/elementor
+!src/plugins/elementor-pro
+!src/plugins/posts-carousel
+!src/plugins/wordpress-seo
+!src/plugins/wp-migrate-db
+!src/plugins/carousel
+!src/plugins/wp-migrate-db-pro
+!src/plugins/wp-migrate-db-pro-media-files
+!src/plugins/button
+
+# But ignore everything under "src/themes"
+src/themes/*
+
+# But don't ignore needed themes
+!src/themes/hello-elementor
+!src/themes/hello-theme-child
+!src/themes/twentytwentyone

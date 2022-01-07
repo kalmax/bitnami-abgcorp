@@ -1,0 +1,81 @@
+[
+  {
+    "name": "ABGCSI-BITNAMI-TD",
+    "image": "406714387839.dkr.ecr.us-west-1.amazonaws.com/abgcorp-bitnami:latest",
+    "repositoryCredentials": {
+      "credentialsParameter": "arn:aws:secretsmanager:us-west-1:406714387839:secret:ABGCorp@ECRSecret-4cfrTT"
+    },
+    "cpu": 1024,
+    "memory": 3072,
+    "portMappings": [
+      {
+        "containerPort": 8080,
+        "hostPort": 8080,
+        "protocol": "tcp"
+      }
+    ],
+    "requiresCompatibilities": [ 
+        "FARGATE" 
+    ],
+    "essential": true,
+    "environment": [
+        {
+            "name": "MARIADB_HOST",
+            "value": "${WOF_RDS_ENDPOINT}"
+        },
+        {   
+            "name": "WORDPRESS_DATABASE_USER",
+            "value": "admin"
+        },
+        {   
+            "name": "WORDPRESS_DATABASE_PASSWORD",
+            "value": "supersecretpassword"
+        },
+        {   
+            "name": "WORDPRESS_DATABASE_NAME",
+            "value": "wordpress"
+        },
+        {   
+            "name": "PHP_MEMORY_LIMIT",
+            "value": "512M"
+        },
+        {   
+            "name": "enabled",
+            "value": "false"
+        },
+        {   
+            "name": "ALLOW_EMPTY_PASSWORD",
+            "value": "yes"
+        }
+    ],
+    "mountPoints": [
+      {
+        "sourceVolume": "wordpress",
+        "containerPath": "/bitnami/wordpress",
+        "readOnly": false
+      }
+    ],
+    "readonlyRootFilesystem": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {"awslogs-region": "us-west-1", 
+        "awslogs-group": "ABGCSIWP-Log-Group",
+        "awslogs-stream-prefix": "ecs"
+        }
+    },
+    "volumes": [
+        {
+            "name": "wordpress",
+            "efsVolumeConfiguration": {
+                "fileSystemId": "fs-0cdcabfc8e054e535",
+                "transitEncryption": "ENABLED",
+                "authorizationConfig": {
+                    "accessPointId": "fsap-07908453108c3cfdd",
+                    "iam": "DISABLED"
+                }
+            }
+        }
+    ],
+    "family": "ABGCSI-BITNAMI-TD"
+  }
+]

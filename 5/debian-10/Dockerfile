@@ -20,6 +20,8 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.14.0-0"
 RUN chmod g+rwX /opt/bitnami
 
 COPY rootfs /
+COPY src/themes /opt/bitnami/wordpress/wp-content/themes
+COPY src/plugins /opt/bitnami/wordpress/wp-content/plugins
 RUN /opt/bitnami/scripts/mysql-client/postunpack.sh
 RUN /opt/bitnami/scripts/apache/postunpack.sh
 RUN /opt/bitnami/scripts/php/postunpack.sh
@@ -44,7 +46,6 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/apache/bin:/opt/bitnami/wp-cli/bin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
 
 EXPOSE 8080 8443
-
-USER 1001
+USER 1000
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
