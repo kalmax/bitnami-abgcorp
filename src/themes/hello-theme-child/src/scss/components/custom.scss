@@ -1,0 +1,55 @@
+// /* Elementor */
+.elementor-widget:not(:last-child) {
+  margin-bottom: 0;
+}
+
+// Remove p tag margin-bottom for elementor
+.elementor-widget-text-editor p {
+  margin-bottom: 0;
+}
+
+// About Page
+.about{
+  // About Page Hero
+  #hero-aboutPage{
+    width: 100%;
+    height: auto;
+
+    #sub-header-text{
+      font-size: 24px;
+    }
+  }
+
+}
+
+// About Tab CSS
+.tabContent:not(:first-child){
+  display: none;
+}
+
+a.elementor-button{
+  border-radius: none;
+  border: none!important;
+}
+
+.btnTab{
+  border-bottom: #f6f6f6 2px solid;
+
+  &.active{
+    border-bottom: #EE1C25 2px solid;
+  }
+
+  &:hover{
+    cursor: pointer;
+    border-bottom: #EE1C25 2px solid;
+  }
+}
+
+.category-aboutus-tabcontent{
+  margin-bottom: 0!important;
+}
+
+/* Buttons */
+.btn-from {
+  font-weight: 700;
+}

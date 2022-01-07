@@ -1,0 +1,113 @@
+.btn-from {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  padding: 0.8rem 4.2rem;
+  background: none;
+  color: #000;
+  border:  none;
+}
+
+.btn-from:focus {
+  border: none;
+  outline: none;
+}
+
+.btn-from:hover {
+  background: none;
+  color: #000;
+}
+
+.btn-from .btn-primary .elementor-button,
+.btn-from .btn-secondary .elementor-button {
+  padding: 0.9rem 4.5rem 0.9rem 4.5rem;
+  font-weight: bold;
+}
+
+.btn-from.btn-primary {
+  background-color: #20438C;
+  color: #ffff;
+  border: 2px solid transparent;
+}
+
+.btn-from.btn-primary:hover {
+  background-color: #183269;
+}
+
+.btn-from.btn-primary.disabled {
+  background-color: #90A1C5;
+}
+
+.btn-from.btn-secondary {
+  background-color: #FFFFFF;
+  color: #20438C;
+  border: 2px solid transparent;
+}
+
+.btn-from.btn-secondary:hover {
+  border: 2px solid #707070;
+}
+
+.btn-from.btn-secondary.disabled {
+  background-color: #DBDBDB;
+}
+
+/* Default button sizes */
+.btn-from.btn-lg {
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+}
+
+.btn-from.btn-md {
+  font-size: 1.30rem;
+  line-height: 1.5rem;
+}
+
+.btn-from.btn-sm {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.btn-from-link,
+.btn-from-link:active,
+.btn-from-link:hover,
+.btn-from-link:visited {
+  background: none;
+  border: none;
+  padding: 0;
+  padding-bottom: 0.3rem;
+  color: #000;
+}
+
+.btn-from-link .line {
+  height: 2.2px;
+  width: 100%;
+  float: left;
+  background-color: #000;
+  margin-top: 0.5rem;
+}
+
+.btn-from-link.light {
+  color: #ffffff;
+}
+
+.btn-from-link.light .line {
+  background-color: #fff;
+}
+
+
+.btn-from-link.btn-lg {
+  font-size: 1.5rem;
+}
+
+.btn-from-link.btn-md {
+  font-size: 1.3125rem;
+}
+
+.btn-from-link.btn-sm {
+  font-size: 1.125rem;
+}
