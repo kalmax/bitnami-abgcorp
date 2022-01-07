@@ -1,3 +1,4 @@
+//Added comment
 jQuery(document).ready(function(){
 
     var selector;
