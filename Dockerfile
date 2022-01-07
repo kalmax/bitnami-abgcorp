@@ -20,8 +20,8 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.14.0-0"
 RUN chmod g+rwX /opt/bitnami
 
 COPY 5/debian-10/rootfs /
-COPY 5/debian-10/src/themes /opt/bitnami/wordpress/wp-content/themes
-COPY 5/debian-10/src/plugins /opt/bitnami/wordpress/wp-content/plugins
+COPY src/themes /opt/bitnami/wordpress/wp-content/themes
+COPY src/plugins /opt/bitnami/wordpress/wp-content/plugins
 RUN /opt/bitnami/scripts/mysql-client/postunpack.sh
 RUN /opt/bitnami/scripts/apache/postunpack.sh
 RUN /opt/bitnami/scripts/php/postunpack.sh

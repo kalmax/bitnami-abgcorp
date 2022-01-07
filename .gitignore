@@ -11,6 +11,7 @@ src/*/*/node_modules
 
 # Ignore everything under "src/plugins"
 src/plugins/*
+src/wordpress
 # But don't ignore needed plugins
 !src/plugins/akismet
 !src/plugins/disable-wordpress-updates
