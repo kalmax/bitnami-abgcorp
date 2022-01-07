@@ -1,4 +1,3 @@
-// testing from carousel file
 jQuery(document).ready(function(){
 
     var selector;
