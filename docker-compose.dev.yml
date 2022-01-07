@@ -15,13 +15,13 @@ services:
       - '80:8080'
       - '443:8443'
     volumes:
-      - 'wordpress_data:/bitnami/wordpress'
+      - ./src/plugins:/bitnami/wordpress/wp-content/plugins
+      - ./src/themes:/bitnami/wordpress/wp-content/themes
     depends_on:
       - mariadb
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_HOST=mariadb
       - WORDPRESS_DATABASE_HOST=mariadb
       - WORDPRESS_DATABASE_PORT_NUMBER=3306
       - WORDPRESS_DATABASE_USER=bn_wordpress
