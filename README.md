@@ -8,7 +8,7 @@ This repo contains an environment to run Wordpress on Docker
 ```
 docker-compose up --build
 ```
-3. Run containers with the custom code
+4. Run containers with the custom code
 ```
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 ```
