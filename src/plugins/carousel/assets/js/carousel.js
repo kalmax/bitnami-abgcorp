@@ -1,3 +1,4 @@
+// testing JS file change with pipeline
 jQuery(document).ready(function(){
 
     var selector;
