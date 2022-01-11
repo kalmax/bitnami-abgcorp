@@ -17,6 +17,7 @@ services:
     volumes:
       - ./src/plugins:/bitnami/wordpress/wp-content/plugins
       - ./src/themes:/bitnami/wordpress/wp-content/themes
+      - ./uploads:/bitnami/wordpress/wp-content/uploads
     depends_on:
       - mariadb
     environment:
