@@ -208,7 +208,7 @@ jQuery(function ($) {
       tl.staggerFrom(element, 0.3, { x: "+=30", opacity: 0, autoAlpha: 0 }, 0.5);
     }
 
-    /* ############# END OF ABOUT PAGE ############# */
+    /* ############# ABOUT PAGE ############# */
 
     // about page tab
     var indicatorInitialPosition, indicatorNewPosition, indicatorTemporaryPosition = 0;
