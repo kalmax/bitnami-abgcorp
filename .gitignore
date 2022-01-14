@@ -16,6 +16,7 @@ src/wordpress
 !src/plugins/akismet
 !src/plugins/disable-wordpress-updates
 !src/plugins/elementor
+!src/plugins/ele-custom-skin
 !src/plugins/elementor-pro
 !src/plugins/posts-carousel
 !src/plugins/wordpress-seo
