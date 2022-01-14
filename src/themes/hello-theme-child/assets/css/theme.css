@@ -73,44 +73,44 @@ h6 {
     width: 100%;
   }
 }
+@-webkit-keyframes shrink {
+  0% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shrink {
+  0% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(3);
+  }
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(3);
+  }
+}
 .elementor-widget:not(:last-child) {
   margin-bottom: 0;
 }
 
 .elementor-widget-text-editor p {
   margin-bottom: 0;
-}
-
-.about #hero-aboutPage {
-  width: 100%;
-  height: auto;
-}
-.about #hero-aboutPage #sub-header-text {
-  font-size: 24px;
-}
-
-.tabContent:not(:first-child) {
-  display: none;
-}
-
-a.elementor-button {
-  border-radius: none;
-  border: none !important;
-}
-
-.btnTab {
-  border-bottom: #f6f6f6 2px solid;
-}
-.btnTab.active {
-  border-bottom: #EE1C25 2px solid;
-}
-.btnTab:hover {
-  cursor: pointer;
-  border-bottom: #EE1C25 2px solid;
-}
-
-.category-aboutus-tabcontent {
-  margin-bottom: 0 !important;
 }
 
 /* Buttons */
