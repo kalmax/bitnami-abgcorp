@@ -1,0 +1,182 @@
+// About Page
+#hero-aboutPage {
+    @media (max-width: 1024px) {
+      background-color: #20438c;
+    }
+  }
+  .about {
+    // About Page Hero
+    #hero-aboutPage {
+      width: 100%;
+      height: auto;
+  
+      #sub-header-text {
+        font-size: 24px;
+      }
+    }
+  }
+  
+  // About Tab CSS
+  .tabContent:not(:first-child) {
+    display: none;
+  }
+  
+  .btnTab {
+    cursor: pointer;
+  }
+  
+  a.elementor-button {
+    border-radius: none;
+    border: none !important;
+  }
+  
+  #tab-indicator {
+    left: 0px;
+    transition: all 500ms ease-in-out;
+  }
+  
+  .category-aboutus-tabcontent {
+    margin-bottom: 0 !important;
+  }
+  
+  // leadership slider peakaboo
+  .peakaboo-slider {
+    .slick-list {
+      left: -9% !important;
+      width: 118%;
+      padding-right: 9%;
+      padding-left: 9%;
+  
+      @media (max-width: 1024px) {
+        left: -9% !important;
+        width: 118%;
+        padding-right: 9%;
+        padding-left: 9%;
+      }
+    }
+  
+    .slick-next {
+      right: -12px !important;
+    }
+  
+    .slick-prev {
+      left: -10px !important;
+      z-index: 1;
+    }
+  
+    .slick-prev,
+    .slick-next {
+      top: 44%;
+      width: 40px;
+      height: 40px;
+    }
+  
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: 40px;
+    }
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  // timeline slider
+  
+  .animate--shrink {
+    animation-duration: 1s;
+    animation-name: shrink;
+    animation-timing-function: "linear";
+  }
+  
+  .animate--grow {
+    animation-duration: 1s;
+    animation-timing-function: "linear";
+    animation-name: grow;
+  }
+  
+  .timeline-year-slider {
+    .slick-vertical & {
+      border: 0;
+      outline: none;
+  
+      &:focus,
+      &:active,
+      &::selection {
+        outline: none !important;
+        border: 0 !important;
+        box-shadow: none;
+      }
+    }
+  
+    .slick-list {
+      margin-top: 103px;
+      padding: 64px 0 62px 0;
+      transform: translate3d(0, 0, 0);
+  
+      @media (max-width: 1024px) {
+        margin-top: 0;
+        padding: 0 !important;
+      }
+  
+      .slick-track {
+        transform: translate3d(0, 0, 0);
+      }
+  
+      .slick-slide {
+        margin-bottom: 32px;
+  
+        p {
+          cursor: pointer;
+          transform: translate3d(0, 0, 0);
+          transform-origin: 100% 45%;
+          perspective: 1000;
+          filter: blur(0);
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+  
+          @media (max-width: 1024px) {
+            transform-origin: 110% 45%;
+          }
+  
+          @media (max-width: 640px) {
+            transform-origin: 99% 45%;
+          }
+        }
+  
+        @media (max-width: 1024px) {
+          margin-bottom: 0;
+          text-align: center;
+        }
+      }
+  
+      .slick-slide [aria-hidden] {
+        transition: 1s;
+      }
+  
+      .slick-slide [aria-hidden="false"] {
+        p {
+          @extend .animate--shrink;
+        }
+      }
+  
+      .slick-current {
+        @media (max-width: 1024px) {
+          text-align: right;
+        }
+  
+        p {
+          // transform: scale(3);
+          // transition: all 1s ease-in-out;
+          @extend .animate--grow;
+          font-weight: bold !important;
+        }
+      }
+    }
+  }
+  
+  #timeline-up img,
+  #timeline-down img {
+    cursor: pointer;
+  }
+  
