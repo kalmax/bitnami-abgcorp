@@ -25,6 +25,7 @@ src/wordpress
 !src/plugins/wp-migrate-db-pro
 !src/plugins/wp-migrate-db-pro-media-files
 !src/plugins/sticky-header-effects-for-elementor
+src/plugins/*
 
 # But ignore everything under "src/themes"
 src/themes/*
