@@ -196,6 +196,69 @@ jQuery(function ($) {
       }
 
     }
+    
+    /*
+      Animates an image  - Fades image up with opacity reveal
+      @param el - the element
+      @param triggerElement - element to trigger when scrolling before the animation
+      @@param offset - scroll offset on scroll trigger
+    */
+    function animateEaseImageUp(params) {
+
+      let tl = new TimelineMax();
+      tl
+      .fromTo(
+        params.el,
+        0.5,
+        { y: 30, autoAlpha: 0, ease: Power1.easeOut },
+        { y: 0, autoAlpha: 1 }
+      );
+
+      var scene = new ScrollMagic.Scene({
+        triggerElement: params.triggerElement,
+        offset: params.offset ? params.offset : 0,
+        reverse: false
+      })
+      .setTween(tl)
+      .addTo(controller);
+
+    }
+
+    /*
+      Animates an image  - Draws a line with a node
+      @param el - the element
+      @param triggerElement - element to trigger when scrolling before the animation
+      @@param offset - scroll offset on scroll trigger
+    */
+    function animateLineNodeDown(params) {
+
+      let tl = new TimelineMax();
+      tl
+      .set(`${params.el} .node-line .elementor-widget-container img`, { height: '0' }, 'start')
+      .fromTo(
+        `${params.el} .node-line .elementor-widget-container img`,
+        0.5,
+        { height: 0 },
+        { height: '67px' }
+      )
+      .staggerFrom(
+        `${params.el} .node .elementor-widget-container img`,
+        0.5,
+        {
+          opacity: 0,
+          scale: 0.5,
+          transformOrigin: "center center",
+          ease: Elastic.easeOut.config(1, 0.5)
+        }
+      );
+
+      var scene = new ScrollMagic.Scene({
+        triggerElement: params.triggerElement,
+        reverse: false
+      })
+      .setTween(tl)
+      .addTo(controller);
+    }
 
     animateHomeHeroCarouselByWidth();
 
@@ -231,31 +294,31 @@ jQuery(function ($) {
     })
 
     // getting inital indicator position
-    indicatorInitialPosition = $('#tab-indicator').position().left;
+    // indicatorInitialPosition = $('#tab-indicator').position().left;
 
-    $('.btnTab').hover(function () {
-      // Tab indicator behaviour
+    // $('.btnTab').hover(function () {
+    //   // Tab indicator behaviour
 
-      // calculating and applying indicator temporary new position
-      var item = $(this).attr('item')
-      var indicatorWidth = $('#tab-indicator').width()
-      var left = item * indicatorWidth
-      $('#tab-indicator').css({ 'left': left + 'px' })
+    //   // calculating and applying indicator temporary new position
+    //   var item = $(this).attr('item')
+    //   var indicatorWidth = $('#tab-indicator').width()
+    //   var left = item * indicatorWidth
+    //   $('#tab-indicator').css({ 'left': left + 'px' })
 
-      indicatorTemporaryPosition = left
-    }, () => {
+    //   indicatorTemporaryPosition = left
+    // }, () => {
 
-      if (!indicatorNewPosition) {
-        // returning indicator to its initial position
-        $('#tab-indicator').css({ 'left': indicatorInitialPosition + 'px' })
-      }
-      else {
-        // reseting indicator new and temporary position
-        indicatorNewPosition = 0
-        indicatorTemporaryPosition = 0
-      }
+    //   if (!indicatorNewPosition) {
+    //     // returning indicator to its initial position
+    //     $('#tab-indicator').css({ 'left': indicatorInitialPosition + 'px' })
+    //   }
+    //   else {
+    //     // reseting indicator new and temporary position
+    //     indicatorNewPosition = 0
+    //     indicatorTemporaryPosition = 0
+    //   }
 
-    })
+    // })
 
 
     // Peakaboo Slider
@@ -365,6 +428,45 @@ jQuery(function ($) {
 
 
     /* ############# END OF ABOUT PAGE ############# */
+
+    /* ############# ESG PAGE ############# */
+
+    // section - environmental - cover image slide up
+    animateEaseImageUp({
+      el: "#esg-section-environmental #cover-image .elementor-widget-container",
+      triggerElement: "#esg-section-environmental",
+      offset: 0,
+    });
+
+    // section - social - cover image slide up
+    animateEaseImageUp({
+      el: "#esg-section-social #cover-image .elementor-widget-container",
+      triggerElement: "#esg-section-social",
+      offset: -100,
+    });
+    
+    // section - governance - cover image slide up
+    animateEaseImageUp({
+      el: "#esg-section-governance #cover-image .elementor-widget-container",
+      triggerElement: "#esg-section-governance",
+      offset: -100,
+    });
+    
+    // section - diversity - cover image slide up
+    animateEaseImageUp({
+      el: "#esg-section-diversity #cover-image .elementor-widget-container",
+      triggerElement: "#esg-section-diversity",
+      offset: -100,
+    });
+
+    // section - cta download
+    animateLineNodeDown({
+      el: "#esg-section-cta-download-line-node",
+      triggerElement: "#esg-section-cta-download-top-border",
+      offset: -100,
+    });
+
+    /* ############# END OF ESG PAGE ############# */
 
 
   });
