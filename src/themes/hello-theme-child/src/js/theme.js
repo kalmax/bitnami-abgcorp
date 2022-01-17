@@ -291,7 +291,7 @@ jQuery(function ($) {
       indicatorInitialPosition = indicatorNewPosition
 
 
-    })
+    });
 
     // getting inital indicator position
     // indicatorInitialPosition = $('#tab-indicator').position().left;
