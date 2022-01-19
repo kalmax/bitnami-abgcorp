@@ -3,7 +3,7 @@ a {
   border-bottom: 2px solid #20438c;
 }
 
-.header-nav-button {
+.header-nav-button > a {
   border-bottom: none;
 }
 
