@@ -291,34 +291,36 @@ jQuery(function ($) {
       indicatorInitialPosition = indicatorNewPosition
 
 
-    })
+    });
 
     // getting inital indicator position
-    // indicatorInitialPosition = $('#tab-indicator').position().left;
+    if($('#tab-indicator').length > 0){
+      indicatorInitialPosition = $('#tab-indicator').position().left;
+    }
+    
+    $('.btnTab').hover(function () {
+      // Tab indicator behaviour
 
-    // $('.btnTab').hover(function () {
-    //   // Tab indicator behaviour
+      // calculating and applying indicator temporary new position
+      var item = $(this).attr('item')
+      var indicatorWidth = $('#tab-indicator').width()
+      var left = item * indicatorWidth
+      $('#tab-indicator').css({ 'left': left + 'px' })
 
-    //   // calculating and applying indicator temporary new position
-    //   var item = $(this).attr('item')
-    //   var indicatorWidth = $('#tab-indicator').width()
-    //   var left = item * indicatorWidth
-    //   $('#tab-indicator').css({ 'left': left + 'px' })
+      indicatorTemporaryPosition = left
+    }, () => {
 
-    //   indicatorTemporaryPosition = left
-    // }, () => {
+      if (!indicatorNewPosition) {
+        // returning indicator to its initial position
+        $('#tab-indicator').css({ 'left': indicatorInitialPosition + 'px' })
+      }
+      else {
+        // reseting indicator new and temporary position
+        indicatorNewPosition = 0
+        indicatorTemporaryPosition = 0
+      }
 
-    //   if (!indicatorNewPosition) {
-    //     // returning indicator to its initial position
-    //     $('#tab-indicator').css({ 'left': indicatorInitialPosition + 'px' })
-    //   }
-    //   else {
-    //     // reseting indicator new and temporary position
-    //     indicatorNewPosition = 0
-    //     indicatorTemporaryPosition = 0
-    //   }
-
-    // })
+    })
 
 
     // Peakaboo Slider

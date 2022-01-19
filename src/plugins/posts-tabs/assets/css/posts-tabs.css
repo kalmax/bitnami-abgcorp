@@ -1,0 +1,68 @@
+.from-posts-tabs .tab-contents-item {
+  display: none;
+}
+
+.from-posts-tabs .from-posts-tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.from-posts-tabs a, 
+.from-posts-tabs a:active,
+.from-posts-tabs a:link,
+.from-posts-tabs a:hover {
+  color: #000;
+  text-decoration: none;
+  border: none;
+  padding: 0.5rem 7rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.from-posts-tabs .tab-links {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.from-posts-tabs .tab-contents  {
+  width: 100%;
+}
+
+.from-posts-tabs .tab-contents .tab-contents-item.active {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.from-posts-tabs .tab-contents .tab-contents-item .thumbnail {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  min-height: 500px;
+  width: 90%;
+  float: left;
+}
+
+.from-posts-tabs .tab-contents .tab-contents-item .col {
+  width:  50%;
+}
+
+.from-posts-tabs .tab-contents .tab-contents-item .col-details {
+  padding-top: 4rem;
+  padding-left: 2rem;
+}
+
+.from-posts-tabs .tab-contents .tab-contents-item .col-details .title {
+  font-size: 3rem;
+  font-weight: bold;
+  
+}
+
+.from-posts-tabs .tab-contents .tab-contents-item .col-details .excerpt {
+  font-size: 1.125rem;
+}
