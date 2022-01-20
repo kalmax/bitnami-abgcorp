@@ -2,6 +2,7 @@ jQuery(document).ready(function(){
 
     let selector;
     let tabContainer;
+    let tablSlickContainer;
 
     // For the editor page
     jQuery(document).ready(function () {
@@ -11,7 +12,10 @@ jQuery(document).ready(function(){
             elementorFrontend.hooks.addAction('frontend/element_ready/posts-tabs.default', function($scope) {
               selector = `.elementor-element-${$scope[0].dataset.id}`;
               tabContainer = window.document.querySelector(`${selector} .from-posts-tabs-container`);
+              tablSlickContainer = window.document.querySelector(`${selector} .from-posts-tabs-container-mobile .tab-contents-mobile`);
               buildPostTabs(tabContainer);
+              destroyCarousel(tablSlickContainer);
+              buildSlickCarousel(tablSlickContainer);
             });
 
         }
@@ -26,7 +30,10 @@ jQuery(document).ready(function(){
             elementorFrontend.hooks.addAction('frontend/element_ready/posts-tabs.default', function($scope) {
               selector = `.elementor-element-${$scope[0].dataset.id}`;
               tabContainer = window.document.querySelector(`${selector} .from-posts-tabs-container`);
+              tablSlickContainer = window.document.querySelector(`${selector} .from-posts-tabs-container-mobile .tab-contents-mobile`);
               buildPostTabs(tabContainer);
+              destroyCarousel(tablSlickContainer);
+              buildSlickCarousel(tablSlickContainer);
             });
 
         }
@@ -66,7 +73,6 @@ jQuery(document).ready(function(){
 
         });
 
-      // jQuery(el).find()
 
       }
 
@@ -84,6 +90,43 @@ jQuery(document).ready(function(){
       jQuery(el).find(`.tab-contents #posts-tabs-content-${tabId}`).addClass("active");
 
     }
+
+    jQuery(window).resize(function(){
+      destroyCarousel();
+      buildSlickCarousel();
+    });
+
+    function destroyCarousel(el) {     
+      if (jQuery(el).hasClass('slick-initialized')) {       
+        jQuery(el).slick('slickRemove', null, null, true);       
+        jQuery(el).slick('destroy');     
+      }         
+    }
+
+    /**
+     * @description Foreach of the carousel elements initiate a Slick carousel.
+     *
+     * @param {object} $scope
+     * @return void
+     */
+    function buildSlickCarousel(el) {
+   
+     if (el && el !== 'undefined') {
+        
+        jQuery(el).not('.slick-initialized').slick({
+          infinite: true,
+          autoplay: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          prevArrow: false,
+          nextArrow: false
+        });
+
+      }
+
+    }
+
 
 
 

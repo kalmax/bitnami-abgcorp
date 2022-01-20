@@ -137,7 +137,8 @@ class Posts_Tabs_Widget extends Widget_Base {
     } ?>
 
     <div class="from-posts-tabs from-posts-tabs-wrapper">
-      <div class="from-posts-tabs-container">
+
+      <div class="from-posts-tabs-container from-posts-tabs-container-desktop">
         <div class="tab-links">
           <?php if($posts):?>
             <?php $tabId=0; ?>
@@ -163,6 +164,20 @@ class Posts_Tabs_Widget extends Widget_Base {
             <?php $tabItemId++;?>
           <?php endforeach;?>
         <?php endif; ?>
+        </div>
+      </div>
+      
+      <div class="from-posts-tabs-container-mobile">
+        <div class="tab-contents-mobile">
+          <?php if($posts):?>
+            <?php foreach ($posts as $post): ?>
+              <div class="tab-contents-mobile-item">
+                <h3 class="title"> <?= $post->post_title;?> </h3>
+                <div class="thumbnail" style="background-image:url(<?= get_the_post_thumbnail_url($post->ID); ?>)"></div>
+                <p class="excerpt"> <?= $post->post_excerpt;?> </p>
+              </div>
+            <?php endforeach;?>
+          <?php endif; ?>
         </div>
       </div>
     </div>
