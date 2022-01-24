@@ -1,0 +1,133 @@
+jQuery(document).ready(function(){
+
+    let selector;
+    let tabContainer;
+    let tablSlickContainer;
+
+    // For the editor page
+    jQuery(document).ready(function () {
+        // Sanity Check
+        if (window.elementorFrontend && 'undefined' !== window.elementorFrontend) {
+
+            elementorFrontend.hooks.addAction('frontend/element_ready/posts-tabs.default', function($scope) {
+              selector = `.elementor-element-${$scope[0].dataset.id}`;
+              tabContainer = window.document.querySelector(`${selector} .from-posts-tabs-container`);
+              tablSlickContainer = window.document.querySelector(`${selector} .from-posts-tabs-container-mobile .tab-contents-mobile`);
+              buildPostTabs(tabContainer);
+              destroyCarousel(tablSlickContainer);
+              buildSlickCarousel(tablSlickContainer);
+            });
+
+        }
+    });
+
+    // Front end
+    jQuery(window).on('elementor/frontend/init', function () {
+
+        // Sanity Check
+        if (window.elementorFrontend && 'undefined' !== window.elementorFrontend) {
+
+            elementorFrontend.hooks.addAction('frontend/element_ready/posts-tabs.default', function($scope) {
+              selector = `.elementor-element-${$scope[0].dataset.id}`;
+              tabContainer = window.document.querySelector(`${selector} .from-posts-tabs-container`);
+              tablSlickContainer = window.document.querySelector(`${selector} .from-posts-tabs-container-mobile .tab-contents-mobile`);
+              buildPostTabs(tabContainer);
+              destroyCarousel(tablSlickContainer);
+              buildSlickCarousel(tablSlickContainer);
+            });
+
+        }
+    });
+
+    /**
+     * @description Builds tabs based on posts
+     *
+     * @param {object} $scope
+     * @return void
+     */
+    function buildPostTabs(el) {
+   
+     if (el && el !== 'undefined') {
+
+        // set first tab content open
+        openTab(el, 0);
+
+        jQuery(el).find(".tab-link").on('click', function (e) {
+
+          // setting new indicator position if tab is clicked
+          //indicatorNewPosition = indicatorTemporaryPosition
+
+          // Hide and Show of tab contents
+          var tabId = jQuery(this).attr('id').replace("posts-tabs-nav-","");
+
+          // open tab
+          openTab(el, tabId);
+          // $('.tabContent').css({ 'display': 'none' })
+          // $('#' + content).css({ 'display': 'block' })
+          // $('#tab-indicator').css({ 'left': indicatorNewPosition + 'px' })
+
+          // // setting new initial indicator position
+          // indicatorInitialPosition = indicatorNewPosition
+
+          e.preventDefault();
+
+        });
+
+
+      }
+
+    }
+
+    function openTab(el, tabId) {
+      
+      let tablinks = jQuery(el).find(".tab-contents .tab-contents-item");
+
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        console.log(tablinks[i]);
+      }
+
+      jQuery(el).find(`.tab-contents #posts-tabs-content-${tabId}`).addClass("active");
+
+    }
+
+    jQuery(window).resize(function(){
+      destroyCarousel();
+      buildSlickCarousel();
+    });
+
+    function destroyCarousel(el) {     
+      if (jQuery(el).hasClass('slick-initialized')) {       
+        jQuery(el).slick('slickRemove', null, null, true);       
+        jQuery(el).slick('destroy');     
+      }         
+    }
+
+    /**
+     * @description Foreach of the carousel elements initiate a Slick carousel.
+     *
+     * @param {object} $scope
+     * @return void
+     */
+    function buildSlickCarousel(el) {
+   
+     if (el && el !== 'undefined') {
+        
+        jQuery(el).not('.slick-initialized').slick({
+          infinite: true,
+          autoplay: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          prevArrow: false,
+          nextArrow: false
+        });
+
+      }
+
+    }
+
+
+
+
+});

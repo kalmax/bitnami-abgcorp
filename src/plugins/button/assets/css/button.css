@@ -12,6 +12,12 @@
   border:  none;
 }
 
+@media only screen and (max-width: 480px) {
+  .btn-from {
+    padding: 0.8rem;
+  }
+}
+
 .btn-from:focus {
   border: none;
   outline: none;

@@ -178,6 +178,7 @@ h6 {
   border-radius: 2rem;
   height: 2.7rem;
   width: 2.7rem;
+  background: none;
 }
 .home #hero-carousel-brands .from-carousel .slick-next i,
 .home #hero-carousel-brands .from-carousel .slick-prev i {
