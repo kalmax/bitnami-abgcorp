@@ -522,10 +522,10 @@ jQuery(function ($) {
     };
 
 
-    $('#clientFilter').on('change', () => {
+    $('#clientFilter').change( () => {
 
       // get selected data tag
-      var id = $(this).find(":selected").data('gallery-index');
+      var id = $('#clientFilter').find(":selected").data('gallery-index');
 
       // replicate the action of existing filter of gallery widget for logo
       $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
@@ -543,23 +543,23 @@ jQuery(function ($) {
         $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
       }
 
-      function download(source) {
-        const fileName = source.split('/').pop();
-        var el = document.createElement("a");
-        el.setAttribute("href", source);
-        el.setAttribute("download", fileName);
-        document.body.appendChild(el);
-        el.click();
-        el.remove();
-      }
-
-      $('body').on('click','.e-gallery-item',() => {
-        var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
-        alert(url)
-        // download(url)
-      })
-
     });
+
+    function download(source) {
+      const fileName = source.split('/').pop();
+      var el = document.createElement("a");
+      el.setAttribute("href", source);
+      el.setAttribute("download", fileName);
+      document.body.appendChild(el);
+      el.click();
+      el.remove();
+    }
+
+    $('body').on('click','.e-gallery-item',() => {
+      var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
+      alert(url)
+      // download(url)
+    })
 
 
     /* ############# END OF NEWS PAGE ############# */
