@@ -26,6 +26,7 @@ src/wordpress
 !src/plugins/wp-migrate-db-pro-media-files
 !src/plugins/sticky-header-effects-for-elementor
 !src/plugins/posts-tabs
+!src/plugins/wordfence
 
 # But ignore everything under "src/themes"
 src/themes/*
