@@ -196,7 +196,7 @@ jQuery(function ($) {
       }
 
     }
-    
+
     /*
       Animates an image  - Fades image up with opacity reveal
       @param el - the element
@@ -207,20 +207,20 @@ jQuery(function ($) {
 
       let tl = new TimelineMax();
       tl
-      .fromTo(
-        params.el,
-        0.5,
-        { y: 30, autoAlpha: 0, ease: Power1.easeOut },
-        { y: 0, autoAlpha: 1 }
-      );
+        .fromTo(
+          params.el,
+          0.5,
+          { y: 30, autoAlpha: 0, ease: Power1.easeOut },
+          { y: 0, autoAlpha: 1 }
+        );
 
       var scene = new ScrollMagic.Scene({
         triggerElement: params.triggerElement,
         offset: params.offset ? params.offset : 0,
         reverse: false
       })
-      .setTween(tl)
-      .addTo(controller);
+        .setTween(tl)
+        .addTo(controller);
 
     }
 
@@ -234,30 +234,30 @@ jQuery(function ($) {
 
       let tl = new TimelineMax();
       tl
-      .set(`${params.el} .node-line .elementor-widget-container img`, { height: '0' }, 'start')
-      .fromTo(
-        `${params.el} .node-line .elementor-widget-container img`,
-        0.5,
-        { height: 0 },
-        { height: '67px' }
-      )
-      .staggerFrom(
-        `${params.el} .node .elementor-widget-container img`,
-        0.5,
-        {
-          opacity: 0,
-          scale: 0.5,
-          transformOrigin: "center center",
-          ease: Elastic.easeOut.config(1, 0.5)
-        }
-      );
+        .set(`${params.el} .node-line .elementor-widget-container img`, { height: '0' }, 'start')
+        .fromTo(
+          `${params.el} .node-line .elementor-widget-container img`,
+          0.5,
+          { height: 0 },
+          { height: '67px' }
+        )
+        .staggerFrom(
+          `${params.el} .node .elementor-widget-container img`,
+          0.5,
+          {
+            opacity: 0,
+            scale: 0.5,
+            transformOrigin: "center center",
+            ease: Elastic.easeOut.config(1, 0.5)
+          }
+        );
 
       var scene = new ScrollMagic.Scene({
         triggerElement: params.triggerElement,
         reverse: false
       })
-      .setTween(tl)
-      .addTo(controller);
+        .setTween(tl)
+        .addTo(controller);
     }
 
     animateHomeHeroCarouselByWidth();
@@ -294,10 +294,10 @@ jQuery(function ($) {
     })
 
     // getting inital indicator position
-    if($('#tab-indicator').length > 0){
+    if ($('#tab-indicator').length > 0) {
       indicatorInitialPosition = $('#tab-indicator').position().left;
     }
-    
+
     $('.btnTab').hover(function () {
       // Tab indicator behaviour
 
@@ -446,14 +446,14 @@ jQuery(function ($) {
       triggerElement: "#esg-section-social",
       offset: -100,
     });
-    
+
     // section - governance - cover image slide up
     animateEaseImageUp({
       el: "#esg-section-governance #cover-image .elementor-widget-container",
       triggerElement: "#esg-section-governance",
       offset: -100,
     });
-    
+
     // section - diversity - cover image slide up
     animateEaseImageUp({
       el: "#esg-section-diversity #cover-image .elementor-widget-container",
@@ -469,6 +469,100 @@ jQuery(function ($) {
     });
 
     /* ############# END OF ESG PAGE ############# */
+
+    /* ############# NEWS PAGE ############# */
+
+    $('#changer').on('click', (e) => {
+      e.preventDefault();
+      // alert('test')
+      // elementorFrontend.hooks.addAction( 'elementor/query/$query_id', 'my_query_by_post_types','partnerships');
+      // var values = {
+      //         'categoryFilter': 'business-news'
+      // };
+      // $.ajax({
+      //     url: "/news",
+      //     type: "GET",
+      //     data: values,
+      // });
+
+      // window.location('/news?categoryFilter=business-news')
+      // var refresh = '/news?categoryFilter=business-news';    
+      // window.history.pushState({ path: refresh }, '', refresh);
+
+      // elementorFrontend.hooks.doAction( 'elementor/query/{$query_id}', 'my_query_by_post_types');
+
+      // location.href = "/news?categoryFilter=business-news";
+
+      // return false
+
+      //ajax call 
+      // var data = {
+      //   action: 'elementor/query/my_query_by_post_types',
+      //   categoryFilter: 'partnerships'
+      // };
+      // var ajaxurl = '/news';  ///WHAT IS THIS?!?!
+      // jQuery.get(ajaxurl, data, function(response) {
+      //   // alert('Got this from the server: ' + response);
+      //   console.log(response);
+      // });
+    });
+
+
+    // Media Section
+
+    // Client Dropdown populate options
+    var targetElement = $('#mediaLogo  a.elementor-gallery-title');
+    var optionCount = targetElement.length;
+
+    for (var i = 0; i < optionCount; i++) {
+
+      var value = $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + i + '"]').html();
+      $('#clientFilter').append('<option data-gallery-index="' + i + '">' + value + '</option>');
+
+    };
+
+
+    $('#clientFilter').on('change', () => {
+
+      // get selected data tag
+      var id = $(this).find(":selected").data('gallery-index');
+
+      // replicate the action of existing filter of gallery widget for logo
+      $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+
+      var haveImages = $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').length;
+
+      if (!haveImages) {
+        $('#mediaImageSectionHeader').css({ 'display': 'none' })
+        $('#mediaImageSectionContent').css({ 'display': 'none' })
+      } else {
+        $('#mediaImageSectionHeader').css({ 'display': 'block' })
+        $('#mediaImageSectionContent').css({ 'display': 'block' })
+
+        // replicate the action of existing filter of gallery widget for image
+        $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+      }
+
+      function download(source) {
+        const fileName = source.split('/').pop();
+        var el = document.createElement("a");
+        el.setAttribute("href", source);
+        el.setAttribute("download", fileName);
+        document.body.appendChild(el);
+        el.click();
+        el.remove();
+      }
+
+      $('body').on('click','.e-gallery-item',() => {
+        var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
+        alert(url)
+        // download(url)
+      })
+
+    });
+
+
+    /* ############# END OF NEWS PAGE ############# */
 
 
   });

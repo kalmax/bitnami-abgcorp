@@ -23,6 +23,10 @@ a {
   width: 100%;
 }
 
+.leadership-postItem a {
+  border: none;
+}
+
 h1, h2, h3, h3, h5, h6 {
   color: #000;
 }
@@ -295,7 +299,7 @@ h6 {
   cursor: pointer;
 }
 
-a.elementor-button {
+.btnTab a.elementor-button {
   border-radius: none;
   border: none !important;
 }
@@ -434,5 +438,78 @@ a.elementor-button {
 
 #timeline-up img,
 #timeline-down img {
+  cursor: pointer;
+}
+
+#mediaSection .elementor-gallery__titles-container {
+  display: none;
+}
+
+.selectdiv {
+  position: relative;
+  float: left;
+  width: 100%;
+  /* IE11 hide native button (thanks Matt!) */
+}
+.selectdiv select::-ms-expand {
+  display: none;
+}
+.selectdiv:after {
+  content: ">";
+  font: 25px "Consolas", monospace;
+  font-weight: bolder;
+  /* letter-spacing: 12px; */
+  color: #20438c;
+  right: 11px;
+  top: 10px;
+  transform: rotate(90deg);
+  padding: 0 0 2px;
+  position: absolute;
+  pointer-events: none;
+}
+.selectdiv label {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  width: 100%;
+}
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  height: 50px;
+  float: right;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
+.goBack {
+  padding-left: 20px;
+}
+.goBack:before {
+  content: ">";
+  font: 25px "Consolas", monospace;
+  font-weight: bolder;
+  /* letter-spacing: 12px; */
+  left: 0px;
+  top: 0px;
+  color: #20438c;
+  transform: rotate(180deg);
+  padding: 0 0 2px;
+  position: absolute;
+  pointer-events: none;
+}
+.goBack a {
+  text-decoration: none;
+}
+.goBack a:hover {
   cursor: pointer;
 }
