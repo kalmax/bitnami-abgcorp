@@ -65,21 +65,16 @@ add_action('elementor/query/my_query_by_post_types', function ($query) {
 
 function previoustitle_shortcode($atts)
 {
-	$prev_post = get_adjacent_post(false, '', true,'category');
-	if (!empty($prev_post)) {
-		echo $prev_post->post_title;
-	}
+	// $prev_post = $_GET['anterior'];
+	// if (!empty($prev_post)) {
+	// 	echo $prev_post;
+	// }
 
-	else{
-		echo '';
-	}	
+	// else{
+	// 	echo '';
+	// }	
 
-	// $prev_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-	// $str = file_get_contents($prev_url);
-	// $str = trim(preg_replace('/\s+/', ' ', $str));
-	// preg_match("/\<title\>(.*)\<\/title\>/i",$str,$title);
-	// $prev_page_title = $title[1];
-	// echo $prev_page_title;
+	echo get_adjacent_post( false, '', true, 'page' );
 
 };
 
