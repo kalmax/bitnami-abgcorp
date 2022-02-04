@@ -8,7 +8,7 @@ a {
 }
 
 .otherPagesHeader a.elementor-button {
-  border-bottom: 2px solid #20438C;
+  border-bottom: 2px solid #20438C !important;
 }
 
 .elementor-section.elementor-section-boxed > .elementor-container {
