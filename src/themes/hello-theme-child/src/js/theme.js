@@ -618,7 +618,7 @@ jQuery(function ($) {
     
     $('#headerSection .elementor-item,.elementor-sub-item').mouseover(function() {
       var  offset = $('#headerSection').data('scroll')
-      if(offset === 0){
+      if(offset > -60 && offset <= 0){
         $('div.page-content').addClass('offsetTop')
       }
 
@@ -630,7 +630,7 @@ jQuery(function ($) {
     })
     .mouseout(function() {
       var  offset = $('#headerSection').data('scroll')
-      if(offset === 0){
+      if(offset > -60 && offset <= 0){
         $('div.page-content').removeClass('offsetTop')
         $('#headerSection .elementor-item').removeClass('hovered')
         $('#contactUs').removeClass('contactUs')
