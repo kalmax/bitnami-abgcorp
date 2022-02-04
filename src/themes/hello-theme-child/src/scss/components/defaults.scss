@@ -3,6 +3,12 @@ a {
   border-bottom: 2px solid #20438C;
 }
 
+#headerSection{
+  a {
+    border-bottom: 0;
+  }
+}
+
 .elementor-section.elementor-section-boxed {
 
   & > .elementor-container {

@@ -3,6 +3,10 @@ a {
   border-bottom: 2px solid #20438C;
 }
 
+#headerSection a {
+  border-bottom: 0;
+}
+
 .elementor-section.elementor-section-boxed > .elementor-container {
   max-width: 86%;
   width: 86%;
@@ -59,6 +63,66 @@ h5 {
 h6 {
   font-size: 1.3125rem;
   line-height: 1.8rem;
+}
+
+#headerSection {
+  transition: height, background-color 700ms;
+}
+#headerSection .elementor-item:hover {
+  color: #20438C !important;
+}
+#headerSection .elementor-sub-item.has-submenu .sub-arrow:after {
+  content: ">";
+  font: 18px "Consolas", monospace;
+  font-weight: bolder;
+  right: 0px;
+  top: 10px;
+  color: #20438c;
+  transform: rotate(0deg);
+  padding: 0 0 2px;
+  position: absolute;
+  pointer-events: none;
+}
+#headerSection .elementor-button {
+  border-bottom: 2px solid #fff;
+}
+#headerSection .hovered {
+  color: #000;
+}
+#headerSection .coloredLogo {
+  filter: brightness(1) invert(0) !important;
+}
+#headerSection .elementor-nav-menu--main {
+  padding: 13px 15px !important;
+}
+#headerSection .headerButton {
+  font-size: 14px;
+}
+#headerSection .contactUs {
+  color: #20438C;
+  border: 2px solid #20438C !important;
+}
+#headerSection .rentCar {
+  background-color: #20438C !important;
+  color: #fff !important;
+  border: 2px solid #20438C !important;
+}
+
+.headerOpen {
+  background-color: #fff !important;
+  height: 380px;
+}
+
+.page-content {
+  transition: margin-top 700ms;
+}
+
+.offsetTop {
+  margin-top: 380px !important;
+}
+
+.scrolledNav {
+  color: #000;
 }
 
 @-webkit-keyframes a_width_left_to_right {
