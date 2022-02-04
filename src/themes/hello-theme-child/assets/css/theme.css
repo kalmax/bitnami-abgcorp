@@ -7,6 +7,10 @@ a {
   border-bottom: 0;
 }
 
+.otherPagesHeader a.elementor-button {
+  border-bottom: 2px solid #20438C;
+}
+
 .elementor-section.elementor-section-boxed > .elementor-container {
   max-width: 86%;
   width: 86%;
