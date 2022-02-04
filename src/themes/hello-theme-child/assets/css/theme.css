@@ -577,3 +577,37 @@ h6 {
 .goBack a:hover {
   cursor: pointer;
 }
+
+#diversity-slider .slick-slider {
+  overflow: hidden;
+}
+
+#diversity-slider .from-carousel .slick-prev {
+  display: none;
+}
+
+#diversity-slider .from-carousel .slick-next {
+  margin-right: 6rem;
+}
+
+#diversity-slider .from-carousel .slick-prev,
+#diversity-slider .from-carousel .slick-next {
+  top: 44%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #20438C;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+}
+
+#diversity-slider .from-carousel .slick-prev::before,
+#diversity-slider .from-carousel .slick-next::before {
+  font-size: 2.7rem;
+}
+
+#diversity-slider .from-carousel .slick-list {
+  width: 100%;
+  margin-left: 4vw;
+  padding: 0 10% 0 0 !important;
+}
