@@ -64,8 +64,8 @@ jQuery(document).ready(function(){
           slidesToScroll: el.dataset.slidestoscroll,
           dots: false,
           arrows: true,
-          prevArrow:"<div class='elementor-icon'><button type='button' class='slick-prev pull-left'><i class='fas fa-chevron-left' aria-hidden='true'></i></button></div>",
-          nextArrow:"<div class='elementor-icon'><button type='button' class='slick-next pull-right'><i class='fas fa-chevron-right' aria-hidden='true'></i></button></div>",
+          prevArrow:"<div class='elementor-icon slick-arrow-left'><button type='button' class='slick-prev pull-left'><i class='fas fa-chevron-left' aria-hidden='true'></i></button></div>",
+          nextArrow:"<div class='elementor-icon slick-arrow-right'><button type='button' class='slick-next pull-right'><i class='fas fa-chevron-right' aria-hidden='true'></i></button></div>",
           responsive: [
             {
               breakpoint: 769,
