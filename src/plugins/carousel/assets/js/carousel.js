@@ -56,7 +56,7 @@ jQuery(document).ready(function(){
     function buildSlickCarousel(el) {
    
      if (el && el !== 'undefined') {
-
+console.log(el.dataset.slidesmobile);
         jQuery(el).not('.slick-initialized').slick({
           infinite: true,
           autoplay: false,
