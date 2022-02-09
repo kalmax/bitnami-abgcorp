@@ -28,6 +28,7 @@ src/wordpress
 !src/plugins/posts-tabs
 !src/plugins/wordfence
 !src/plugins/advanced-custom-fields
+!src/plugins/back-button
 
 # But ignore everything under "src/themes"
 src/themes/*
