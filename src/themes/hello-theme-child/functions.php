@@ -105,6 +105,8 @@ add_action('elementor/query/my_query_by_post_types', function ($query) {
 
 // add_action('elementor/query/{$query_id}', 'my_query_by_post_types';
 
+/*
+Disabled previous title back button
 function previoustitle_shortcode($atts)
 {
 	// $prev_post = $_GET['anterior'];
@@ -121,3 +123,4 @@ function previoustitle_shortcode($atts)
 };
 
 add_shortcode('show_previous_title', 'previoustitle_shortcode');
+*/
