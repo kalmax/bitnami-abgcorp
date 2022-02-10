@@ -36,8 +36,7 @@ function hello_elementor_child_is_local(){
 
 function hello_elementor_child_enqueue_scripts()
 {
-	// $is_local = hello_elementor_child_is_local();
-	$is_local = false;
+	$is_local = hello_elementor_child_is_local();
 
 	if($is_local){
 
