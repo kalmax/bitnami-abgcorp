@@ -17,9 +17,7 @@
  */
 function hello_elementor_child_is_local(){
 
-	$is_local = false;
-
-	if ( 'http://localhost' !== get_site_url() ) {
+	if ( 'http://localhost' === get_site_url() ) {
 		$is_local = true;
 	}
 
