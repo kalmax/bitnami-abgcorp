@@ -4,7 +4,8 @@
   "description": "Theme for ABG Website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "npx mix",
+    "build:prod": "npx mix --production"
   },
   "author": "FROM Digital",
   "license": "ISC",

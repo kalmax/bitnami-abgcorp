@@ -37,3 +37,8 @@ src/themes/*
 !src/themes/hello-elementor
 !src/themes/hello-theme-child
 !src/themes/twentytwentyone
+
+
+# ignore manifest file for laravel mix hello-theme-child
+src/themes/hello-theme-child/assets/mix-manifest.json
+
