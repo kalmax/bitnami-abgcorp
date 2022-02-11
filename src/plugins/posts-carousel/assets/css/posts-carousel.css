@@ -71,4 +71,11 @@ background: none;
 }
 
 
-
+.from-posts-carousel .from-posts-carousel--image {
+  float: left;
+  margin-bottom: 1.6rem;
+  background-size: cover;
+  min-height: 255px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
