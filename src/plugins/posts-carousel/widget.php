@@ -147,9 +147,11 @@ class Posts_Carousel_Widget extends Widget_Base {
         >
         <?php if($posts):
           foreach ($posts as $post): ?>
+            <?php 
+              $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
+            ?>
             <div class="from-posts-carousel--item-wrapper">
-              <div class="from-posts-carousel--image"> <a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= get_the_post_thumbnail($post->ID, 'thumbnail'); ?></a> 
-              </div>
+              <a href="<?= get_permalink($post->ID);?>" class="from-posts-carousel--image" style="background-image:url(<?php echo $post_image_url;?>);" target="_blank" ></a> 
               <div class="from-posts-carousel--details">
                 <h3 class="from-posts-carousel--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
                 <p class="from-posts-carousel--description"><?= $post->post_excerpt; ?></p>

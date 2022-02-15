@@ -31,6 +31,26 @@ a {
   border: none;
 }
 
+.slick-prev,
+.slick-next,
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+  color: transparent !important;
+  outline: none;
+  background: transparent !important;
+}
+
+@media (min-width: 768px) {
+  body:not(.elementor-editor-active) .elementor-menu-anchor:before {
+    content: "";
+    display: block;
+    height: 60px;
+    /* fixed header height*/
+    margin: -60px 0 0;
+    /* negative fixed header height */
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
 h1, h2, h3, h3, h5, h6 {
   color: #000;
 }
@@ -71,17 +91,19 @@ h6 {
 #headerSection .elementor-item:hover {
   color: #20438C !important;
 }
-#headerSection .elementor-sub-item.has-submenu .sub-arrow:after {
-  content: ">";
-  font: 18px "Consolas", monospace;
-  font-weight: bolder;
-  right: 0px;
-  top: 10px;
-  color: #20438c;
-  transform: rotate(0deg);
-  padding: 0 0 2px;
-  position: absolute;
-  pointer-events: none;
+@media (min-width: 768px) {
+  #headerSection .elementor-sub-item.has-submenu .sub-arrow:after {
+    content: ">";
+    font: 18px "Consolas", monospace;
+    font-weight: bolder;
+    right: 0px;
+    top: 10px;
+    color: #20438c;
+    transform: rotate(0deg);
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+  }
 }
 #headerSection .elementor-button {
   border-bottom: 2px solid #fff;
@@ -107,6 +129,9 @@ h6 {
   color: #fff !important;
   border: 2px solid #20438C !important;
 }
+#headerSection .scrolledMobileNav {
+  fill: #20438C !important;
+}
 
 .otherPagesHeader .elementor-button {
   border-bottom: 2px solid #20438C !important;
@@ -127,6 +152,18 @@ h6 {
 
 .scrolledNav {
   color: #000;
+}
+
+.jumpTo {
+  display: none;
+}
+
+.jumpto-icon .elementor-icon {
+  border-bottom: 0;
+}
+
+.jumpToNav a {
+  border-bottom: 0;
 }
 
 @-webkit-keyframes a_width_left_to_right {
@@ -626,4 +663,11 @@ h6 {
   width: 100%;
   margin-left: 4vw;
   padding: 0 10% 0 0 !important;
+}
+
+@media (max-width: 480px) {
+  #diversity-slider .from-carousel .slick-list {
+    padding: 0 20% 0 0 !important;
+    margin-left: 6vw;
+  }
 }

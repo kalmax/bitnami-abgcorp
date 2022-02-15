@@ -1,4 +1,4 @@
 {
-    "/js/theme.js": "/js/theme.js",
-    "/css/theme.css": "/css/theme.css"
+    "/js/theme.min.js": "/js/theme.min.js",
+    "/css/theme.min.css": "/css/theme.min.css"
 }

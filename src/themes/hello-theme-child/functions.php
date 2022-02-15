@@ -11,21 +11,55 @@
 
 
 /**
+ * Checks whether the env is local or not
+ *
+ * @return boolean
+ */
+function hello_elementor_child_is_local(){
+
+	if ( 'http://localhost' === get_site_url() ) {
+		$is_local = true;
+	}
+
+	return $is_local;
+
+}
+
+/**
  * Load child theme css and optional scripts
  *
  * @return void
  */
+
+
 function hello_elementor_child_enqueue_scripts()
 {
+	$is_local = hello_elementor_child_is_local();
 
-	wp_enqueue_style(
-		'hello-elementor-child-style',
-		get_stylesheet_directory_uri() . '/assets/css/theme.css',
-		[
-			'hello-elementor-theme-style',
-		],
-		'1.0.0'
-	);
+	if($is_local){
+
+		wp_enqueue_style(
+			'hello-elementor-child-style',
+			get_stylesheet_directory_uri() . '/assets/css/theme.css',
+			[
+				'hello-elementor-theme-style',
+			],
+			'1.0.0'
+		);
+
+	} else {
+
+		wp_enqueue_style(
+			'hello-elementor-child-style',
+			get_stylesheet_directory_uri() . '/assets/css/theme.min.css',
+			[
+				'hello-elementor-theme-style',
+			],
+			'1.0.0'
+		);
+
+	}
+
 
 	wp_enqueue_style(
 		'from-slider-slick',
@@ -45,7 +79,12 @@ function hello_elementor_child_enqueue_scripts()
 	wp_enqueue_script('from-gsap-animation', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js', '2.0.7', true);
 	wp_enqueue_script('from-gsap-indicators', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', '2.0.7', true);
 
-	wp_enqueue_script('hello-theme-child', get_stylesheet_directory_uri() . '/assets/js/theme.js', '1.0.0', true);
+
+	if($is_local){
+		wp_enqueue_script('hello-theme-child', get_stylesheet_directory_uri() . '/assets/js/theme.js', '1.0.0', true);
+	} else {
+		wp_enqueue_script('hello-theme-child', get_stylesheet_directory_uri() . '/assets/js/theme.min.js', '1.0.0', true);		
+	}
 }
 add_action('wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20);
 
@@ -63,6 +102,8 @@ add_action('elementor/query/my_query_by_post_types', function ($query) {
 
 // add_action('elementor/query/{$query_id}', 'my_query_by_post_types';
 
+/*
+Disabled previous title back button
 function previoustitle_shortcode($atts)
 {
 	// $prev_post = $_GET['anterior'];
@@ -79,3 +120,4 @@ function previoustitle_shortcode($atts)
 };
 
 add_shortcode('show_previous_title', 'previoustitle_shortcode');
+*/

@@ -28,6 +28,7 @@ src/wordpress
 !src/plugins/posts-tabs
 !src/plugins/wordfence
 !src/plugins/advanced-custom-fields
+!src/plugins/back-button
 
 # But ignore everything under "src/themes"
 src/themes/*
@@ -36,3 +37,8 @@ src/themes/*
 !src/themes/hello-elementor
 !src/themes/hello-theme-child
 !src/themes/twentytwentyone
+
+
+# ignore manifest file for laravel mix hello-theme-child
+src/themes/hello-theme-child/assets/mix-manifest.json
+

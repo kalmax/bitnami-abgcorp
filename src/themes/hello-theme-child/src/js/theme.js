@@ -689,7 +689,7 @@ jQuery(function ($) {
           console.log(anchorIDs[i])
           $('#jumpToTitle span').html($('#'+anchorIDs[i]).parent().parent().data('title'))
         }else{
-          $('#jumpToTitle span').html('About Us Overview')
+          // $('#jumpToTitle span').html('About Us Overview')
         }
         
       }

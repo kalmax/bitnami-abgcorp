@@ -127,10 +127,12 @@ class Carousel_Widget extends Widget_Base {
   protected function render() {
 
     $settings = $this->get_settings_for_display();
+
     $gallery = $settings['gallery'];
     $background_color = $settings['background_color'];
     $slides = $settings['slides'];
-    $slides_mobile = isset($settings['slides_mobile']) ? $settings['slides_mobile'] : $slides;
+    $slides_tablet = isset($settings['slides_tablet']) ? $settings['slides_tablet'] : $slides;
+    $slides_mobile = isset($settings['slides_mobile']) ? $settings['slides_mobile'] : $slides_tablet;
     $slides_to_scroll = isset($settings['slides_to_scroll']) ? $settings['slides_to_scroll'] : 1;
     $slides_to_scroll_mobile = isset($settings['slides_to_scroll_mobile']) ? $settings['slides_to_scroll_mobile'] : $slides_to_scroll;
 
