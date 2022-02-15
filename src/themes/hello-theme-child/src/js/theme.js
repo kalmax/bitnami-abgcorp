@@ -688,8 +688,10 @@ jQuery(function ($) {
         if(offTop <= 80){
           console.log(anchorIDs[i])
           $('#jumpToTitle span').html($('#'+anchorIDs[i]).parent().parent().data('title'))
-        }else{
-          // $('#jumpToTitle span').html('About Us Overview')
+        }
+
+        if(($('#'+anchorIDs[0]).offset().top - scrollTop) < 0){
+          $('#jumpToTitle span').html('About Us Overview')
         }
         
       }
