@@ -690,9 +690,9 @@ jQuery(function ($) {
           $('#jumpToTitle span').html($('#'+anchorIDs[i]).parent().parent().data('title'))
         }
 
-        if(($('#'+anchorIDs[0]).offset().top - scrollTop) < 0){
-          $('#jumpToTitle span').html('About Us Overview')
-        }
+        // if(($('#'+anchorIDs[0]).offset().top - scrollTop) < 0){
+        //   $('#jumpToTitle span').html('About Us Overview')
+        // }
         
       }
 
