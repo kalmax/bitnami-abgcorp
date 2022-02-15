@@ -29,6 +29,7 @@ src/wordpress
 !src/plugins/wordfence
 !src/plugins/advanced-custom-fields
 !src/plugins/back-button
+!src/plugins/wp-mail-smtp-pro
 
 # But ignore everything under "src/themes"
 src/themes/*
