@@ -641,22 +641,68 @@ jQuery(function ($) {
       
       $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
     });
+
+    $('body').on('click','.elementor-item-anchor', function(){
+      $('#jumpToTitle span').html($(this).html())
+    })
   });
+  
 
   $(document).on('scroll', function(){
     var scrollTop     = $(window).scrollTop(),
           elementOffset = $('div.page-content').offset().top,
-          distance      = (elementOffset - scrollTop);
+          ourheritageOffset = $('#ourheritage').offset().top,
+          distance      = (elementOffset - scrollTop),
+          ourheritage = (ourheritageOffset - scrollTop);
+
     $('#headerSection').data('scroll', distance )
+
 
     if(distance < -60){
       $('#headerSection .elementor-item').addClass('hovered')
       $('#contactUs').addClass('contactUs')
       $('#rentCar').addClass('rentCar')
+      $('#headerSection .elementor-icon svg').addClass('scrolledMobileNav')
+
     }else{
       $('#headerSection .elementor-item').removeClass('hovered')
       $('#contactUs').removeClass('contactUs')
       $('#rentCar').removeClass('rentCar')
+      $('#headerSection .elementor-icon svg').removeClass('scrolledMobileNav')
     }
+
+    if(screen.width <= 768){
+      // Switching Jump To
+      $('.mobile-nav').css({'display': 'none'})
+      $('.jumpTo').css({'display':'block'})
+
+      // Change Title of Jump To After Sroll
+      anchorIDs = $('.jumpToAnchor  > div > div').map(function() {
+        return $(this).attr('id');
+      });
+  
+  
+      for(i = 0 ; i < anchorIDs.length; i ++){
+        var offTop = ($('#'+anchorIDs[i]).offset().top - scrollTop);
+        console.log('#'+anchorIDs[i] + ' '+offTop)
+        if(offTop <= 80){
+          console.log(anchorIDs[i])
+          $('#jumpToTitle span').html($('#'+anchorIDs[i]).parent().parent().data('title'))
+        }else{
+          $('#jumpToTitle span').html('About Us Overview')
+        }
+        
+      }
+
+    }
+
+    if(distance === 0 && screen.width <= 768){
+
+      // Switching Jump To
+      $('.mobile-nav').css({'display': 'block'})
+      $('.jumpTo').css({'display':'none'})
+    }
+
+    $('div.page-content').removeClass('offsetTop')
   });
 });
