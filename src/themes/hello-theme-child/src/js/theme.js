@@ -651,12 +651,9 @@ jQuery(function ($) {
   $(document).on('scroll', function(){
     var scrollTop     = $(window).scrollTop(),
           elementOffset = $('div.page-content').offset().top,
-          ourheritageOffset = $('#ourheritage').offset().top,
-          distance      = (elementOffset - scrollTop),
-          ourheritage = (ourheritageOffset - scrollTop);
+          distance      = (elementOffset - scrollTop);
 
     $('#headerSection').data('scroll', distance )
-
 
     if(distance < -60){
       $('#headerSection .elementor-item').addClass('hovered')
