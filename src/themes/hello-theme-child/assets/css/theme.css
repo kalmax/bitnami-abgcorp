@@ -133,6 +133,9 @@ h6 {
   fill: #20438C !important;
 }
 
+.otherPagesHeader {
+  background-color: #fff !important;
+}
 .otherPagesHeader .elementor-button {
   border-bottom: 2px solid #20438C !important;
 }
