@@ -49,30 +49,59 @@ jQuery(document).ready(function(){
    
      if (el && el !== 'undefined') {
 
+        // about page tab
+        var indicatorInitialPosition, indicatorNewPosition, indicatorTemporaryPosition = 0;
+        
+        // getting inital indicator position
+        if (jQuery('.from-posts-tabs .tab-marker .marker').length > 0) {
+          indicatorInitialPosition = jQuery('.from-posts-tabs .tab-marker .marker').position().left;
+        }
+
         // set first tab content open
         openTab(el, 0);
 
         jQuery(el).find(".tab-link").on('click', function (e) {
-
+  
           // setting new indicator position if tab is clicked
-          //indicatorNewPosition = indicatorTemporaryPosition
+          indicatorNewPosition = indicatorTemporaryPosition;
 
           // Hide and Show of tab contents
           var tabId = jQuery(this).attr('id').replace("posts-tabs-nav-","");
 
+          jQuery(this).parent().parent().find('.tab-marker .marker').css({ 'left': indicatorNewPosition + 'px' })
+            
           // open tab
           openTab(el, tabId);
-          // $('.tabContent').css({ 'display': 'none' })
-          // $('#' + content).css({ 'display': 'block' })
-          // $('#tab-indicator').css({ 'left': indicatorNewPosition + 'px' })
 
-          // // setting new initial indicator position
-          // indicatorInitialPosition = indicatorNewPosition
+          // setting new initial indicator position
+          indicatorInitialPosition = indicatorNewPosition;
 
           e.preventDefault();
 
         });
+    
+        jQuery(el).find(".tab-link").hover(function () {
+          
+          // calculating and applying indicator temporary new position
+          var item = jQuery(this).attr('item');
+          var indicatorWidth = jQuery(this).parent().parent().find('.tab-marker .marker').width();
 
+          var left = item * indicatorWidth;
+          jQuery(this).parent().parent().find('.tab-marker .marker').css({ 'left': left + 'px' });
+            indicatorTemporaryPosition = left;
+          }, () => {
+
+          if (!indicatorNewPosition) {
+            // returning indicator to its initial position
+            jQuery(this).parent().parent().find('.tab-marker .marker').css({ 'left': indicatorInitialPosition + 'px' });
+          }
+          else {
+            // reseting indicator new and temporary position
+            indicatorNewPosition = 0;
+            indicatorTemporaryPosition = 0;
+          }
+
+        });
 
       }
 
@@ -84,7 +113,6 @@ jQuery(document).ready(function(){
 
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
-        console.log(tablinks[i]);
       }
 
       jQuery(el).find(`.tab-contents #posts-tabs-content-${tabId}`).addClass("active");

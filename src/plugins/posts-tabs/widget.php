@@ -143,27 +143,30 @@ class Posts_Tabs_Widget extends Widget_Base {
           <?php if($posts):?>
             <?php $tabId=0; ?>
             <?php foreach ($posts as $post): ?>
-              <a href="" class="tab-link" id="posts-tabs-nav-<?=$tabId;?>"><?= $post->post_title; ?></a>
+              <a href="" class="tab-link" id="posts-tabs-nav-<?=$tabId;?>" item="<?=$tabId;?>"><?= $post->post_title; ?></a>
               <?php $tabId++; ?>
             <?php endforeach;?>
           <?php endif;?>
         </div>
+        <div class="tab-marker">
+          <div class="marker"></div>
+        </div>
         <div class="tab-contents">
-        <?php if($posts):?>
-          <?php $tabItemId=0; ?>
-          <?php foreach ($posts as $post): ?>
-            <div class="tab-contents-item" id="posts-tabs-content-<?= $tabItemId;?>">
-              <div class="col col-image">
-                <div class="thumbnail" style="background-image:url(<?= get_the_post_thumbnail_url($post->ID); ?>)"></div>
+          <?php if($posts):?>
+            <?php $tabItemId=0; ?>
+            <?php foreach ($posts as $post): ?>
+              <div class="tab-contents-item" id="posts-tabs-content-<?= $tabItemId;?>">
+                <div class="col col-image">
+                  <div class="thumbnail" style="background-image:url(<?= get_the_post_thumbnail_url($post->ID); ?>)"></div>
+                </div>
+                <div class="col col-details">
+                  <h3 class="title"> <?= $post->post_title;?> </h3>
+                  <p class="excerpt"> <?= $post->post_excerpt;?> </p>
+                </div>
               </div>
-              <div class="col col-details">
-                <h3 class="title"> <?= $post->post_title;?> </h3>
-                <p class="excerpt"> <?= $post->post_excerpt;?> </p>
-              </div>
-            </div>
-            <?php $tabItemId++;?>
-          <?php endforeach;?>
-        <?php endif; ?>
+              <?php $tabItemId++;?>
+            <?php endforeach;?>
+          <?php endif; ?>
         </div>
       </div>
       
