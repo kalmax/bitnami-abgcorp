@@ -9,22 +9,24 @@
         }
 
         .elementor-sub-item{
-            &.has-submenu{
-                .sub-arrow{
-                    &:after{
-                        content: ">";
-                        font: 18px "Consolas", monospace;
-                        font-weight: bolder;
-                        right: 0px;
-                        top:10px;
-                        color: #20438c;
-                        -webkit-transform: rotate(0deg);
-                        -moz-transform: rotate(0deg);
-                        -ms-transform: rotate(0deg);
-                        transform: rotate(0deg);
-                        padding: 0 0 2px;
-                        position: absolute;
-                        pointer-events: none;
+            @media (min-width: 768px) {
+                &.has-submenu{
+                    .sub-arrow{
+                        &:after{
+                            content: ">";
+                            font: 18px "Consolas", monospace;
+                            font-weight: bolder;
+                            right: 0px;
+                            top:10px;
+                            color: #20438c;
+                            -webkit-transform: rotate(0deg);
+                            -moz-transform: rotate(0deg);
+                            -ms-transform: rotate(0deg);
+                            transform: rotate(0deg);
+                            padding: 0 0 2px;
+                            position: absolute;
+                            pointer-events: none;
+                        }
                     }
                 }
             }
@@ -63,9 +65,14 @@
             color: #fff!important;
             border:2px solid #20438C!important;
         }
+
+        .scrolledMobileNav{
+            fill: #20438C!important;
+        }
     }
 
     .otherPagesHeader{
+        background-color: #fff!important;
         .elementor-button{
           border-bottom: 2px solid #20438C!important;
         }
@@ -86,4 +93,16 @@
 
     .scrolledNav{
         color: #000
+    }
+
+    .jumpTo{
+        display: none;
+    }
+
+    .jumpto-icon .elementor-icon{
+        border-bottom: 0;
+    }
+
+    .jumpToNav a{
+        border-bottom: 0;
     }
