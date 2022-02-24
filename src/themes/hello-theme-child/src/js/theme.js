@@ -616,30 +616,56 @@ jQuery(function ($) {
 
     
     
-    $('#headerSection .elementor-item,.elementor-sub-item').mouseover(function() {
-      var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
+    $('.homeNavigation .elementor-item,.elementor-sub-item').mouseover(function() {
+      var  offset = $('.homeNavigation').data('scroll') ? $('.homeNavigation').data('scroll') : 0
       if(offset > -60 && offset <= 0){
         $('div.page-content').addClass('offsetTop')
       }
 
-      $('#headerSection').addClass('headerOpen')
+      $('.homeNavigation').addClass('headerOpen')
       $('#contactUs').addClass('contactUs')
       $('#rentCar').addClass('rentCar')
-      $('#headerSection .elementor-item').addClass('hovered')
-      $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
+      $('.homeNavigation .elementor-item').addClass('hovered')
+      $('.homeNavigation .elementor-widget-theme-site-logo img').addClass('coloredLogo')
     })
     .mouseout(function() {
-      var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
+      var  offset = $('.homeNavigation').data('scroll') ? $('.homeNavigation').data('scroll') : 0
       if(offset > -60 && offset <= 0){
         $('div.page-content').removeClass('offsetTop')
-        $('#headerSection .elementor-item').removeClass('hovered')
+        $('.homeNavigation .elementor-item').removeClass('hovered')
         $('#contactUs').removeClass('contactUs')
         $('#rentCar').removeClass('rentCar')
       }
       
-      $('#headerSection').removeClass('headerOpen')
+      $('.homeNavigation').removeClass('headerOpen')
       
-      $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+      $('.homeNavigation .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+    });
+
+    $('.otherPagesHeader .elementor-item,.elementor-sub-item').mouseover(function() {
+      var  offset = $('.otherPagesHeader').data('scroll') ? $('.otherPagesHeader').data('scroll') : 0
+      if(offset > -60 && offset <= 0){
+        // $('div.page-content').addClass('offsetTop')
+      }
+
+      $('.otherPagesHeader').addClass('headerOpen')
+      $('#contactUs').addClass('contactUs')
+      $('#rentCar').addClass('rentCar')
+      $('.otherPagesHeader .elementor-item').addClass('hovered')
+      $('.otherPagesHeader .elementor-widget-theme-site-logo img').addClass('coloredLogo')
+    })
+    .mouseout(function() {
+      var  offset = $('.otherPagesHeader').data('scroll') ? $('.otherPagesHeader').data('scroll') : 0
+      if(offset > -60 && offset <= 0){
+        // $('div.page-content').removeClass('offsetTop')
+        $('.otherPagesHeader .elementor-item').removeClass('hovered')
+        $('#contactUs').removeClass('contactUs')
+        $('#rentCar').removeClass('rentCar')
+      }
+      
+      $('.otherPagesHeader').removeClass('headerOpen')
+      
+      $('.otherPagesHeader .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
     });
 
     $('body').on('click','.elementor-item-anchor', function(){
