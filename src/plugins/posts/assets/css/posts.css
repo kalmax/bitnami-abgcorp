@@ -1,0 +1,104 @@
+.from-posts .from-posts-inner {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 20px;
+}
+
+@media (min-width: 769px){
+  .from-posts .from-posts-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 926px){
+  .from-posts .from-posts-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.from-posts .from-posts--item {
+  margin-bottom: 3rem;
+}
+    
+.from-posts .from-posts--image img {
+  width: 100% !important;
+  height: 15rem;
+}
+
+.from-posts .from-posts--title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px){
+  .from-posts--title {
+    font-size: 1.1875rem;
+    line-height: 1.4rem;
+  }
+}
+
+.from-posts .from-posts--title a,
+.from-posts .from-posts--title a:active,
+.from-posts .from-posts--title a:link,
+.from-posts .from-posts--title a:hover,
+.from-posts .from-posts--title a:visited {
+  color: #000;
+}
+
+.from-posts .from-posts--description {
+   margin-bottom: 1.2rem;
+}
+
+.from-posts .from-posts--description p {
+  font-size: 1.125rem;
+  line-height: 1.3rem;
+  color: #000;
+}
+
+.from-posts .from-posts--link {
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  border: none;
+  background: none;
+}
+
+.from-posts .from-posts--link .line {
+  background-color: #20438C;
+}
+
+.from-posts .from-posts--link,
+.from-posts .from-posts--link:hover,
+.from-posts .from-posts--link:active,
+.from-posts .from-posts--link:visited,
+.from-posts .from-posts--link:link {
+  color: #20438C;
+  background-color:  transparent;
+}
+
+@media (max-width: 480px){
+  .from-posts .from-posts--link {
+    font-size: 1.125rem;
+    line-height: 1.3rem;
+  }
+}
+
+.from-posts .from-posts--image {
+  float: left;
+  margin-bottom: 1.6rem;
+  background-size: cover;
+  min-height: 255px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.from-posts a,
+.from-posts a:active,
+.from-posts a:link,
+.from-posts a:hover,
+.from-posts a:visited {
+  text-decoration: none;
+  border: none;
+}
