@@ -96,6 +96,36 @@ add_action('elementor/query/my_query_by_post_types', function ($query) {
 	$query->set('category_name', 'news');
 });
 
+//Custom Theme Settings
+add_action('admin_menu', 'add_social_media_links_interface');
+
+function add_social_media_links_interface() {
+    add_options_page('Social Links', 'Social Links', '8', 'functions', 'edit_social_links');
+}
+
+function edit_social_links() {
+?>
+  <div class='wrap'>
+  <h2> Social Media Links </h2>
+  <form method="post" action="options.php">
+  <?php wp_nonce_field('update-options') ?>
+  <p><strong> Facebook </strong><br />
+  <input type="text" name="facebook" size="45" value="<?php echo get_option('facebook'); ?>" /></p>
+  <p><strong> Twitter </strong><br />
+  <input type="text" name="twitter" size="45" value="<?php echo get_option('twitter'); ?>" /></p>
+  <p><strong> Instagram </strong><br />
+  <input type="text" name="instagram" size="45" value="<?php echo get_option('instagram'); ?>" /></p>
+  <p><strong> LinkedIn </strong><br />
+  <input type="text" name="linkedin" size="45" value="<?php echo get_option('linkedin'); ?>" /></p>
+  <p><input type="submit" name="Submit" value="Update" /></p>
+  <input type="hidden" name="action" value="update" />
+  <input type="hidden" name="page_options" value="facebook,twitter,instagram,linkedin" />
+
+  </form>
+  </div>
+<?php
+}
+
 // function my_query_by_post_types( $query ){
 // 	$query->set( 'category_name', 'partnerships');
 // };
