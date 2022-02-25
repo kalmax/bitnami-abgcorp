@@ -1,0 +1,51 @@
+.elementor-share-buttons--view-icon {
+
+  .elementor-share-btn_facebook,
+  .elementor-share-btn_ {
+    background: none;
+  }
+
+  .elementor-share-btn {
+
+    width: 24px;
+    height: 24px;
+    background: none !important;
+    filter: none !important; 
+
+    .elementor-share-btn__icon {
+      background-image: none;
+    }
+
+    .fab {
+
+      width: 100%;
+      height: 100%;
+
+      &:before {
+        content: "";
+      }
+      
+    }
+
+    .fa-facebook {
+      background-image: url(/wp-content/themes/hello-theme-child/assets/images/icon-facebook.svg);
+    }
+
+    .fa-twitter {
+      background-image: url(/wp-content/themes/hello-theme-child/assets/images/icon-twitter.svg);
+    }
+
+    .fa-linkedin {
+      background-image: url(/wp-content/themes/hello-theme-child/assets/images/icon-linkedin.svg);
+    }
+
+  }
+
+  .elementor-grid-item {
+    --grid-side-margin: 20px;
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+    --grid-bottom-margin: 20px;
+  }
+
+}
