@@ -2,10 +2,19 @@
     #headerSection{
         transition: height,background-color 700ms;
 
+        .menu-item a{
+            color: #000;
+        }
+
         .elementor-item{
             &:hover{
                 color: #20438C!important;
             }
+        }
+
+        .headerBtn{
+            padding-left: 40px;
+            padding-right: 40px;
         }
 
         .elementor-sub-item{
@@ -13,18 +22,14 @@
                 &.has-submenu{
                     .sub-arrow{
                         &:after{
-                            content: ">";
-                            font: 18px "Consolas", monospace;
-                            font-weight: bolder;
-                            right: 0px;
-                            top:10px;
-                            color: #20438c;
-                            -webkit-transform: rotate(0deg);
-                            -moz-transform: rotate(0deg);
-                            -ms-transform: rotate(0deg);
-                            transform: rotate(0deg);
-                            padding: 0 0 2px;
-                            position: absolute;
+                            content: " ";
+                            display: inline-block;
+                            position: relative;
+                            width: 16px;
+                            height: 16px;
+                            background-image: url('/wp-content/themes/hello-theme-child/assets/images/caretNav.png');
+                            background-size: contain;
+                            background-repeat: no-repeat;
                             pointer-events: none;
                         }
                     }
