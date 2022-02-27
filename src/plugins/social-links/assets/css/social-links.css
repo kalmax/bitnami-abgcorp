@@ -1,0 +1,18 @@
+.from-social-links .from-social-links--inner ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.from-social-links .from-social-links--inner ul li {
+  height: 35px;
+  width: 35px;
+}
+
+.from-social-links .from-social-links--inner .icon {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  height: 100%;
+  width: 100%;
+}

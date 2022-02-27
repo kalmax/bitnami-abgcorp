@@ -32,7 +32,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.from-posts-tabs .tab-marker {
+  height: 10px;
+  width:  100%;
   margin-bottom: 4rem;
+  position: relative;
+}
+
+.from-posts-tabs .tab-marker .marker {
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: #EE1C25;
+  width: 7rem;
+  position: absolute;
 }
 
 .from-posts-tabs .tab-contents  {
@@ -124,5 +138,3 @@
   }
 
 }
-
-

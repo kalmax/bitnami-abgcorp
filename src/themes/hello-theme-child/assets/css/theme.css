@@ -680,3 +680,76 @@ h6 {
     margin-left: 6vw;
   }
 }
+.elementor-share-buttons--view-icon .elementor-share-btn_facebook,
+.elementor-share-buttons--view-icon .elementor-share-btn_ {
+  background: none;
+}
+.elementor-share-buttons--view-icon .elementor-share-btn {
+  width: 24px;
+  height: 24px;
+  background: none !important;
+  filter: none !important;
+}
+.elementor-share-buttons--view-icon .elementor-share-btn .elementor-share-btn__icon {
+  background-image: none;
+}
+.elementor-share-buttons--view-icon .elementor-share-btn .fab {
+  width: 100%;
+  height: 100%;
+}
+.elementor-share-buttons--view-icon .elementor-share-btn .fab:before {
+  content: "";
+}
+.elementor-share-buttons--view-icon .elementor-share-btn .fa-facebook {
+  background-image: url(/wp-content/themes/hello-theme-child/assets/images/icon-facebook.svg);
+}
+.elementor-share-buttons--view-icon .elementor-share-btn .fa-twitter {
+  background-image: url(/wp-content/themes/hello-theme-child/assets/images/icon-twitter.svg);
+}
+.elementor-share-buttons--view-icon .elementor-share-btn .fa-linkedin {
+  background-image: url(/wp-content/themes/hello-theme-child/assets/images/icon-linkedin.svg);
+}
+.elementor-share-buttons--view-icon .elementor-grid-item {
+  --grid-side-margin: 20px;
+  --grid-column-gap: 20px;
+  --grid-row-gap: 20px;
+  --grid-bottom-margin: 20px;
+}
+
+.elementor-widget-wp-widget-categories .elementor-widget-container h5 {
+  display: none;
+}
+.elementor-widget-wp-widget-categories .elementor-widget-container ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.elementor-widget-wp-widget-categories .elementor-widget-container ul li {
+  margin-left: 1rem;
+}
+.elementor-widget-wp-widget-categories .elementor-widget-container ul li:first-child {
+  margin-left: 0;
+}
+.elementor-widget-wp-widget-categories .elementor-widget-container ul li a:link, .elementor-widget-wp-widget-categories .elementor-widget-container ul li a:active, .elementor-widget-wp-widget-categories .elementor-widget-container ul li a:hover, .elementor-widget-wp-widget-categories .elementor-widget-container ul li a:visited {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #64BC47;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 1.3125rem;
+  border: none;
+  text-decoration: none;
+}
+
+.elementor-widget-post-info .elementor-icon-list-item a:link, .elementor-widget-post-info .elementor-icon-list-item a:active, .elementor-widget-post-info .elementor-icon-list-item a:hover, .elementor-widget-post-info .elementor-icon-list-item a:visited {
+  color: #000;
+  border: none;
+  text-decoration: none;
+}
+.elementor-widget-post-info .elementor-icon-list-item a .elementor-icon-list-icon {
+  display: none;
+}
+.elementor-widget-post-info .elementor-icon-list-item a .elementor-icon-list-text {
+  color: #000;
+}

@@ -1,0 +1,155 @@
+<?php
+namespace From_Posts;
+
+use Elementor\Plugin;
+use Elementor\Repeater;
+use Elementor\Widget_Base;
+use Elementor\Group_Control_Background;
+use Elementor\Controls_Manager;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+class From_Posts_Widget extends Widget_Base {
+
+  public static $slug = 'from-posts';
+
+  public function __construct($data = [], $args = null) {
+
+    parent::__construct($data, $args);
+
+    
+    wp_register_style( 'from-posts-style', 
+      plugins_url( 'assets/css/posts.css', __FILE__ ), 
+      array(), 
+      '1.0'
+    );
+    wp_enqueue_style('from-posts-style');
+
+  }
+
+  public function get_name() { return self::$slug; }
+
+  public function get_title() { return __('Posts', self::$slug); }
+
+  public function get_icon() { return 'eicon-slider-push'; }
+
+  public function get_categories() { return [ 'general' ]; }
+
+  protected function _register_controls() {
+
+
+    $this->start_controls_section(
+      'content_section',
+      [
+        'label' => __( 'Options', self::$slug ),
+        'tab' => Controls_Manager::TAB_CONTENT,
+      ]
+    );
+
+    $this->add_responsive_control(
+      'from-posts-widget-columns',
+      [
+        'label' => __( 'Columns', self::$slug ),
+        'type' => Controls_Manager::SELECT,
+        'multiple' => false,
+        'default' => '3',
+        'options' => [
+          '1' => '1',
+          '2' => '2',
+          '3' => '3',
+          '4' => '4',
+        ],
+        'devices' => [ 'desktop', 'tablet', 'mobile' ],
+        'desktop_default' => '3',
+        'tablet_default' => '3',
+        'mobile_default' => '1'
+      ]
+    );
+
+    $this->add_control(
+      'from-posts-widget-order-by',
+      [
+        'label' => __( 'Order By', self::$slug ),
+        'type' => Controls_Manager::SELECT,
+        'multiple' => false,
+        'default' => 'rand',
+        'options' => [
+          'name' => 'name',
+          'title' => 'title',
+          'date' => 'date',
+          'rand' => 'rand'
+        ]
+      ]
+    );
+
+    $this->add_control(
+    'from-posts-widget-order',
+      [
+        'label' => __( 'Order', self::$slug ),
+        'type' => Controls_Manager::SELECT,
+        'multiple' => false,
+        'default' => 'DESC',
+        'options' => [
+          'ASC' => 'ASC',
+          'DESC' => 'DESC',
+        ]
+      ]
+    );
+
+
+    $this->end_controls_section();
+
+  
+  }
+
+  protected function render() {
+
+    $settings = $this->get_settings_for_display();
+    $postsPerPage = $settings['from-posts-widget-columns'];
+    $postsPerPageTablet = isset($settings['from-posts-widget-columns_tablet']) ? $settings['from-posts-widget-columns_tablet'] : $postsPerPage;
+    $postsPerPageMobile = isset($settings['from-posts-widget-columns_mobile']) ? $settings['from-posts-widget-columns_mobile'] : $postsPerPageTablet;
+    $orderBy = $settings['from-posts-widget-order-by'];
+    $order = $settings['from-posts-widget-order'];
+
+    $args = array(
+      'post_type' => 'post', 
+      'post_status' => 'publish',
+      'posts_per_page' => $postsPerPage,
+      'orderby' => $orderBy,
+      'order' => $order
+    );
+
+    $postsQuery = new \WP_Query($args);
+    $posts = $postsQuery->posts;
+
+    if (Plugin::$instance->editor->is_edit_mode()) {
+      // If the Elementor editor is opened.
+
+    } ?>
+
+    <div class="from-posts from-posts-wrapper">
+      <div class="from-posts-inner">
+        <?php if($posts):
+          foreach ($posts as $post): ?>
+            <?php 
+              $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
+            ?>
+            <div class="from-posts--item">
+              <a href="<?= get_permalink($post->ID);?>" class="from-posts--image" style="background-image:url(<?php echo $post_image_url;?>);" target="_blank" ></a> 
+              <div class="from-posts--details">
+                <h3 class="from-posts--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
+                <p class="from-posts--description"><?= $post->post_excerpt; ?></p>
+                <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts--link btn-from btn-from-link">
+                  <span> Find out more </span>
+                  <span class="line"></span>
+                </a>
+              </div>
+            </div>
+          <?php endforeach;
+        endif; ?>
+      </div>
+    </div>
+
+  <?php }
+
+} 

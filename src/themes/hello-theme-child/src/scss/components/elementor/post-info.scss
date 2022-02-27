@@ -1,0 +1,28 @@
+.elementor-widget-post-info {
+
+  .elementor-icon-list-item {
+
+    a {
+
+      &:link,
+      &:active,
+      &:hover,
+      &:visited {
+        color: #000;
+        border: none;
+        text-decoration: none;
+      }
+
+      .elementor-icon-list-icon {
+        display: none;
+      }
+
+      .elementor-icon-list-text {
+        color: #000;
+      }
+
+    }
+
+  }
+
+}
