@@ -156,7 +156,7 @@ class Posts_Carousel_Widget extends Widget_Base {
                 <h3 class="from-posts-carousel--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
                 <p class="from-posts-carousel--description"><?= $post->post_excerpt; ?></p>
                 <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
-                  <span> Find out more </span>
+                  <span style="text-transform:capitalize"> Find out more </span>
                   <span class="line"></span>
                 </a>
               </div>
