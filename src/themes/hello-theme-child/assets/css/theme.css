@@ -99,15 +99,8 @@ h6 {
 #headerSection {
   transition: height, background-color 700ms;
 }
-#headerSection .menu-item a {
-  color: #000;
-}
 #headerSection .elementor-item:hover {
   color: #20438C !important;
-}
-#headerSection .headerBtn {
-  padding-left: 40px;
-  padding-right: 40px;
 }
 @media (min-width: 768px) {
   #headerSection .elementor-sub-item.has-submenu .sub-arrow:after {
@@ -155,6 +148,9 @@ h6 {
 }
 .otherPagesHeader .elementor-button {
   border-bottom: 2px solid #20438C !important;
+}
+.otherPagesHeader .menu-item a {
+  color: #000;
 }
 
 .headerOpen {
