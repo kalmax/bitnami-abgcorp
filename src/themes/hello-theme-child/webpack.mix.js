@@ -5,6 +5,7 @@ const themePath = './';
 const resources = themePath + '/src';
 mix.setPublicPath(`${themePath}/assets`);
 
+
 if(!mix.inProduction()) {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css`).sourceMaps();
   mix.js(`${resources}/js/theme.js`, `${themePath}/assets/js`)
