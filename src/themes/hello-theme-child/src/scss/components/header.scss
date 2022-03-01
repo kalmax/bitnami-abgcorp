@@ -2,19 +2,11 @@
     #headerSection{
         transition: height,background-color 700ms;
 
-        .menu-item a{
-            color: #000;
-        }
 
         .elementor-item{
             &:hover{
                 color: #20438C!important;
             }
-        }
-
-        .headerBtn{
-            padding-left: 40px;
-            padding-right: 40px;
         }
 
         .elementor-sub-item{
@@ -80,6 +72,10 @@
         background-color: #fff!important;
         .elementor-button{
           border-bottom: 2px solid #20438C!important;
+        }
+
+        .menu-item a{
+            color: #000;
         }
     }
 
