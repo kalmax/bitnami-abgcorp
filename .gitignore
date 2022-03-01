@@ -33,6 +33,7 @@ src/wordpress
 !src/plugins/posts
 !src/plugins/wp-mail-smtp-pro
 !src/plugins/social-links
+!src/plugins/tabs
 
 # But ignore everything under "src/themes"
 src/themes/*
