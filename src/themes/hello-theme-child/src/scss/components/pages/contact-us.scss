@@ -1,0 +1,38 @@
+// Contact Us Page
+#hero-contactUsPage {
+  @media (max-width: 1024px) {
+
+  }
+}
+#brands-gallery .gallery {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#brands-gallery .gallery-item {
+  height: 120px;
+  width: 30%;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+  margin: 2% 0;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+  @media (max-width: 767px) {
+    height: 92px;
+    width: 48%;
+  }
+}
+#brands-gallery .gallery-item:hover {
+  background-color: #F0F0F0;
+}
+#brands-gallery .gallery-item img {
+  width: 50%;
+  @media (max-width: 767px) {
+    width: 65%;
+  }
+}
+  
+  
+  

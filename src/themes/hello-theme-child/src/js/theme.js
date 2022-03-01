@@ -704,4 +704,12 @@ jQuery(function ($) {
 
     $('div.page-content').removeClass('offsetTop')
   });
+
+  /* ############# CONTACT US PAGE ############# */
+
+  $('#btn-moreBrands').on('click', (e) => {
+    e.preventDefault();
+    console.log('Trigger Load more brands section load');
+  });
+  /* ############# END CONTACT US PAGE ############# */
 });
