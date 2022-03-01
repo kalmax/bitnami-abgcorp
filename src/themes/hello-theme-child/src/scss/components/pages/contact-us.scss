@@ -1,7 +1,6 @@
 // Contact Us Page
 #hero-contactUsPage {
-  @media (max-width: 1024px) {
-
+  @media (max-width: 767px) {
   }
 }
 #brands-gallery .gallery {
@@ -32,6 +31,10 @@
   @media (max-width: 767px) {
     width: 65%;
   }
+}
+
+#form-description p:last-child {
+  margin-top: 10px;
 }
   
   

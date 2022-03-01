@@ -4,6 +4,7 @@
 .DS_Store
 .idea
 uploads
+docs
 
 # Ignore src dir node_modules
 src/*/*/node_modules
