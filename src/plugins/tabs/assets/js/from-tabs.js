@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
               selector = `.elementor-element-${$scope[0].dataset.id}`;
               tabContainer = window.document.querySelector(`${selector} .from-tabs-container`);
               tablSlickContainer = window.document.querySelector(`${selector} .from-tabs-container-mobile .tab-contents-mobile`);
-              buildPostTabs(tabContainer);
+              buildTabs(tabContainer);
               destroyCarousel(tablSlickContainer);
               buildSlickCarousel(tablSlickContainer);
             });
