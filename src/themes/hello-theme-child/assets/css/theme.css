@@ -319,6 +319,9 @@ h6 {
 .home #hero-carousel-brands .from-carousel .elementor-icon {
   padding: 0.5rem;
 }
+.home #home-news-posts-carousel {
+  font-family: "Source Sans Pro";
+}
 .home #home-news-posts-carousel a {
   color: #000;
   text-decoration: none;
@@ -687,6 +690,83 @@ h6 {
     margin-left: 6vw;
   }
 }
+#brands-gallery .gallery {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#brands-gallery .gallery-item {
+  height: 120px;
+  width: 30%;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  margin: 2% 0;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+}
+@media (max-width: 767px) {
+  #brands-gallery .gallery-item {
+    height: 92px;
+    width: 48%;
+  }
+}
+
+#brands-gallery .gallery-item:hover {
+  background-color: #F0F0F0;
+}
+
+#brands-gallery .gallery-item img {
+  width: 50%;
+}
+@media (max-width: 767px) {
+  #brands-gallery .gallery-item img {
+    width: 65%;
+  }
+}
+
+#form-description p:last-child {
+  margin-top: 10px;
+}
+
+#abg_contact_us {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.search-results h1.entry-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.search-results .total-results {
+  font-weight: 400;
+  color: #000;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.search-results hr {
+  border-top: 1px solid #979797;
+}
+.search-results .search-results-container {
+  display: flex;
+}
+.search-results .search-results-container .results-row {
+  display: flex;
+  flex-flow: row;
+}
+.search-results .search-results-container .results-row .thumbnail {
+  flex-flow: column;
+}
+.search-results .search-results-container .results-row .result-details h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
 .elementor-share-buttons--view-icon .elementor-share-btn_facebook,
 .elementor-share-buttons--view-icon .elementor-share-btn_ {
   background: none;
