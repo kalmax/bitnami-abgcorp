@@ -735,6 +735,11 @@ h6 {
   max-width: 60%;
   margin: 0 auto;
 }
+@media (max-width: 767px) {
+  #abg_contact_us {
+    max-width: 100%;
+  }
+}
 
 .search-results h1.entry-title {
   font-family: "Source Sans Pro", sans-serif;

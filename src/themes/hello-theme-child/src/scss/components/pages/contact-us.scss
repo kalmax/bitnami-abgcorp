@@ -38,6 +38,9 @@
 #abg_contact_us {
   max-width: 60%;
   margin: 0 auto;
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
 }
   
   
