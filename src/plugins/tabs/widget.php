@@ -114,13 +114,13 @@ class From_Tabs_Widget extends Widget_Base {
           <?php if($settings["tabs"]):?>
             <?php $tabId=0; ?>
             <?php foreach ($settings["tabs"] as $tab): ?>
-              <a href="" class="tab-link" id="from-tabs-nav-<?=$tabId;?>" item="<?=$tabId;?>"><?= $tab['title']; ?></a>
+              <div class="tab-link" id="from-tabs-nav-<?=$tabId;?>" item="<?=$tabId;?>"><?= $tab['title']; ?></div>
               <?php $tabId++; ?>
             <?php endforeach;?>
           <?php endif;?>
         </div>
-        <div class="tab-marker">
-          <div class="marker"></div>
+        <div class="tab-indicator">
+          <div class="indicator"></div>
         </div>
         <div class="tab-contents">
           <?php if($settings['tabs']):?>

@@ -5,7 +5,6 @@
 .from-tabs .from-tabs-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 @media only screen and (max-width:  1024px){
@@ -14,39 +13,34 @@
   }
 }
 
-.from-tabs a, 
-.from-tabs a:active,
-.from-tabs a:link,
-.from-tabs a:hover {
-  color: #000;
-  text-decoration: none;
-  border: none;
-  padding: 0.5rem 7rem;
+.from-tabs .tab-links {
+  height:60px;
+  display:flex;
+  align-items:center;
+  width: 100%;
+}
+
+.from-tabs .tab-links > div {
+  text-align:center;
+  cursor:pointer;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.from-tabs .tab-links {
-  width: 100%;
-  text-align: center;
+.from-tabs .tab-indicator {
+  position:relative;
+  width: 33.33%;
+  left:0px;
+  transition:all 500ms ease-in-out;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.from-tabs .tab-marker {
-  height: 10px;
-  width:  100%;
-  margin-bottom: 4rem;
-  position: relative;
-}
-
-.from-tabs .tab-marker .marker {
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-color: #EE1C25;
-  width: 7rem;
-  position: absolute;
+.from-tabs .tab-indicator .indicator {
+  height: 1px;
+  background: #EE1C25;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .from-tabs .tab-contents  {

@@ -29,9 +29,9 @@ jQuery(document).ready(function(){
 
             elementorFrontend.hooks.addAction('frontend/element_ready/from-tabs.default', function($scope) {
               selector = `.elementor-element-${$scope[0].dataset.id}`;
-              tabContainer = window.document.querySelector(`${selector} .from-tabs-container`);
+              tabContainer = window.document.querySelector(`${selector} .from-tabs-container-desktop`);
               tablSlickContainer = window.document.querySelector(`${selector} .from-tabs-container-mobile .tab-contents-mobile`);
-              buildPostTabs(tabContainer);
+              buildTabs(tabContainer);
               destroyCarousel(tablSlickContainer);
               buildSlickCarousel(tablSlickContainer);
             });
@@ -45,63 +45,25 @@ jQuery(document).ready(function(){
      * @param {object} $scope
      * @return void
      */
-    function buildPostTabs(el) {
+    function buildTabs(el) {
    
      if (el && el !== 'undefined') {
-
-        // about page tab
-        var indicatorInitialPosition, indicatorNewPosition, indicatorTemporaryPosition = 0;
         
-        // getting inital indicator position
-        if (jQuery('.from-tabs .tab-marker .marker').length > 0) {
-          indicatorInitialPosition = jQuery('.from-tabs .tab-marker .marker').position().left;
-        }
+        let tabLinks = jQuery(el).find('.tab-links .tab-link');
+        let tabIndicator = jQuery(el).find('.tab-indicator')[0];
 
-        // set first tab content open
+        tabLinks.css({ 'width': `calc(100% / ${tabLinks.length})` });
+        tabIndicator.style.left = `calc(calc(100%/${tabLinks.length})*${0})`; 
+        
         openTab(el, 0);
-
-        jQuery(el).find(".tab-link").on('click', function (e) {
-  
-          // setting new indicator position if tab is clicked
-          indicatorNewPosition = indicatorTemporaryPosition;
-
-          // Hide and Show of tab contents
-          var tabId = jQuery(this).attr('id').replace("from-tabs-nav-","");
-
-          jQuery(this).parent().parent().find('.tab-marker .marker').css({ 'left': indicatorNewPosition + 'px' })
-            
-          // open tab
-          openTab(el, tabId);
-
-          // setting new initial indicator position
-          indicatorInitialPosition = indicatorNewPosition;
-
-          e.preventDefault();
-
-        });
-    
-        jQuery(el).find(".tab-link").hover(function () {
-          
-          // calculating and applying indicator temporary new position
-          var item = jQuery(this).attr('item');
-          var indicatorWidth = jQuery(this).parent().parent().find('.tab-marker .marker').width();
-
-          var left = item * indicatorWidth;
-          jQuery(this).parent().parent().find('.tab-marker .marker').css({ 'left': left + 'px' });
-            indicatorTemporaryPosition = left;
-          }, () => {
-
-          if (!indicatorNewPosition) {
-            // returning indicator to its initial position
-            jQuery(this).parent().parent().find('.tab-marker .marker').css({ 'left': indicatorInitialPosition + 'px' });
-          }
-          else {
-            // reseting indicator new and temporary position
-            indicatorNewPosition = 0;
-            indicatorTemporaryPosition = 0;
-          }
-
-        });
+        
+        for(let i=0;i<tabLinks.length;i++){
+          tabLinks[i].addEventListener("click",function(){
+            var tabId = jQuery(this).attr('id').replace("from-tabs-nav-","");
+            tabIndicator.style.left = `calc(calc(100%/${tabLinks.length})*${i})`; 
+            openTab(el, tabId);
+          });
+        }
 
       }
 
