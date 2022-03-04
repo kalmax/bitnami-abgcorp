@@ -1,0 +1,39 @@
+.search-results {
+  h1.entry-title {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    @media (max-width: 767px) {
+    }
+  }
+
+  .total-results {
+    font-weight: 400;
+    color: #000;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  hr {
+    border-top: 1px solid #979797;
+  }
+
+  .search-results-container {
+    display: flex;
+    .results-row {
+      display: flex;
+      flex-flow: row;
+      .thumbnail {
+        flex-flow: column;
+      }
+      .result-details {
+        h2 {
+          font-family: "Source Sans Pro", sans-serif;
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}

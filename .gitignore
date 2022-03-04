@@ -4,6 +4,7 @@
 .DS_Store
 .idea
 uploads
+docs
 
 # Ignore src dir node_modules
 src/*/*/node_modules
@@ -33,6 +34,8 @@ src/wordpress
 !src/plugins/posts
 !src/plugins/wp-mail-smtp-pro
 !src/plugins/social-links
+!src/plugins/tabs
+!src/plugins/custom-post-type-ui
 
 # But ignore everything under "src/themes"
 src/themes/*
