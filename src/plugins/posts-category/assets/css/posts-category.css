@@ -1,0 +1,29 @@
+.from-posts-category {
+  display: flex;
+}
+
+.from-posts-category {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.from-posts-category li {
+  margin-left: 1rem;
+}
+
+.from-posts-category li:first-child {
+  margin-left: 0;
+}
+
+.from-posts-category li {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #64BC47;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 1.3125rem;
+  border: none;
+  text-decoration: none;
+}
