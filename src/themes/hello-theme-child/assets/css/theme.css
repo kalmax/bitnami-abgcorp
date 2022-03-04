@@ -420,6 +420,10 @@ h6 {
   display: none;
 }
 
+#tabContent1 {
+  display: block;
+}
+
 .btnTab {
   cursor: pointer;
 }
