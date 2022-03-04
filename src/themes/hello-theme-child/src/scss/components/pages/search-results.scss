@@ -1,6 +1,8 @@
 .search-results {
-  h1.entry-title {
+  main {
     font-family: "Source Sans Pro", sans-serif;
+  }
+  h1.entry-title {
     font-weight: 900;
     font-size: 3rem;
     @media (max-width: 767px) {
@@ -10,29 +12,84 @@
   .total-results {
     font-weight: 400;
     color: #000;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.4em;
   }
 
   hr {
     border-top: 1px solid #979797;
+    margin: 1rem 0;
+    color: #979797;
   }
 
   .search-results-container {
     display: flex;
+    flex-flow: column;
+    margin-top: 2rem;
     .results-row {
       display: flex;
       flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
       .thumbnail {
         flex-flow: column;
+        width: 30%;
+        img {
+          width: 27.7777777vw;
+          border: 2px solid transparent;
+          border-radius: 5px;
+          // box-shadow: 1px 1px 3px #979797;
+        }
       }
       .result-details {
+        font-family: "Source Sans Pro", sans-serif;
+        flex-flow: column;
+        width: 66%;
         h2 {
-          font-family: "Source Sans Pro", sans-serif;
           font-size: 1.5rem;
-          line-height: 1.5rem;
+          line-height: 1.1em;
+          a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: none;
+          }
         }
+        p {
+          font-size: 1.125rem;
+          line-height: 1.55em;
+        }
+      }
+    }
+  }
+
+  .results-footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    .total-results {
+      flex-flow: column;
+      width: 50%;
+      display: flex;
+    }
+    .navigation.pagination {
+      flex-flow: column;
+      display: flex;
+      width: 45%;
+      margin: 0;
+      align-items: flex-end;
+      font-size: 1.25rem;
+      line-height: 1.4em;
+      a {
+        color: #262321;
+        border-bottom: none;
+        margin: 0 0.5rem;
+      }
+      .current {
+        text-decoration: underline;
+        color: #20438C;
+        font-weight: 600;
       }
     }
   }
