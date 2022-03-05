@@ -132,7 +132,7 @@ class From_Tabs_Widget extends Widget_Base {
                 </div>
                 <div class="col col-details">
                   <h3 class="title"> <?= $tab['title'];?> </h3>
-                  <p class="excerpt"> <?= $tab['content'];?> </p>
+                  <div class="excerpt"> <?= $tab['content'];?> </div>
                 </div>
               </div>
               <?php $tabItemId++;?>
@@ -148,7 +148,7 @@ class From_Tabs_Widget extends Widget_Base {
               <div class="tab-contents-mobile-item">
                 <h3 class="title"> <?= $tab['title'];?> </h3>
                 <div class="thumbnail" style="background-image:url(<?= $tab['image']['url']; ?>)"></div>
-                <p class="excerpt"> <?= $tab['content'];?> </p>
+                <div class="excerpt"> <?= $tab['content'];?> </div>
               </div>
             <?php endforeach;?>
           <?php endif; ?>

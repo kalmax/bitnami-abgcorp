@@ -42,6 +42,7 @@ global $wp_query;
 				printf('<div class="result-details">');
 				the_post();
 				printf( '<h2><a href="%s">%s</a></h2>', esc_url( get_permalink() ), esc_html( get_the_title() ) );
+				printf('<p class="date-fragment">%s</p>', get_the_date('F jS, Y'));
 				the_excerpt();
 				printf('</div>');
 				printf('</div>');
@@ -52,16 +53,23 @@ global $wp_query;
 		<?php endif; ?>
 	</div>
 
-	<?php wp_link_pages(); ?>
+	<hr />
 
-	<?php
+	<div class="results-footer">
+		<div class="total-results">
+			<p class="small text-uppercase">Showing <?=$first_post ?> - <?=$last_post ?> of <?=$all_posts; ?> results</p>
+		</div>
+		<?php
 	if ( $wp_query->max_num_pages > 1 ) :
 		?>
-		<nav class="pagination" role="navigation">
-			<?php /* Translators: HTML arrow */ ?>
-			<div class="nav-previous"><?php next_posts_link( sprintf( __( '%s older', 'hello-elementor' ), '<span class="meta-nav">&larr;</span>' ) ); ?></div>
-			<?php /* Translators: HTML arrow */ ?>
-			<div class="nav-next"><?php previous_posts_link( sprintf( __( 'newer %s', 'hello-elementor' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
-		</nav>
+		<?php the_posts_pagination(array(
+			'mid-size' => 2, 
+			'prev_text' => '<span class="meta-nav">&larr;</span>',
+			'next_text' => '<span class="meta-nav">&rarr;</span>'
+		)); ?>
+
 	<?php endif; ?>
+	</div>
+	<?php //wp_link_pages(); ?>
+
 </main>

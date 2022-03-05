@@ -1,11 +1,8 @@
 .from-carousel .slick-slide {
     height: auto;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
-
-    padding-right: 1rem;
-    padding-left: 1rem;
 }
 
 .from-carousel .slick-track {
