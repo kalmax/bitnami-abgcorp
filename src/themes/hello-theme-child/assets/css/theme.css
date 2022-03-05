@@ -8,6 +8,10 @@ body {
   margin: 0 auto;
 }
 
+ul, ol {
+  margin-bottom: 1rem;
+}
+
 #headerSection a {
   border-bottom: 0;
 }
