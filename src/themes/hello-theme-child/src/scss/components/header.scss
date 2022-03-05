@@ -107,3 +107,17 @@
     .jumpToNav a{
         border-bottom: 0;
     }
+
+
+    body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
+        position: relative;
+        z-index: -1;
+    }
+    body:not(.elementor-editor-active) .elementor-menu-anchor:before {
+    content: "";
+    display: block;
+    height: 380px; // fixed header height
+    margin: -380px 0 0; // negative fixed header height
+    visibility: hidden;
+    pointer-events: none;
+    }
