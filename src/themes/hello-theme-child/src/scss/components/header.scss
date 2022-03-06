@@ -113,22 +113,31 @@
         position: relative;
         z-index: -1;
     }
-    body:not(.elementor-editor-active) .elementor-menu-anchor.fromTop:before {
-    content: "";
-    display: block;
-    height: 564px; // fixed header height
-    margin: -564px 0 0; // negative fixed header height
-    visibility: hidden;
-    pointer-events: none;
-    }
+    // body:not(.elementor-editor-active) .fromTop:before {
+    //     content: "";
+    //     display: block;
+    //     height: 564px; // fixed header height
+    //     margin: -564px 0 0; // negative fixed header height
+    //     visibility: hidden;
+    //     pointer-events: none;
+    // }
 
-    body:not(.elementor-editor-active) .elementor-menu-anchor.fromScrolled:before {
-    content: "";
-    display: block;
-    height: 92px; // fixed header height
-    margin: -92px 0 0; // negative fixed header height
-    visibility: hidden;
-    pointer-events: none;
+    // body:not(.elementor-editor-active) .fromScrolled:before {
+    //     content: "";
+    //     display: block;
+    //     height: 184px; // fixed header height
+    //     margin: -184px 0 0; // negative fixed header height
+    //     visibility: hidden;
+    //     pointer-events: none;
+    // }
+
+    body:not(.elementor-editor-active) .elementor-menu-anchor:before {
+        content: "";
+        display: block;
+        height: 564px; // fixed header height
+        margin: -564px 0 0; // negative fixed header height
+        visibility: hidden;
+        pointer-events: none;
     }
 
     .externalIcon:after{

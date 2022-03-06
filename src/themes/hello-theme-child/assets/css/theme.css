@@ -179,20 +179,11 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
   z-index: -1;
 }
 
-body:not(.elementor-editor-active) .elementor-menu-anchor.fromTop:before {
+body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   content: "";
   display: block;
   height: 564px;
   margin: -564px 0 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-body:not(.elementor-editor-active) .elementor-menu-anchor.fromScrolled:before {
-  content: "";
-  display: block;
-  height: 92px;
-  margin: -92px 0 0;
   visibility: hidden;
   pointer-events: none;
 }

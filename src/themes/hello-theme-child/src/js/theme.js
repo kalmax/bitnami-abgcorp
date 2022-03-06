@@ -579,14 +579,33 @@ jQuery(function ($) {
 
 
     /* ############# END OF NEWS PAGE ############# */
+    $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
+    $('#headerSection .elementor-item,#headerSection .elementor-sub-item').on('click', ()=>{
+      var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
+      if(offset < -60){
 
+        // alert('from scrolled')
+
+        $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromTop')
+        $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromScrolled')
+        
+      }else{
+        // alert('from top')
+
+        $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
+        $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromScrolled')
+
+      }
+    })
 
     $('#headerSection .elementor-item,#headerSection .elementor-sub-item').mouseover(function() {
       var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
       if(offset > -60 && offset <= 0){
         $('div.page-content').addClass('offsetTop')
+
       }else{
         $('#headerSection').addClass('headerOpen')
+
       }
 
       $('#contactUs').addClass('contactUs')
@@ -612,9 +631,6 @@ jQuery(function ($) {
       $('#jumpToTitle span').html($(this).html())
     })
 
-    // $(".elementor-nav-menu > li > a[href*='external'").parent().css({'width': '94px'})
-    // $(".elementor-nav-menu > li > a[href*='external'").children().children().addClass('fa')
-
     $('.menu-item > a').mouseover( function(){
         var path = $(this).attr('href') 
         if (path.indexOf("external") >= 0) {
@@ -630,7 +646,7 @@ jQuery(function ($) {
     })
   });
   
-  $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
+  
 
   $(document).on('scroll', function(){
     var scrollTop     = $(window).scrollTop(),
@@ -645,8 +661,7 @@ jQuery(function ($) {
       $('#rentCar').addClass('rentCar')
       $('#headerSection .elementor-icon svg').addClass('scrolledMobileNav')
 
-      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromTop')
-      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromScrolled')
+      
 
     }else{
       $('#headerSection .elementor-item').removeClass('hovered')
@@ -654,8 +669,7 @@ jQuery(function ($) {
       $('#rentCar').removeClass('rentCar')
       $('#headerSection .elementor-icon svg').removeClass('scrolledMobileNav')
 
-      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
-      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromScrolled')
+      
     }
 
     if(screen.width <= 768){
