@@ -522,40 +522,6 @@ jQuery(function ($) {
 
     /* ############# NEWS PAGE ############# */
 
-    $('#changer').on('click', (e) => {
-      e.preventDefault();
-      // alert('test')
-      // elementorFrontend.hooks.addAction( 'elementor/query/$query_id', 'my_query_by_post_types','partnerships');
-      // var values = {
-      //         'categoryFilter': 'business-news'
-      // };
-      // $.ajax({
-      //     url: "/news",
-      //     type: "GET",
-      //     data: values,
-      // });
-
-      // window.location('/news?categoryFilter=business-news')
-      // var refresh = '/news?categoryFilter=business-news';    
-      // window.history.pushState({ path: refresh }, '', refresh);
-
-      // elementorFrontend.hooks.doAction( 'elementor/query/{$query_id}', 'my_query_by_post_types');
-
-      // location.href = "/news?categoryFilter=business-news";
-
-      // return false
-
-      //ajax call 
-      // var data = {
-      //   action: 'elementor/query/my_query_by_post_types',
-      //   categoryFilter: 'partnerships'
-      // };
-      // var ajaxurl = '/news';  ///WHAT IS THIS?!?!
-      // jQuery.get(ajaxurl, data, function(response) {
-      //   // alert('Got this from the server: ' + response);
-      //   console.log(response);
-      // });
-    });
 
 
     // Media Section
@@ -645,8 +611,26 @@ jQuery(function ($) {
     $('body').on('click','.elementor-item-anchor', function(){
       $('#jumpToTitle span').html($(this).html())
     })
+
+    // $(".elementor-nav-menu > li > a[href*='external'").parent().css({'width': '94px'})
+    // $(".elementor-nav-menu > li > a[href*='external'").children().children().addClass('fa')
+
+    $('.menu-item > a').mouseover( function(){
+        var path = $(this).attr('href') 
+        if (path.indexOf("external") >= 0) {
+          $(this).parent().addClass('external')
+          if($(this).children().length > 0){
+            $(this).children().children().addClass('fa fa-external-link')
+          }else{
+            $(this).append("<span class='sub-arrow'><i class='fa fa-external-link'></i>")
+          }
+        } 
+    }).mouseout(function() {
+      $(this).children().children().removeClass('fa fa-external-link')
+    })
   });
   
+  $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
 
   $(document).on('scroll', function(){
     var scrollTop     = $(window).scrollTop(),
@@ -661,11 +645,17 @@ jQuery(function ($) {
       $('#rentCar').addClass('rentCar')
       $('#headerSection .elementor-icon svg').addClass('scrolledMobileNav')
 
+      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromTop')
+      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromScrolled')
+
     }else{
       $('#headerSection .elementor-item').removeClass('hovered')
       $('#contactUs').removeClass('contactUs')
       $('#rentCar').removeClass('rentCar')
       $('#headerSection .elementor-icon svg').removeClass('scrolledMobileNav')
+
+      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
+      $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromScrolled')
     }
 
     if(screen.width <= 768){
@@ -703,6 +693,10 @@ jQuery(function ($) {
     }
 
     $('div.page-content').removeClass('offsetTop')
+
+
+
+    
   });
 
   /* ############# CONTACT US PAGE ############# */

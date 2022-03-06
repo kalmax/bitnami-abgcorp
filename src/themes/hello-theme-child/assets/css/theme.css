@@ -48,18 +48,6 @@ ul, ol {
   background: transparent !important;
 }
 
-@media (min-width: 768px) {
-  body:not(.elementor-editor-active) .elementor-menu-anchor:before {
-    content: "";
-    display: block;
-    height: 60px;
-    /* fixed header height*/
-    margin: -60px 0 0;
-    /* negative fixed header height */
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
 .shadowed img {
   box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.75) !important;
   -webkit-box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.75) !important;
@@ -184,6 +172,50 @@ h6 {
 
 .jumpToNav a {
   border-bottom: 0;
+}
+
+body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
+  position: relative;
+  z-index: -1;
+}
+
+body:not(.elementor-editor-active) .elementor-menu-anchor.fromTop:before {
+  content: "";
+  display: block;
+  height: 564px;
+  margin: -564px 0 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body:not(.elementor-editor-active) .elementor-menu-anchor.fromScrolled:before {
+  content: "";
+  display: block;
+  height: 92px;
+  margin: -92px 0 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.externalIcon:after {
+  content: " ";
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+.elementor-nav-menu > li:hover > a {
+  border-bottom: #20438C solid 2px !important;
+}
+.elementor-nav-menu > li.external .sub-arrow {
+  position: absolute;
+  right: -13px;
+}
+.elementor-nav-menu > li.external .sub-arrow i {
+  font-size: 12px;
+}
+.elementor-nav-menu > li.external .sub-arrow i.fa-external-link {
+  transform: rotate(0deg) !important;
 }
 
 @-webkit-keyframes a_width_left_to_right {
