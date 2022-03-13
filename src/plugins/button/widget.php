@@ -49,7 +49,7 @@ class Button_Widget extends Widget_Base {
     $this->add_control(
       'button_text',
       [
-        'label' => __( 'Button', self::$slug ),
+        'label' => __( 'Text', self::$slug ),
         'type' => Controls_Manager::TEXT,
         'default' => __( 'Text', self::$slug ),
         'placeholder' => __( 'Text here', self::$slug ),
@@ -174,6 +174,15 @@ class Button_Widget extends Widget_Base {
       ]
     );
 
+    $this->add_control(
+      'link_attribute',
+      [
+        'label' => __( 'Link Attribute', self::$slug ),
+        'type' => Controls_Manager::TEXT,
+        'default' => __( '', self::$slug ),
+        'placeholder' => __( 'Key | Value', self::$slug ),
+      ]
+    );
 
     $this->end_controls_section();
 
@@ -190,17 +199,38 @@ class Button_Widget extends Widget_Base {
     $button_link = $settings['button_link'];
     $button_layout = $settings['button_layout'];
     $text_align = $settings['text_align'];
+    $link_attribute = $settings['link_attribute'];
     $button_theme = $settings['button_theme'] ? $settings['button_theme'] : '';
 
     $btn_link_class = $button_element === "link" ? "btn-from-link" : '';
     $button_type = $button_element === "link" ? '' : $button_type;
+    $link_attribute_str = 'array()';
+
+    if($link_attribute){
+      $new_link_attribute_array = explode('|', trim($link_attribute));
+      foreach ($new_link_attribute_array as $value) {
+        $new_arr = explode('=', $value);
+        $link_attribute_result_array[$new_link_attribute_array[0]] = $new_link_attribute_array[1];
+      }
+      
+    }
 
     if (Plugin::$instance->editor->is_edit_mode()) {
       // If the Elementor editor is opened.
 
     } ?>
     <div class="wrapper">
-      <a href="<?=$button_link;?>" class="btn-from <?=$button_type;?> <?=$button_size;?> <?=$btn_link_class;?> <?=$button_theme;?>">
+      <a 
+        href="<?=$button_link;?>" 
+        class="btn-from <?=$button_type;?> <?=$button_size;?> <?=$btn_link_class;?> <?=$button_theme;?>"
+        <?php 
+        if(!empty($link_attribute_result_array)){
+          foreach ($link_attribute_result_array as $key => $value) { 
+            echo $key . '=' . $value;
+          }
+        }
+        ?>
+        >
         <span><?=$button_text;?></span>
         <span class="line"></span>
       </a>

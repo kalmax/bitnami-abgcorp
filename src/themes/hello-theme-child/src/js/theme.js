@@ -462,68 +462,69 @@ jQuery(function ($) {
     /* ############# END OF ABOUT PAGE ############# */
 
     /* ############# ESG PAGE ############# */
+    if (window.matchMedia("(min-width: 1366px)").matches) {
 
-    // section - environmental - cover image slide up
-    animateEaseImageUp({
-      el: "#esg-section-environmental #cover-image .elementor-widget-container",
-      triggerElement: "#esg-section-environmental",
-      offset: 0,
-    });
+   
+      // section - environmental - cover image slide up
+      animateEaseImageUp({
+        el: "#esg-section-environmental #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-environmental",
+        offset: 0,
+      });
 
-    // section - social - cover image slide up
-    animateEaseImageUp({
-      el: "#esg-section-social #cover-image .elementor-widget-container",
-      triggerElement: "#esg-section-social",
-      offset: -100,
-    });
+      // section - social - cover image slide up
+      animateEaseImageUp({
+        el: "#esg-section-social #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-social",
+        offset: -100,
+      });
 
-    // section - governance - cover image slide up
-    animateEaseImageUp({
-      el: "#esg-section-governance #cover-image .elementor-widget-container",
-      triggerElement: "#esg-section-governance",
-      offset: -100,
-    });
+      // section - governance - cover image slide up
+      animateEaseImageUp({
+        el: "#esg-section-governance #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-governance",
+        offset: -100,
+      });
 
-    // section - diversity - cover image slide up
-    animateEaseImageUp({
-      el: "#esg-section-diversity #cover-image .elementor-widget-container",
-      triggerElement: "#esg-section-diversity",
-      offset: -100,
-    });
+      // section - diversity - cover image slide up
+      animateEaseImageUp({
+        el: "#esg-section-diversity #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-diversity",
+        offset: -100,
+      });
 
-    // section - cta download
-    animateLineNodeDown({
-      el: "#esg-section-cta-download-line-node",
-      triggerElement: "#esg-section-cta-download-top-border",
-      offset: -100,
-    });
+      // section - cta download
+      animateLineNodeDown({
+        el: "#esg-section-cta-download-line-node",
+        triggerElement: "#esg-section-cta-download-top-border",
+        offset: -100,
+      });
+
+    }
 
     /* ############# END OF ESG PAGE ############# */
-    
     
     /* ############# ESG SUB-PAGE - DIVERSITY  ############# */
+    if (window.matchMedia("(min-width: 1366px)").matches) {
     
-    // section - diversity - cover image slide up
-    animateEaseImageUp({
-      el: "#esg-sub-diversity-section-gender #cover-image .elementor-widget-container",
-      triggerElement: "#esg-sub-diversity-section-gender",
-      offset: -100,
-    });
+      // section - diversity - cover image slide up
+      animateEaseImageUp({
+        el: "#esg-sub-diversity-section-gender #cover-image .elementor-widget-container",
+        triggerElement: "#esg-sub-diversity-section-gender",
+        offset: -100,
+      });
 
-    animateLineNodeRight({
-      el: "#esg-sub-diversity-section-ceo-message-line-node",
-      triggerElement: "#esg-sub-diversity-section-ceo-message",
-      offset: -100
-    });
+      animateLineNodeRight({
+        el: "#esg-sub-diversity-section-ceo-message-line-node",
+        triggerElement: "#esg-sub-diversity-section-ceo-message",
+        offset: -100
+      });
 
-
-    /* ############# END OF ESG PAGE ############# */
+    }
+    /* ############# END OF ESG SUB PAGE ############# */
 
 
     /* ############# NEWS PAGE ############# */
-
-
-
     // Media Section
 
     // Client Dropdown populate options

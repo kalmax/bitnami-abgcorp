@@ -26,6 +26,14 @@
   top: 53%;
 }
 
+#diversity-slider .from-carousel .slick-slide {
+  padding-left: 1.4rem;
+}
+
+#diversity-slider .from-carousel .slick-slide:first-child {
+  padding-left: 0;
+}
+
 #diversity-slider .from-carousel .slick-arrow-right .slick-next::before {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   -moz-opacity: 1;
@@ -40,7 +48,7 @@
 
 #diversity-slider .from-carousel .slick-list {
   width: 100%;
-  margin-left: 4vw;
+  margin-left: 6rem;
   padding:0 10% 0 0 !important;
 }
 
