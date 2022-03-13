@@ -209,6 +209,35 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   transform: rotate(0deg) !important;
 }
 
+.searchBox {
+  display: block;
+  position: absolute;
+  width: 35.8vw !important;
+  left: 38.8vw;
+  top: 0;
+  background-color: #20438C;
+  height: 92px;
+  z-index: 1;
+}
+.searchBox > div {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.showSearch {
+  -webkit-animation: showSearch 0.5s forwards;
+  -webkit-animation-delay: 1s;
+  animation: showSearch 0.5s forwards;
+  animation-delay: 1s;
+}
+
+.hideSearch {
+  -webkit-animation: hideSearch 0.5s backwards;
+  -webkit-animation-delay: 1s;
+  animation: hideSearch 0.5s backwards;
+  animation-delay: 1s;
+}
+
 @-webkit-keyframes a_width_left_to_right {
   0% {
     width: 0;
@@ -255,6 +284,38 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   }
   100% {
     transform: scale(3);
+  }
+}
+@-webkit-keyframes showSearch {
+  0% {
+    left: 38.8vw;
+  }
+  100% {
+    left: 3vw;
+  }
+}
+@keyframes showSearch {
+  0% {
+    left: 38.8vw;
+  }
+  100% {
+    left: 3vw;
+  }
+}
+@-webkit-keyframes hideSearch {
+  0% {
+    left: 3vw;
+  }
+  100% {
+    left: 38.8vw;
+  }
+}
+@keyframes hideSearch {
+  0% {
+    left: 3vw;
+  }
+  100% {
+    left: 38.8vw;
   }
 }
 .elementor-widget:not(:last-child) {

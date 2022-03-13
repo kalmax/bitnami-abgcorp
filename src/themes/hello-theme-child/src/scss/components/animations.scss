@@ -34,3 +34,14 @@
       transform: scale(3);
   }
 }
+
+
+@keyframes showSearch {
+  0% { left: 38.8vw; }
+  100% { left: 3vw; }
+}
+
+@keyframes hideSearch {
+  0% { left: 3vw; }
+  100% { left: 38.8vw; }
+}

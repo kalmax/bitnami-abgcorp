@@ -644,6 +644,16 @@ jQuery(function ($) {
     }).mouseout(function() {
       $(this).children().children().removeClass('fa fa-external-link')
     })
+
+    $('.openSearch').on('click', () => {
+      $('.searchBox').removeClass('hideSearch')
+      $('.searchBox').addClass('showSearch')
+    })
+
+    $('.closeSearch').on('click', () => {
+      $('.searchBox').removeClass('showSearch')
+      $('.searchBox').addClass('hideSearch')
+    })
   });
   
   

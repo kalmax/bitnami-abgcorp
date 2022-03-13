@@ -175,3 +175,33 @@
         }
 
     }
+
+    .searchBox{
+        display: block;
+        position: absolute;
+        width: 35.8vw!important;
+        left: 38.8vw;
+        top: 0;
+        background-color: #20438C;
+        height: 92px;
+        z-index: 1;
+
+        & > div{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .showSearch{
+        -webkit-animation: showSearch 0.5s forwards;
+        -webkit-animation-delay: 1s;
+        animation: showSearch 0.5s forwards;
+        animation-delay: 1s;
+    }
+
+    .hideSearch{
+        -webkit-animation: hideSearch 0.5s backwards;
+        -webkit-animation-delay: 1s;
+        animation: hideSearch 0.5s backwards;
+        animation-delay: 1s;
+    }
