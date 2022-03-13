@@ -662,12 +662,14 @@ jQuery(function ($) {
       $('#contactUs').addClass('contactUs')
       $('#rentCar').addClass('rentCar')
       $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
+      $('.openSearch').css({'color': '#20438C'})
     }).mouseout(function() {
       $('#headerSection').removeClass('headerHover')
       $('#headerSection .elementor-item').removeClass('hovered')
       $('#contactUs').removeClass('contactUs')
       $('#rentCar').removeClass('rentCar')
       $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+      $('.openSearch').css({'color': '#fff'})
     })
   });
   
@@ -685,13 +687,14 @@ jQuery(function ($) {
       $('#contactUs').addClass('contactUs')
       $('#rentCar').addClass('rentCar')
       $('#headerSection .elementor-icon svg').addClass('scrolledMobileNav')
+      $('.openSearch').css({'color': '#20438C'})
 
     }else{
       $('#headerSection .elementor-item').removeClass('hovered')
       $('#contactUs').removeClass('contactUs')
       $('#rentCar').removeClass('rentCar')
       $('#headerSection .elementor-icon svg').removeClass('scrolledMobileNav')
-
+      $('.openSearch').css({'color': '#fff'})
       
     }
 
