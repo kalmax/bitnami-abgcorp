@@ -150,6 +150,10 @@ h6 {
   height: 380px;
 }
 
+.headerHover {
+  background-color: #fff !important;
+}
+
 .page-content {
   transition: margin-top 700ms;
 }

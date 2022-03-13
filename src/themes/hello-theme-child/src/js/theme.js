@@ -655,6 +655,20 @@ jQuery(function ($) {
       $('.searchBox').removeClass('showSearch')
       $('.searchBox').addClass('hideSearch')
     })
+
+    $('#contactUs, #rentCar').mouseover( function(){
+      $('#headerSection').addClass('headerHover')
+      $('#headerSection .elementor-item').addClass('hovered')
+      $('#contactUs').addClass('contactUs')
+      $('#rentCar').addClass('rentCar')
+      $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
+    }).mouseout(function() {
+      $('#headerSection').removeClass('headerHover')
+      $('#headerSection .elementor-item').removeClass('hovered')
+      $('#contactUs').removeClass('contactUs')
+      $('#rentCar').removeClass('rentCar')
+      $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+    })
   });
   
   
@@ -671,8 +685,6 @@ jQuery(function ($) {
       $('#contactUs').addClass('contactUs')
       $('#rentCar').addClass('rentCar')
       $('#headerSection .elementor-icon svg').addClass('scrolledMobileNav')
-
-      
 
     }else{
       $('#headerSection .elementor-item').removeClass('hovered')
