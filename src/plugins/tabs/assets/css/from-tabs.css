@@ -129,7 +129,7 @@
   height: 5rem;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1024px){
 
   .from-tabs .tab-contents-mobile .slick-list {
     padding:0 10% 0 0 !important;
