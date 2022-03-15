@@ -895,9 +895,19 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   align-items: center;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 767px) {
+  .search-results .search-results-container .results-row {
+    flex-flow: column;
+  }
+}
 .search-results .search-results-container .results-row .thumbnail {
   flex-flow: column;
   width: 30%;
+}
+@media (max-width: 767px) {
+  .search-results .search-results-container .results-row .thumbnail {
+    width: 100%;
+  }
 }
 .search-results .search-results-container .results-row .thumbnail img {
   width: 27.7777777vw;
@@ -907,10 +917,21 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 767px) {
+  .search-results .search-results-container .results-row .thumbnail img {
+    width: 100vw;
+    height: 52vw;
+  }
+}
 .search-results .search-results-container .results-row .result-details {
   font-family: "Source Sans Pro", sans-serif;
   flex-flow: column;
   width: 66%;
+}
+@media (max-width: 767px) {
+  .search-results .search-results-container .results-row .result-details {
+    width: 100%;
+  }
 }
 .search-results .search-results-container .results-row .result-details h2 {
   font-size: 1.5rem;
@@ -931,10 +952,20 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   flex-flow: row;
   justify-content: space-between;
 }
+@media (max-width: 767px) {
+  .search-results .results-footer {
+    flex-flow: column;
+  }
+}
 .search-results .results-footer .total-results {
   flex-flow: column;
   width: 50%;
   display: flex;
+}
+@media (max-width: 767px) {
+  .search-results .results-footer .total-results {
+    width: 100%;
+  }
 }
 .search-results .results-footer .navigation.pagination {
   flex-flow: column;
@@ -944,6 +975,12 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   align-items: flex-end;
   font-size: 1.25rem;
   line-height: 1.4em;
+}
+@media (max-width: 767px) {
+  .search-results .results-footer .navigation.pagination {
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
 .search-results .results-footer .navigation.pagination a {
   color: #262321;
