@@ -3,14 +3,12 @@
 @import 'components/headings';
 @import 'components/header';
 
-@import 'components/slider';
 @import 'components/animations';
 @import 'components/custom';
 
 @import 'components/pages/home';
 @import 'components/pages/about';
 @import 'components/pages/news';
-@import 'components/pages/esg-diversity';
 @import 'components/pages/esg';
 @import 'components/pages/contact-us';
 @import 'components/pages/search-results';
@@ -18,3 +16,5 @@
 @import 'components/elementor/share-buttons';
 @import 'components/elementor/categories';
 @import 'components/elementor/post-info';
+
+@import 'components/sliders/three-col-hint';
