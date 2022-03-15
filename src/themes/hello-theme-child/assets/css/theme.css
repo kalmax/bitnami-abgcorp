@@ -120,7 +120,7 @@ h6 {
   padding: 13px 15px !important;
 }
 #headerSection .headerButton {
-  font-size: 14px;
+  width: 100%;
 }
 #headerSection .contactUs {
   color: #20438C;
@@ -214,10 +214,11 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 }
 
 .searchBox {
+  overflow: hidden;
   display: block;
   position: absolute;
-  width: 35.8vw !important;
-  left: 38.8vw;
+  width: 0% !important;
+  left: 8.7vw !important;
   top: 0;
   background-color: #20438C;
   height: 92px;
@@ -292,34 +293,34 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 }
 @-webkit-keyframes showSearch {
   0% {
-    left: 38.8vw;
+    width: 0%;
   }
   100% {
-    left: 3vw;
+    width: 100%;
   }
 }
 @keyframes showSearch {
   0% {
-    left: 38.8vw;
+    width: 0%;
   }
   100% {
-    left: 3vw;
+    width: 100%;
   }
 }
 @-webkit-keyframes hideSearch {
   0% {
-    left: 3vw;
+    width: 100%;
   }
   100% {
-    left: 38.8vw;
+    width: 0%;
   }
 }
 @keyframes hideSearch {
   0% {
-    left: 3vw;
+    width: 100%;
   }
   100% {
-    left: 38.8vw;
+    width: 0%;
   }
 }
 .elementor-widget:not(:last-child) {

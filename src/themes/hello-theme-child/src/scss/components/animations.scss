@@ -37,11 +37,11 @@
 
 
 @keyframes showSearch {
-  0% { left: 38.8vw; }
-  100% { left: 3vw; }
+  0% { width: 0%; }
+  100% { width: 100%; }
 }
 
 @keyframes hideSearch {
-  0% { left: 3vw; }
-  100% { left: 38.8vw; }
+  0% { width: 100%; }
+  100% { width: 0%; }
 }

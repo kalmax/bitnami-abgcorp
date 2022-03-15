@@ -656,7 +656,7 @@ jQuery(function ($) {
       $('.searchBox').addClass('hideSearch')
     })
 
-    $('#contactUs, #rentCar').mouseover( function(){
+    $('#headerSection').mouseover( function(){
       $('#headerSection').addClass('headerHover')
       $('#headerSection .elementor-item').addClass('hovered')
       $('#contactUs').addClass('contactUs')
