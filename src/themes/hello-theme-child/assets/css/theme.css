@@ -795,6 +795,24 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     margin-left: 6vw;
   }
 }
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .esg-column-content .elementor-widget-wrap {
+    padding: 0rem 3rem 0rem 0rem !important;
+  }
+  .esg-column-content .elementor-heading-title {
+    font-size: 30px !important;
+    line-height: 42px !important;
+  }
+  .esg-column-content .elementor-widget-text-editor {
+    font-size: 16px !important;
+    line-height: 26px !important;
+  }
+  .esg-column-content .btn-from {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
 #brands-gallery .gallery {
   display: flex;
   flex-flow: row;

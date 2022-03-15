@@ -37,6 +37,7 @@ src/wordpress
 !src/plugins/tabs
 !src/plugins/custom-post-type-ui
 !src/plugins/posts-category
+!src/plugins/post-types-order
 
 # But ignore everything under "src/themes"
 src/themes/*

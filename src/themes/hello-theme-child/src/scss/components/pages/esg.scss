@@ -1,0 +1,26 @@
+.esg-column-content {
+
+  @media (min-width: 1025px) and (max-width: 1200px) {
+
+    .elementor-widget-wrap {
+      padding: 0rem 3rem 0rem 0rem !important;
+    }
+
+    .elementor-heading-title {
+      font-size: 30px !important;
+      line-height: 42px !important;
+    }
+
+    .elementor-widget-text-editor {
+      font-size: 16px !important;
+      line-height: 26px !important;
+    }
+
+    .btn-from {
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+
+  }
+
+}
