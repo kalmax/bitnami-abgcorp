@@ -1,5 +1,6 @@
 
     #headerSection{
+        overflow-x: clip;
         transition: height,background-color 700ms;
 
 
@@ -48,8 +49,8 @@
             padding: 13px 15px!important;
         }
 
-        .headerButton{
-            font-size: 14px;
+        .headerButton a{
+            width: 100%;
         }
 
         .contactUs{
@@ -181,10 +182,11 @@
     }
 
     .searchBox{
+        overflow: hidden;
         display: block;
         position: absolute;
-        width: 35.8vw!important;
-        left: 38.8vw;
+        width: 100%;
+        left: 38.3vw;
         top: 0;
         background-color: #20438C;
         height: 92px;

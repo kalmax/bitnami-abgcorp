@@ -32,20 +32,36 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.5rem;
+      @media (max-width: 767px) {
+        flex-flow: column;
+      }
       .thumbnail {
         flex-flow: column;
         width: 30%;
+        @media (max-width: 767px) {
+          width: 100%;
+        }
         img {
           width: 27.7777777vw;
+          // height: 17.708328375vw;
+          height: 13vw;
           border: 2px solid transparent;
           border-radius: 5px;
+          object-fit: cover;
           // box-shadow: 1px 1px 3px #979797;
+          @media (max-width: 767px) {
+            width: 100vw;
+            height: 52vw;
+          }
         }
       }
       .result-details {
         font-family: "Source Sans Pro", sans-serif;
         flex-flow: column;
         width: 66%;
+        @media (max-width: 767px) {
+          width: 100%;
+        }
         h2 {
           font-size: 1.5rem;
           line-height: 1.1em;
@@ -68,10 +84,16 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+    @media (max-width: 767px) {
+      flex-flow: column;
+    }
     .total-results {
       flex-flow: column;
       width: 50%;
       display: flex;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
     }
     .navigation.pagination {
       flex-flow: column;
@@ -81,15 +103,28 @@
       align-items: flex-end;
       font-size: 1.25rem;
       line-height: 1.4em;
+      @media (max-width: 767px) {
+        justify-content: flex-end;
+        width: 100%;
+      }
       a {
         color: #262321;
         border-bottom: none;
-        margin: 0 0.5rem;
+        margin: 0 0.75rem;
+        font-size: 1.3rem;
       }
       .current {
         text-decoration: underline;
         color: #20438C;
         font-weight: 600;
+      }
+      .nav-links {
+        display: flex;
+        a.page-numbers {
+          img {
+            width: 30px;
+          }
+        }
       }
     }
   }
