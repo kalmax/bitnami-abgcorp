@@ -37,8 +37,11 @@
         width: 30%;
         img {
           width: 27.7777777vw;
+          // height: 17.708328375vw;
+          height: 13vw;
           border: 2px solid transparent;
           border-radius: 5px;
+          object-fit: cover;
           // box-shadow: 1px 1px 3px #979797;
         }
       }
@@ -84,12 +87,21 @@
       a {
         color: #262321;
         border-bottom: none;
-        margin: 0 0.5rem;
+        margin: 0 0.75rem;
+        font-size: 1.3rem;
       }
       .current {
         text-decoration: underline;
         color: #20438C;
         font-weight: 600;
+      }
+      .nav-links {
+        display: flex;
+        a.page-numbers {
+          img {
+            width: 30px;
+          }
+        }
       }
     }
   }

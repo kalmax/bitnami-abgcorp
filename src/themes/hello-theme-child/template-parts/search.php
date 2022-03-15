@@ -37,7 +37,11 @@ global $wp_query;
 			while ( have_posts() ) :
 				printf('<div class="results-row">');
 				printf('<div class="thumbnail">');
-				the_post_thumbnail();
+				if (has_post_thumbnail()) {
+					the_post_thumbnail();
+				} else {
+					printf('<img src="/wp-content/uploads/2022/03/Logo-Image@2x.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" loading="lazy" alt="%s" />', esc_html( get_the_title() ));
+				}
 				printf('</div>');
 				printf('<div class="result-details">');
 				the_post();
@@ -64,8 +68,8 @@ global $wp_query;
 		?>
 		<?php the_posts_pagination(array(
 			'mid-size' => 2, 
-			'prev_text' => '<span class="meta-nav">&larr;</span>',
-			'next_text' => '<span class="meta-nav">&rarr;</span>'
+			'prev_text' => '<img src="/wp-content/uploads/2022/03/Left-Caret@2x.png"/>',
+			'next_text' => '<img src="/wp-content/uploads/2022/03/Right-Caret@2x.png"/>'
 		)); ?>
 
 	<?php endif; ?>

@@ -901,8 +901,11 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 }
 .search-results .search-results-container .results-row .thumbnail img {
   width: 27.7777777vw;
+  height: 13vw;
   border: 2px solid transparent;
   border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .search-results .search-results-container .results-row .result-details {
   font-family: "Source Sans Pro", sans-serif;
@@ -945,12 +948,19 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 .search-results .results-footer .navigation.pagination a {
   color: #262321;
   border-bottom: none;
-  margin: 0 0.5rem;
+  margin: 0 0.75rem;
+  font-size: 1.3rem;
 }
 .search-results .results-footer .navigation.pagination .current {
   text-decoration: underline;
   color: #20438C;
   font-weight: 600;
+}
+.search-results .results-footer .navigation.pagination .nav-links {
+  display: flex;
+}
+.search-results .results-footer .navigation.pagination .nav-links a.page-numbers img {
+  width: 30px;
 }
 
 .elementor-share-buttons--view-icon .elementor-share-btn_facebook,
