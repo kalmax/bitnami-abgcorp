@@ -1,5 +1,6 @@
 
     #headerSection{
+        overflow-x: clip;
         transition: height,background-color 700ms;
 
 
@@ -184,8 +185,8 @@
         overflow: hidden;
         display: block;
         position: absolute;
-        width: 0%!important;
-        left: 8.7vw !important;
+        width: 100%;
+        left: 38.3vw;
         top: 0;
         background-color: #20438C;
         height: 92px;

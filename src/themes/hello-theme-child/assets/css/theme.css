@@ -89,6 +89,7 @@ h6 {
 }
 
 #headerSection {
+  overflow-x: clip;
   transition: height, background-color 700ms;
 }
 #headerSection .elementor-item:hover {
@@ -119,7 +120,7 @@ h6 {
 #headerSection .elementor-nav-menu--main {
   padding: 13px 15px !important;
 }
-#headerSection .headerButton {
+#headerSection .headerButton a {
   width: 100%;
 }
 #headerSection .contactUs {
@@ -217,8 +218,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   overflow: hidden;
   display: block;
   position: absolute;
-  width: 0% !important;
-  left: 8.7vw !important;
+  width: 100%;
+  left: 38.3vw;
   top: 0;
   background-color: #20438C;
   height: 92px;
@@ -293,34 +294,34 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 }
 @-webkit-keyframes showSearch {
   0% {
-    width: 0%;
+    left: 38.3vw;
   }
   100% {
-    width: 100%;
+    left: 8.6vw;
   }
 }
 @keyframes showSearch {
   0% {
-    width: 0%;
+    left: 38.3vw;
   }
   100% {
-    width: 100%;
+    left: 8.6vw;
   }
 }
 @-webkit-keyframes hideSearch {
   0% {
-    width: 100%;
+    left: 8.6vw;
   }
   100% {
-    width: 0%;
+    left: 38.3vw;
   }
 }
 @keyframes hideSearch {
   0% {
-    width: 100%;
+    left: 8.6vw;
   }
   100% {
-    width: 0%;
+    left: 38.3vw;
   }
 }
 .elementor-widget:not(:last-child) {
