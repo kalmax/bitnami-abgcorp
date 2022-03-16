@@ -1,0 +1,132 @@
+.elementor-widget-jump-to-menu {
+  display: none;
+  background-color: #ffffff;
+  font-family: "Source Sans Pro";
+  color: #000000;
+  position: fixed;
+  height: auto;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 767px){
+  .elementor-widget-jump-to-menu {
+    display: block;
+  }
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-inner .label-jump-to {
+  font-size: 14px;
+  line-height: 28px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .dropdown {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+  background-color: #FFFFFF;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .links-container {
+  padding-top: 1.5rem;
+}    
+.elementor-widget-jump-to-menu .from-jump-to-menu .links-container.collapsed {
+  display: none;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .dropdown label {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 23px;
+  width: 90%;
+  color: #20438C;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .dropdown .caret {
+  height: 36px;
+  width: 36px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  text-decoration: none;
+  width: 10%;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .header {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+ 
+.elementor-widget-jump-to-menu .from-jump-to-menu .page-title {
+  font-size: 21px;
+  line-height: 28px;
+  width: 90%;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .close {
+  height: 36px;
+  width: 36px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  text-decoration: none;
+  width: 10%;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .close,
+.elementor-widget-jump-to-menu .from-jump-to-menu .close:active,
+.elementor-widget-jump-to-menu .from-jump-to-menu .close:visited,
+.elementor-widget-jump-to-menu .from-jump-to-menu .close:link,
+.elementor-widget-jump-to-menu .from-jump-to-menu .close:hover {
+  border: none;
+  text-decoration: none;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item {
+  float: left;
+  width: inherit;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item a,
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item a:active,
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item a:visited,
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item a:link,
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item a:hover {
+  text-decoration: none;
+  border: none;
+  width: inherit;
+  float: left;
+  line-height: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item a.active {
+  background-color: #F6F6F6;
+  color: #20438C;
+}

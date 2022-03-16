@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>CCF89D25-D13B-4B47-BFCA-99D8CF13564C</title>
+    <defs>
+        <path d="M12.9003417,0.588926174 C12.1007973,-0.196308725 10.8092255,-0.196308725 10.0096811,0.588926174 L0.599658314,9.83053691 C-0.199886105,10.6157718 -0.199886105,11.8842282 0.599658314,12.6694631 L10.0096811,21.9110738 C10.8092255,22.6963087 12.1007973,22.6963087 12.9003417,21.9110738 C13.6998861,21.1258389 13.6998861,19.8573826 12.9003417,19.0721477 L4.94589977,11.2399329 L12.9003417,3.42785235 C13.679385,2.64261745 13.679385,1.35402685 12.9003417,0.588926174 Z" id="path-1"></path>
+    </defs>
+    <g id="Navigation-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Navigation---On-Scroll-(Vision)" transform="translate(-319.000000, -22.000000)">
+            <g id="Caret" transform="translate(319.000000, 22.000000)">
+                <g id="Navigation-Icons/-Caret" transform="translate(17.250000, 18.750000) scale(1, -1) rotate(90.000000) translate(-17.250000, -18.750000) translate(10.500000, 7.500000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Path" fill="#20438C" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
