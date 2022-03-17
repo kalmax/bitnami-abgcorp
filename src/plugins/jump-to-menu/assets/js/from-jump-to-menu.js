@@ -61,10 +61,17 @@ jQuery(document).ready(function(){
           e.preventDefault();
 
           let sectionId = jQuery(this).attr('id').replace('from-jump-to-','');
-       
+          let sectionTitle = jQuery(this).attr('title');
+        
+          jQuery(el).find('.from-jump-to-menu-item a').removeClass("active");
+          jQuery(el).find('.dropdown label').html(sectionTitle);
+          jQuery(el).find('.dropdown').css({ "display" : "flex" });
+          jQuery(el).find('.links-container').addClass('collapsed');
+          jQuery(this).addClass("active");
+
           jQuery('html, body').animate({
             scrollTop: jQuery(`#${sectionId}`).offset().top
-          }, 1500);
+          }, 1000);
 
         });
         

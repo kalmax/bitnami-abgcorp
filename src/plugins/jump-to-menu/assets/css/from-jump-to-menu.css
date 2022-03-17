@@ -123,10 +123,11 @@
   font-weight: 600;
   line-height: 24px;
   color: #000000;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-item a.active {
   background-color: #F6F6F6;
   color: #20438C;
+  font-weight: bold;
 }

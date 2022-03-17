@@ -98,7 +98,7 @@ class Jump_To_Menu_Widget extends Widget_Base {
     <div class="from-jump-to-menu from-jump-to-menu-container">
       <div class="from-jump-to-menu-inner">
         <div class="dropdown">
-          <label> Vision, Purpose, Values </label>
+          <label> <?=$post_title;?> Overview </label>
           <a href="" class="caret" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-caret.svg';?>');"></a>
         </div>
         <div class="links-container collapsed">
@@ -111,7 +111,7 @@ class Jump_To_Menu_Widget extends Widget_Base {
             <?php if($settings['items']):?>
               <?php foreach ($settings['items'] as $item): ?>
                 <li class="from-jump-to-menu-item">
-                  <a href="#" id="from-jump-to-<?=$item['id'];?>">
+                  <a href="#" id="from-jump-to-<?=$item['id'];?>" title="<?= $item['title'];?>">
                     <label class="title"> <?= $item['title'];?> </label>
                   </a>
                 </li>
