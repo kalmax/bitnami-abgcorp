@@ -42,6 +42,10 @@ jQuery(document).ready(function(){
    
       if (el && el !== 'undefined') {
         
+        let nextSection = jQuery(el).parent().parent().parent().parent().parent().parent().next();
+
+        nextSection.css({ "margin-top": "84px" });
+
         // expand jump to menu list
         jQuery(el).find('.dropdown .caret').click(function(e){
 
