@@ -1,11 +1,55 @@
 .search-results {
   main {
     font-family: "Source Sans Pro", sans-serif;
+    @media (max-width: 767px) {
+      padding: 0 2rem !important;
+      margin-bottom: 2rem;
+    }
+    .page-header {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: 767px) {
+        display: block;
+      }
+      .search-form {
+        position: relative;
+        @media (max-width: 767px) {
+          margin: 1rem 0;
+        }
+        .search-field {
+          border: 1px solid #a0a0a0;
+          font-family: 'Source Sans Pro';
+          font-size: .88rem;
+          line-height: 1.7em;
+          min-width: 20rem;
+          @media (max-width: 767px) {
+            width: 84vw;
+          }
+        }
+        .search-submit {
+          background: transparent;
+          position: absolute;
+          right: 5px;
+          width: 10px;
+          background-image: url(/wp-content/uploads/2022/02/Search.svg);
+          background-repeat: no-repeat;
+          text-indent: -1000px;
+          background-position: center center;
+          background-size: contain;
+          border: none;
+        }
+      }
+    }
   }
   h1.entry-title {
     font-weight: 900;
     font-size: 3rem;
+    margin-right: 0.5em;
     @media (max-width: 767px) {
+      text-align: center;
+      width: 100%;
     }
   }
 
@@ -14,12 +58,24 @@
     color: #000;
     font-size: 1.25rem;
     line-height: 1.4em;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
 
   hr {
     border-top: 1px solid #979797;
     margin: 1rem 0;
     color: #979797;
+    @media (max-width: 767px) { 
+      display: none;
+    }
+  }
+
+  hr.pagination-footer {
+    @media (max-width: 767px) { 
+      display: block;
+    }
   }
 
   .search-results-container {
@@ -120,6 +176,11 @@
       }
       .nav-links {
         display: flex;
+        @media (max-width: 767px) {
+          flex-flow: row;
+          width: 100%;
+          justify-content: space-between;
+        }
         a.page-numbers {
           img {
             width: 30px;

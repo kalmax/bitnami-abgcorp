@@ -16,20 +16,21 @@ global $wp_query;
 			<?php esc_html_e( 'Search results for ', 'hello-elementor' ); ?>
 			<span>&ldquo;<?php echo get_search_query(); ?>&rdquo;</span>
 		</h1>
-		<div class="total-results">
-			<?php
-				if ($wp_query->get('paged') == 0) {
-					$first_post = 1;
-				} else {
-					$first_post = absint( $wp_query->get('paged') - 1 ) * $wp_query->get('posts_per_page') + 1;
-				}
-				$last_post = $first_post + $wp_query->post_count;
-				$all_posts = $wp_query->found_posts;
-				if ($last_post > $all_posts) $last_post = $all_posts;
-			?>
-			<p class="small text-uppercase">Showing <?=$first_post ?> - <?=$last_post ?> of <?=$all_posts; ?> results</p>
-		</div>
+		<?php get_search_form( true ); ?>
 	</header>
+	<div class="total-results">
+		<?php
+			if ($wp_query->get('paged') == 0) {
+				$first_post = 1;
+			} else {
+				$first_post = absint( $wp_query->get('paged') - 1 ) * $wp_query->get('posts_per_page') + 1;
+			}
+			$last_post = $first_post + $wp_query->post_count;
+			$all_posts = $wp_query->found_posts;
+			if ($last_post > $all_posts) $last_post = $all_posts;
+		?>
+		<p class="small text-uppercase">Showing <?=$first_post ?> - <?=$last_post ?> of <?=$all_posts; ?> results</p>
+	</div>
 	<hr />
 	<div class="page-content search-results-container">
 		<?php if ( have_posts() ) : ?>
@@ -57,7 +58,7 @@ global $wp_query;
 		<?php endif; ?>
 	</div>
 
-	<hr />
+	<hr class="pagination-footer" />
 
 	<div class="results-footer">
 		<div class="total-results">
