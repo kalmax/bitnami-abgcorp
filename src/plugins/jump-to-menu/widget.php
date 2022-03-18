@@ -39,52 +39,6 @@ class Jump_To_Menu_Widget extends Widget_Base {
 
   public function get_categories() { return [ 'general' ]; }
 
-  protected function _register_controls() {
-
-
-    $this->start_controls_section(
-      'content_section',
-      [
-        'label' => __( 'Options', self::$slug ),
-        'tab' => Controls_Manager::TAB_CONTENT,
-      ]
-    );
-
-    $repeater = new \Elementor\Repeater();
-
-    $repeater->add_control(
-      'title', [
-        'label' => esc_html__( 'Title', self::$slug ),
-        'type' => \Elementor\Controls_Manager::TEXT,
-        'default' => esc_html__( 'Label' , self::$slug ),
-        'label_block' => true,
-      ]
-    );
-
-    $repeater->add_control(
-      'id', [
-        'label' => esc_html__( 'ID', self::$slug ),
-        'type' => \Elementor\Controls_Manager::TEXT,
-        'default' => esc_html__( '' , self::$slug ),
-        'label_block' => true,
-      ]
-    );
-
-    $this->add_control(
-      'items',
-      [
-        'label' => esc_html__( 'Items', self::$slug ),
-        'type' => \Elementor\Controls_Manager::REPEATER,
-        'fields' => $repeater->get_controls(),
-        'title_field' => '{{{ title }}}',
-      ]
-    );
-
-    $this->end_controls_section();
-
-  
-  }
-
   protected function render() {
 
     $settings = $this->get_settings_for_display();
@@ -95,32 +49,39 @@ class Jump_To_Menu_Widget extends Widget_Base {
 
     } ?>
 
-    <div class="from-jump-to-menu from-jump-to-menu-container">
-      <div class="from-jump-to-menu-inner">
-        <div class="dropdown">
-          <label> <?=$post_title;?> Overview </label>
-          <a href="" class="caret" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-caret.svg';?>');"></a>
-        </div>
-        <div class="links-container collapsed">
-          <div class="header">
-            <div class="page-title"><?=$post_title;?> Overview</div>
-            <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
+    <?php while ( have_posts() ) : the_post(); ?>
+      <?php $sections = carbon_get_the_post_meta( 'crb_jump_to_sections' ); ?>
+
+
+      <div class="from-jump-to-menu from-jump-to-menu-container">
+        <div class="from-jump-to-menu-inner">
+          <div class="dropdown">
+            <label> <?=$post_title;?> Overview </label>
+            <a href="" class="caret" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-caret.svg';?>');"></a>
           </div>
-          <div class="label-jump-to"> Jump to: </div>
-          <ul class="links">
-            <?php if($settings['items']):?>
-              <?php foreach ($settings['items'] as $item): ?>
-                <li class="from-jump-to-menu-item">
-                  <a href="#" id="from-jump-to-<?=$item['id'];?>" title="<?= $item['title'];?>">
-                    <label class="title"> <?= $item['title'];?> </label>
-                  </a>
-                </li>
-              <?php endforeach;?>
-            <?php endif; ?>
-          </ul>
+          <div class="links-container collapsed">
+            <div class="header">
+              <div class="page-title"><?=$post_title;?> Overview</div>
+              <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
+            </div>
+            <div class="label-jump-to"> Jump to: </div>
+            <ul class="links">
+              <?php if($sections):?>
+                <?php foreach ($sections as $section): ?>
+                  <li class="from-jump-to-menu-item">
+                    <a href="#" id="from-jump-to-<?=$section['id'];?>" title="<?= $section['title'];?>">
+                      <label class="title"> <?= $section['title'];?> </label>
+                    </a>
+                  </li>
+                <?php endforeach;?>
+              <?php endif; ?>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+
+    <?php endwhile; ?>
+
 
   <?php }
 
