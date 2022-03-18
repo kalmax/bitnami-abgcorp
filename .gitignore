@@ -39,6 +39,7 @@ src/wordpress
 !src/plugins/posts-category
 !src/plugins/post-types-order
 !src/plugins/jump-to-menu
+!src/plugins/hide-admin-bar-based-on-user-roles
 
 # But ignore everything under "src/themes"
 src/themes/*
