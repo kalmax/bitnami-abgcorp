@@ -81,3 +81,15 @@ ul, ol {
   -webkit-box-shadow: 1px 1px 7px -1px rgba(0,0,0,0.75)!important;
   -moz-box-shadow: 1px 1px 7px -1px rgba(0,0,0,0.75)!important;
 }
+
+.sticky-header {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; 
+  z-index: 999999999;
+  -webkit-transition: position 10s;
+  -moz-transition: position 10s;
+  -ms-transition: position 10s;
+  -o-transition: position 10s;
+  transition: position 10s;
+}

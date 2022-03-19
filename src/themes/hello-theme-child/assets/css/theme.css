@@ -54,6 +54,15 @@ ul, ol {
   -moz-box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.75) !important;
 }
 
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999999;
+  transition: position 10s;
+}
+
 h1, h2, h3, h3, h5, h6 {
   color: #000;
 }

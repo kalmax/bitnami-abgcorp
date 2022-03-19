@@ -8,7 +8,12 @@ mix.setPublicPath(`${themePath}/assets`);
 
 if(!mix.inProduction()) {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css`).sourceMaps();
-  mix.js(`${resources}/js/theme.js`, `${themePath}/assets/js`)
+  mix.scripts([
+    `${resources}/js/theme.js`,
+    `${resources}/js/header-scroll.js`,
+  ], 
+    `${themePath}/assets/js/theme.js`
+  )
 } else {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css/theme.min.css`).sourceMaps();
   mix.js(`${resources}/js/theme.js`, `${themePath}/assets/js/theme.min.js`)
