@@ -105,7 +105,7 @@
   transform: rotate(180deg);
 }
 
-.elementor-widget-mobile-menu .links-container .links .sub-menu a:first-child {
+.elementor-widget-mobile-menu .links-container .links .sub-menu li:first-child a {
   margin-left: 0;
 }
 
