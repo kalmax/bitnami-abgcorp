@@ -227,7 +227,7 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   overflow: hidden;
   display: block;
   position: absolute;
-  width: 107% !important;
+  width: 117% !important;
   left: 38.3vw;
   top: 0;
   background-color: #20438C;
@@ -306,7 +306,7 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     left: 38.3vw;
   }
   100% {
-    left: 6.6vw;
+    left: 3.6vw;
   }
 }
 @keyframes showSearch {
@@ -314,12 +314,12 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     left: 38.3vw;
   }
   100% {
-    left: 6.6vw;
+    left: 3.6vw;
   }
 }
 @-webkit-keyframes hideSearch {
   0% {
-    left: 6.6vw;
+    left: 3.6vw;
   }
   100% {
     left: 38.3vw;
@@ -327,7 +327,7 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 }
 @keyframes hideSearch {
   0% {
-    left: 6.6vw;
+    left: 3.6vw;
   }
   100% {
     left: 38.3vw;
