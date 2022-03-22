@@ -42,9 +42,21 @@ class Mobile_Menu_Widget extends Widget_Base {
     );
 
     $this->add_control(
-      'menu_name',
+      'font_family',
       [
-        'label' => esc_html__( 'Menu Name', self::$slug ),
+        'label' => esc_html__( 'Font Family', 'plugin-name' ),
+        'type' => \Elementor\Controls_Manager::FONT,
+        'default' => "'Open Sans', sans-serif",
+        'selectors' => [
+          '{{WRAPPER}} .title' => 'font-family: {{VALUE}}',
+        ],
+      ]
+    );
+
+    $this->add_control(
+      'menu_id',
+      [
+        'label' => esc_html__( 'Menu ID', self::$slug ),
         'type' => \Elementor\Controls_Manager::TEXT,
         'default' => esc_html__( '', self::$slug )
       ]
@@ -86,8 +98,7 @@ class Mobile_Menu_Widget extends Widget_Base {
     $settings = $this->get_settings_for_display();
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-    $menu_name = $settings['menu_name']; 
-    $menu = wp_get_nav_menu_object( $settings['menu_name'] );
+    $menu = wp_get_nav_menu_object( $settings['menu_id'] );
     $menu_items = wp_get_nav_menu_items( $menu->term_id );
     $menu_items_tree = self::buildTree($menu_items);
 
