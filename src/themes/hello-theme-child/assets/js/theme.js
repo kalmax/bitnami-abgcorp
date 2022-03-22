@@ -628,9 +628,9 @@ jQuery(function ($) {
       $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
     });
 
-    // $('body').on('click','.elementor-item-anchor', function(){
-    //   $('#jumpToTitle span').html($(this).html())
-    // })
+    $('body').on('click','.elementor-item-anchor', function(){
+      $('#jumpToTitle span').html($(this).html())
+    })
 
     $('.menu-item > a').mouseover( function(){
         var path = $(this).attr('href') 
@@ -748,26 +748,26 @@ jQuery(function ($) {
 
 jQuery(function ($) {
 
-  $(document).ready(function () {
+  // $(document).ready(function () {
     
-    var previousScroll = 0;
+  //   var previousScroll = 0;
 
-    $(window).scroll(function(){
+  //   $(window).scroll(function(){
    
-      var sticky = $('.elementor-location-header'),
-          scroll = $(this).scrollTop();
+  //     var sticky = $('.elementor-location-header'),
+  //         scroll = $(this).scrollTop();
 
-      if (scroll >= previousScroll){
-        sticky.removeClass('sticky-header');
-      } else {
-        sticky.addClass('sticky-header');
-      } 
+  //     if (scroll >= previousScroll){
+  //       sticky.removeClass('sticky-header');
+  //     } else {
+  //       sticky.addClass('sticky-header');
+  //     } 
 
-      previousScroll = scroll;
+  //     previousScroll = scroll;
 
-    });
+  //   });
 
   
-  });
+  // });
 
 });

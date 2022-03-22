@@ -42,6 +42,7 @@ src/wordpress
 !src/plugins/hide-admin-bar-based-on-user-roles
 !src/plugins/carbon-fields
 !src/plugins/equalweb
+!src/plugins/mobile-menu
 
 # But ignore everything under "src/themes"
 src/themes/*

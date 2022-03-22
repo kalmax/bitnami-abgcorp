@@ -628,9 +628,9 @@ jQuery(function ($) {
       $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
     });
 
-    // $('body').on('click','.elementor-item-anchor', function(){
-    //   $('#jumpToTitle span').html($(this).html())
-    // })
+    $('body').on('click','.elementor-item-anchor', function(){
+      $('#jumpToTitle span').html($(this).html())
+    })
 
     $('.menu-item > a').mouseover( function(){
         var path = $(this).attr('href') 
