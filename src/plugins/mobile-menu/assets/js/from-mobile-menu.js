@@ -43,16 +43,17 @@ jQuery(document).ready(function(){
 
         // burger menu
         jQuery(el).find('.header .burger').click(function(e){
-
           e.preventDefault();
+          jQuery(el).find('.links-container').removeClass('collapsed');
+          jQuery(this).hide();
+          jQuery(el).find('.header .close').show();
+        });
 
-          if(jQuery(el).find('.links-container').hasClass('collapsed')){
-            jQuery(el).find('.links-container').removeClass('collapsed');
-          } else {
-            jQuery(el).find('.links-container').addClass('collapsed');
-          }
-
-
+        jQuery(el).find('.header .close').click(function(e){
+          e.preventDefault();
+          jQuery(el).find('.links-container').addClass('collapsed');
+          jQuery(this).hide();
+          jQuery(el).find('.header .burger').show();
         });
 
         // menu item click

@@ -108,6 +108,7 @@ class Mobile_Menu_Widget extends Widget_Base {
           </div>
           <div class="controls">
             <a href="" class="burger" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-burger.svg';?>');"></a>
+            <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
           </div>
         </div>
         <div class="links-container collapsed">
