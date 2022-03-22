@@ -656,21 +656,21 @@ jQuery(function ($) {
       $('.searchBox').addClass('hideSearch')
     })
 
-    // $('#headerSection').mouseover( function(){
-    //   $('#headerSection').addClass('headerHover')
-    //   $('#headerSection .elementor-item').addClass('hovered')
-    //   $('#contactUs').addClass('contactUs')
-    //   $('#rentCar').addClass('rentCar')
-    //   $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
-    //   $('.openSearch').css({'color': '#20438C'})
-    // }).mouseout(function() {
-    //   $('#headerSection').removeClass('headerHover')
-    //   $('#headerSection .elementor-item').removeClass('hovered')
-    //   $('#contactUs').removeClass('contactUs')
-    //   $('#rentCar').removeClass('rentCar')
-    //   $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
-    //   $('.openSearch').css({'color': '#fff'})
-    // });
+    $('#headerSection').mouseover( function(){
+      $('#headerSection').addClass('headerHover')
+      $('#headerSection .elementor-item').addClass('hovered')
+      $('#contactUs').addClass('contactUs')
+      $('#rentCar').addClass('rentCar')
+      $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
+      $('.openSearch').css({'color': '#20438C'})
+    }).mouseout(function() {
+      $('#headerSection').removeClass('headerHover')
+      $('#headerSection .elementor-item').removeClass('hovered')
+      $('#contactUs').removeClass('contactUs')
+      $('#rentCar').removeClass('rentCar')
+      $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+      $('.openSearch').css({'color': '#fff'})
+    });
 
   });
   
@@ -732,7 +732,7 @@ jQuery(function ($) {
     //   $('.jumpTo').css({'display':'none'})
     // }
 
-    // $('div.page-content').removeClass('offsetTop')
+    $('div.page-content').removeClass('offsetTop')
 
   });
 
