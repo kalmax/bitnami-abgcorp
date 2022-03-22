@@ -70,7 +70,11 @@ jQuery(document).ready(function(){
 
         // click outside
        jQuery(document).mouseup(e => {
-        if (!jQuery(this).is(e.target) && jQuery(this).has(e.target).length === 0) {
+        
+        let trigger = jQuery(el).find('.header .burger');
+        let trigger2 = jQuery(el).find('.links .has-children');
+
+        if ( trigger !== e.target && !trigger.has(event.target).length && trigger2 !== e.target && !trigger2.has(event.target).length ) {
           jQuery(el).find('.links-container').addClass('collapsed');
         }
        });
