@@ -85,6 +85,14 @@ jQuery(document).ready(function(){
 
         });
 
+        // click outside collapse menu
+        jQuery('html').click(function(event) {
+          if (jQuery(event.target).closest('.from-jump-to-menu, .from-jump-to-menu .dropdown .caret').length === 0) {
+            jQuery(el).find('.links-container').addClass('collapsed');
+            jQuery(el).find('.dropdown').css({ "display" : "flex" });
+          }
+        });
+
 
       }
 
