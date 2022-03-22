@@ -40,7 +40,7 @@ jQuery(document).ready(function(){
     function buildMenu(el) {
    
       if (el && el !== 'undefined') {
-        
+
         // burger menu
         jQuery(el).find('.header .burger').click(function(e){
 
@@ -69,15 +69,11 @@ jQuery(document).ready(function(){
         });
 
         // click outside
-       jQuery(document).mouseup(e => {
-        
-        let trigger = jQuery(el).find('.header .burger');
-        let trigger2 = jQuery(el).find('.links .has-children');
-
-        if ( trigger !== e.target && !trigger.has(event.target).length && trigger2 !== e.target && !trigger2.has(event.target).length ) {
-          jQuery(el).find('.links-container').addClass('collapsed');
-        }
-       });
+        jQuery('html').click(function(event) {
+            if (jQuery(event.target).closest('.from-mobile-menu, .from-mobile-menu .burger').length === 0) {
+              jQuery(el).find('.links-container').addClass('collapsed');
+            }
+        });
 
 
       }
