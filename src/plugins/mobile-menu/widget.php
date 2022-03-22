@@ -44,7 +44,7 @@ class Mobile_Menu_Widget extends Widget_Base {
     $this->add_control(
       'font_family',
       [
-        'label' => esc_html__( 'Font Family', 'plugin-name' ),
+        'label' => esc_html__( 'Font Family', self::$slug ),
         'type' => \Elementor\Controls_Manager::FONT,
         'default' => "'Open Sans', sans-serif",
         'selectors' => [
@@ -96,10 +96,11 @@ class Mobile_Menu_Widget extends Widget_Base {
   protected function render() {
 
     $settings = $this->get_settings_for_display();
+    $font_family = $settings['font_family'];
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-    $menu = wp_get_nav_menu_object( $settings['menu_id'] );
-    $menu_items = wp_get_nav_menu_items( $menu->term_id );
+    $menu = $settings['menu_id'] ? wp_get_nav_menu_object( $settings['menu_id'] ) : false;
+    $menu_items = $menu ? wp_get_nav_menu_items( $menu->term_id ) : [];
     $menu_items_tree = self::buildTree($menu_items);
 
     if (Plugin::$instance->editor->is_edit_mode()) {
@@ -107,7 +108,7 @@ class Mobile_Menu_Widget extends Widget_Base {
 
     } ?>
 
-    <div class="from-mobile-menu from-mobile-menu-container">
+    <div class="from-mobile-menu from-mobile-menu-container" style="font-family: <?php echo esc_attr( $font_family ); ?>;">
       <div class="from-mobile-menu-inner">
         <div class="header">
           <div class="logo">
