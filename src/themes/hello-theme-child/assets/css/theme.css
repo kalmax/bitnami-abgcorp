@@ -6,6 +6,7 @@ a {
 body {
   max-width: 1440px;
   margin: 0 auto;
+  font-family: "Source Sans Pro";
 }
 
 ul, ol {
@@ -63,6 +64,57 @@ ul, ol {
   transition: position 10s;
 }
 
+.elementor-location-footer.blue {
+  background-color: #20438C;
+  color: #fff;
+}
+.elementor-location-footer.blue li span, .elementor-location-footer.blue li a, .elementor-location-footer.blue li .elementor-widget-icon-list .elementor-icon-list-icon i {
+  color: #fff !important;
+}
+.elementor-location-footer.blue div.elementor-widget-text-editor p {
+  color: #fff !important;
+}
+
+.elementor-location-footer.green {
+  background-color: #64BC47;
+  color: #fff;
+}
+.elementor-location-footer.green li span, .elementor-location-footer.green li a, .elementor-location-footer.green li .elementor-widget-icon-list .elementor-icon-list-icon i {
+  color: #fff !important;
+}
+.elementor-location-footer.green div.elementor-widget-text-editor p {
+  color: #fff !important;
+}
+
+.elementor-location-footer.grey {
+  background-color: #343434;
+  color: #fff;
+}
+.elementor-location-footer.grey li span, .elementor-location-footer.grey li a, .elementor-location-footer.grey li .elementor-widget-icon-list .elementor-icon-list-icon i {
+  color: #fff !important;
+}
+.elementor-location-footer.grey div.elementor-widget-text-editor p {
+  color: #fff !important;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Regular.ttf?c2b23b36ce51dfd4d60a11c90c127f48) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-SemiBold.ttf?26160fac3621d82c24319c4ca98d981a) format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Bold.ttf?66dc68e4e7cdfceb56276884b483b186) format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
 h1, h2, h3, h3, h5, h6 {
   color: #000;
 }
