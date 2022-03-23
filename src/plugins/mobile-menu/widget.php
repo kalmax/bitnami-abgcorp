@@ -152,6 +152,16 @@ class Mobile_Menu_Widget extends Widget_Base {
               <?php endforeach;?>
             <?php endif;?>
           </ul>
+          <div class="cta">
+            <a href="/contact-us" id="btn-contact-us" class="btn-from btn-secondary btn-lg">
+              <span> CONTACT US </span>
+              <span class="line"></span>
+            </a>
+            <a href="https://www.avis.com/en/home" target="_blank" class="btn-from btn-primary btn-lg  opaque">
+              <span> RENT A CAR </span>
+              <span class="line"></span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
