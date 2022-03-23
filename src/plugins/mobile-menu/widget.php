@@ -141,9 +141,9 @@ class Mobile_Menu_Widget extends Widget_Base {
         <div class="header">
           <div class="logo">
            <?php  if ( has_custom_logo() ): ?>
-            <img src="<?=esc_url( $logo[0] );?>" alt="<?=get_bloginfo( 'name' );?>">
+            <a href="<?=get_site_url();?>"><img src="<?=esc_url( $logo[0] );?>" alt="<?=get_bloginfo( 'name' );?>"></a>
            <?php else: ?> 
-              <h1><?=get_bloginfo('name');?></h1>
+            <a href="<?=get_site_url();?>"><h1><?=get_bloginfo('name');?></h1></a>  
            <?php endif;?>
           </div>
           <div class="controls">

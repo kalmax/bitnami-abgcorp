@@ -17,6 +17,15 @@
   width: 60%;
 }
 
+.elementor-widget-mobile-menu .header .logo a,
+.elementor-widget-mobile-menu .header .logo a:link,
+.elementor-widget-mobile-menu .header .logo a:active,
+.elementor-widget-mobile-menu .header .logo a:hover,
+.elementor-widget-mobile-menu .header .logo a:visited {
+  border: none;
+  text-decoration: none;
+}
+
 .elementor-widget-mobile-menu .header .controls {
   width: 20%;
   margin-left: auto;
