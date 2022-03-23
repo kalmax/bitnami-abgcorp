@@ -73,11 +73,11 @@
   list-style-type: none;
 }
 
-.elementor-widget-mobile-menu .links-container .links > li a,
-.elementor-widget-mobile-menu .links-container .links > li a:active,
-.elementor-widget-mobile-menu .links-container .links > li a:link,
-.elementor-widget-mobile-menu .links-container .links > li a:hover,
-.elementor-widget-mobile-menu .links-container .links > li a:visited {
+.elementor-widget-mobile-menu .links-container .links > li > a,
+.elementor-widget-mobile-menu .links-container .links > li > a:active,
+.elementor-widget-mobile-menu .links-container .links > li > a:link,
+.elementor-widget-mobile-menu .links-container .links > li > a:hover,
+.elementor-widget-mobile-menu .links-container .links > li > a:visited {
   float: left;
   width: 100%;
   text-decoration: none;
