@@ -125,3 +125,48 @@
   margin-left: 2rem;
 }
 
+.elementor-widget-mobile-menu .search-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search {
+  border: 1px solid #A0A0A0;
+  border: 1px solid #A0A0A0;
+  padding: 0.7rem;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #000;
+   opacity: 1;
+}
+.elementor-widget-mobile-menu .search-box .input-search:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::-ms-input-placeholder { /* Microsoft Edge */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::placeholder { /* Most modern browsers support this now. */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .btn-search {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-size: cover;
+  right: 2rem;
+  border: none;
+}

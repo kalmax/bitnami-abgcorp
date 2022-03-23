@@ -78,10 +78,20 @@ jQuery(document).ready(function(){
             }
         });
 
+        // search
+       jQuery(el).find(".search-box .btn-search").click(function(e) {
+          e.preventDefault();
+          let searchUrl = jQuery(el).find(".search-box .input-search").data('url');
+          let searchStr = jQuery(el).find(".search-box .input-search").val();
+          let searchStrEncoded = encodeURIComponent(searchStr);
+
+          if(searchStr){
+            window.location.href = `${searchUrl}?s=${searchStrEncoded}`;
+          }
+        });
 
       }
 
     }
-
 
 });

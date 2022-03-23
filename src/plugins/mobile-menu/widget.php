@@ -124,6 +124,10 @@ class Mobile_Menu_Widget extends Widget_Base {
           </div>
         </div>
         <div class="links-container collapsed">
+          <div class="search-box">
+            <input type='text' placeholder="Search" class="input-search" data-url="<?=get_site_url();?>"/>
+            <a class="btn-search" href="#" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-search.svg';?>');"></a>
+          </div>
           <ul class="links">
             <?php if ($menu_items): ?>
               <?php foreach($menu_items_tree as $menu_item):?>
