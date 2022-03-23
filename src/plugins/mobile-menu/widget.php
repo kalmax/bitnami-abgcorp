@@ -62,6 +62,34 @@ class Mobile_Menu_Widget extends Widget_Base {
       ]
     );
 
+    $this->add_control(
+      'cta_contact_us',
+      [
+        'label' => esc_html__( 'Link - Contact Us', self::$slug ),
+        'type' => \Elementor\Controls_Manager::URL,
+        'placeholder' => esc_html__( 'https://your-link.com', self::$slug ),
+        'default' => [
+          'url' => '',
+          'is_external' => false,
+        ],
+        'label_block' => true,
+      ]
+    );
+
+    $this->add_control(
+      'cta_rent_a_car',
+      [
+        'label' => esc_html__( 'Link - Rent A Car', self::$slug ),
+        'type' => \Elementor\Controls_Manager::URL,
+        'placeholder' => esc_html__( 'https://your-link.com', self::$slug ),
+        'default' => [
+          'url' => '',
+          'is_external' => false,
+        ],
+        'label_block' => true,
+      ]
+    );
+
     $this->end_controls_section();
 
   
@@ -153,11 +181,20 @@ class Mobile_Menu_Widget extends Widget_Base {
             <?php endif;?>
           </ul>
           <div class="cta">
-            <a href="/contact-us" id="btn-contact-us" class="btn-from btn-secondary btn-lg">
+            <a 
+              href="<?=$settings['cta_contact_us']['url'];?>" 
+              id="btn-contact-us" 
+              class="btn-from btn-secondary btn-lg"
+              <?=$settings['cta_contact_us']['is_external'] ? 'target="_blank"' : '';?>
+              >
               <span> CONTACT US </span>
               <span class="line"></span>
             </a>
-            <a href="https://www.avis.com/en/home" target="_blank" class="btn-from btn-primary btn-lg  opaque">
+            <a 
+              href="<?=$settings['cta_rent_a_car']['url'];?>" 
+              target="_blank" class="btn-from btn-primary btn-lg opaque"
+              <?=$settings['cta_rent_a_car']['is_external'] ? 'target="_blank"' : '';?>
+              >
               <span> RENT A CAR </span>
               <span class="line"></span>
             </a>
