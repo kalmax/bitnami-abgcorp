@@ -43,6 +43,7 @@ src/wordpress
 !src/plugins/carbon-fields
 !src/plugins/equalweb
 !src/plugins/mobile-menu
+!src/plugins/jet-smart-filters
 
 # But ignore everything under "src/themes"
 src/themes/*
