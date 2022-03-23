@@ -190,14 +190,18 @@ class Mobile_Menu_Widget extends Widget_Base {
               <span> CONTACT US </span>
               <span class="line"></span>
             </a>
-            <a 
-              href="<?=$settings['cta_rent_a_car']['url'];?>" 
-              target="_blank" class="btn-from btn-primary btn-lg opaque"
-              <?=$settings['cta_rent_a_car']['is_external'] ? 'target="_blank"' : '';?>
-              >
-              <span> RENT A CAR </span>
-              <span class="line"></span>
-            </a>
+            <?php 
+            if(is_front_page()): ?>
+              <a 
+                href="<?=$settings['cta_rent_a_car']['url'];?>"
+                id="btn-rent-a-car"
+                target="_blank" class="btn-from btn-primary btn-lg opaque"
+                <?=$settings['cta_rent_a_car']['is_external'] ? 'target="_blank"' : '';?>
+                >
+                <span> RENT A CAR </span>
+                <span class="line"></span>
+              </a>
+            <?php endif;?>
           </div>
         </div>
       </div>
