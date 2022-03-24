@@ -1,5 +1,5 @@
 jQuery(function ($) {
-
+  console.log("esg-diversity.js");
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();

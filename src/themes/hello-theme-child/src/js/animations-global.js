@@ -1,5 +1,5 @@
  jQuery(function ($) {
-  
+  console.log("animation-global.js");
   let controller = new ScrollMagic.Controller();
 
   $(document).ready(function () {

@@ -1,5 +1,5 @@
 jQuery(function ($) {
-
+  console.log("theme.js");
   $(document).ready(function () {
 
 

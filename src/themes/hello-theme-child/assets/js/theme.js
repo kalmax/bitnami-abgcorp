@@ -1,5 +1,5 @@
  jQuery(function ($) {
-  
+  console.log("animation-global.js");
   let controller = new ScrollMagic.Controller();
 
   $(document).ready(function () {
@@ -37,7 +37,7 @@
 });
 
 jQuery(function ($) {
-
+  console.log("theme.js");
   $(document).ready(function () {
 
 
@@ -476,7 +476,7 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-
+  console.log("header-scroll.js");
   $(document).ready(function () {
     
     var header = $('.elementor-location-header');
@@ -513,7 +513,7 @@ jQuery(function ($) {
 
 });
  jQuery(function ($) {
-
+  console.log("home.js");
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -704,7 +704,7 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-
+  console.log("esg.js");
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -811,7 +811,7 @@ jQuery(function ($) {
 
 
 jQuery(function ($) {
-
+  console.log("esg-diversity.js");
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
