@@ -50,27 +50,25 @@ class Jump_To_Menu_Widget extends Widget_Base {
     } ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
-      <?php $sections = carbon_get_the_post_meta( 'crb_jump_to_sections' ); ?>
-
-
-      <div class="from-jump-to-menu from-jump-to-menu-container">
-        <div class="from-jump-to-menu-inner">
-          <div class="dropdown">
-            <label> <?=$post_title;?> Overview </label>
-            <div class="controls">
-              <a href="" class="caret" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-caret.svg';?>');"></a>
-            </div>
-          </div>
-          <div class="links-container collapsed">
-            <div class="header">
-              <div class="page-title"><?=$post_title;?> Overview</div>
+      <?php $sections = carbon_get_the_post_meta( 'crb_jump_to_sections' );?>
+      <?php if($sections):?>
+        <div class="from-jump-to-menu from-jump-to-menu-container">
+          <div class="from-jump-to-menu-inner">
+            <div class="dropdown">
+              <label> <?=$post_title;?> Overview </label>
               <div class="controls">
-                <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
+                <a href="" class="caret" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-caret.svg';?>');"></a>
               </div>
             </div>
-            <div class="label-jump-to"> Jump to: </div>
-            <ul class="links">
-              <?php if($sections):?>
+            <div class="links-container collapsed">
+              <div class="header">
+                <div class="page-title"><?=$post_title;?> Overview</div>
+                <div class="controls">
+                  <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
+                </div>
+              </div>
+              <div class="label-jump-to"> Jump to: </div>
+              <ul class="links">
                 <?php foreach ($sections as $section): ?>
                   <li class="from-jump-to-menu-item">
                     <a href="#" id="from-jump-to-<?=$section['id'];?>" title="<?= $section['title'];?>">
@@ -78,14 +76,12 @@ class Jump_To_Menu_Widget extends Widget_Base {
                     </a>
                   </li>
                 <?php endforeach;?>
-              <?php endif; ?>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-
+      <?php endif; ?>
     <?php endwhile; ?>
-
 
   <?php }
 

@@ -10,7 +10,6 @@
 .elementor-widget-mobile-menu .header {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .elementor-widget-mobile-menu .header .logo {
@@ -140,6 +139,7 @@
 .elementor-widget-mobile-menu .search-box {
   display: flex;
   align-items: center;
+  margin-top: 1rem;  
   margin-bottom: 1.5rem;
 }
 
