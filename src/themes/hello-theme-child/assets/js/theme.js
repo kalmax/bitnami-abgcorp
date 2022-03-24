@@ -744,6 +744,23 @@ jQuery(function ($) {
   });
   /* ############# END CONTACT US PAGE ############# */
 
+
+  /** SET Footer container background color*/
+  console.log('SET footer colors');
+  console.log('GREEN ', $('.elementor-location-footer .green').length);
+  console.log('BLUE ', $('.elementor-location-footer .blue').length);
+  console.log('GREY ', $('.elementor-location-footer .grey  ').length);
+  if ($('.elementor-location-footer .green').length) {
+    $('.elementor-location-footer').addClass('green');
+  }
+  if ($('.elementor-location-footer .blue').length) {
+    $('.elementor-location-footer').addClass('blue');
+  }
+  if ($('.elementor-location-footer .grey').length) {
+    $('.elementor-location-footer').addClass('grey');
+  }
+  /** END SET Footer container background color*/
+  
 });
 
 jQuery(function ($) {
