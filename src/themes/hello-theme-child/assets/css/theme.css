@@ -68,7 +68,7 @@ ul, ol {
   background-color: #20438C;
   color: #fff;
 }
-.elementor-location-footer.blue li span, .elementor-location-footer.blue li a, .elementor-location-footer.blue li .elementor-widget-icon-list .elementor-icon-list-icon i {
+.elementor-location-footer.blue li span, .elementor-location-footer.blue li a, .elementor-location-footer.blue li .elementor-icon-list-icon i.fa-circle {
   color: #fff !important;
 }
 .elementor-location-footer.blue div.elementor-widget-text-editor p {
@@ -79,7 +79,7 @@ ul, ol {
   background-color: #64BC47;
   color: #fff;
 }
-.elementor-location-footer.green li span, .elementor-location-footer.green li a, .elementor-location-footer.green li .elementor-widget-icon-list .elementor-icon-list-icon i {
+.elementor-location-footer.green li span, .elementor-location-footer.green li a, .elementor-location-footer.green li .elementor-icon-list-icon i.fa-circle {
   color: #fff !important;
 }
 .elementor-location-footer.green div.elementor-widget-text-editor p {
@@ -90,7 +90,7 @@ ul, ol {
   background-color: #343434;
   color: #fff;
 }
-.elementor-location-footer.grey li span, .elementor-location-footer.grey li a, .elementor-location-footer.grey li .elementor-widget-icon-list .elementor-icon-list-icon i {
+.elementor-location-footer.grey li span, .elementor-location-footer.grey li a, .elementor-location-footer.grey li .elementor-icon-list-icon i.fa-circle {
   color: #fff !important;
 }
 .elementor-location-footer.grey div.elementor-widget-text-editor p {
