@@ -99,19 +99,19 @@ ul, ol {
 
 @font-face {
   font-family: "Source Sans Pro";
-  src: url(/fonts/SourceSansPro-Regular.ttf?c2b23b36ce51dfd4d60a11c90c127f48) format("truetype");
+  src: url("/wp-content/themes/hello-theme-child/assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Source Sans Pro";
-  src: url(/fonts/SourceSansPro-SemiBold.ttf?26160fac3621d82c24319c4ca98d981a) format("truetype");
+  src: url("/wp-content/themes/hello-theme-child/assets/fonts/SourceSansPro-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
 }
 @font-face {
   font-family: "Source Sans Pro";
-  src: url(/fonts/SourceSansPro-Bold.ttf?66dc68e4e7cdfceb56276884b483b186) format("truetype");
+  src: url("/wp-content/themes/hello-theme-child/assets/fonts/SourceSansPro-Bold.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
