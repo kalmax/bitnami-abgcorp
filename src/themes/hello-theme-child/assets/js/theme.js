@@ -745,18 +745,17 @@ jQuery(function ($) {
   /* ############# END CONTACT US PAGE ############# */
 
 
-  /** SET Footer container background color*/
-  console.log('SET footer colors');
-  console.log('GREEN ', $('.elementor-location-footer .green').length);
-  console.log('BLUE ', $('.elementor-location-footer .blue').length);
-  console.log('GREY ', $('.elementor-location-footer .grey  ').length);
-  if ($('.elementor-location-footer .green').length) {
+  /** SET Footer container background color */
+  /** ESG pages (with subpages?) must have green footer */
+  if ($('body.page.page-id-5730, body.page.page-child.parent-pageid-5730').length) {
     $('.elementor-location-footer').addClass('green');
   }
-  if ($('.elementor-location-footer .blue').length) {
+  /** Contact US pages must have blue footer */
+  if (jQuery('body.page.page-id-7377').length.length) {
     $('.elementor-location-footer').addClass('blue');
   }
-  if ($('.elementor-location-footer .grey').length) {
+  /** News Article pages must have grey footer */
+  if ($('.post.category-news-article').length) {
     $('.elementor-location-footer').addClass('grey');
   }
   /** END SET Footer container background color*/
