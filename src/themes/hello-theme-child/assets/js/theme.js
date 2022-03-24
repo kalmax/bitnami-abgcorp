@@ -672,6 +672,21 @@ jQuery(function ($) {
       $('.openSearch').css({'color': '#fff'})
     });
 
+
+    /* ############# OUR BRANDS  ############# */
+      $('.swiper-slide-active').addClass('activeBrand')
+
+      $('.swiper-slide').click(function() {
+        $('.swiper-slide').removeClass('activeBrand');
+        $(this).addClass('activeBrand');
+
+        // Hide and Show of tab contents
+        var content = $(this).attr('data-swiper-slide-index')
+        $('.brandContent').css({ 'display': 'none' })
+        $('.brandContent[data-index="'+ content +'"]').css({ 'display': 'block' })
+      })
+    /* ############# OUR BRANDS END ############# */
+
   });
   
   
@@ -743,6 +758,9 @@ jQuery(function ($) {
     console.log('Trigger Load more brands section load');
   });
   /* ############# END CONTACT US PAGE ############# */
+
+
+  
 
 });
 

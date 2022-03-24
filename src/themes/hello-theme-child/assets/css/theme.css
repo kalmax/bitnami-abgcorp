@@ -673,6 +673,26 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   cursor: pointer;
 }
 
+.swiper-slide {
+  cursor: pointer;
+}
+.swiper-slide img {
+  filter: grayscale(100%) !important;
+  opacity: 0.7;
+}
+.swiper-slide.activeBrand img {
+  filter: grayscale(0%) !important;
+  opacity: 1;
+}
+
+.brandContent {
+  display: none;
+}
+
+#brandContent1 {
+  display: block;
+}
+
 #mediaSection .elementor-gallery__titles-container {
   display: none;
 }

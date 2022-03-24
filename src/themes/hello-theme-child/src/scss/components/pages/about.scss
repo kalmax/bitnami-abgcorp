@@ -183,3 +183,30 @@
 #timeline-down img {
   cursor: pointer;
 }
+
+.swiper-slide{
+  cursor: pointer;
+  img{
+    -webkit-filter: grayscale(100%) !important;
+    filter: grayscale(100%) !important;
+    opacity: 0.7;
+
+  }
+
+  &.activeBrand{
+    img{
+      -webkit-filter: grayscale(0%) !important;
+      filter: grayscale(0%) !important;
+      opacity: 1;
+    }
+
+  }
+}
+
+.brandContent{
+    display: none;
+}
+
+#brandContent1{
+  display: block;
+}
