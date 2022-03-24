@@ -9,16 +9,24 @@ mix.setPublicPath(`${themePath}/assets`);
 if(!mix.inProduction()) {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css`).sourceMaps();
   mix.scripts([
+    `${resources}/js/animations-global.js`,
     `${resources}/js/theme.js`,
     `${resources}/js/header-scroll.js`,
+    `${resources}/js/home.js`,
+    `${resources}/js/esg.js`,
+    `${resources}/js/esg-diversity.js`,
   ], 
     `${themePath}/assets/js/theme.js`
   )
 } else {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css/theme.min.css`).sourceMaps();
   mix.scripts([
+    `${resources}/js/animations-global.js`,
     `${resources}/js/theme.js`,
     `${resources}/js/header-scroll.js`,
+    `${resources}/js/home.js`,
+    `${resources}/js/esg.js`,
+    `${resources}/js/esg-diversity.js`,
   ], 
     `${themePath}/assets/js/theme.min.js`
   )
