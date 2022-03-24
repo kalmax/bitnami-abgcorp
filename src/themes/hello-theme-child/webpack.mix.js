@@ -15,6 +15,9 @@ if(!mix.inProduction()) {
     `${resources}/js/home.js`,
     `${resources}/js/esg.js`,
     `${resources}/js/esg-diversity.js`,
+    `${resources}/js/about-us.js`,
+    `${resources}/js/header.js`,
+    `${resources}/js/news.js`
   ], 
     `${themePath}/assets/js/theme.js`
   )
@@ -27,6 +30,9 @@ if(!mix.inProduction()) {
     `${resources}/js/home.js`,
     `${resources}/js/esg.js`,
     `${resources}/js/esg-diversity.js`,
+    `${resources}/js/about-us.js`,
+    `${resources}/js/header.js`,
+    `${resources}/js/news.js`
   ], 
     `${themePath}/assets/js/theme.min.js`
   )

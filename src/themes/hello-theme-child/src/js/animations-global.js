@@ -32,6 +32,33 @@
 
     /* ########## ANIMATIONS ###########*/
 
+    /* ########## GLOBAL SLIDERS ###########*/
+
+    // Peakaboo Slider
+    $('.peakaboo-slider > div > div').slick({
+      infinite: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      centerMode: false,
+      arrows: true,
+      draggable: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            draggable: true,
+            centerMode: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true
+          }
+        }
+      ]
+    });
+
+    /* ########## GLOBAL SLIDERS ###########*/
+
   });
 
 });
