@@ -751,6 +751,7 @@ jQuery(function ($) {
             $('#rentCar').addClass('rentCar')
             $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
             $('.openSearch').css({ 'color': '#20438C' })
+            $('.openSearch').addClass('searchColored')
         }).mouseout(function () {
             $('#headerSection').removeClass('headerHover')
             $('#headerSection .elementor-item').removeClass('hovered')
@@ -758,6 +759,7 @@ jQuery(function ($) {
             $('#rentCar').removeClass('rentCar')
             $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
             $('.openSearch').css({ 'color': '#fff' })
+            $('.openSearch').removeClass('searchColored')
         });
     });
 
