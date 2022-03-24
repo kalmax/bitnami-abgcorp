@@ -10,11 +10,19 @@
 .elementor-widget-mobile-menu .header {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .elementor-widget-mobile-menu .header .logo {
   width: 60%;
+}
+
+.elementor-widget-mobile-menu .header .logo a,
+.elementor-widget-mobile-menu .header .logo a:link,
+.elementor-widget-mobile-menu .header .logo a:active,
+.elementor-widget-mobile-menu .header .logo a:hover,
+.elementor-widget-mobile-menu .header .logo a:visited {
+  border: none;
+  text-decoration: none;
 }
 
 .elementor-widget-mobile-menu .header .controls {
@@ -22,16 +30,27 @@
   margin-left: auto;
 }
 
-.elementor-widget-mobile-menu .header .controls .burger {
+.elementor-widget-mobile-menu .header .controls .burger,
+.elementor-widget-mobile-menu .header .controls .close {
   background-size: cover;
-  width: 22.5px;
-  height: 17.25px;
   background-position: center;
   float: left;
   background-repeat: no-repeat;
   text-decoration: none;
   border: none;
   float: right;
+}
+
+.elementor-widget-mobile-menu .header .controls .close {
+  width: 27px;
+  height: 27px;
+  background-size: 170%;
+  display: none;
+}
+
+.elementor-widget-mobile-menu .header .controls .burger {
+  width: 22.5px;
+  height: 17.25px;
 }
     
 .elementor-widget-mobile-menu .links ul {
@@ -45,6 +64,9 @@
 }
 
 .elementor-widget-mobile-menu .links-container .links {
+  float: left;
+  width: 100%;
+  margin-bottom: 1rem;
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -69,8 +91,10 @@
 
 .elementor-widget-mobile-menu .links-container .links > li > a label {
   width: 90%;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
 }
-
 
 .elementor-widget-mobile-menu .links-container .links > li > a .caret {
   width: 10%;
@@ -81,7 +105,7 @@
   background-position: center;
   width: 24px;
   height: 24px;
-  float: left;
+  float: right;
 }
 
 .elementor-widget-mobile-menu .links-container .links > li.collapsed .sub-menu {
@@ -92,7 +116,7 @@
   transform: rotate(180deg);
 }
 
-.elementor-widget-mobile-menu .links-container .links .sub-menu a:first-child {
+.elementor-widget-mobile-menu .links-container .links .sub-menu li:first-child a {
   margin-left: 0;
 }
 
@@ -112,3 +136,76 @@
   margin-left: 2rem;
 }
 
+.elementor-widget-mobile-menu .search-box {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;  
+  margin-bottom: 1.5rem;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search {
+  border: 1px solid #A0A0A0;
+  border: 1px solid #A0A0A0;
+  padding: 0.7rem;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #000;
+   opacity: 1;
+}
+.elementor-widget-mobile-menu .search-box .input-search:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::-ms-input-placeholder { /* Microsoft Edge */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .input-search::placeholder { /* Most modern browsers support this now. */
+  color: #000;
+}
+
+.elementor-widget-mobile-menu .search-box .btn-search {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-size: cover;
+  right: 2rem;
+  border: none;
+}
+
+.elementor-widget-mobile-menu .cta {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.elementor-widget-mobile-menu .cta .btn-from {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  padding: 0.74rem 4.2rem;
+}
+
+.elementor-widget-mobile-menu .cta #btn-contact-us {
+  border-radius: 3px;
+  border: 2px solid #20438C;
+}
+
+.elementor-widget-mobile-menu .cta #btn-rent-a-car {
+  margin-top: 1.3rem;
+}
+
+  

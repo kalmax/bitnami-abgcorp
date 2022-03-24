@@ -43,16 +43,17 @@ jQuery(document).ready(function(){
 
         // burger menu
         jQuery(el).find('.header .burger').click(function(e){
-
           e.preventDefault();
+          jQuery(el).find('.links-container').removeClass('collapsed');
+          jQuery(this).hide();
+          jQuery(el).find('.header .close').show();
+        });
 
-          if(jQuery(el).find('.links-container').hasClass('collapsed')){
-            jQuery(el).find('.links-container').removeClass('collapsed');
-          } else {
-            jQuery(el).find('.links-container').addClass('collapsed');
-          }
-
-
+        jQuery(el).find('.header .close').click(function(e){
+          e.preventDefault();
+          jQuery(el).find('.links-container').addClass('collapsed');
+          jQuery(this).hide();
+          jQuery(el).find('.header .burger').show();
         });
 
         // menu item click
@@ -72,13 +73,25 @@ jQuery(document).ready(function(){
         jQuery('html').click(function(event) {
             if (jQuery(event.target).closest('.from-mobile-menu, .from-mobile-menu .burger').length === 0) {
               jQuery(el).find('.links-container').addClass('collapsed');
+              jQuery(el).find('.header .burger').show();
+              jQuery(el).find('.header .close').hide();
             }
         });
 
+        // search
+       jQuery(el).find(".search-box .btn-search").click(function(e) {
+          e.preventDefault();
+          let searchUrl = jQuery(el).find(".search-box .input-search").data('url');
+          let searchStr = jQuery(el).find(".search-box .input-search").val();
+          let searchStrEncoded = encodeURIComponent(searchStr);
+
+          if(searchStr){
+            window.location.href = `${searchUrl}?s=${searchStrEncoded}`;
+          }
+        });
 
       }
 
     }
-
 
 });

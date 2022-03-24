@@ -1,18 +1,15 @@
 .elementor-widget-jump-to-menu {
-  display: none;
-  background-color: #ffffff;
   font-family: "Source Sans Pro";
   color: #000000;
   height: auto;
   z-index: 999;
   top: 0;
   left: 0;
+  margin-top: -1px;
 }
 
-@media (max-width: 767px){
-  .elementor-widget-jump-to-menu {
-    display: block;
-  }
+.elementor-widget-jump-to-menu .from-jump-to-menu-container {
+  background-color: #ffffff;
 }
 
 .elementor-widget-jump-to-menu .from-jump-to-menu .from-jump-to-menu-inner .label-jump-to {
@@ -46,14 +43,19 @@
   color: #20438C;
 }
 
-.elementor-widget-jump-to-menu .from-jump-to-menu .dropdown .caret {
+.elementor-widget-jump-to-menu .from-jump-to-menu .dropdown .controls {
+  margin-left: auto;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .dropdown .controls .caret {
   height: 36px;
   width: 36px;
   background-size: cover;
   background-position: center;
   border: none;
   text-decoration: none;
-  width: 10%;
+  float: right;
+  margin-right: -0.5rem;
 }
 
 .elementor-widget-jump-to-menu .from-jump-to-menu .header {
@@ -71,14 +73,19 @@
   width: 90%;
 }
 
-.elementor-widget-jump-to-menu .from-jump-to-menu .close {
-  height: 36px;
-  width: 36px;
+.elementor-widget-jump-to-menu .from-jump-to-menu .controls {
+  margin-left: auto;
+}
+
+.elementor-widget-jump-to-menu .from-jump-to-menu .controls .close {
+  height: 42px;
+  width: 42px;
   background-size: cover;
   background-position: center;
   border: none;
   text-decoration: none;
-  width: 10%;
+  float: right;
+  margin-right: -0.4rem;
 }
 
 .elementor-widget-jump-to-menu .from-jump-to-menu .close,

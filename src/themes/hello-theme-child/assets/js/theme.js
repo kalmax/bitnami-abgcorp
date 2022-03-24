@@ -1,29 +1,188 @@
-jQuery(function ($) {
+ jQuery(function ($) {
+  console.log("animation-global.js");
+  let controller = new ScrollMagic.Controller();
 
   $(document).ready(function () {
+    
+    /* ########## ANIMATIONS ###########*/
 
-    let windowWidth = $(window).height();
+    /* FROM Tabs - Widget */
+    $('.from-tabs .tab-link').click(function(e){
+      
+      e.preventDefault();
+      
+      let tl = new TimelineMax();
+      tl
+      .fromTo(
+        $(".from-tabs .col-image .thumbnail"),
+        0.5,
+        { y: 50, autoAlpha: 0, ease: Power1.easeOut },
+        { y: 0, autoAlpha: 1 }
+      );
 
-    /* #### Scroll maging indicator params #### */
-    var indicatorParams = {
-      colorTrigger: "white",
-      colorStart: "red",
-      colorEnd: "blue",
-      indent: 5
-    };
+    });
 
-    if (window.matchMedia("(min-width: 1025px)").matches) {
+    /* Button Links*/
+    $(".btn-from-link").mouseenter(function () {
+      var btnLinkLine = $(this).find(".line");
+      var tl = new TimelineMax();
+      //tl.fromTo(btnLinkLine, 0.1, { width: "100%" }, { width: "0px" })
+      tl.fromTo(btnLinkLine, 0.5, { delay: 0.3, width: "0" }, { delay: 0.3, width: "100%" });
+    });
 
-      /* ############### ANIMATION - Button Links ############# */
-      $(".btn-from-link").mouseenter(function () {
-        var btnLinkLine = $(this).find(".line");
-        var tl = new TimelineMax();
-        //tl.fromTo(btnLinkLine, 0.1, { width: "100%" }, { width: "0px" })
-        tl.fromTo(btnLinkLine, 0.5, { delay: 0.3, width: "0" }, { delay: 0.3, width: "100%" });
+    /* ########## ANIMATIONS ###########*/
+
+    /* ########## GLOBAL SLIDERS ###########*/
+
+    // Peakaboo Slider
+    $('.peakaboo-slider > div > div').slick({
+      infinite: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      centerMode: false,
+      arrows: true,
+      draggable: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            draggable: true,
+            centerMode: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true
+          }
+        }
+      ]
+    });
+
+    /* ########## GLOBAL SLIDERS ###########*/
+
+  });
+
+});
+
+jQuery(function ($) {
+  console.log("theme.js");
+
+  /* ############# CONTACT US PAGE ############# */
+
+  $('#btn-moreBrands').on('click', (e) => {
+    e.preventDefault();
+    console.log('Trigger Load more brands section load');
+  });
+
+  var filteredImages = $('#brands-gallery .gallery-item');
+
+  //Edit the links HERE
+  var links = [
+    'https://www.avis.com/en/customer-service',
+    'https://www.budget.com/en/customer-care',
+    'https://www.budgettruck.com/contact-us',
+    'https://www.paylesscar.com/en/customer-service/contact-us',
+    'https://support.zipcar.com/hc/en-us',
+    'https://www.maggiore.it/en/if-you-need-help/online-assistance/',
+    'https://www.francecars.fr/contact-s220.html',
+    'https://www.apexrentals.co.nz/customer-support',
+    'https://www.amicoblu.it/en/if-you-need-help/online-assistance/',
+    'https://support.flexcar.com/hc/en-us',
+    'https://www.morinirent.com/en/booking-customer/'
+  ];
+
+  var _loope = function _loope(i) {
+    filteredImages[i].addEventListener('click', function () {
+      // location = links[i];
+      window.open(links[i]);
+    });
+  }
+
+  for (var i = 0; i < filteredImages.length; i++) {
+    console.log('IMAGES TO LINK');
+    _loope(i);
+  }
+
+  /* ############# END CONTACT US PAGE ############# */
+
+
+  /** SET Footer container background color */
+  /** ESG pages (with subpages?) must have green footer */
+  $('.elementor-location-footer').removeClass('grey');
+  $('.elementor-location-footer').removeClass('green');
+  $('.elementor-location-footer').removeClass('blue');
+
+  if ($('body.page.page-id-5730, body.page.page-child.parent-pageid-5730').length) {
+    $('.elementor-location-footer').addClass('green');
+  }
+  /** Contact US pages must have blue footer */
+  if ($('body.page.page-id-7377').length) {
+    $('.elementor-location-footer').addClass('blue');
+  }
+  /** News Article pages must have grey footer */
+  if ($('body.single.single-post div.post.category-news-article').length) {
+    $('.elementor-location-footer').addClass('grey');
+  }
+  /** END SET Footer container background color*/
+
+ 
+});
+
+jQuery(function ($) {
+  console.log("header-scroll.js");
+  $(document).ready(function () {
+    
+    var header = $('.elementor-location-header');
+    var mobileMenu = $('.elementor-widget-mobile-menu');
+    var jumpToMenu = $(".elementor-widget-jump-to-menu");
+
+   
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      
+       var lastScrollTop = 0;
+
+      $(window).scroll(function(){
+        
+        if($(this).scrollTop() > header.outerHeight()) {
+          header.addClass("fixed");
+        } else {
+          header.removeClass("fixed");
+        }
+
+        var st = $(this).scrollTop();
+        
+        if (st > lastScrollTop){
+          mobileMenu.hide();
+        } else {
+          mobileMenu.show();
+        }
+        lastScrollTop = st;
+
       });
 
-      /* ############### HOME PAGE ############### */
-      var controller = new ScrollMagic.Controller();
+    }
+
+  });
+
+});
+ jQuery(function ($) {
+  console.log("home.js");
+  $(document).ready(function () {
+    
+    let controller = new ScrollMagic.Controller();
+    
+    function homeAnimateEaseRightToLeft(element) {
+      var tl = new TimelineMax();
+      tl.staggerFrom(element, 0.3, { x: "+=30", opacity: 0, autoAlpha: 0 }, 0.5);
+    }
+
+
+    function homeAnimateHeroCarouselByWidth() {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        homeAnimateEaseRightToLeft($(".home #hero-carousel-brands .from-carousel .slick-active:lt(4)"));
+      }
+    }
+
+    if (window.matchMedia("(min-width: 1025px)").matches) {
 
       /* Who we are section */
       var tl1 = new TimelineMax();
@@ -33,180 +192,181 @@ jQuery(function ($) {
         { scaleX: 0 },
         { scaleX: 1, transformOrigin: '0% 100%' }
       )
-        .staggerFrom(
-          '.home #section-who-we-are .node .elementor-widget-container img',
-          0.5,
-          {
-            opacity: 0,
-            scale: 0.5,
-            transformOrigin: "center center",
-            ease: Elastic.easeOut.config(1, 0.5)
-          }
-        );
+      .staggerFrom(
+        '.home #section-who-we-are .node .elementor-widget-container img',
+        0.5,
+        {
+          opacity: 0,
+          scale: 0.5,
+          transformOrigin: "center center",
+          ease: Elastic.easeOut.config(1, 0.5)
+        }
+      );
 
       var scene1 = new ScrollMagic.Scene({
         triggerElement: ".home #section-who-we-are",
         reverse: false
       })
-        .setTween(tl1)
-        .addTo(controller);
+      .setTween(tl1)
+      .addTo(controller);
 
       var tl1_2 = new TimelineMax();
       tl1_2
-        .fromTo(
-          '.home #section-who-we-are #cover-image .elementor-widget-container',
-          0.5,
-          { y: 30, autoAlpha: 0, ease: Power1.easeOut },
-          { y: 0, autoAlpha: 1 }
-        );
+      .fromTo(
+        '.home #section-who-we-are #cover-image .elementor-widget-container',
+        0.5,
+        { y: 30, autoAlpha: 0, ease: Power1.easeOut },
+        { y: 0, autoAlpha: 1 }
+      );
 
       var scene1_2 = new ScrollMagic.Scene({
         triggerElement: ".home #section-who-we-are",
         reverse: false
       })
-        .setTween(tl1_2)
-        .addTo(controller);
+      .setTween(tl1_2)
+      .addTo(controller);
 
       /* Join our team bottom section */
       var tl2 = new TimelineMax();
       tl2
-        .set(".home #section-join-team-bottom .node-line .elementor-widget-container img", { height: '0' }, 'start')
-        .fromTo(
-          '.home #section-join-team-bottom .node-line .elementor-widget-container img',
-          0.5,
-          { height: 0 },
-          { height: '67px' }
-        )
-        .staggerFrom(
-          '.home #section-join-team-bottom .node .elementor-widget-container img',
-          0.5,
-          {
-            opacity: 0,
-            scale: 0.5,
-            transformOrigin: "center center",
-            ease: Elastic.easeOut.config(1, 0.5)
-          }
-        );
+      .set(".home #section-join-team-bottom .node-line .elementor-widget-container img", { height: '0' }, 'start')
+      .fromTo(
+        '.home #section-join-team-bottom .node-line .elementor-widget-container img',
+        0.5,
+        { height: 0 },
+        { height: '67px' }
+      )
+      .staggerFrom(
+        '.home #section-join-team-bottom .node .elementor-widget-container img',
+        0.5,
+        {
+          opacity: 0,
+          scale: 0.5,
+          transformOrigin: "center center",
+          ease: Elastic.easeOut.config(1, 0.5)
+        }
+      );
 
       var scene2 = new ScrollMagic.Scene({
         triggerElement: ".home #section-join-team-bottom",
         reverse: false
       })
-        .setTween(tl2)
-        .addTo(controller);
+      .setTween(tl2)
+      .addTo(controller);
 
       // cover image
       var tl2_2 = new TimelineMax();
       tl2_2
-        .fromTo(
-          '.home #section-join-team #cover-image .elementor-widget-container',
-          0.5,
-          { y: 30, autoAlpha: 0, ease: Power1.easeOut },
-          { y: 0, autoAlpha: 1 }
-        );
+      .fromTo(
+        '.home #section-join-team #cover-image .elementor-widget-container',
+        0.5,
+        { y: 30, autoAlpha: 0, ease: Power1.easeOut },
+        { y: 0, autoAlpha: 1 }
+      );
 
       var scene2_2 = new ScrollMagic.Scene({
         triggerElement: ".home #section-join-team",
         offset: -100,
         reverse: false
       })
-        .setTween(tl2_2)
-        .addTo(controller);
+      .setTween(tl2_2)
+      .addTo(controller);
 
       /* Vision Goals Section */
       var tl3 = new TimelineMax();
       tl3
-        .fromTo(
-          '.home #section-vision-goals #node-line-1 .elementor-widget-container img',
-          0.3,
-          { scaleX: 0 },
-          { scaleX: 1, transformOrigin: '0% 100%' }
-        )
-        .staggerFrom(
-          '.home #section-vision-goals #icon-1 .elementor-icon',
-          0.3,
-          {
-            scale: 0.8,
-            transformOrigin: "center center",
-            ease: Elastic.easeOut.config(1, 0.5)
-          }
-        )
-        .fromTo(
-          '.home #section-vision-goals #node-line-2 .elementor-widget-container img',
-          0.3,
-          { scaleX: 0 },
-          { scaleX: 1, transformOrigin: '0% 100%' }
-        )
-        .staggerFrom(
-          '.home #section-vision-goals #icon-2 .elementor-icon',
-          0.3,
-          {
-            scale: 0.8,
-            transformOrigin: "center center",
-            ease: Elastic.easeOut.config(1, 0.5)
-          }
-        )
-        .fromTo(
-          '.home #section-vision-goals #node-line-3 .elementor-widget-container img',
-          0.3,
-          { scaleX: 0 },
-          { scaleX: 1, transformOrigin: '0% 100%' }
-        )
-        .staggerFrom(
-          '.home #section-vision-goals #icon-3 .elementor-icon',
-          0.3,
-          {
-            scale: 0.8,
-            transformOrigin: "center center",
-            ease: Elastic.easeOut.config(1, 0.5)
-          }
-        )
-        .fromTo(
-          '.home #section-vision-goals #node-line-4 .elementor-widget-container img',
-          0.3,
-          { scaleX: 0 },
-          { scaleX: 1, transformOrigin: '0% 100%' }
-        )
-        .staggerFrom(
-          '.home #section-vision-goals .node .elementor-widget-container img',
-          0.3,
-          {
-            opacity: 0,
-            scale: 0.8,
-            transformOrigin: "center center",
-            ease: Elastic.easeOut.config(1, 0.5)
-          }
-        );
+      .fromTo(
+        '.home #section-vision-goals #node-line-1 .elementor-widget-container img',
+        0.3,
+        { scaleX: 0 },
+        { scaleX: 1, transformOrigin: '0% 100%' }
+      )
+      .staggerFrom(
+        '.home #section-vision-goals #icon-1 .elementor-icon',
+        0.3,
+        {
+          scale: 0.8,
+          transformOrigin: "center center",
+          ease: Elastic.easeOut.config(1, 0.5)
+        }
+      )
+      .fromTo(
+        '.home #section-vision-goals #node-line-2 .elementor-widget-container img',
+        0.3,
+        { scaleX: 0 },
+        { scaleX: 1, transformOrigin: '0% 100%' }
+      )
+      .staggerFrom(
+        '.home #section-vision-goals #icon-2 .elementor-icon',
+        0.3,
+        {
+          scale: 0.8,
+          transformOrigin: "center center",
+          ease: Elastic.easeOut.config(1, 0.5)
+        }
+      )
+      .fromTo(
+        '.home #section-vision-goals #node-line-3 .elementor-widget-container img',
+        0.3,
+        { scaleX: 0 },
+        { scaleX: 1, transformOrigin: '0% 100%' }
+      )
+      .staggerFrom(
+        '.home #section-vision-goals #icon-3 .elementor-icon',
+        0.3,
+        {
+          scale: 0.8,
+          transformOrigin: "center center",
+          ease: Elastic.easeOut.config(1, 0.5)
+        }
+      )
+      .fromTo(
+        '.home #section-vision-goals #node-line-4 .elementor-widget-container img',
+        0.3,
+        { scaleX: 0 },
+        { scaleX: 1, transformOrigin: '0% 100%' }
+      )
+      .staggerFrom(
+        '.home #section-vision-goals .node .elementor-widget-container img',
+        0.3,
+        {
+          opacity: 0,
+          scale: 0.8,
+          transformOrigin: "center center",
+          ease: Elastic.easeOut.config(1, 0.5)
+        }
+      );
 
       var scene4 = new ScrollMagic.Scene({
         triggerElement: ".home #section-vision-goals",
         offset: 40,
         reverse: false
       })
-        // .addIndicators()
-        .setTween(tl3)
-        .addTo(controller);
+      // .addIndicators()
+      .setTween(tl3)
+      .addTo(controller);
+
+
+      homeAnimateHeroCarouselByWidth();
 
     }
 
-    function animateHomeHeroCarouselByWidth() {
+  });
 
-      if (window.matchMedia("(min-width: 1024px)").matches) {
-        animateEaseRightToLeft($(".home #hero-carousel-brands .from-carousel .slick-active:lt(4)"));
-      }
+});
 
-    }
+jQuery(function ($) {
+  console.log("esg.js");
+  $(document).ready(function () {
+    
+    let controller = new ScrollMagic.Controller();
 
-    /*
-      Animates an image  - Fades image up with opacity reveal
-      @param el - the element
-      @param triggerElement - element to trigger when scrolling before the animation
-      @@param offset - scroll offset on scroll trigger
-    */
-    function animateEaseImageUp(params) {
+    if (window.matchMedia("(min-width: 1366px)").matches) {
 
-      let tl = new TimelineMax();
-      tl
+      function esgAnimateEaseImageUp(params) {
+
+        let tl = new TimelineMax();
+        tl
         .fromTo(
           params.el,
           0.5,
@@ -214,26 +374,20 @@ jQuery(function ($) {
           { y: 0, autoAlpha: 1 }
         );
 
-      var scene = new ScrollMagic.Scene({
-        triggerElement: params.triggerElement,
-        offset: params.offset ? params.offset : 0,
-        reverse: false
-      })
+        var scene = new ScrollMagic.Scene({
+          triggerElement: params.triggerElement,
+          offset: params.offset ? params.offset : 0,
+          reverse: false
+        })
         .setTween(tl)
         .addTo(controller);
 
-    }
+      }
 
-    /*
-      Animates an image  - Draws a line with a node
-      @param el - the element
-      @param triggerElement - element to trigger when scrolling before the animation
-      @@param offset - scroll offset on scroll trigger
-    */
-    function animateLineNodeDown(params) {
+      function esgAnimateLineNodeDown(params) {
 
-      let tl = new TimelineMax();
-      tl
+        let tl = new TimelineMax();
+        tl
         .set(`${params.el} .node-line .elementor-widget-container img`, { height: '0' }, 'start')
         .fromTo(
           `${params.el} .node-line .elementor-widget-container img`,
@@ -252,16 +406,69 @@ jQuery(function ($) {
           }
         );
 
-      var scene = new ScrollMagic.Scene({
-        triggerElement: params.triggerElement,
-        reverse: false
-      })
+        var scene = new ScrollMagic.Scene({
+          triggerElement: params.triggerElement,
+          reverse: false
+        })
         .setTween(tl)
         .addTo(controller);
+        
+      }
+
+      // section - environmental - cover image slide up
+      esgAnimateEaseImageUp({
+        controller: controller,
+        el: "#esg-section-environmental #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-environmental",
+        offset: 0,
+      });
+
+      // section - social - cover image slide up
+      esgAnimateEaseImageUp({
+        controller: controller,
+        el: "#esg-section-social #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-social",
+        offset: -100,
+      });
+
+      // section - governance - cover image slide up
+      esgAnimateEaseImageUp({
+        controller: controller,
+        el: "#esg-section-governance #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-governance",
+        offset: -100,
+      });
+
+      // section - diversity - cover image slide up
+      esgAnimateEaseImageUp({
+        controller: controller,
+        el: "#esg-section-diversity #cover-image .elementor-widget-container",
+        triggerElement: "#esg-section-diversity",
+        offset: -100,
+      });
+
+      // section - cta download
+      esgAnimateLineNodeDown({
+        controller: controller,
+        el: "#esg-section-cta-download-line-node",
+        triggerElement: "#esg-section-cta-download-top-border",
+        offset: -100,
+      });
+
     }
 
-    function animateLineNodeRight(params) {
+  });
 
+});
+
+
+jQuery(function ($) {
+  console.log("esg-diversity.js");
+  $(document).ready(function () {
+    
+    let controller = new ScrollMagic.Controller();
+
+    function esgDiversityAnimateLineNodeRight(params) {
       let tl = new TimelineMax();
       tl
         .fromTo(
@@ -290,19 +497,31 @@ jQuery(function ($) {
         .addTo(controller);
     }
 
-    animateHomeHeroCarouselByWidth();
+    if (window.matchMedia("(min-width: 1366px)").matches) {
+    
+      // section - diversity - cover image slide up
+      esgDiversityAnimateLineNodeRight({
+        el: "#esg-sub-diversity-section-gender #cover-image .elementor-widget-container",
+        triggerElement: "#esg-sub-diversity-section-gender",
+        offset: -100,
+      });
 
-    /* ############# END OF HOME PAGE ############# */
+      esgDiversityAnimateLineNodeRight({
+        el: "#esg-sub-diversity-section-ceo-message-line-node",
+        triggerElement: "#esg-sub-diversity-section-ceo-message",
+        offset: -100
+      });
 
-    /* ################ ANIMATION FUNCTIONS ######################## */
-    /* carousel items animation */
-    function animateEaseRightToLeft(element) {
-      var tl = new TimelineMax();
-      tl.staggerFrom(element, 0.3, { x: "+=30", opacity: 0, autoAlpha: 0 }, 0.5);
     }
 
-    /* ############# ABOUT PAGE ############# */
+  });
 
+});
+
+
+
+
+jQuery(function ($) {
     // about page tab
     var indicatorInitialPosition, indicatorNewPosition, indicatorTemporaryPosition = 0;
 
@@ -352,29 +571,6 @@ jQuery(function ($) {
 
     })
 
-
-    // Peakaboo Slider
-    $('.peakaboo-slider > div > div').slick({
-      infinite: false,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      centerMode: false,
-      arrows: true,
-      draggable: false,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            arrows: false,
-            draggable: true,
-            centerMode: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            adaptiveHeight: true
-          }
-        }
-      ]
-    });
 
     // Timeline Slider
     var sliderContent = $('.timeline-content-slider > div > div');
@@ -458,334 +654,191 @@ jQuery(function ($) {
     });
 
 
+    $('.swiper-slide-active').addClass('activeBrand')
 
-    /* ############# END OF ABOUT PAGE ############# */
+    $('.swiper-slide').click(function() {
+    $('.swiper-slide').removeClass('activeBrand');
+    $(this).addClass('activeBrand');
 
-    /* ############# ESG PAGE ############# */
-    if (window.matchMedia("(min-width: 1366px)").matches) {
-
-   
-      // section - environmental - cover image slide up
-      animateEaseImageUp({
-        el: "#esg-section-environmental #cover-image .elementor-widget-container",
-        triggerElement: "#esg-section-environmental",
-        offset: 0,
-      });
-
-      // section - social - cover image slide up
-      animateEaseImageUp({
-        el: "#esg-section-social #cover-image .elementor-widget-container",
-        triggerElement: "#esg-section-social",
-        offset: -100,
-      });
-
-      // section - governance - cover image slide up
-      animateEaseImageUp({
-        el: "#esg-section-governance #cover-image .elementor-widget-container",
-        triggerElement: "#esg-section-governance",
-        offset: -100,
-      });
-
-      // section - diversity - cover image slide up
-      animateEaseImageUp({
-        el: "#esg-section-diversity #cover-image .elementor-widget-container",
-        triggerElement: "#esg-section-diversity",
-        offset: -100,
-      });
-
-      // section - cta download
-      animateLineNodeDown({
-        el: "#esg-section-cta-download-line-node",
-        triggerElement: "#esg-section-cta-download-top-border",
-        offset: -100,
-      });
-
-    }
-
-    /* ############# END OF ESG PAGE ############# */
-    
-    /* ############# ESG SUB-PAGE - DIVERSITY  ############# */
-    if (window.matchMedia("(min-width: 1366px)").matches) {
-    
-      // section - diversity - cover image slide up
-      animateEaseImageUp({
-        el: "#esg-sub-diversity-section-gender #cover-image .elementor-widget-container",
-        triggerElement: "#esg-sub-diversity-section-gender",
-        offset: -100,
-      });
-
-      animateLineNodeRight({
-        el: "#esg-sub-diversity-section-ceo-message-line-node",
-        triggerElement: "#esg-sub-diversity-section-ceo-message",
-        offset: -100
-      });
-
-    }
-    /* ############# END OF ESG SUB PAGE ############# */
-
-
-    /* ############# NEWS PAGE ############# */
-    // Media Section
-
-    // Client Dropdown populate options
-    var targetElement = $('#mediaLogo  a.elementor-gallery-title');
-    var optionCount = targetElement.length;
-
-    for (var i = 0; i < optionCount; i++) {
-
-      var value = $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + i + '"]').html();
-      $('#clientFilter').append('<option data-gallery-index="' + i + '">' + value + '</option>');
-
-    };
-
-
-    $('#clientFilter').change( () => {
-
-      // get selected data tag
-      var id = $('#clientFilter').find(":selected").data('gallery-index');
-
-      // replicate the action of existing filter of gallery widget for logo
-      $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
-
-      var haveImages = $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').length;
-
-      if (!haveImages) {
-        $('#mediaImageSectionHeader').css({ 'display': 'none' })
-        $('#mediaImageSectionContent').css({ 'display': 'none' })
-      } else {
-        $('#mediaImageSectionHeader').css({ 'display': 'block' })
-        $('#mediaImageSectionContent').css({ 'display': 'block' })
-
-        // replicate the action of existing filter of gallery widget for image
-        $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
-      }
-
-    });
-
-    function download(source) {
-      const fileName = source.split('/').pop();
-      var el = document.createElement("a");
-      el.setAttribute("href", source);
-      el.setAttribute("download", fileName);
-      document.body.appendChild(el);
-      el.click();
-      el.remove();
-    }
-
-    $('body').on('click','.e-gallery-item',() => {
-      var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
-      alert(url)
-      // download(url)
+    // Hide and Show of tab contents
+    var content = $(this).attr('data-swiper-slide-index')
+    $('.brandContent').css({ 'display': 'none' })
+    $('.brandContent[data-index="'+ content +'"]').css({ 'display': 'block' })
     })
 
-
-    /* ############# END OF NEWS PAGE ############# */
-    $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
-    $('#headerSection .elementor-item,#headerSection .elementor-sub-item').on('click', ()=>{
-      var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
-      if(offset < -60){
-
-        // alert('from scrolled')
-
-        $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromTop')
-        $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromScrolled')
-        
-      }else{
-        // alert('from top')
-
+});
+jQuery(function ($) {
+    $(document).ready(function () {
         $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
-        $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromScrolled')
+        $('#headerSection .elementor-item,#headerSection .elementor-sub-item').on('click', ()=>{
+        var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
+        if(offset < -60){
 
-      }
-    })
+            // alert('from scrolled')
 
-    $('#headerSection .elementor-item,#headerSection .elementor-sub-item').mouseover(function() {
-      var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
-      if(offset > -60 && offset <= 0){
-        $('div.page-content').addClass('offsetTop')
+            $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromTop')
+            $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromScrolled')
+            
+        }else{
+            // alert('from top')
 
-      }else{
-        $('#headerSection').addClass('headerOpen')
+            $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
+            $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').removeClass('fromScrolled')
 
-      }
+        }
+        })
 
-      $('#contactUs').addClass('contactUs')
-      $('#rentCar').addClass('rentCar')
-      $('#headerSection .elementor-item').addClass('hovered')
-      $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
-    })
-    .mouseout(function() {
-      var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
-      if(offset > -60 && offset <= 0){
-        $('div.page-content').removeClass('offsetTop')
+        $('#headerSection .elementor-item,#headerSection .elementor-sub-item').mouseover(function() {
+        var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
+        if(offset > -60 && offset <= 0){
+            $('div.page-content').addClass('offsetTop')
+
+        }else{
+            $('#headerSection').addClass('headerOpen')
+
+        }
+
+        $('#contactUs').addClass('contactUs')
+        $('#rentCar').addClass('rentCar')
+        $('#headerSection .elementor-item').addClass('hovered')
+        $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
+        })
+        .mouseout(function() {
+        var  offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
+        if(offset > -60 && offset <= 0){
+            $('div.page-content').removeClass('offsetTop')
+            $('#headerSection .elementor-item').removeClass('hovered')
+            $('#contactUs').removeClass('contactUs')
+            $('#rentCar').removeClass('rentCar')
+        }
+        
+        $('#headerSection').removeClass('headerOpen')
+        
+        $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+        });
+
+
+        $('.menu-item > a').mouseover( function(){
+            var path = $(this).attr('href') 
+            if (path.indexOf("external") >= 0) {
+            $(this).parent().addClass('external')
+            if($(this).children().length > 0){
+                $(this).children().children().addClass('fa fa-external-link')
+            }else{
+                $(this).append("<span class='sub-arrow'><i class='fa fa-external-link'></i>")
+            }
+            } 
+        }).mouseout(function() {
+        $(this).children().children().removeClass('fa fa-external-link')
+        })
+
+        $('.openSearch').on('click', () => {
+        $('.searchBox').removeClass('hideSearch')
+        $('.searchBox').addClass('showSearch')
+        })
+
+        $('.closeSearch').on('click', () => {
+        $('.searchBox').removeClass('showSearch')
+        $('.searchBox').addClass('hideSearch')
+        })
+
+        $('#headerSection').mouseover( function(){
+        $('#headerSection').addClass('headerHover')
+        $('#headerSection .elementor-item').addClass('hovered')
+        $('#contactUs').addClass('contactUs')
+        $('#rentCar').addClass('rentCar')
+        $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
+        $('.openSearch').css({'color': '#20438C'})
+        }).mouseout(function() {
+        $('#headerSection').removeClass('headerHover')
         $('#headerSection .elementor-item').removeClass('hovered')
         $('#contactUs').removeClass('contactUs')
         $('#rentCar').removeClass('rentCar')
-      }
-      
-      $('#headerSection').removeClass('headerOpen')
-      
-      $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
-    });
-
-    $('body').on('click','.elementor-item-anchor', function(){
-      $('#jumpToTitle span').html($(this).html())
-    })
-
-    $('.menu-item > a').mouseover( function(){
-        var path = $(this).attr('href') 
-        if (path.indexOf("external") >= 0) {
-          $(this).parent().addClass('external')
-          if($(this).children().length > 0){
-            $(this).children().children().addClass('fa fa-external-link')
-          }else{
-            $(this).append("<span class='sub-arrow'><i class='fa fa-external-link'></i>")
-          }
-        } 
-    }).mouseout(function() {
-      $(this).children().children().removeClass('fa fa-external-link')
-    })
-
-    $('.openSearch').on('click', () => {
-      $('.searchBox').removeClass('hideSearch')
-      $('.searchBox').addClass('showSearch')
-    })
-
-    $('.closeSearch').on('click', () => {
-      $('.searchBox').removeClass('showSearch')
-      $('.searchBox').addClass('hideSearch')
-    })
-
-    $('#headerSection').mouseover( function(){
-      $('#headerSection').addClass('headerHover')
-      $('#headerSection .elementor-item').addClass('hovered')
-      $('#contactUs').addClass('contactUs')
-      $('#rentCar').addClass('rentCar')
-      $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
-      $('.openSearch').css({'color': '#20438C'})
-    }).mouseout(function() {
-      $('#headerSection').removeClass('headerHover')
-      $('#headerSection .elementor-item').removeClass('hovered')
-      $('#contactUs').removeClass('contactUs')
-      $('#rentCar').removeClass('rentCar')
-      $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
-      $('.openSearch').css({'color': '#fff'})
+        $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+        $('.openSearch').css({'color': '#fff'})
+        });
     });
 
 
-    /* ############# OUR BRANDS  ############# */
-      $('.swiper-slide-active').addClass('activeBrand')
-
-      $('.swiper-slide').click(function() {
-        $('.swiper-slide').removeClass('activeBrand');
-        $(this).addClass('activeBrand');
-
-        // Hide and Show of tab contents
-        var content = $(this).attr('data-swiper-slide-index')
-        $('.brandContent').css({ 'display': 'none' })
-        $('.brandContent[data-index="'+ content +'"]').css({ 'display': 'block' })
-      })
-    /* ############# OUR BRANDS END ############# */
-
-  });
-  
-  
-  $(document).on('scroll', function(){
-    var scrollTop     = $(window).scrollTop(),
+    $(document).on('scroll', function(){
+        var scrollTop     = $(window).scrollTop(),
           elementOffset = $('div.page-content').offset().top,
           distance      = (elementOffset - scrollTop);
 
-    $('#headerSection').data('scroll', distance )
+        $('#headerSection').data('scroll', distance )
 
-    if(distance < -60){
-      $('#headerSection .elementor-item').addClass('hovered')
-      $('#contactUs').addClass('contactUs')
-      $('#rentCar').addClass('rentCar')
-      $('#headerSection .elementor-icon svg').addClass('scrolledMobileNav')
-      $('.openSearch').css({'color': '#20438C'})
+        if(distance < -60){
+        $('#headerSection .elementor-item').addClass('hovered')
+        $('#contactUs').addClass('contactUs')
+        $('#rentCar').addClass('rentCar')
+        $('#headerSection .elementor-icon svg').addClass('scrolledMobileNav')
+        $('.openSearch').css({'color': '#20438C'})
 
-    }else{
-      $('#headerSection .elementor-item').removeClass('hovered')
-      $('#contactUs').removeClass('contactUs')
-      $('#rentCar').removeClass('rentCar')
-      $('#headerSection .elementor-icon svg').removeClass('scrolledMobileNav')
-      $('.openSearch').css({'color': '#fff'})
-      
-    }
-
-    // if(screen.width <= 768){
-    //   // Switching Jump To
-    //   $('.mobile-nav').css({'display': 'none'})
-    //   $('.jumpTo').css({'display':'block'})
-
-    //   // Change Title of Jump To After Sroll
-    //   anchorIDs = $('.jumpToAnchor  > div > div').map(function() {
-    //     return $(this).attr('id');
-    //   });
-  
-  
-    //   for(i = 0 ; i < anchorIDs.length; i ++){
-    //     var offTop = ($('#'+anchorIDs[i]).offset().top - scrollTop);
-    //     console.log('#'+anchorIDs[i] + ' '+offTop)
-    //     if(offTop <= 80){
-    //       console.log(anchorIDs[i])
-    //       $('#jumpToTitle span').html($('#'+anchorIDs[i]).parent().parent().data('title'))
-    //     }
-
-    //     // if(($('#'+anchorIDs[0]).offset().top - scrollTop) < 0){
-    //     //   $('#jumpToTitle span').html('About Us Overview')
-    //     // }
+        }else{
+        $('#headerSection .elementor-item').removeClass('hovered')
+        $('#contactUs').removeClass('contactUs')
+        $('#rentCar').removeClass('rentCar')
+        $('#headerSection .elementor-icon svg').removeClass('scrolledMobileNav')
+        $('.openSearch').css({'color': '#fff'})
         
-    //   }
-
-    // }
-
-    // if(distance === 0 && screen.width <= 768){
-
-    //   // Switching Jump To
-    //   $('.mobile-nav').css({'display': 'block'})
-    //   $('.jumpTo').css({'display':'none'})
-    // }
-
-    $('div.page-content').removeClass('offsetTop')
-
-  });
-
-  /* ############# CONTACT US PAGE ############# */
-
-  $('#btn-moreBrands').on('click', (e) => {
-    e.preventDefault();
-    console.log('Trigger Load more brands section load');
-  });
-  /* ############# END CONTACT US PAGE ############# */
+        }
 
 
-  
-
+        $('div.page-content').removeClass('offsetTop')
+    });
 });
-
 jQuery(function ($) {
+    $(document).ready(function () {
 
-  // $(document).ready(function () {
-    
-  //   var previousScroll = 0;
+         // Client Dropdown populate options
+        var targetElement = $('#mediaLogo  a.elementor-gallery-title');
+        var optionCount = targetElement.length;
 
-  //   $(window).scroll(function(){
-   
-  //     var sticky = $('.elementor-location-header'),
-  //         scroll = $(this).scrollTop();
+        for (var i = 0; i < optionCount; i++) {
 
-  //     if (scroll >= previousScroll){
-  //       sticky.removeClass('sticky-header');
-  //     } else {
-  //       sticky.addClass('sticky-header');
-  //     } 
+        var value = $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + i + '"]').html();
+        $('#clientFilter').append('<option data-gallery-index="' + i + '">' + value + '</option>');
 
-  //     previousScroll = scroll;
+        };
 
-  //   });
 
-  
-  // });
+        $('#clientFilter').change( () => {
 
-});
+        // get selected data tag
+        var id = $('#clientFilter').find(":selected").data('gallery-index');
+
+        // replicate the action of existing filter of gallery widget for logo
+        $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+
+        var haveImages = $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').length;
+
+        if (!haveImages) {
+            $('#mediaImageSectionHeader').css({ 'display': 'none' })
+            $('#mediaImageSectionContent').css({ 'display': 'none' })
+        } else {
+            $('#mediaImageSectionHeader').css({ 'display': 'block' })
+            $('#mediaImageSectionContent').css({ 'display': 'block' })
+
+            // replicate the action of existing filter of gallery widget for image
+            $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+        }
+
+        });
+
+        function download(source) {
+        const fileName = source.split('/').pop();
+        var el = document.createElement("a");
+        el.setAttribute("href", source);
+        el.setAttribute("download", fileName);
+        document.body.appendChild(el);
+        el.click();
+        el.remove();
+        }
+
+        $('body').on('click','.e-gallery-item',() => {
+        var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
+        alert(url)
+        // download(url)
+        })
+    });
+})

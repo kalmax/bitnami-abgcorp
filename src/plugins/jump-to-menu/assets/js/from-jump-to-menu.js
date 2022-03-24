@@ -68,6 +68,9 @@ jQuery(document).ready(function(){
           jQuery(el).find('.dropdown').css({ "display" : "flex" });
           jQuery(el).find('.links-container').addClass('collapsed');
           jQuery(this).addClass("active");
+          
+
+          jQuery(".elementor-location-header .elementor-widget-mobile-menu").css({'display' : 'none'});
 
           jQuery('html, body').animate({
             scrollTop: jQuery(`#${sectionId}`).offset().top
