@@ -1,25 +1,37 @@
 jQuery(function ($) {
 
-  // $(document).ready(function () {
+  $(document).ready(function () {
     
-  //   var previousScroll = 0;
+    var header = $('.elementor-location-header');
+    var mobileMenu = $('.elementor-widget-mobile-menu');
+    var jumpToMenu = $(".elementor-widget-jump-to-menu");
 
-  //   $(window).scroll(function(){
    
-  //     var sticky = $('.elementor-location-header'),
-  //         scroll = $(this).scrollTop();
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      
+       var lastScrollTop = 0;
 
-  //     if (scroll >= previousScroll){
-  //       sticky.removeClass('sticky-header');
-  //     } else {
-  //       sticky.addClass('sticky-header');
-  //     } 
+      $(window).scroll(function(){
+        
+        if($(this).scrollTop() > header.outerHeight()) {
+          header.addClass("fixed");
+        } else {
+          header.removeClass("fixed");
+        }
 
-  //     previousScroll = scroll;
+        var st = $(this).scrollTop();
+        
+        if (st > lastScrollTop){
+          mobileMenu.hide();
+        } else {
+          mobileMenu.show();
+        }
+        lastScrollTop = st;
 
-  //   });
+      });
 
-  
-  // });
+    }
+
+  });
 
 });
