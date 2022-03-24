@@ -57,12 +57,16 @@ class Jump_To_Menu_Widget extends Widget_Base {
         <div class="from-jump-to-menu-inner">
           <div class="dropdown">
             <label> <?=$post_title;?> Overview </label>
-            <a href="" class="caret" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-caret.svg';?>');"></a>
+            <div class="controls">
+              <a href="" class="caret" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-caret.svg';?>');"></a>
+            </div>
           </div>
           <div class="links-container collapsed">
             <div class="header">
               <div class="page-title"><?=$post_title;?> Overview</div>
-              <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
+              <div class="controls">
+                <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
+              </div>
             </div>
             <div class="label-jump-to"> Jump to: </div>
             <ul class="links">
