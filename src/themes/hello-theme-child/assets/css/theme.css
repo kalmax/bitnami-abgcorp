@@ -207,6 +207,13 @@ h6 {
   color: #000;
 }
 
+.homeNavigation .openSearch svg {
+  filter: brightness(0) invert(1);
+}
+.homeNavigation .searchColored svg {
+  filter: brightness(1) invert(0) !important;
+}
+
 .headerOpen {
   background-color: #fff !important;
   height: 380px;
@@ -283,7 +290,7 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   left: 38.3vw;
   top: 0;
   background-color: #20438C;
-  height: 92px;
+  height: 73px;
   z-index: 1;
 }
 .searchBox > div {
