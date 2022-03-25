@@ -17,7 +17,9 @@ if(!mix.inProduction()) {
     `${resources}/js/esg-diversity.js`,
     `${resources}/js/about-us.js`,
     `${resources}/js/header.js`,
-    `${resources}/js/news.js`
+    `${resources}/js/news.js`,
+    `${resources}/js/contact-us.js`,
+    `${resources}/js/footer.js`
   ], 
     `${themePath}/assets/js/theme.js`
   )
@@ -32,7 +34,9 @@ if(!mix.inProduction()) {
     `${resources}/js/esg-diversity.js`,
     `${resources}/js/about-us.js`,
     `${resources}/js/header.js`,
-    `${resources}/js/news.js`
+    `${resources}/js/news.js`,
+    `${resources}/js/contact-us.js`,
+    `${resources}/js/footer.js`
   ], 
     `${themePath}/assets/js/theme.min.js`
   )
