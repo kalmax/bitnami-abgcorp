@@ -45,6 +45,20 @@ class Posts_Carousel_Widget extends Widget_Base {
   protected function _register_controls() {
 
 
+    // get current list of categories
+    $categories_options = [];
+
+    $categories = get_categories( array(
+      'orderby' => 'name',
+      'order'   => 'ASC',
+      'hide_empty' => false
+    ));
+
+    foreach ( $categories as $category ) {
+      $categories_options[$category->term_id] = $category->name;
+    }
+
+
     $this->start_controls_section(
       'content_section',
       [
@@ -56,7 +70,7 @@ class Posts_Carousel_Widget extends Widget_Base {
     $this->add_responsive_control(
       'from-posts-columns',
       [
-        'label' => __( 'Columns', self::$slug ),
+        'label' => __( 'Items to Show', self::$slug ),
         'type' => Controls_Manager::SELECT,
         'multiple' => false,
         'default' => '3',
@@ -70,6 +84,17 @@ class Posts_Carousel_Widget extends Widget_Base {
         'desktop_default' => '3',
         'tablet_default' => '3',
         'mobile_default' => '1'
+      ]
+    );
+
+    $this->add_control(
+      'from-posts-category',
+      [
+        'label' => __( 'Category', self::$slug ),
+        'type' => Controls_Manager::SELECT,
+        'multiple' => false,
+        'default' => 'rand',
+        'options' => $categories_options
       ]
     );
 
@@ -112,15 +137,12 @@ class Posts_Carousel_Widget extends Widget_Base {
   protected function render() {
 
     $settings = $this->get_settings_for_display();
+    $category_id = $settings['from-posts-category'] ? $settings['from-posts-category'] : false;
     $postsPerPage = $settings['from-posts-columns'];
     $postsPerPageTablet = isset($settings['from-posts-columns_tablet']) ? $settings['from-posts-columns_tablet'] : $postsPerPage;
     $postsPerPageMobile = isset($settings['from-posts-columns_mobile']) ? $settings['from-posts-columns_mobile'] : 1;
     $orderBy = $settings['from-posts-order-by'];
     $order = $settings['from-posts-order'];
-
-    // echo '<pre>';
-    // var_dump($settings);
-    // exit();
 
     $args = array(
       'post_type' => 'post', 
@@ -129,6 +151,16 @@ class Posts_Carousel_Widget extends Widget_Base {
       'orderby' => $orderBy,
       'order' => $order
     );
+
+    if($category_id) {
+      $args['tax_query'] = array(
+        array(
+          'taxonomy' => 'category',
+          'field'    => 'id',
+          'terms'    => $category_id
+        )
+      );
+    }
 
     $postsQuery = new \WP_Query($args);
     $posts = $postsQuery->posts;
