@@ -850,6 +850,22 @@ jQuery(function ($) {
     /** News Article pages must have grey footer */
     if ($('body.single.single-post div.post.category-news-article').length) {
       $('.elementor-location-footer').addClass('grey');
+
+      /** Add Logos */
+      if ($('section[data-id="a844566"] div.elementor-logo-container').length == 0) {
+        $html = `
+        <div class="elementor-logo-container elementor-column-gap-default">
+          <ul style="display: flex;flex-flow: row;list-style-type: none;">
+            <li><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></li>
+            <li><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></li>
+            <li><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></li>
+            <li><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></li>
+          </ul>
+        </div>
+        `;
+
+        $('section[data-id="a844566"]').append($html);
+      }
     }
     /** END SET Footer container background color*/
   });

@@ -130,4 +130,37 @@ ul, ol {
   div.elementor-widget-text-editor p {
     color: #fff !important;
   }
+
+  section[data-id="a844566"] {
+    flex-flow: row;
+    display: flex;
+    justify-content: space-between;
+    width: 86%;
+    margin: auto;
+    .elementor-column-gap-default {
+      flex-flow: column;
+      .elementor-column.elementor-col-50 {
+        width: auto;
+      }
+    }
+    .elementor-logo-container {
+      flex-flow: column;
+      min-width: 45%;
+      ul {
+        display: flex;
+        flex-flow: row;
+        list-style-type: none;
+        li {
+          margin: 0 1rem;
+        }
+      }
+    }
+    
+    div[data-id="3273a9d"] {
+      order: 1;
+    }
+    div[data-id="9c865b9"] {
+      text-align: left;
+    }
+  }
 }

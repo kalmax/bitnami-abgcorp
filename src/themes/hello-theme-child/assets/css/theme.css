@@ -96,6 +96,37 @@ ul, ol {
 .elementor-location-footer.grey div.elementor-widget-text-editor p {
   color: #fff !important;
 }
+.elementor-location-footer.grey section[data-id=a844566] {
+  flex-flow: row;
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  margin: auto;
+}
+.elementor-location-footer.grey section[data-id=a844566] .elementor-column-gap-default {
+  flex-flow: column;
+}
+.elementor-location-footer.grey section[data-id=a844566] .elementor-column-gap-default .elementor-column.elementor-col-50 {
+  width: auto;
+}
+.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container {
+  flex-flow: column;
+  min-width: 45%;
+}
+.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul {
+  display: flex;
+  flex-flow: row;
+  list-style-type: none;
+}
+.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul li {
+  margin: 0 1rem;
+}
+.elementor-location-footer.grey section[data-id=a844566] div[data-id="3273a9d"] {
+  order: 1;
+}
+.elementor-location-footer.grey section[data-id=a844566] div[data-id="9c865b9"] {
+  text-align: left;
+}
 
 @font-face {
   font-family: "Source Sans Pro";
