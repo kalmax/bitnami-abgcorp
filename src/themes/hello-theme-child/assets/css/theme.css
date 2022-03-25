@@ -64,73 +64,6 @@ ul, ol {
   transition: position 10s;
 }
 
-.elementor-location-footer.blue {
-  background-color: #20438C;
-  color: #fff;
-}
-.elementor-location-footer.blue li span, .elementor-location-footer.blue li a, .elementor-location-footer.blue li .elementor-icon-list-icon i.fa-circle {
-  color: #fff !important;
-}
-.elementor-location-footer.blue div.elementor-widget-text-editor p {
-  color: #fff !important;
-}
-
-.elementor-location-footer.green {
-  background-color: #64BC47;
-  color: #fff;
-}
-.elementor-location-footer.green li span, .elementor-location-footer.green li a, .elementor-location-footer.green li .elementor-icon-list-icon i.fa-circle {
-  color: #fff !important;
-}
-.elementor-location-footer.green div.elementor-widget-text-editor p {
-  color: #fff !important;
-}
-
-.elementor-location-footer.grey {
-  background-color: #343434;
-  color: #fff;
-}
-.elementor-location-footer.grey li span, .elementor-location-footer.grey li a, .elementor-location-footer.grey li .elementor-icon-list-icon i.fa-circle {
-  color: #fff !important;
-}
-.elementor-location-footer.grey div.elementor-widget-text-editor p {
-  color: #fff !important;
-}
-.elementor-location-footer.grey section[data-id=a844566] {
-  flex-flow: row;
-  display: flex;
-  justify-content: space-between;
-  width: 86%;
-  margin: auto;
-}
-.elementor-location-footer.grey section[data-id=a844566] .elementor-column-gap-default {
-  flex-flow: column;
-}
-.elementor-location-footer.grey section[data-id=a844566] .elementor-column-gap-default .elementor-column.elementor-col-50 {
-  width: auto;
-}
-.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container {
-  flex-flow: column;
-  min-width: 45%;
-}
-.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul {
-  display: flex;
-  flex-flow: row;
-  list-style-type: none;
-}
-.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul li {
-  margin: 0 1rem;
-}
-.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul li a {
-  border: none;
-}
-.elementor-location-footer.grey section[data-id=a844566] div[data-id="3273a9d"] {
-  order: 1;
-}
-.elementor-location-footer.grey section[data-id=a844566] div[data-id="9c865b9"] {
-  text-align: left;
-}
-
 @font-face {
   font-family: "Source Sans Pro";
   src: url("/wp-content/themes/hello-theme-child/assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
@@ -344,6 +277,122 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   -webkit-animation-delay: 1s;
   animation: hideSearch 0.5s backwards;
   animation-delay: 1s;
+}
+
+.elementor-location-footer.blue {
+  background-color: #20438C;
+  color: #fff;
+}
+.elementor-location-footer.blue li span, .elementor-location-footer.blue li a, .elementor-location-footer.blue li .elementor-icon-list-icon i.fa-circle {
+  color: #fff !important;
+}
+.elementor-location-footer.blue div.elementor-widget-text-editor p {
+  color: #fff !important;
+}
+
+.elementor-location-footer.green {
+  background-color: #64BC47;
+  color: #fff;
+}
+.elementor-location-footer.green li span, .elementor-location-footer.green li a, .elementor-location-footer.green li .elementor-icon-list-icon i.fa-circle {
+  color: #fff !important;
+}
+.elementor-location-footer.green div.elementor-widget-text-editor p {
+  color: #fff !important;
+}
+
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey {
+  background-color: #343434;
+  color: #fff;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey li span, body[data-elementor-device-mode=desktop] .elementor-location-footer.grey li a, body[data-elementor-device-mode=desktop] .elementor-location-footer.grey li .elementor-icon-list-icon i.fa-circle {
+  color: #fff !important;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey div.elementor-widget-text-editor p {
+  color: #fff !important;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey .elementor-logo-mobile-container {
+  display: none;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] {
+  flex-flow: row;
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  margin: auto;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] .elementor-column-gap-default {
+  flex-flow: column;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] .elementor-column-gap-default .elementor-column.elementor-col-50 {
+  width: auto;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container {
+  flex-flow: column;
+  min-width: 45%;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul {
+  display: flex;
+  flex-flow: row;
+  list-style-type: none;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul li {
+  margin: 0 1rem;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul li a {
+  border: none;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] div[data-id="3273a9d"] {
+  order: 1;
+}
+body[data-elementor-device-mode=desktop] .elementor-location-footer.grey section[data-id=a844566] div[data-id="9c865b9"] {
+  text-align: left;
+}
+
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey {
+  background-color: #343434;
+  color: #fff;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey li span, body[data-elementor-device-mode=mobile] .elementor-location-footer.grey li a, body[data-elementor-device-mode=mobile] .elementor-location-footer.grey li .elementor-icon-list-icon i.fa-circle,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey li span,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey li a,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey li .elementor-icon-list-icon i.fa-circle {
+  color: #fff !important;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey div.elementor-widget-text-editor p,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey div.elementor-widget-text-editor p {
+  color: #fff !important;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey .elementor-logo-desktop-container,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .elementor-logo-desktop-container {
+  display: none;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey section[data-id=a844566] .elementor-container,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey section[data-id=a844566] .elementor-container {
+  border-top: 1px solid #fff;
+  padding-top: 1rem;
+  margin: 1rem auto 0 auto;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey .elementor-logo-container ul,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .elementor-logo-container ul {
+  display: flex;
+  flex-flow: row;
+  list-style-type: none;
+  justify-content: center;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey .elementor-logo-container ul li,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .elementor-logo-container ul li {
+  margin: 0 1rem;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey .elementor-logo-container ul li a,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .elementor-logo-container ul li a {
+  border: none;
+}
+body[data-elementor-device-mode=mobile] .elementor-location-footer.grey .elementor-logo-mobile-container,
+body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .elementor-logo-mobile-container {
+  padding-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 @-webkit-keyframes a_width_left_to_right {
@@ -788,6 +837,10 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 #mediaSection .elementor-gallery__titles-container {
   display: none;
+}
+
+.jet-smart-filters-select .jet-select.selectdiv .jet-select__control {
+  height: 50px;
 }
 
 .selectdiv {
