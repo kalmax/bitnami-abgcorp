@@ -121,6 +121,9 @@ ul, ol {
 .elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul li {
   margin: 0 1rem;
 }
+.elementor-location-footer.grey section[data-id=a844566] .elementor-logo-container ul li a {
+  border: none;
+}
 .elementor-location-footer.grey section[data-id=a844566] div[data-id="3273a9d"] {
   order: 1;
 }

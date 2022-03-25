@@ -856,10 +856,10 @@ jQuery(function ($) {
         $html = `
         <div class="elementor-logo-container elementor-column-gap-default">
           <ul style="display: flex;flex-flow: row;list-style-type: none;">
-            <li><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></li>
-            <li><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></li>
-            <li><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></li>
-            <li><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></li>
+            <li><a href="https://www.avis.com/en/customer-service" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></a></li>
+            <li><a href="https://www.budget.com/en/customer-care" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></a></li>
+            <li><a href="https://support.zipcar.com/hc/en-us" target="_blank"><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></a></li>
+            <li><a href="https://www.paylesscar.com/en/customer-service/contact-us" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></a></li>
           </ul>
         </div>
         `;
