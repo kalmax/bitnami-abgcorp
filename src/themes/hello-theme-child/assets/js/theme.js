@@ -733,59 +733,61 @@ jQuery(function ($) {
     });
 });
 jQuery(function ($) {
-    $(document).ready(function () {
+  $(document).ready(function () {
 
-         // Client Dropdown populate options
-        var targetElement = $('#mediaLogo  a.elementor-gallery-title');
-        var optionCount = targetElement.length;
+    // Client Dropdown populate options
+    var targetElement = $('#mediaLogo  a.elementor-gallery-title');
+    var optionCount = targetElement.length;
 
-        for (var i = 0; i < optionCount; i++) {
-
-        var value = $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + i + '"]').html();
-        $('#clientFilter').append('<option data-gallery-index="' + i + '">' + value + '</option>');
-
-        };
+    for (var i = 0; i < optionCount; i++) {
+      var value = $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + i + '"]').html();
+      $('#clientFilter').append('<option data-gallery-index="' + i + '">' + value + '</option>');
+    };
 
 
-        $('#clientFilter').change( () => {
+    $('#clientFilter').change( () => {
 
-        // get selected data tag
-        var id = $('#clientFilter').find(":selected").data('gallery-index');
+      // get selected data tag
+      var id = $('#clientFilter').find(":selected").data('gallery-index');
 
-        // replicate the action of existing filter of gallery widget for logo
-        $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+      // replicate the action of existing filter of gallery widget for logo
+      $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
 
-        var haveImages = $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').length;
+      var haveImages = $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').length;
 
-        if (!haveImages) {
-            $('#mediaImageSectionHeader').css({ 'display': 'none' })
-            $('#mediaImageSectionContent').css({ 'display': 'none' })
-        } else {
-            $('#mediaImageSectionHeader').css({ 'display': 'block' })
-            $('#mediaImageSectionContent').css({ 'display': 'block' })
+      if (!haveImages) {
+          $('#mediaImageSectionHeader').css({ 'display': 'none' })
+          $('#mediaImageSectionContent').css({ 'display': 'none' })
+      } else {
+          $('#mediaImageSectionHeader').css({ 'display': 'block' })
+          $('#mediaImageSectionContent').css({ 'display': 'block' })
 
-            // replicate the action of existing filter of gallery widget for image
-            $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
-        }
+          // replicate the action of existing filter of gallery widget for image
+          $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+      }
 
-        });
-
-        function download(source) {
-        const fileName = source.split('/').pop();
-        var el = document.createElement("a");
-        el.setAttribute("href", source);
-        el.setAttribute("download", fileName);
-        document.body.appendChild(el);
-        el.click();
-        el.remove();
-        }
-
-        $('body').on('click','.e-gallery-item',() => {
-        var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
-        alert(url)
-        // download(url)
-        })
     });
+
+    function download(source) {
+      const fileName = source.split('/').pop();
+      var el = document.createElement("a");
+      el.setAttribute("href", source);
+      el.setAttribute("download", fileName);
+      document.body.appendChild(el);
+      el.click();
+      el.remove();
+    }
+
+    $('body').on('click','.e-gallery-item',() => {
+      var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
+      alert(url)
+      // download(url)
+    });
+
+    if ($('.jet-select').length) {
+      $('.jet-select').addClass('selectdiv');
+    }
+  });
 })
 jQuery(function ($) {
   $(document).ready(function () {
@@ -850,23 +852,51 @@ jQuery(function ($) {
     /** News Article pages must have grey footer */
     if ($('body.single.single-post div.post.category-news-article').length) {
       $('.elementor-location-footer').addClass('grey');
-
-      /** Add Logos */
-      if ($('section[data-id="a844566"] div.elementor-logo-container').length == 0) {
-        $html = `
-        <div class="elementor-logo-container elementor-column-gap-default">
-          <ul style="display: flex;flex-flow: row;list-style-type: none;">
-            <li><a href="https://www.avis.com/en/customer-service" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></a></li>
-            <li><a href="https://www.budget.com/en/customer-care" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></a></li>
-            <li><a href="https://support.zipcar.com/hc/en-us" target="_blank"><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></a></li>
-            <li><a href="https://www.paylesscar.com/en/customer-service/contact-us" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></a></li>
-          </ul>
-        </div>
-        `;
-
-        $('section[data-id="a844566"]').append($html);
-      }
     }
+    addLogoContainer();
     /** END SET Footer container background color*/
   });
+
+  function addLogoContainer() {
+    if ($('body.single.single-post div.post.category-news-article').length) {
+      /** Add Logos */
+      if ($('body[data-elementor-device-mode="desktop"]').length) {
+        if ($('section[data-id="a844566"] div.elementor-logo-desktop-container').length == 0) {
+          console.log('THE LOGO DESKTOP added');
+          $html = `
+            <div class="elementor-logo-container elementor-logo-desktop-container elementor-column-gap-default">
+              <ul style="display: flex;flex-flow: row;list-style-type: none;">
+                <li><a href="https://www.avis.com/en/customer-service" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></a></li>
+                <li><a href="https://www.budget.com/en/customer-care" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></a></li>
+                <li><a href="https://support.zipcar.com/hc/en-us" target="_blank"><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></a></li>
+                <li><a href="https://www.paylesscar.com/en/customer-service/contact-us" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></a></li>
+              </ul>
+            </div>
+          `;
+  
+          $('section[data-id="a844566"]').append($html);
+        }
+      }
+      if ($('body[data-elementor-device-mode="mobile"]').length || $('body[data-elementor-device-mode="tablet"]').length) {
+        if ($('div.elementor-logo-mobile-container').length == 0) {
+          console.log('THE LOGO MOBILE added');
+          $html = `
+            <div class="elementor-logo-container elementor-logo-mobile-container elementor-column-gap-default">
+              <ul style="display: flex;flex-flow: row;list-style-type: none;">
+                <li><a href="https://www.avis.com/en/customer-service" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></a></li>
+                <li><a href="https://www.budget.com/en/customer-care" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></a></li>
+                <li><a href="https://support.zipcar.com/hc/en-us" target="_blank"><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></a></li>
+                <li><a href="https://www.paylesscar.com/en/customer-service/contact-us" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></a></li>
+              </ul>
+            </div>
+          `;
+          $($html).insertAfter('section[data-id="a844566"]');
+        }
+      }
+    }
+  }
+
+  $( window ).resize(function() {
+    addLogoContainer();
+  })
 });

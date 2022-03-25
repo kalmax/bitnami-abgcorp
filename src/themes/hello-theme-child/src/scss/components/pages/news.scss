@@ -3,7 +3,9 @@
     display: none;
   }
 }
-
+.jet-smart-filters-select .jet-select.selectdiv .jet-select__control {
+  height: 50px;
+}
 .selectdiv {
   position: relative;
   float: left;
