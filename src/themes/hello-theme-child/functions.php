@@ -98,19 +98,20 @@ add_action('elementor/query/my_query_by_post_types', function ($query) {
 function search_filter($query) {
 	if ( ! is_admin() && $query->is_main_query() ) {
 		if ( $query->is_search ) {
-			$parent_term_id = 121; // term id of parent term
-			$taxonomies = array( 'category' );
-			$args = array( 'child_of'      => $parent_term_id	); 
+			// Should categories be used to restrict search results?
+			// $parent_term_id = 121; // term id of parent term
+			// $taxonomies = array( 'category' );
+			// $args = array( 'child_of'      => $parent_term_id	); 
 
-			$all_categories = get_terms($taxonomies, $args);
-			$categsIds = array(114, 121);
-			foreach($all_categories as $categ) {
-				$categsIds[] = $categ->term_id;
-			}
+			// $all_categories = get_terms($taxonomies, $args);
+			// $categsIds = array(114, 121);
+			// foreach($all_categories as $categ) {
+			// 	$categsIds[] = $categ->term_id;
+			// }
 			
 			$query->set( 'post_type', 'post' );
-			$query->set( 'category__in', $categsIds);
 			$query->set( 'tag', 'press-release' );
+			// $query->set( 'category__in', $categsIds);
 		}
 	}
 }
