@@ -1,6 +1,5 @@
 jQuery(function ($) {
   $(document).ready(function () {
-    console.log("footer.js");
 
     /** SET Footer container background color */
     /** ESG pages (with subpages) must have green footer */

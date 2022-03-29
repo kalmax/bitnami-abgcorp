@@ -1,5 +1,5 @@
  jQuery(function ($) {
-  console.log("animation-global.js");
+
   let controller = new ScrollMagic.Controller();
 
   $(document).ready(function () {
@@ -64,11 +64,7 @@
 });
 
 jQuery(function ($) {
-  console.log("theme.js"); 
-});
-
-jQuery(function ($) {
-  console.log("header-scroll.js");
+  
   $(document).ready(function () {
     
     var header = $('.elementor-location-header');
@@ -105,7 +101,7 @@ jQuery(function ($) {
 
 });
  jQuery(function ($) {
-  console.log("home.js");
+
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -296,7 +292,7 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-  console.log("esg.js");
+ 
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -403,7 +399,7 @@ jQuery(function ($) {
 
 
 jQuery(function ($) {
-  console.log("esg-diversity.js");
+
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -791,7 +787,6 @@ jQuery(function ($) {
 })
 jQuery(function ($) {
   $(document).ready(function () {
-    console.log("contact-us.js");
 
     /* ############# CONTACT US PAGE ############# */
 
@@ -834,7 +829,6 @@ jQuery(function ($) {
 });
 jQuery(function ($) {
   $(document).ready(function () {
-    console.log("footer.js");
 
     /** SET Footer container background color */
     /** ESG pages (with subpages) must have green footer */

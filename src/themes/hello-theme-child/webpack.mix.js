@@ -10,7 +10,6 @@ if(!mix.inProduction()) {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css`).sourceMaps();
   mix.scripts([
     `${resources}/js/animations-global.js`,
-    `${resources}/js/theme.js`,
     `${resources}/js/header-scroll.js`,
     `${resources}/js/home.js`,
     `${resources}/js/esg.js`,
@@ -27,7 +26,6 @@ if(!mix.inProduction()) {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css/theme.min.css`).sourceMaps();
   mix.scripts([
     `${resources}/js/animations-global.js`,
-    `${resources}/js/theme.js`,
     `${resources}/js/header-scroll.js`,
     `${resources}/js/home.js`,
     `${resources}/js/esg.js`,

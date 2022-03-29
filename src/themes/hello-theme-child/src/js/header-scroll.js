@@ -1,5 +1,5 @@
 jQuery(function ($) {
-  console.log("header-scroll.js");
+  
   $(document).ready(function () {
     
     var header = $('.elementor-location-header');

@@ -1,6 +1,5 @@
 jQuery(function ($) {
   $(document).ready(function () {
-    console.log("contact-us.js");
 
     /* ############# CONTACT US PAGE ############# */
 
