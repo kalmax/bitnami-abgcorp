@@ -65,6 +65,15 @@ class From_Tabs_Widget extends Widget_Base {
     );
 
     $repeater->add_control(
+      'excerpt', [
+        'label' => esc_html__( 'Excerpt', self::$slug ),
+        'type' => \Elementor\Controls_Manager::WYSIWYG,
+        'default' => esc_html__( 'Excerpt' , self::$slug ),
+        'show_label' => false,
+      ]
+    );
+
+    $repeater->add_control(
       'content', [
         'label' => esc_html__( 'Content', self::$slug ),
         'type' => \Elementor\Controls_Manager::WYSIWYG,
@@ -132,7 +141,7 @@ class From_Tabs_Widget extends Widget_Base {
                 </div>
                 <div class="col col-details">
                   <h3 class="title"> <?= $tab['title'];?> </h3>
-                  <div class="excerpt"> <?= $tab['content'];?> </div>
+                  <div class="content"> <?= $tab['content'];?></div>
                 </div>
               </div>
               <?php $tabItemId++;?>
@@ -148,7 +157,11 @@ class From_Tabs_Widget extends Widget_Base {
               <div class="tab-contents-mobile-item">
                 <h3 class="title"> <?= $tab['title'];?> </h3>
                 <div class="thumbnail" style="background-image:url(<?= $tab['image']['url']; ?>)"></div>
-                <div class="excerpt"> <?= $tab['content'];?> </div>
+                <div class="excerpt"> <?= $tab['excerpt'];?> </div>
+                <?php if($tab['content']) :?>
+                  <div class="content collapsed"> <?= $tab['content'];?> </div>
+                  <a href="#" class="read-more">Read More</a>
+                <?php endif;?>
               </div>
             <?php endforeach;?>
           <?php endif; ?>
