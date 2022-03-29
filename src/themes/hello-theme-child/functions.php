@@ -99,12 +99,12 @@ function search_filter($query) {
 	if ( ! is_admin() && $query->is_main_query() ) {
 		if ( $query->is_search ) {
 			// Should categories be used to restrict search results?
-			// $parent_term_id = 121; // term id of parent term
+			// $parent_term_id = 133; // term id of parent term (News & Media)
 			// $taxonomies = array( 'category' );
 			// $args = array( 'child_of'      => $parent_term_id	); 
 
 			// $all_categories = get_terms($taxonomies, $args);
-			// $categsIds = array(114, 121);
+			// $categsIds = array(114, 133);
 			// foreach($all_categories as $categ) {
 			// 	$categsIds[] = $categ->term_id;
 			// }

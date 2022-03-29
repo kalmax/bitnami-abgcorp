@@ -862,7 +862,6 @@ jQuery(function ($) {
       /** Add Logos */
       if ($('body[data-elementor-device-mode="desktop"]').length) {
         if ($('section[data-id="a844566"] div.elementor-logo-desktop-container').length == 0) {
-          console.log('THE LOGO DESKTOP added');
           $html = `
             <div class="elementor-logo-container elementor-logo-desktop-container elementor-column-gap-default">
               <ul style="display: flex;flex-flow: row;list-style-type: none;">
@@ -879,7 +878,6 @@ jQuery(function ($) {
       }
       if ($('body[data-elementor-device-mode="mobile"]').length || $('body[data-elementor-device-mode="tablet"]').length) {
         if ($('div.elementor-logo-mobile-container').length == 0) {
-          console.log('THE LOGO MOBILE added');
           $html = `
             <div class="elementor-logo-container elementor-logo-mobile-container elementor-column-gap-default">
               <ul style="display: flex;flex-flow: row;list-style-type: none;">
