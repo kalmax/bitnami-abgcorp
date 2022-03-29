@@ -99,19 +99,19 @@ function search_filter($query) {
 	if ( ! is_admin() && $query->is_main_query() ) {
 		if ( $query->is_search ) {
 			// Should categories be used to restrict search results?
-			// $parent_term_id = 133; // term id of parent term (News & Media)
-			// $taxonomies = array( 'category' );
-			// $args = array( 'child_of'      => $parent_term_id	); 
+			$parent_term_id = 125; // term id of parent term (Awards)
+			$taxonomies = array( 'category' );
+			$args = array( 'child_of'      => $parent_term_id	); 
 
-			// $all_categories = get_terms($taxonomies, $args);
-			// $categsIds = array(114, 133);
-			// foreach($all_categories as $categ) {
-			// 	$categsIds[] = $categ->term_id;
-			// }
+			$all_categories = get_terms($taxonomies, $args);
+			$categsIds = array(125);
+			foreach($all_categories as $categ) {
+				$categsIds[] = $categ->term_id;
+			}
 			
-			$query->set( 'post_type', 'post' );
-			$query->set( 'tag', 'press-release' );
-			// $query->set( 'category__in', $categsIds);
+			$query->set( 'post_type', ['post', 'page'] );
+			// $query->set( 'tag', 'press-release' );
+			$query->set( 'category__not_in', $categsIds);
 		}
 	}
 }
