@@ -1,5 +1,5 @@
  jQuery(function ($) {
-  console.log("animation-global.js");
+
   let controller = new ScrollMagic.Controller();
 
   $(document).ready(function () {
@@ -64,71 +64,7 @@
 });
 
 jQuery(function ($) {
-  console.log("theme.js");
-
-  /* ############# CONTACT US PAGE ############# */
-
-  $('#btn-moreBrands').on('click', (e) => {
-    e.preventDefault();
-    console.log('Trigger Load more brands section load');
-  });
-
-  var filteredImages = $('#brands-gallery .gallery-item');
-
-  //Edit the links HERE
-  var links = [
-    'https://www.avis.com/en/customer-service',
-    'https://www.budget.com/en/customer-care',
-    'https://www.budgettruck.com/contact-us',
-    'https://www.paylesscar.com/en/customer-service/contact-us',
-    'https://support.zipcar.com/hc/en-us',
-    'https://www.maggiore.it/en/if-you-need-help/online-assistance/',
-    'https://www.francecars.fr/contact-s220.html',
-    'https://www.apexrentals.co.nz/customer-support',
-    'https://www.amicoblu.it/en/if-you-need-help/online-assistance/',
-    'https://support.flexcar.com/hc/en-us',
-    'https://www.morinirent.com/en/booking-customer/'
-  ];
-
-  var _loope = function _loope(i) {
-    filteredImages[i].addEventListener('click', function () {
-      // location = links[i];
-      window.open(links[i]);
-    });
-  }
-
-  for (var i = 0; i < filteredImages.length; i++) {
-    console.log('IMAGES TO LINK');
-    _loope(i);
-  }
-
-  /* ############# END CONTACT US PAGE ############# */
-
-
-  /** SET Footer container background color */
-  /** ESG pages (with subpages?) must have green footer */
-  $('.elementor-location-footer').removeClass('grey');
-  $('.elementor-location-footer').removeClass('green');
-  $('.elementor-location-footer').removeClass('blue');
-
-  if ($('body.page.page-id-5730, body.page.page-child.parent-pageid-5730').length) {
-    $('.elementor-location-footer').addClass('green');
-  }
-  /** Contact US pages must have blue footer */
-  if ($('body.page.page-id-7377').length) {
-    $('.elementor-location-footer').addClass('blue');
-  }
-  /** News Article pages must have grey footer */
-  if ($('body.single.single-post div.post.category-news-article').length) {
-    $('.elementor-location-footer').addClass('grey');
-  }
-  /** END SET Footer container background color*/
-
- 
-});
-
-jQuery(function ($) {
-  console.log("header-scroll.js");
+  
   $(document).ready(function () {
     
     var header = $('.elementor-location-header');
@@ -165,7 +101,7 @@ jQuery(function ($) {
 
 });
  jQuery(function ($) {
-  console.log("home.js");
+
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -356,7 +292,7 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-  console.log("esg.js");
+ 
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -463,7 +399,7 @@ jQuery(function ($) {
 
 
 jQuery(function ($) {
-  console.log("esg-diversity.js");
+
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
@@ -799,57 +735,166 @@ jQuery(function ($) {
     });
 });
 jQuery(function ($) {
-    $(document).ready(function () {
+  $(document).ready(function () {
 
-         // Client Dropdown populate options
-        var targetElement = $('#mediaLogo  a.elementor-gallery-title');
-        var optionCount = targetElement.length;
+    // Client Dropdown populate options
+    var targetElement = $('#mediaLogo  a.elementor-gallery-title');
+    var optionCount = targetElement.length;
 
-        for (var i = 0; i < optionCount; i++) {
-
-        var value = $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + i + '"]').html();
-        $('#clientFilter').append('<option data-gallery-index="' + i + '">' + value + '</option>');
-
-        };
+    for (var i = 0; i < optionCount; i++) {
+      var value = $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + i + '"]').html();
+      $('#clientFilter').append('<option data-gallery-index="' + i + '">' + value + '</option>');
+    };
 
 
-        $('#clientFilter').change( () => {
+    $('#clientFilter').change( () => {
 
-        // get selected data tag
-        var id = $('#clientFilter').find(":selected").data('gallery-index');
+      // get selected data tag
+      var id = $('#clientFilter').find(":selected").data('gallery-index');
 
-        // replicate the action of existing filter of gallery widget for logo
-        $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+      // replicate the action of existing filter of gallery widget for logo
+      $('#mediaLogo a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
 
-        var haveImages = $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').length;
+      var haveImages = $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').length;
 
-        if (!haveImages) {
-            $('#mediaImageSectionHeader').css({ 'display': 'none' })
-            $('#mediaImageSectionContent').css({ 'display': 'none' })
-        } else {
-            $('#mediaImageSectionHeader').css({ 'display': 'block' })
-            $('#mediaImageSectionContent').css({ 'display': 'block' })
+      if (!haveImages) {
+          $('#mediaImageSectionHeader').css({ 'display': 'none' })
+          $('#mediaImageSectionContent').css({ 'display': 'none' })
+      } else {
+          $('#mediaImageSectionHeader').css({ 'display': 'block' })
+          $('#mediaImageSectionContent').css({ 'display': 'block' })
 
-            // replicate the action of existing filter of gallery widget for image
-            $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
-        }
+          // replicate the action of existing filter of gallery widget for image
+          $('#mediaImage a.elementor-gallery-title[data-gallery-index="' + id + '"]').trigger("click");
+      }
 
-        });
-
-        function download(source) {
-        const fileName = source.split('/').pop();
-        var el = document.createElement("a");
-        el.setAttribute("href", source);
-        el.setAttribute("download", fileName);
-        document.body.appendChild(el);
-        el.click();
-        el.remove();
-        }
-
-        $('body').on('click','.e-gallery-item',() => {
-        var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
-        alert(url)
-        // download(url)
-        })
     });
+
+    function download(source) {
+      const fileName = source.split('/').pop();
+      var el = document.createElement("a");
+      el.setAttribute("href", source);
+      el.setAttribute("download", fileName);
+      document.body.appendChild(el);
+      el.click();
+      el.remove();
+    }
+
+    $('body').on('click','.e-gallery-item',() => {
+      var url = $(this).find('.elementor-gallery-item__image').data('thumbnail');
+      alert(url)
+      // download(url)
+    });
+
+    if ($('.jet-select').length) {
+      $('.jet-select').addClass('selectdiv');
+    }
+  });
 })
+jQuery(function ($) {
+  $(document).ready(function () {
+
+    /* ############# CONTACT US PAGE ############# */
+
+    $('#btn-moreBrands').on('click', (e) => {
+      e.preventDefault();
+      console.log('Trigger Load more brands section load');
+    });
+
+    var filteredImages = $('#brands-gallery .gallery-item');
+
+    //Edit the links HERE
+    var links = [
+      'https://www.avis.com/en/customer-service',
+      'https://www.budget.com/en/customer-care',
+      'https://www.budgettruck.com/contact-us',
+      'https://www.paylesscar.com/en/customer-service/contact-us',
+      'https://support.zipcar.com/hc/en-us',
+      'https://www.maggiore.it/en/if-you-need-help/online-assistance/',
+      'https://www.francecars.fr/contact-s220.html',
+      'https://www.apexrentals.co.nz/customer-support',
+      'https://www.amicoblu.it/en/if-you-need-help/online-assistance/',
+      'https://support.flexcar.com/hc/en-us',
+      'https://www.morinirent.com/en/booking-customer/'
+    ];
+
+    var _loope = function _loope(i) {
+      filteredImages[i].addEventListener('click', function () {
+        // location = links[i];
+        window.open(links[i]);
+      });
+    }
+
+    for (var i = 0; i < filteredImages.length; i++) {
+      console.log('IMAGES TO LINK');
+      _loope(i);
+    }
+
+    /* ############# END CONTACT US PAGE ############# */
+  });
+});
+jQuery(function ($) {
+  $(document).ready(function () {
+
+    /** SET Footer container background color */
+    /** ESG pages (with subpages) must have green footer */
+    $('.elementor-location-footer').removeClass('grey');
+    $('.elementor-location-footer').removeClass('green');
+    $('.elementor-location-footer').removeClass('blue');
+
+    if ($('body.page.page-id-5730, body.page.page-child.parent-pageid-5730').length) {
+      $('.elementor-location-footer').addClass('green');
+    }
+    /** Contact US pages must have blue footer */
+    if ($('body.page.page-id-7377').length) {
+      $('.elementor-location-footer').addClass('blue');
+    }
+    /** News Article pages must have grey footer */
+    if ($('body.single.single-post div.post.category-news-article').length) {
+      $('.elementor-location-footer').addClass('grey');
+    }
+    addLogoContainer();
+    /** END SET Footer container background color*/
+  });
+
+  function addLogoContainer() {
+    if ($('body.single.single-post div.post.category-news-article').length) {
+      /** Add Logos */
+      if ($('body[data-elementor-device-mode="desktop"]').length) {
+        if ($('section[data-id="a844566"] div.elementor-logo-desktop-container').length == 0) {
+          $html = `
+            <div class="elementor-logo-container elementor-logo-desktop-container elementor-column-gap-default">
+              <ul style="display: flex;flex-flow: row;list-style-type: none;">
+                <li><a href="https://www.avis.com/en/customer-service" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></a></li>
+                <li><a href="https://www.budget.com/en/customer-care" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></a></li>
+                <li><a href="https://support.zipcar.com/hc/en-us" target="_blank"><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></a></li>
+                <li><a href="https://www.paylesscar.com/en/customer-service/contact-us" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></a></li>
+              </ul>
+            </div>
+          `;
+  
+          $('section[data-id="a844566"]').append($html);
+        }
+      }
+      if ($('body[data-elementor-device-mode="mobile"]').length || $('body[data-elementor-device-mode="tablet"]').length) {
+        if ($('div.elementor-logo-mobile-container').length == 0) {
+          $html = `
+            <div class="elementor-logo-container elementor-logo-mobile-container elementor-column-gap-default">
+              <ul style="display: flex;flex-flow: row;list-style-type: none;">
+                <li><a href="https://www.avis.com/en/customer-service" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Avis_Logo.png" /></a></li>
+                <li><a href="https://www.budget.com/en/customer-care" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Budget_Logo.png" /></a></li>
+                <li><a href="https://support.zipcar.com/hc/en-us" target="_blank"><img src="/wp-content/uploads/2022/01/Zipcar_Logo.png" /></a></li>
+                <li><a href="https://www.paylesscar.com/en/customer-service/contact-us" target="_blank"><img src="http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/03/Payless_Logo.png" /></a></li>
+              </ul>
+            </div>
+          `;
+          $($html).insertAfter('section[data-id="a844566"]');
+        }
+      }
+    }
+  }
+
+  $( window ).resize(function() {
+    addLogoContainer();
+  })
+});

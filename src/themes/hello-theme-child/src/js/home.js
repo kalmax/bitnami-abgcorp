@@ -1,5 +1,5 @@
  jQuery(function ($) {
-  console.log("home.js");
+
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();

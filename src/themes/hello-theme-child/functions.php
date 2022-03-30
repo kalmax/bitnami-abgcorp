@@ -16,7 +16,6 @@
  * @return boolean
  */
 function hello_elementor_child_is_local(){
-
 	if ( 'http://localhost' === get_site_url() ) {
 		$is_local = true;
 	}
@@ -96,6 +95,28 @@ add_action('elementor/query/my_query_by_post_types', function ($query) {
 	$query->set('category_name', 'news');
 });
 
+function search_filter($query) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+		if ( $query->is_search ) {
+			// Should categories be used to restrict search results?
+			$parent_term_id = 125; // term id of parent term (Awards)
+			$taxonomies = array( 'category' );
+			$args = array( 'child_of'      => $parent_term_id	); 
+
+			$all_categories = get_terms($taxonomies, $args);
+			$categsIds = array(125);
+			foreach($all_categories as $categ) {
+				$categsIds[] = $categ->term_id;
+			}
+			
+			$query->set( 'post_type', ['post', 'page'] );
+			// $query->set( 'tag', 'press-release' );
+			$query->set( 'category__not_in', $categsIds);
+		}
+	}
+}
+add_action( 'pre_get_posts', 'search_filter' );
+
 //Custom Theme Settings
 add_action('admin_menu', 'add_social_media_links_interface');
 
@@ -125,6 +146,7 @@ function edit_social_links() {
   </div>
 <?php
 }
+
 
 // function my_query_by_post_types( $query ){
 // 	$query->set( 'category_name', 'partnerships');

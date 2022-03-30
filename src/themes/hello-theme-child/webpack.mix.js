@@ -10,14 +10,15 @@ if(!mix.inProduction()) {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css`).sourceMaps();
   mix.scripts([
     `${resources}/js/animations-global.js`,
-    `${resources}/js/theme.js`,
     `${resources}/js/header-scroll.js`,
     `${resources}/js/home.js`,
     `${resources}/js/esg.js`,
     `${resources}/js/esg-diversity.js`,
     `${resources}/js/about-us.js`,
     `${resources}/js/header.js`,
-    `${resources}/js/news.js`
+    `${resources}/js/news.js`,
+    `${resources}/js/contact-us.js`,
+    `${resources}/js/footer.js`
   ], 
     `${themePath}/assets/js/theme.js`
   )
@@ -25,14 +26,15 @@ if(!mix.inProduction()) {
   mix.sass(`${resources}/scss/theme.scss`, `${themePath}/assets/css/theme.min.css`).sourceMaps();
   mix.scripts([
     `${resources}/js/animations-global.js`,
-    `${resources}/js/theme.js`,
     `${resources}/js/header-scroll.js`,
     `${resources}/js/home.js`,
     `${resources}/js/esg.js`,
     `${resources}/js/esg-diversity.js`,
     `${resources}/js/about-us.js`,
     `${resources}/js/header.js`,
-    `${resources}/js/news.js`
+    `${resources}/js/news.js`,
+    `${resources}/js/contact-us.js`,
+    `${resources}/js/footer.js`
   ], 
     `${themePath}/assets/js/theme.min.js`
   )

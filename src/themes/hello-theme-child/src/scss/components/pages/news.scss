@@ -3,7 +3,13 @@
     display: none;
   }
 }
-
+.jet-smart-filters-select .jet-select.selectdiv {
+  max-width: 100% !important;
+  min-width: 150px;
+}
+.jet-smart-filters-select .jet-select.selectdiv .jet-select__control {
+  height: 50px;
+}
 .selectdiv {
   position: relative;
   float: left;
