@@ -604,6 +604,23 @@ jQuery(function ($) {
 
 });
 jQuery(function ($) {
+// Get the menu instance
+   // Ultimately smartmenus is expecting a <ul> input, so you need to target the <ul> of the drop-down you're trying to affect. Below is how it best work for my menu. #desktopMenu is the unique name I gave the menu in the Elementor widget options.
+   var $menu = $('#headerSection .elementor-nav-menu:first');
+
+   // Get rid of the existing menu
+   $menu.smartmenus('destroy');
+ 
+   // Re-instantiate the new menu, with no delay settings
+   $menu.smartmenus( {
+       subIndicatorsText: '',
+       subIndicatorsPos: 'append',
+       subMenusMaxWidth: '1000px',
+       hideFunction: null,
+       hideDuration: 0,
+       hideTimeout: 0,
+   });
+
     $(document).ready(function () {
         $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
         $('#headerSection .elementor-item,#headerSection .elementor-sub-item').on('click', () => {
