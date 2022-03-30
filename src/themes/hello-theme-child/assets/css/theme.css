@@ -931,26 +931,24 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 .parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch .elementor-background-overlay {
   background-position: center center;
 }
-
 @media (min-width: 1025px) and (max-width: 1366px) {
-  .esg-column-content .elementor-widget-wrap {
+  .parent-pageid-5730 .esg-column-content .elementor-widget-wrap {
     padding-top: 0 !important;
   }
-  .esg-column-content .elementor-heading-title {
+  .parent-pageid-5730 .esg-column-content .elementor-heading-title {
     font-size: 30px !important;
     line-height: 42px !important;
   }
-  .esg-column-content .elementor-widget-text-editor {
+  .parent-pageid-5730 .esg-column-content .elementor-widget-text-editor {
     font-size: 16px !important;
     line-height: 26px !important;
   }
-  .esg-column-content .btn-from {
+  .parent-pageid-5730 .esg-column-content .btn-from {
     font-size: 1rem;
     line-height: 1.4rem;
   }
 }
-
-.elementor-widget-from-button .btn-from {
+.parent-pageid-5730 .elementor-widget-from-button .btn-from {
   font-weight: 600;
   font-family: "Source Sans Pro", Sans-serif;
   font-size: 1.14rem;
@@ -958,12 +956,17 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
 .parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container {
   font-family: "Source Sans Pro", Sans-serif;
   font-size: 1.3125rem;
   line-height: 28px;
   font-weight: 300;
+}
+.parent-pageid-5730 .elementor-element-populated ul {
+  font-family: "Source Sans Pro", Sans-serif;
+  font-size: 1.15rem;
+  line-height: 2.4;
+  font-weight: 600;
 }
 
 #brands-gallery .gallery {

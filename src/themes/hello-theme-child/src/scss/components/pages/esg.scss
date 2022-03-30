@@ -1,55 +1,65 @@
-.parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch {
-  max-height: 400px;
-  .elementor-background-overlay {
-    background-position: center center;
+.parent-pageid-5730 {
+
+  .elementor-section.elementor-section-full_width.elementor-section-items-stretch {
+    max-height: 400px;
+    .elementor-background-overlay {
+      background-position: center center;
+    }
   }
-}
 
-.esg-column-content {
+  .esg-column-content {
 
-  @media (min-width: 1025px) and (max-width: 1366px) {
+    @media (min-width: 1025px) and (max-width: 1366px) {
 
-    .elementor-widget-wrap {
-      padding-top: 0 !important;
+      .elementor-widget-wrap {
+        padding-top: 0 !important;
+      }
+
+      .elementor-heading-title {
+        font-size: 30px !important;
+        line-height: 42px !important;
+      }
+
+      .elementor-widget-text-editor {
+        font-size: 16px !important;
+        line-height: 26px !important;
+      }
+
+      .btn-from {
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
+
     }
 
-    .elementor-heading-title {
-      font-size: 30px !important;
-      line-height: 42px !important;
-    }
-
-    .elementor-widget-text-editor {
-      font-size: 16px !important;
-      line-height: 26px !important;
-    }
-
+  }
+  .elementor-widget-from-button {
     .btn-from {
-      font-size: 1rem;
-      line-height: 1.4rem;
+      font-weight: 600;
+      font-family: "Source Sans Pro", Sans-serif;
+      font-size: 1.14rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: .5px;
     }
-
   }
 
-}
-.elementor-widget-from-button {
-  .btn-from {
+  .quotes .elementor-widget-text-editor {
+    .elementor-widget-container {
+      font-family: "Source Sans Pro", Sans-serif;
+      font-size: 1.3125rem;
+      line-height: 28px;
+      font-weight: 300;
+      // p:last-child, p:nth-child(3) {
+      //   // font-weight: normal;
+      // }
+    }
+  }
+
+  .elementor-element-populated ul {
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 1.15rem;
+    line-height: 2.4;
     font-weight: 600;
-    font-family: "Source Sans Pro", Sans-serif;
-    font-size: 1.14rem;
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
-}
-
-.parent-pageid-5730 .quotes .elementor-widget-text-editor {
-  .elementor-widget-container {
-    font-family: "Source Sans Pro", Sans-serif;
-    font-size: 1.3125rem;
-    line-height: 28px;
-    font-weight: 300;
-    // p:last-child, p:nth-child(3) {
-    //   // font-weight: normal;
-    // }
   }
 }
