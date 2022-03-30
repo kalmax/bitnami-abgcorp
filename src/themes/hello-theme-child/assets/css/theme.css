@@ -841,6 +841,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 
 .jet-smart-filters-select .jet-select.selectdiv {
   max-width: 100% !important;
+  min-width: 150px;
 }
 
 .jet-smart-filters-select .jet-select.selectdiv .jet-select__control {
@@ -931,6 +932,15 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     font-size: 1rem;
     line-height: 1.4rem;
   }
+}
+
+.elementor-widget-from-button .btn-from {
+  font-weight: 600;
+  font-family: "Source Sans Pro";
+  font-size: 1.14rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 #brands-gallery .gallery {
