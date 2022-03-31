@@ -1,227 +1,235 @@
+#headerSection {
+    overflow-x: clip;
+    transition: height, background-color 700ms;
 
-    #headerSection{
-        overflow-x: clip;
-        transition: height,background-color 700ms;
-
-
-        .elementor-item{
-            &:hover{
-                color: #20438C!important;
-            }
+    .elementor-item {
+        &:hover {
+            color: #20438c !important;
         }
+    }
 
-        .elementor-sub-item{
-            @media (min-width: 768px) {
-                &.has-submenu{
-                    .sub-arrow{
-                        &:after{
-                            content: " ";
-                            display: inline-block;
-                            position: relative;
-                            width: 16px;
-                            height: 16px;
-                            background-image: url('/wp-content/themes/hello-theme-child/assets/images/caretNav.png');
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                            pointer-events: none;
-                        }
+    
+
+    .elementor-sub-item {
+        @media (min-width: 768px) {
+            &.has-submenu {
+                .sub-arrow {
+                    &:after {
+                        content: " ";
+                        display: inline-block;
+                        position: relative;
+                        width: 16px;
+                        height: 16px;
+                        background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        pointer-events: none;
                     }
                 }
             }
         }
-        
-        .elementor-button{
-            border-bottom: 2px solid #fff;
+    }
+
+    .elementor-button {
+        border-bottom: 2px solid #fff;
+    }
+
+    .hovered {
+        color: #000;
+    }
+
+    .coloredLogo {
+        -webkit-filter: brightness(1) invert(0) !important;
+        filter: brightness(1) invert(0) !important;
+    }
+
+    .elementor-nav-menu--main {
+        padding: 13px 15px !important;
+    }
+
+    .headerButton a {
+        width: 100%;
+    }
+
+    .contactUs {
+        color: #20438c;
+        border: 2px solid #20438c !important;
+    }
+
+    .rentCar {
+        background-color: #20438c !important;
+        color: #fff !important;
+        border: 2px solid #20438c !important;
+    }
+
+    .scrolledMobileNav {
+        fill: #20438c !important;
+    }
+}
+
+.otherPagesHeader {
+    background-color: #fff !important;
+    .elementor-button {
+        border-bottom: 2px solid #20438c !important;
+    }
+
+    .menu-item a {
+        color: #000;
+    }
+}
+
+.homeNavigation {
+    .openSearch {
+        svg {
+            filter: brightness(0) invert(1);
         }
+    }
 
-        
-
-        .hovered{
-            color: #000;
-        }
-
-        .coloredLogo{
-            -webkit-filter: brightness(1) invert(0) !important;
+    .searchColored {
+        svg {
             filter: brightness(1) invert(0) !important;
         }
+    }
 
-        .elementor-nav-menu--main{
-            padding: 13px 15px!important;
+    &.headerShadowed {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+            top,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    }
+}
+
+.headerOpen {
+    background-color: #fff !important;
+    height: 380px;
+}
+
+.headerHover {
+    background-color: #fff !important;
+}
+
+.page-content {
+    transition: margin-top 700ms;
+}
+
+.offsetTop {
+    margin-top: 380px !important;
+}
+
+.scrolledNav {
+    color: #000;
+}
+
+.jumpTo {
+    display: none;
+}
+
+.jumpto-icon .elementor-icon {
+    border-bottom: 0;
+}
+
+.jumpToNav a {
+    border-bottom: 0;
+}
+
+body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
+    position: relative;
+    z-index: -1;
+}
+// body:not(.elementor-editor-active) .fromTop:before {
+//     content: "";
+//     display: block;
+//     height: 564px; // fixed header height
+//     margin: -564px 0 0; // negative fixed header height
+//     visibility: hidden;
+//     pointer-events: none;
+// }
+
+// body:not(.elementor-editor-active) .fromScrolled:before {
+//     content: "";
+//     display: block;
+//     height: 184px; // fixed header height
+//     margin: -184px 0 0; // negative fixed header height
+//     visibility: hidden;
+//     pointer-events: none;
+// }
+
+body:not(.elementor-editor-active) .elementor-menu-anchor:before {
+    content: "";
+    display: block;
+    height: 564px; // fixed header height
+    margin: -564px 0 0; // negative fixed header height
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.externalIcon:after {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+}
+
+.elementor-nav-menu > li {
+    &:hover {
+        & > a {
+            border-bottom: #20438c solid 2px !important;
         }
-
-        .headerButton a{
-            width: 100%;
-        }
-
-        .contactUs{
-            color: #20438C;
-            border: 2px solid #20438C!important;
-        }
-    
-        .rentCar{
-            background-color: #20438C!important;
-            color: #fff!important;
-            border:2px solid #20438C!important;
-        }
-
-        .scrolledMobileNav{
-            fill: #20438C!important;
-        }
     }
 
-    .otherPagesHeader{
-        background-color: #fff!important;
-        .elementor-button{
-          border-bottom: 2px solid #20438C!important;
-        }
+    &.external {
+        .sub-arrow {
+            position: absolute;
+            right: -13px;
+            i {
+                font-size: 12px;
 
-        .menu-item a{
-            color: #000;
-        }
-    }
-
-    .homeNavigation{
-        .openSearch{
-            svg{
-                filter: brightness(0) invert(1);
-            }
-        }
-
-        .searchColored{
-            svg{
-                filter: brightness(1) invert(0) !important;
-            }
-        }
-    }
-
-    .headerOpen{
-        background-color: #fff!important;
-        height: 380px;
-    }
-
-    .headerHover{
-        background-color: #fff!important;
-    }
-
-    .page-content{
-        transition: margin-top 700ms;
-    }
-
-    .offsetTop{
-        margin-top: 380px!important;
-    }
-
-    .scrolledNav{
-        color: #000
-    }
-
-    .jumpTo{
-        display: none;
-    }
-
-    .jumpto-icon .elementor-icon{
-        border-bottom: 0;
-    }
-
-    .jumpToNav a{
-        border-bottom: 0;
-    }
-
-
-    body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
-        position: relative;
-        z-index: -1;
-    }
-    // body:not(.elementor-editor-active) .fromTop:before {
-    //     content: "";
-    //     display: block;
-    //     height: 564px; // fixed header height
-    //     margin: -564px 0 0; // negative fixed header height
-    //     visibility: hidden;
-    //     pointer-events: none;
-    // }
-
-    // body:not(.elementor-editor-active) .fromScrolled:before {
-    //     content: "";
-    //     display: block;
-    //     height: 184px; // fixed header height
-    //     margin: -184px 0 0; // negative fixed header height
-    //     visibility: hidden;
-    //     pointer-events: none;
-    // }
-
-    body:not(.elementor-editor-active) .elementor-menu-anchor:before {
-        content: "";
-        display: block;
-        height: 564px; // fixed header height
-        margin: -564px 0 0; // negative fixed header height
-        visibility: hidden;
-        pointer-events: none;
-    }
-
-    .externalIcon:after{
-        content: " ";
-        display: block;
-        width: 15px;
-        height: 15px; 
-    }
-
-    .elementor-nav-menu > li{
-        &:hover{
-            & > a{
-
-                border-bottom: #20438C solid 2px!important;
-            }
-        }
-
-        &.external{
-
-            .sub-arrow{
-                position: absolute;
-                right: -13px;
-                i{
-                    font-size: 12px;
-    
-                    &.fa-external-link{
-                        -webkit-transform: rotate(0deg)!important;
-                        -ms-transform: rotate(0deg)!important;
-                        transform: rotate(0deg)!important;
-                    }
+                &.fa-external-link {
+                    -webkit-transform: rotate(0deg) !important;
+                    -ms-transform: rotate(0deg) !important;
+                    transform: rotate(0deg) !important;
                 }
-    
-                
             }
         }
-
     }
+}
 
-    .searchBox{
-        overflow: hidden;
-        display: block;
-        position: absolute;
-        width: 117%!important;
-        left: 38.3vw;
-        top: 0;
-        background-color: #20438C;
-        height: 73px;
-        z-index: 1;
+.searchBox {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    width: 117% !important;
+    left: 38.3vw;
+    top: 0;
+    background-color: #20438c;
+    height: 73px;
+    z-index: 1;
 
-        & > div{
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    & > div {
+        top: 50%;
+        transform: translateY(-50%);
     }
+}
 
-    .showSearch{
-        -webkit-animation: showSearch 0.5s forwards;
-        -webkit-animation-delay: 1s;
-        animation: showSearch 0.5s forwards;
-        animation-delay: 1s;
-    }
+.showSearch {
+    -webkit-animation: showSearch 0.5s forwards;
+    -webkit-animation-delay: 1s;
+    animation: showSearch 0.5s forwards;
+    animation-delay: 1s;
+}
 
-    .hideSearch{
-        -webkit-animation: hideSearch 0.5s backwards;
-        -webkit-animation-delay: 1s;
-        animation: hideSearch 0.5s backwards;
-        animation-delay: 1s;
-    }
+.hideSearch {
+    -webkit-animation: hideSearch 0.5s backwards;
+    -webkit-animation-delay: 1s;
+    animation: hideSearch 0.5s backwards;
+    animation-delay: 1s;
+}

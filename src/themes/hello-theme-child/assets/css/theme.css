@@ -121,7 +121,7 @@ h6 {
   transition: height, background-color 700ms;
 }
 #headerSection .elementor-item:hover {
-  color: #20438C !important;
+  color: #20438c !important;
 }
 @media (min-width: 768px) {
   #headerSection .elementor-sub-item.has-submenu .sub-arrow:after {
@@ -152,23 +152,23 @@ h6 {
   width: 100%;
 }
 #headerSection .contactUs {
-  color: #20438C;
-  border: 2px solid #20438C !important;
+  color: #20438c;
+  border: 2px solid #20438c !important;
 }
 #headerSection .rentCar {
-  background-color: #20438C !important;
+  background-color: #20438c !important;
   color: #fff !important;
-  border: 2px solid #20438C !important;
+  border: 2px solid #20438c !important;
 }
 #headerSection .scrolledMobileNav {
-  fill: #20438C !important;
+  fill: #20438c !important;
 }
 
 .otherPagesHeader {
   background-color: #fff !important;
 }
 .otherPagesHeader .elementor-button {
-  border-bottom: 2px solid #20438C !important;
+  border-bottom: 2px solid #20438c !important;
 }
 .otherPagesHeader .menu-item a {
   color: #000;
@@ -179,6 +179,15 @@ h6 {
 }
 .homeNavigation .searchColored svg {
   filter: brightness(1) invert(0) !important;
+}
+.homeNavigation.headerShadowed {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 );
+  /* IE6-9 */
 }
 
 .headerOpen {
@@ -236,7 +245,7 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 }
 
 .elementor-nav-menu > li:hover > a {
-  border-bottom: #20438C solid 2px !important;
+  border-bottom: #20438c solid 2px !important;
 }
 .elementor-nav-menu > li.external .sub-arrow {
   position: absolute;
@@ -256,7 +265,7 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   width: 117% !important;
   left: 38.3vw;
   top: 0;
-  background-color: #20438C;
+  background-color: #20438c;
   height: 73px;
   z-index: 1;
 }
@@ -841,6 +850,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 
 .jet-smart-filters-select .jet-select.selectdiv {
   max-width: 100% !important;
+  min-width: 150px;
 }
 
 .jet-smart-filters-select .jet-select.selectdiv .jet-select__control {
@@ -915,22 +925,48 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   cursor: pointer;
 }
 
+.parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch {
+  max-height: 400px;
+}
+.parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch .elementor-background-overlay {
+  background-position: center center;
+}
 @media (min-width: 1025px) and (max-width: 1366px) {
-  .esg-column-content .elementor-widget-wrap {
+  .parent-pageid-5730 .esg-column-content .elementor-widget-wrap {
     padding-top: 0 !important;
   }
-  .esg-column-content .elementor-heading-title {
+  .parent-pageid-5730 .esg-column-content .elementor-heading-title {
     font-size: 30px !important;
     line-height: 42px !important;
   }
-  .esg-column-content .elementor-widget-text-editor {
+  .parent-pageid-5730 .esg-column-content .elementor-widget-text-editor {
     font-size: 16px !important;
     line-height: 26px !important;
   }
-  .esg-column-content .btn-from {
+  .parent-pageid-5730 .esg-column-content .btn-from {
     font-size: 1rem;
     line-height: 1.4rem;
   }
+}
+.parent-pageid-5730 .elementor-widget-from-button .btn-from {
+  font-weight: 600;
+  font-family: "Source Sans Pro", Sans-serif;
+  font-size: 1.14rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container {
+  font-family: "Source Sans Pro", Sans-serif;
+  font-size: 1.3125rem;
+  line-height: 28px;
+  font-weight: 300;
+}
+.parent-pageid-5730 .elementor-element-populated ul {
+  font-family: "Source Sans Pro", Sans-serif;
+  font-size: 1.15rem;
+  line-height: 2.4;
+  font-weight: 600;
 }
 
 #brands-gallery .gallery {
