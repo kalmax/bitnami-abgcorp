@@ -604,7 +604,7 @@ jQuery(function ($) {
 
 });
 jQuery(function ($) {
-// Get the menu instance
+    // Get the menu instance
    // Ultimately smartmenus is expecting a <ul> input, so you need to target the <ul> of the drop-down you're trying to affect. Below is how it best work for my menu. #desktopMenu is the unique name I gave the menu in the Elementor widget options.
    var $menu = $('#headerSection .elementor-nav-menu:first');
 
@@ -642,6 +642,19 @@ jQuery(function ($) {
         })
 
         $('#headerSection').mouseover(function () {
+            headHoverOn()
+            // $('.searchBox').css({"display": "block"})
+        })
+        .mouseout(function () {
+            var offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
+            if (offset > -60 && offset <= 0) {
+                closeSearch()
+                headHoverOff()
+            }
+
+        })
+
+        function headHoverOn(){
             $('#headerSection').removeClass('headerShadowed')
            
             $('#headerSection .elementor-item').addClass('hovered')
@@ -652,20 +665,17 @@ jQuery(function ($) {
             $('#headerSection .elementor-widget-theme-site-logo img').addClass('coloredLogo')
             $('.openSearch').css({ 'color': '#20438C' })
             $('.openSearch').addClass('searchColored')
-        })
-        .mouseout(function () {
-            var offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
-            if (offset > -60 && offset <= 0) {
-                $('#headerSection').addClass('headerShadowed')
-                $('#headerSection').removeClass('headerHover')
-                $('#headerSection .elementor-item').removeClass('hovered')
-                $('#contactUs').removeClass('contactUs')
-                $('#rentCar').removeClass('rentCar')
-                $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
-                $('.openSearch').removeClass('searchColored')
-            }
+        }
 
-        })
+        function headHoverOff(){
+            $('#headerSection').addClass('headerShadowed')
+            $('#headerSection').removeClass('headerHover')
+            $('#headerSection .elementor-item').removeClass('hovered')
+            $('#contactUs').removeClass('contactUs')
+            $('#rentCar').removeClass('rentCar')
+            $('#headerSection .elementor-widget-theme-site-logo img').removeClass('coloredLogo')
+            $('.openSearch').removeClass('searchColored')
+        }
 
         $('#headerSection .elementor-item,#headerSection .elementor-sub-item').mouseover(function () {
             var offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
@@ -710,9 +720,13 @@ jQuery(function ($) {
         })
 
         $('.closeSearch').on('click', () => {
+            closeSearch()
+        })
+
+        function closeSearch(){
             $('.searchBox').removeClass('showSearch')
             $('.searchBox').addClass('hideSearch')
-        })
+        }
 
         $('#headerSection').addClass('headerShadowed')
 
