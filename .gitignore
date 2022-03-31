@@ -44,6 +44,7 @@ src/wordpress
 !src/plugins/equalweb
 !src/plugins/mobile-menu
 !src/plugins/jet-smart-filters
+!src/plugins/posts-filter
 
 # But ignore everything under "src/themes"
 src/themes/*
