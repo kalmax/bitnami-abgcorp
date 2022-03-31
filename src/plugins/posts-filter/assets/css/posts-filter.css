@@ -1,0 +1,105 @@
+.from-posts-filter {
+}
+
+.from-posts-filter-container .header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.from-posts-filter-container .header div {
+  display: flex;
+}
+
+.from-posts-filter-container .header .col {
+  flex-flow: column;
+  width: 50%;
+}
+.from-posts-filter-container .header .col .title {
+  color: #000;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.05;
+}
+
+.from-posts-filter-container .header .col-2 {
+  justify-content: center;
+}
+.from-posts-filter-container .header .filters-container {
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.from-posts-filter-container .header select {
+  flex-flow: column;
+  width: 25%;
+}
+
+#from-posts-filter-select-category {
+  width: fit-content;
+}
+
+.from-posts-filter-container hr {
+  border-top: 0;
+  border-color: #979797;
+  margin: 2rem 0;
+}
+
+.from-posts-filter-container .body {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.from-posts-filter-container .body .from-posts-filter--item-wrapper {
+  display: flex;
+  flex-flow: column;
+  width: 30%;
+  margin-right: 2%;
+}
+.from-posts-filter-container .body .from-posts-filter--item-wrapper:nth-child(3) {
+  margin-right: 0;
+}
+.from-posts-filter--image {
+  display: block;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  max-height: 255px;
+  height: 20.564516129vw;
+}
+.from-posts-filter--item-wrapper .from-posts-filter--details {
+
+}
+.from-posts-filter--title a {
+  border: none;
+  color: #000;
+  font-family: "Source Sans Pro";
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.from-posts-filter--description {
+  height: 127px;
+  width: 350px;
+  color: #000000;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+.from-posts-filter--link {
+  color: #20438C;
+  font-family: "Source Sans Pro";
+  font-size: 1.315rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.from-posts-filter--link .line {
+  background-color: #20438C;
+}
+.from-posts-filter--link:hover .line {
+  background-color: #000;
+}

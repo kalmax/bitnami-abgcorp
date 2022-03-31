@@ -271,32 +271,35 @@ class Posts_Filter_Widget extends Widget_Base {
             <h3 class="title"> <?=$filter_title;?></h3>
           </div>
           <div class="col col-2">
-            <?php if($show_category_filter === "yes"):?>
-              <select id="from-posts-filter-select-category" data-nonce="<?=$nonce;?>">
-                <option value=""> Category</option>
-                <?php foreach ( $categories as $category ):?>
-                  <option value="<?=$category->term_id;?>"><?=$category->name;?></option>
+            <div class="filters-container">
+              <?php if($show_category_filter === "yes"):?>
+                <select id="from-posts-filter-select-category" data-nonce="<?=$nonce;?>">
+                  <option value=""> Category</option>
+                  <?php foreach ( $categories as $category ):?>
+                    <option value="<?=$category->term_id;?>"><?=$category->name;?></option>
+                  <?php endforeach; ?>
+                </select>
+              <?php endif;?>
+              <?php if($show_year_filter === "yes"):?>
+              <select id="from-posts-filter-select-year" data-nonce="<?=$nonce;?>">
+                <option value=""> Year </option>
+                <?php foreach ( self::get_posts_years_array() as $year ):?>
+                <option value="<?=$year;?>"><?=$year;?></option>
                 <?php endforeach; ?>
               </select>
-            <?php endif;?>
-            <?php if($show_year_filter === "yes"):?>
-            <select id="from-posts-filter-select-year" data-nonce="<?=$nonce;?>">
-              <option value=""> Year </option>
-              <?php foreach ( self::get_posts_years_array() as $year ):?>
-               <option value="<?=$year;?>"><?=$year;?></option>
-              <?php endforeach; ?>
-            </select>
-            <?php endif;?>
-            <?php if($show_month_filter === "yes"):?>
-            <select id="from-posts-filter-select-month" data-nonce="<?=$nonce;?>">
-              <option value=""> Month </option>
-              <?php foreach ( self::get_posts_months_array() as $month_key => $month ):?>
-               <option value="<?=$month_key;?>"><?=$month;?></option>
-              <?php endforeach; ?>
-            </select>
-            <?php endif;?>
+              <?php endif;?>
+              <?php if($show_month_filter === "yes"):?>
+              <select id="from-posts-filter-select-month" data-nonce="<?=$nonce;?>">
+                <option value=""> Month </option>
+                <?php foreach ( self::get_posts_months_array() as $month_key => $month ):?>
+                <option value="<?=$month_key;?>"><?=$month;?></option>
+                <?php endforeach; ?>
+              </select>
+              <?php endif;?>
+            </div>
           </div>
         </div>
+          <hr/>
         <div class="body">
           <?php if($posts):
             foreach ($posts as $post): ?>
@@ -304,9 +307,10 @@ class Posts_Filter_Widget extends Widget_Base {
                 $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
               ?>
               <div class="from-posts-filter--item-wrapper">
-                <a href="<?= get_permalink($post->ID);?>" class="from-posts-filter--image" style="background-image:url(<?php echo $post_image_url;?>);" target="_blank" ></a> 
+                <a href="<?= get_permalink($post->ID);?>" class="from-posts-filter--image" style="background-image:url(<?php echo $post_image_url;?>);" ></a> 
                 <div class="from-posts-filter--details">
                   <h3 class="from-posts-filter--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
+                  <p class="from-posts-filter--date"><?php echo date('F jS, Y', strtotime($post->post_date)) ?></p>
                   <p class="from-posts-filter--description"><?= $post->post_excerpt; ?></p>
                   <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-filter--link btn-from btn-from-link">
                     <span style="text-transform:capitalize"> Find out more </span>
