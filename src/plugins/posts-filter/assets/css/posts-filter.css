@@ -29,12 +29,17 @@
   flex-flow: row;
   justify-content: space-between;
 }
+.awards-filters .from-posts-filter-container .header .filters-container {
+  justify-content: flex-end;
+}
 
 .from-posts-filter-container .header select {
   flex-flow: column;
   width: 25%;
 }
-
+.awards-filters .from-posts-filter-container .header select {
+  margin-left: 2rem;
+}
 #from-posts-filter-select-category {
   width: fit-content;
 }
