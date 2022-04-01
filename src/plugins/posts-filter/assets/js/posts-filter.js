@@ -47,7 +47,20 @@ jQuery(document).ready(function(){
           action: "from_posts_filter",
           limit: jQuery(el).data('limit')
         };
-
+        
+        jQuery(el).find("#from-posts-filter-mobile-trigger").on('click',function(e) {
+          jQuery(el).find("#from-posts-filter-mobile-trigger").parent().hide();
+          jQuery(el).find("#from-posts-filter-mobile-trigger").closest('.from-posts-filter-wrapper').addClass('overlay');
+          
+          jQuery(el).find(".filters-container").show();
+        });
+        jQuery(el).find("#apply-filters, .from-posts-filter-title-container h2 span").on('click',function(e) {
+          jQuery(el).find("#from-posts-filter-mobile-trigger").parent().show();
+          jQuery(el).find("#from-posts-filter-mobile-trigger").closest('.from-posts-filter-wrapper').removeClass('overlay');
+          
+          jQuery(el).find(".filters-container").hide();
+        });
+        
         jQuery(el).find("#from-posts-filter-select-category").on('change',function(e) {
 
           e.preventDefault(); 

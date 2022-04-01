@@ -266,6 +266,14 @@ class Posts_Filter_Widget extends Widget_Base {
 
     <div class="from-posts-filter from-posts-filter-wrapper">
       <div class="from-posts-filter-container" data-limit="<?=$limit;?>" data-target="<?=$target_element;?>">
+        <div class="from-posts-filter-title-container mobile-container">
+          <h2>Filter<span>X</span></h2>
+        </div>
+        <div class="selectdiv">
+          <select id="from-posts-filter-mobile-trigger" data-nonce="<?=$nonce;?>">
+            <option value=""> Filter </option>
+          </select>
+        </div>
         <div class="filters-container">
           <?php if($show_category_filter === "yes"):?>
             <div class="selectdiv">
@@ -278,6 +286,7 @@ class Posts_Filter_Widget extends Widget_Base {
             </div>
           <?php endif;?>
           <?php if($show_year_filter === "yes"):?>
+            <div class="published-area mobile-container"> Published </div>
             <div class="selectdiv">  
               <select id="from-posts-filter-select-year" data-nonce="<?=$nonce;?>">
                 <option value=""> Year </option>
@@ -297,6 +306,9 @@ class Posts_Filter_Widget extends Widget_Base {
             </select>
           </div>
           <?php endif;?>
+        </div>
+        <div class="btn-apply mobile-container">
+          <button id="apply-filters">APPLY</button>
         </div>
       </div>
     </div>
