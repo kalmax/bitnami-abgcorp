@@ -178,6 +178,9 @@ class Posts_Carousel_Widget extends Widget_Base {
     $postsQuery = new \WP_Query($args);
     $posts = $postsQuery->posts;
 
+    // number formatter
+    $nf = new \NumberFormatter('en_US', \NumberFormatter::ORDINAL);
+
     if (Plugin::$instance->editor->is_edit_mode()) {
       // If the Elementor editor is opened.
 
@@ -194,13 +197,17 @@ class Posts_Carousel_Widget extends Widget_Base {
           foreach ($posts as $post): ?>
             <?php 
               $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
+              $post_date_year = date( 'Y', strtotime($post->post_date));
+              $post_date_month = date( 'F', strtotime($post->post_date));
+              $post_date_day = $nf->format(date( 'd', strtotime($post->post_date) ));
+              $post_date = $post_date_month . ' ' . $post_date_day . ', ' . $post_date_year;
             ?>
             <div class="from-posts-carousel--item-wrapper">
               <a href="<?= get_permalink($post->ID);?>" class="from-posts-carousel--image" style="background-image:url(<?php echo $post_image_url;?>);" target="_blank" ></a> 
               <div class="from-posts-carousel--details">
                 <h3 class="from-posts-carousel--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
                 <?php if($show_date_field === "yes"):?>
-                  <p class="from-posts-carousel--date"><?= date(get_option( 'date_format' ), strtotime($post->post_date)); ?></p>
+                  <p class="from-posts-carousel--date"><?=$post_date;?> </p>
                 <?php endif;?>
                 <p class="from-posts-carousel--description"><?= $post->post_excerpt; ?></p>
                 <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
