@@ -129,6 +129,18 @@ class Posts_Carousel_Widget extends Widget_Base {
     );
 
 
+    $this->add_control(
+      'show_date',
+      [
+        'label' => esc_html__( 'Show Date', self::$slug ),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__( 'Show', self::$slug ),
+        'label_off' => esc_html__( 'Hide', self::$slug ),
+        'return_value' => 'yes',
+        'default' => 'no',
+      ]
+    );
+
     $this->end_controls_section();
 
   
@@ -143,6 +155,7 @@ class Posts_Carousel_Widget extends Widget_Base {
     $postsPerPageMobile = isset($settings['from-posts-columns_mobile']) ? $settings['from-posts-columns_mobile'] : 1;
     $orderBy = $settings['from-posts-order-by'];
     $order = $settings['from-posts-order'];
+    $show_date_field = $settings['show_date'];
 
     $args = array(
       'post_type' => 'post', 
@@ -186,6 +199,9 @@ class Posts_Carousel_Widget extends Widget_Base {
               <a href="<?= get_permalink($post->ID);?>" class="from-posts-carousel--image" style="background-image:url(<?php echo $post_image_url;?>);" target="_blank" ></a> 
               <div class="from-posts-carousel--details">
                 <h3 class="from-posts-carousel--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
+                <?php if($show_date_field === "yes"):?>
+                <p><?= date(get_option( 'date_format' ), strtotime($post->post_date)); ?></p>
+                <?php endif;?>
                 <p class="from-posts-carousel--description"><?= $post->post_excerpt; ?></p>
                 <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
                   <span style="text-transform:capitalize"> Find out more </span>
