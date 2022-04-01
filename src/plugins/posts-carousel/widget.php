@@ -129,6 +129,18 @@ class Posts_Carousel_Widget extends Widget_Base {
     );
 
 
+    $this->add_control(
+      'show_date',
+      [
+        'label' => esc_html__( 'Show Date', self::$slug ),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__( 'Show', self::$slug ),
+        'label_off' => esc_html__( 'Hide', self::$slug ),
+        'return_value' => 'yes',
+        'default' => 'no',
+      ]
+    );
+
     $this->end_controls_section();
 
   
@@ -143,6 +155,7 @@ class Posts_Carousel_Widget extends Widget_Base {
     $postsPerPageMobile = isset($settings['from-posts-columns_mobile']) ? $settings['from-posts-columns_mobile'] : 1;
     $orderBy = $settings['from-posts-order-by'];
     $order = $settings['from-posts-order'];
+    $show_date_field = $settings['show_date'];
 
     $args = array(
       'post_type' => 'post', 
@@ -165,6 +178,9 @@ class Posts_Carousel_Widget extends Widget_Base {
     $postsQuery = new \WP_Query($args);
     $posts = $postsQuery->posts;
 
+    // number formatter
+    $nf = new \NumberFormatter('en_US', \NumberFormatter::ORDINAL);
+
     if (Plugin::$instance->editor->is_edit_mode()) {
       // If the Elementor editor is opened.
 
@@ -181,11 +197,18 @@ class Posts_Carousel_Widget extends Widget_Base {
           foreach ($posts as $post): ?>
             <?php 
               $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
+              $post_date_year = date( 'Y', strtotime($post->post_date));
+              $post_date_month = date( 'F', strtotime($post->post_date));
+              $post_date_day = $nf->format(date( 'd', strtotime($post->post_date) ));
+              $post_date = $post_date_month . ' ' . $post_date_day . ', ' . $post_date_year;
             ?>
             <div class="from-posts-carousel--item-wrapper">
               <a href="<?= get_permalink($post->ID);?>" class="from-posts-carousel--image" style="background-image:url(<?php echo $post_image_url;?>);" target="_blank" ></a> 
               <div class="from-posts-carousel--details">
                 <h3 class="from-posts-carousel--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
+                <?php if($show_date_field === "yes"):?>
+                  <p class="from-posts-carousel--date"><?=$post_date;?> </p>
+                <?php endif;?>
                 <p class="from-posts-carousel--description"><?= $post->post_excerpt; ?></p>
                 <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
                   <span style="text-transform:capitalize"> Find out more </span>
