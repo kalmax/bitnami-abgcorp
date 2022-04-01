@@ -110,6 +110,19 @@ class From_Posts_Widget extends Widget_Base {
     );
 
 
+    $this->add_control(
+      'show_date',
+      [
+        'label' => esc_html__( 'Show Date', self::$slug ),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__( 'Show', self::$slug ),
+        'label_off' => esc_html__( 'Hide', self::$slug ),
+        'return_value' => 'yes',
+        'default' => 'no',
+      ]
+    );
+
+
     $this->end_controls_section();
 
   
@@ -122,7 +135,8 @@ class From_Posts_Widget extends Widget_Base {
     $postsPerPageTablet = isset($settings['from-posts-widget-columns_tablet']) ? $settings['from-posts-widget-columns_tablet'] : $postsPerPage;
     $orderBy = $settings['from-posts-widget-order-by'];
     $order = $settings['from-posts-widget-order'];
-
+    $show_date_field = $settings['show_date'];
+    
     $args = array(
       'post_type' => 'post', 
       'post_status' => 'publish',
@@ -133,6 +147,9 @@ class From_Posts_Widget extends Widget_Base {
 
     $postsQuery = new \WP_Query($args);
     $posts = $postsQuery->posts;
+
+    // number formatter
+    $nf = new \NumberFormatter('en_US', \NumberFormatter::ORDINAL);
 
     if (Plugin::$instance->editor->is_edit_mode()) {
       // If the Elementor editor is opened.
@@ -145,12 +162,18 @@ class From_Posts_Widget extends Widget_Base {
           foreach ($posts as $post): ?>
             <?php 
               $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
+              $post_date_year = date( 'Y', strtotime($post->post_date));
+              $post_date_month = date( 'F', strtotime($post->post_date));
+              $post_date_day = $nf->format(date( 'd', strtotime($post->post_date) ));
+              $post_date = $post_date_month . ' ' . $post_date_day . ', ' . $post_date_year;
             ?>
             <div class="from-posts--item">
               <a href="<?= get_permalink($post->ID);?>" class="from-posts--image" style="background-image:url(<?php echo $post_image_url;?>);" target="_blank" ></a> 
               <div class="from-posts--details">
                 <h3 class="from-posts--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
-                <p class="from-posts--description"><?= $post->post_excerpt; ?></p>
+                <?php if($show_date_field === "yes"):?>
+                  <p class="from-posts--date"><?=$post_date;?> </p>
+                <?php endif;?>
                 <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts--link btn-from btn-from-link">
                   <span> Find out more </span>
                   <span class="line"></span>
