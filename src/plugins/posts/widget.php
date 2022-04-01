@@ -38,11 +38,36 @@ class From_Posts_Widget extends Widget_Base {
   protected function _register_controls() {
 
 
+    // get current list of categories
+    $categories_options = [];
+
+    $categories = get_categories( array(
+      'orderby' => 'name',
+      'order'   => 'ASC',
+      'hide_empty' => false
+    ));
+
+    foreach ( $categories as $category ) {
+      $categories_options[$category->term_id] = $category->name;
+    }
+
+
     $this->start_controls_section(
       'content_section',
       [
         'label' => __( 'Options', self::$slug ),
         'tab' => Controls_Manager::TAB_CONTENT,
+      ]
+    );
+
+    $this->add_control(
+      'from-posts-category',
+      [
+        'label' => __( 'Category', self::$slug ),
+        'type' => Controls_Manager::SELECT,
+        'multiple' => false,
+        'default' => 'rand',
+        'options' => $categories_options
       ]
     );
 
