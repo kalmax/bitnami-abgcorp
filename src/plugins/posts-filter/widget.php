@@ -266,9 +266,9 @@ class Posts_Filter_Widget extends Widget_Base {
 
     <div class="from-posts-filter from-posts-filter-wrapper">
       <div class="from-posts-filter-container" data-limit="<?=$limit;?>" data-target="<?=$target_element;?>">
-        <div class="selectdiv">
+        <div class="filters-container">
           <?php if($show_category_filter === "yes"):?>
-            <div class="select-container">
+            <div class="selectdiv">
               <select id="from-posts-filter-select-category" data-nonce="<?=$nonce;?>">
                 <option value=""> Category</option>
                 <?php foreach ( $categories as $category ):?>
