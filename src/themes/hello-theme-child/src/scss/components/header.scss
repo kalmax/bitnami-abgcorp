@@ -13,7 +13,7 @@
     .elementor-sub-item {
         @media (min-width: 768px) {
             &.has-submenu {
-                .sub-arrow {
+                .sub-arrow:last-child {
                     &:after {
                         content: " ";
                         display: inline-block;
@@ -188,8 +188,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
     &.external {
         .sub-arrow {
-            position: absolute;
-            right: -13px;
+            // position: absolute;
+            // right: -13px;
             i {
                 font-size: 12px;
 

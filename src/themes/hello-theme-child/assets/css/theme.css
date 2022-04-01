@@ -124,7 +124,7 @@ h6 {
   color: #20438c !important;
 }
 @media (min-width: 768px) {
-  #headerSection .elementor-sub-item.has-submenu .sub-arrow:after {
+  #headerSection .elementor-sub-item.has-submenu .sub-arrow:last-child:after {
     content: " ";
     display: inline-block;
     position: relative;
@@ -246,10 +246,6 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .elementor-nav-menu > li:hover > a {
   border-bottom: #20438c solid 2px !important;
-}
-.elementor-nav-menu > li.external .sub-arrow {
-  position: absolute;
-  right: -13px;
 }
 .elementor-nav-menu > li.external .sub-arrow i {
   font-size: 12px;
