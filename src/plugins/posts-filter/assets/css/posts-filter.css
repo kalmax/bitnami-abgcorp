@@ -59,7 +59,7 @@
 .from-posts-filter-container .body .from-posts-filter--item-wrapper {
   display: flex;
   flex-flow: column;
-  width: 30%;
+  width: 32%;
   margin-right: 2%;
 }
 .from-posts-filter-container .body .from-posts-filter--item-wrapper:nth-child(3) {
@@ -108,3 +108,21 @@
 .from-posts-filter--link:hover .line {
   background-color: #000;
 }*/
+.from-posts-filter-container .filters-container {
+  display: flex;
+}
+.awards-filters .from-posts-filter-container .filters-container {
+  justify-content: flex-end;
+}
+.from-posts-filter-container .selectdiv {
+  margin-right: 2rem;
+}
+.from-posts-filter-container .selectdiv:last-child {
+  margin-right: 0;
+}
+.awards-filters .from-posts-filter-container select {
+  margin-left: 2rem;
+}
+#from-posts-filter-select-category {
+  width: fit-content;
+}
