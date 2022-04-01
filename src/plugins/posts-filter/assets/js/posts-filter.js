@@ -128,6 +128,7 @@ jQuery(document).ready(function(){
                     <a href="${post.page_url}" class="from-posts-carousel--image" style="background-image:url(${post.featured_image_thumbnail});" target="_blank" ></a> 
                     <div class="from-posts-carousel--details">
                       <h3 class="from-posts-carousel--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>
+                      <p class="from-posts-carousel--date">${postDate}</p>
                       <p class="from-posts-carousel--description">${post.post_excerpt}</p>
                       <a href="${post.page_url}" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
                         <span style="text-transform:capitalize"> Find out more </span>

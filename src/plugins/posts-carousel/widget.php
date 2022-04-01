@@ -200,7 +200,7 @@ class Posts_Carousel_Widget extends Widget_Base {
               <div class="from-posts-carousel--details">
                 <h3 class="from-posts-carousel--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
                 <?php if($show_date_field === "yes"):?>
-                <p><?= date(get_option( 'date_format' ), strtotime($post->post_date)); ?></p>
+                  <p class="from-posts-carousel--date"><?= date(get_option( 'date_format' ), strtotime($post->post_date)); ?></p>
                 <?php endif;?>
                 <p class="from-posts-carousel--description"><?= $post->post_excerpt; ?></p>
                 <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
