@@ -101,30 +101,83 @@ jQuery(document).ready(function(){
         data : data,
         success: function(response) {
           
-            // clear all active items
-            let body = jQuery(el).find('.body');
-            body.html("");
-            console.log(response);
-            // loop posts and append to body
-            for(var post of response) {
-              var postDate  = new Date(post.post_date);
-              postDate = dateFormater(postDate);
-               var postItemHtml = `<div class="from-posts-filter--item-wrapper">
-                <a href="${post.page_url}" class="from-posts-filter--image" style="background-image:url(${post.featured_image_thumbnail});"></a> 
-                <div class="from-posts-filter--details">
-                  <h3 class="from-posts-filter--title"><a href="${post.page_url}" target="_blank">${post.post_title}</a></h3>
-                  <p class="from-posts-filter--date">${postDate}</p>
-                  <p class="from-posts-filter--description">${post.post_excerpt}</p>
-                  <a href="${post.page_url}" class="from-posts-filter--link btn-from btn-from-link">
-                    <span style="text-transform:capitalize"> Find out more </span>
-                    <span class="line"></span>
-                  </a>
-                </div>
-              </div>`;
+            let targetEl = jQuery(`#${jQuery(el).data('target')}`);
+            let isSlider = targetEl.find(".from-posts-carousel-container").length;
+            let body = targetEl.find(".from-posts-carousel-container");
+            
+            if(jQuery(el).data('target')){
 
-               body.append(postItemHtml);
+              // remove existing post item elements
+              if(isSlider){
+                body.slick('unslick');
+              }
+              
+              body.html("");
+
+              // loop posts and append to body
+              for(var post of response.posts) {
+
+                var postDate  = new Date(post.post_date);
+                postDate = dateFormater(postDate);
+
+                var postItemHtml = "";
+
+                if(isSlider){
+
+                  postItemHtml = `<div class="from-posts-carousel--item-wrapper">
+                    <a href="${post.page_url}" class="from-posts-carousel--image" style="background-image:url(${post.featured_image_thumbnail});" target="_blank" ></a> 
+                    <div class="from-posts-carousel--details">
+                      <h3 class="from-posts-carousel--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>
+                      <p class="from-posts-carousel--description">${post.post_excerpt}</p>
+                      <a href="${post.page_url}" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
+                        <span style="text-transform:capitalize"> Find out more </span>
+                        <span class="line"></span>
+                      </a>
+                    </div>
+                  </div>`;
+
+                }
+                
+
+                body.append(postItemHtml);
+
+              }
                 
             }
+            
+            // initialize slick slider if it is for post-carousel widget
+            if(isSlider){
+
+              body.not('.slick-initialized').slick({
+                infinite: true,
+                autoplay: false,
+                slidesToShow: body.data('columns'),
+                slidesToScroll: 1,
+                dots: false,
+                prevArrow: false,
+                nextArrow: false,
+                responsive: [
+                  {
+                    breakpoint: 769,
+                    settings: {
+                      slidesToShow: body.data('columnstablet'),
+                      slidesToScroll: 1,
+                      arrows: false
+                    }
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: body.data('columnsmobile'),
+                      slidesToScroll: 1,
+                      arrows: false
+                    }
+                  }
+                ]
+              });
+
+            }
+
         },
         error : function(error){ console.log(error) }
       });
