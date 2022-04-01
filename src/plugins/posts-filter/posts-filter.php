@@ -81,7 +81,7 @@ function from_posts_filter(){
 
   }
 
-  echo json_encode(array( "posts" => $results , "test" => "test"));
+  echo json_encode(array( "posts" => $results ));
 
   die();
 
