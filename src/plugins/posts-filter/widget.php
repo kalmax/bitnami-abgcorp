@@ -162,62 +162,62 @@ class Posts_Filter_Widget extends Widget_Base {
 
     $this->end_controls_section();
 
-  }
+    $this->start_controls_section(
+      'years_section',
+      [
+        'label' => __( 'Years List', self::$slug ),
+        'tab' => Controls_Manager::TAB_CONTENT,
+      ]
+    );
 
-  protected function get_posts_years_array() {
-      global $wpdb;
-      $result = array();
-      $years = $wpdb->get_results(
-        $wpdb->prepare(
-          "SELECT YEAR(post_date) FROM {$wpdb->posts} WHERE post_status = 'publish' GROUP BY YEAR(post_date) ASC"
-        ),
-        ARRAY_N
-      );
-      if ( is_array( $years ) && count( $years ) > 0 ) {
-        foreach ( $years as $year ) {
-          $result[] = $year[0];
-        }
-      }
-      return $result;
+    $repeater = new \Elementor\Repeater();
+
+    $repeater->add_control(
+      'year', [
+        'label' => esc_html__( 'Year', self::$slug ),
+        'type' => \Elementor\Controls_Manager::TEXT,
+        'default' => esc_html__( '' , self::$slug ),
+        'label_block' => true,
+      ]
+    );
+
+    $this->add_control(
+      'years',
+      [
+        'label' => esc_html__( 'Years', self::$slug ),
+        'type' => \Elementor\Controls_Manager::REPEATER,
+        'fields' => $repeater->get_controls(),
+        'title_field' => '{{{ year }}}',
+      ]
+    );
+
+    $this->end_controls_section();
+
   }
 
   protected function get_posts_months_array() {
 
-      global $wpdb;
+    return array(
+      1 => "January",
+      2 => "February",
+      3 => "March",
+      4 => "April",
+      5 => "May",
+      6 => "June",
+      7 => "July",
+      8 => "August",
+      9 => "September",
+      10 => "October",
+      11 => "November",
+      12 => "December"
+    );
 
-      $months_ref = array(
-        1 => "January",
-        2 => "February",
-        3 => "March",
-        4 => "April",
-        5 => "May",
-        6 => "June",
-        7 => "July",
-        8 => "August",
-        9 => "September",
-        10 => "October",
-        11 => "November",
-        12 => "December"
-      );
-
-      $result = array();
-      $months = $wpdb->get_results(
-        $wpdb->prepare(
-          "SELECT MONTH( post_date ) AS month FROM {$wpdb->posts} WHERE post_status = 'publish' GROUP BY MONTH(post_date) ASC"
-        ),
-        ARRAY_N
-      );
-      if ( is_array( $months ) && count( $months ) > 0 ) {
-        foreach ( $months as $month ) {
-          $result[$month[0]] = $months_ref[$month[0]];
-        }
-      }
-      return $result;
   }
 
   protected function render() {
 
     $settings = $this->get_settings_for_display();
+    $years_list = $settings['years'];
     $target_element = $settings['from-posts-target-el'];
     $category_id = $settings['from-posts-parent-category'] ? $settings['from-posts-parent-category'] : false;
     $orderBy = $settings['from-posts-order-by'];
@@ -278,8 +278,8 @@ class Posts_Filter_Widget extends Widget_Base {
           <?php if($show_year_filter === "yes"):?>
           <select id="from-posts-filter-select-year" data-nonce="<?=$nonce;?>">
             <option value=""> Year </option>
-            <?php foreach ( self::get_posts_years_array() as $year ):?>
-            <option value="<?=$year;?>"><?=$year;?></option>
+            <?php foreach ( $years_list as $year_item ):?>
+            <option value="<?= $year_item['year'];?>"><?=$year_item['year'];?></option>
             <?php endforeach; ?>
           </select>
           <?php endif;?>
