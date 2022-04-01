@@ -29,7 +29,7 @@ class From_Posts_Widget extends Widget_Base {
 
   public function get_name() { return self::$slug; }
 
-  public function get_title() { return __('Posts', self::$slug); }
+  public function get_title() { return __('FROM Posts', self::$slug); }
 
   public function get_icon() { return 'eicon-slider-push'; }
 
@@ -49,20 +49,8 @@ class From_Posts_Widget extends Widget_Base {
     $this->add_responsive_control(
       'from-posts-widget-columns',
       [
-        'label' => __( 'Columns', self::$slug ),
-        'type' => Controls_Manager::SELECT,
-        'multiple' => false,
-        'default' => '3',
-        'options' => [
-          '1' => '1',
-          '2' => '2',
-          '3' => '3',
-          '4' => '4',
-        ],
-        'devices' => [ 'desktop', 'tablet', 'mobile' ],
-        'desktop_default' => '3',
-        'tablet_default' => '3',
-        'mobile_default' => '1'
+        'label' => __( 'Limit', self::$slug ),
+        'type' => Controls_Manager::NUMBER
       ]
     );
 
@@ -107,7 +95,6 @@ class From_Posts_Widget extends Widget_Base {
     $settings = $this->get_settings_for_display();
     $postsPerPage = $settings['from-posts-widget-columns'];
     $postsPerPageTablet = isset($settings['from-posts-widget-columns_tablet']) ? $settings['from-posts-widget-columns_tablet'] : $postsPerPage;
-    $postsPerPageMobile = isset($settings['from-posts-widget-columns_mobile']) ? $settings['from-posts-widget-columns_mobile'] : $postsPerPageTablet;
     $orderBy = $settings['from-posts-widget-order-by'];
     $order = $settings['from-posts-widget-order'];
 
