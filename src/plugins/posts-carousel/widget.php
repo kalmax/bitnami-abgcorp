@@ -188,7 +188,7 @@ class Posts_Carousel_Widget extends Widget_Base {
 
     <div class="from-posts-carousel from-posts-carousel-wrapper">
       <div 
-        class="from-posts-carousel-container"
+        class="from-posts-carousel-container post-list"
         data-columns="<?=$postsPerPage;?>"
         data-columnstablet="<?=$postsPerPageTablet;?>"
         data-columnsmobile="<?=$postsPerPageMobile;?>"

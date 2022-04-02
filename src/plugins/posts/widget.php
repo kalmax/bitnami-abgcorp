@@ -157,7 +157,7 @@ class From_Posts_Widget extends Widget_Base {
     } ?>
 
     <div class="from-posts from-posts-wrapper">
-      <div class="from-posts-inner">
+      <div class="from-posts-inner post-list">
         <?php if($posts):
           foreach ($posts as $post): ?>
             <?php 
