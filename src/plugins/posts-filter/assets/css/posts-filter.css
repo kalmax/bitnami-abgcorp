@@ -126,11 +126,11 @@
 #from-posts-filter-select-category {
   width: fit-content;
 }
-#from-posts-filter-mobile-trigger, .mobile-container  {
+.mobile-container  {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .from-posts-filter-wrapper.overlay {
     position: fixed;
     width: 100vw;
@@ -155,6 +155,7 @@
     line-height: 1.1;
     text-align: center;
     border: none;
+    width: 100%;
   }
 
   .from-posts-filter-title-container {
@@ -194,7 +195,7 @@
   #from-posts-filter-select-category {
     width: 100%;
   }
-  #from-posts-filter-mobile-trigger {
+  .selectdiv.mobile-container {
     display: block;
   }
   .published-area {
