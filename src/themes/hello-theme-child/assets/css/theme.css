@@ -36,6 +36,9 @@ ul, ol {
   max-width: 100%;
   width: 100%;
 }
+.elementor-section.elementor-section-boxed .elementor-widget-text-editor p {
+  font-size: 1.125rem;
+}
 
 .leadership-postItem a {
   border: none;
