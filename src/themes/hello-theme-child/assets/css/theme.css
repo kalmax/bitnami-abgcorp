@@ -36,6 +36,9 @@ ul, ol {
   max-width: 100%;
   width: 100%;
 }
+.elementor-section.elementor-section-boxed .elementor-widget-text-editor p {
+  font-size: 1.125rem;
+}
 
 .leadership-postItem a {
   border: none;
@@ -569,6 +572,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 .home #hero-carousel-brands .from-carousel .elementor-icon {
   padding: 0.5rem;
 }
+.home .elementor-6612 .elementor-element.elementor-element-8736133 .btn-from {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 .home #home-news-posts-carousel {
   font-family: "Source Sans Pro";
 }
@@ -864,16 +871,15 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 }
 .selectdiv:after {
   content: ">";
-  font: 25px "Consolas", monospace;
-  font-weight: bolder;
-  /* letter-spacing: 12px; */
-  color: #20438c;
   right: 11px;
-  top: 10px;
-  transform: rotate(90deg);
-  padding: 0 0 2px;
+  top: 22px;
   position: absolute;
   pointer-events: none;
+  background: url(/wp-content/uploads/2022/04/select-carrot@2x.png) no-repeat center center;
+  background-size: contain;
+  text-indent: -1000px;
+  width: 15px;
+  height: 9px;
 }
 .selectdiv label {
   display: inline-block;
@@ -892,11 +898,12 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   font-size: 16px;
   line-height: 1.75;
   color: #333;
-  background-color: #ffffff;
+  background-color: #fff;
   background-image: none;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -ms-word-break: normal;
   word-break: normal;
+  min-width: 125px;
 }
 
 .goBack {

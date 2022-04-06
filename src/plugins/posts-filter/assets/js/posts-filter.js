@@ -32,6 +32,14 @@ jQuery(document).ready(function(){
         }
     });
 
+    jQuery(window).on('resize', function () {
+      // selector = `.elementor-element-${$scope[0].dataset.id}`;
+      console.log('RESET style on resize', selector);
+      // jQuery(selector).find("#from-posts-filter-mobile-trigger").parent().hide();
+      jQuery('.elementor-widget-container').find('.from-posts-filter-wrapper').removeClass('overlay');
+      
+      jQuery('.elementor-widget-container').find(".filters-container").removeAttr("style");
+    });
 
     /**
      * @description Initializes widget script

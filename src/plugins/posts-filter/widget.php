@@ -269,7 +269,7 @@ class Posts_Filter_Widget extends Widget_Base {
         <div class="from-posts-filter-title-container mobile-container">
           <h2>Filter<span>X</span></h2>
         </div>
-        <div class="selectdiv">
+        <div class="selectdiv mobile-container">
           <select id="from-posts-filter-mobile-trigger" data-nonce="<?=$nonce;?>">
             <option value=""> Filter </option>
           </select>
