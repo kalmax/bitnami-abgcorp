@@ -102,3 +102,10 @@
   text-decoration: none;
   border: none;
 }
+
+/* Load more */
+.from-posts .from-posts-load-more {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}

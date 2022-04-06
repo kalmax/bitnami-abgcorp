@@ -25,6 +25,10 @@ class From_Posts_Widget extends Widget_Base {
     );
     wp_enqueue_style('from-posts-style');
 
+    wp_register_script('from-posts-js', plugins_url('assets/js/posts.js', __FILE__), array('jquery'), '1.0', true);  
+    wp_localize_script( 'from-posts-js', 'scriptData', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); 
+    wp_enqueue_script('from-posts-js');
+
   }
 
   public function get_name() { return self::$slug; }
@@ -157,9 +161,9 @@ class From_Posts_Widget extends Widget_Base {
     } ?>
 
     <div class="from-posts from-posts-wrapper">
+      <?php if($posts):?>
       <div class="from-posts-inner post-list">
-        <?php if($posts):
-          foreach ($posts as $post): ?>
+        <?php foreach ($posts as $post): ?>
             <?php 
               $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
               $post_date_year = date( 'Y', strtotime($post->post_date));
@@ -180,8 +184,11 @@ class From_Posts_Widget extends Widget_Base {
                 </a>
               </div>
             </div>
-          <?php endforeach;
-        endif; ?>
+        <?php endforeach;?>
+      </div>
+      <?php endif; ?>
+      <div class="from-posts-load-more">
+        <button class="btn-load-more"> Load More </button>
       </div>
     </div>
 

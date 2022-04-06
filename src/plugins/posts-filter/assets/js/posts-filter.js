@@ -117,6 +117,25 @@ jQuery(document).ready(function(){
             let targetEl = jQuery(`#${jQuery(el).data('target')}`);
             let isSlider = targetEl.find(".from-posts-carousel-container").length;
             let body = targetEl.find(".post-list");
+
+            if(data.nonce){
+              targetEl.attr("data-nonce", data.nonce);
+            }
+            
+            if(data.category_id){
+              targetEl.attr("data-category_id", data.category_id);
+            }
+
+            if(data.year){
+              targetEl.data("year", data.year);
+            }
+            
+            if(data.month){
+              targetEl.data("month", data.month);
+            }
+
+            targetEl.data("limit", jQuery(el).data('limit'));
+            
             
             if(jQuery(el).data('target')){
 
