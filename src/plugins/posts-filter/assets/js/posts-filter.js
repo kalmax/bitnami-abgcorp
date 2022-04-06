@@ -53,7 +53,8 @@ jQuery(document).ready(function(){
 
         let queryData = {
           action: "from_posts_filter",
-          limit: jQuery(el).data('limit')
+          limit: jQuery(el).data('limit'),
+          category_id: jQuery(el).data('category_id')
         };
         
         jQuery(el).find("#from-posts-filter-mobile-trigger").on('click',function(e) {
@@ -73,8 +74,16 @@ jQuery(document).ready(function(){
 
           e.preventDefault(); 
           queryData['nonce'] = jQuery(this).attr("data-nonce");
-          queryData['category_id'] = jQuery(this).val();
-          ajaxFilterReq(el, queryData);   
+
+          // only query for actively selected categories
+          if(jQuery(this).val() !== ''){
+            queryData['category_id'] = jQuery(this).val(); 
+          } else {
+            // default category if none is selected
+            queryData['category_id'] = jQuery(el).data('category_id'); 
+          }
+
+          ajaxFilterReq(el, queryData);  
 
         });
 
