@@ -13,6 +13,9 @@
     display: none;
   }
 }
+.from-tabs-container p {
+  font-size: 1rem;
+}
 
 .from-posts-tabs a, 
 .from-posts-tabs a:active,

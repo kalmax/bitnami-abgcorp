@@ -17,7 +17,7 @@ jQuery(function ($) {
    });
 
     $(document).ready(function () {
-        $('.home .elementor-widget-mobile-menu .header .logo a img').attr('src', "http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/01/Assets-Logo.png");
+        $('.home .elementor-widget-mobile-menu .header .logo a img').attr('src', "/wp-content/uploads/2022/01/Assets-Logo.png");
         $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
         $('#headerSection .elementor-item,#headerSection .elementor-sub-item').on('click', () => {
             var offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
