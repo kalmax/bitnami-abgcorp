@@ -649,7 +649,7 @@ jQuery(function ($) {
         .mouseout(function () {
             var offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
             if (offset > -60 && offset <= 0) {
-                closeSearch()
+                // closeSearch()
                 headHoverOff()
             }
 
@@ -706,7 +706,7 @@ jQuery(function ($) {
             if (path.indexOf("external") >= 0) {
                 $(this).parent().addClass('external')
                 if ($(this).children().length > 0) {
-                    $(this).children().children().addClass('fa fa-external-link')
+                    $(this).children('.sub-arrow:first').append("<i class='fa fa-external-link'></i>")
                 } else {
                     $(this).append("<span class='sub-arrow'><i class='fa fa-external-link'></i>")
                 }

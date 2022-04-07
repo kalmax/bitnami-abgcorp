@@ -76,6 +76,12 @@
     .menu-item a {
         color: #000;
     }
+
+    .openSearch {
+        svg {
+            cursor: pointer;
+        }
+    }
 }
 .home .elementor-section.mobile-nav {
     background: linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent);
@@ -87,12 +93,14 @@
 .homeNavigation {
     .openSearch {
         svg {
+            cursor: pointer;
             filter: brightness(0) invert(1);
         }
     }
 
     .searchColored {
         svg {
+            cursor: pointer;
             filter: brightness(1) invert(0) !important;
         }
     }
@@ -111,6 +119,12 @@
             rgba(0, 0, 0, 0) 100%
         ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    }
+}
+
+.closeSearch{
+    svg{
+        cursor: pointer;
     }
 }
 
@@ -252,3 +266,20 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     animation: hideSearch 0.5s backwards;
     animation-delay: 1s;
 }
+
+// Header nav over ride css
+
+// .elementor-nav-menu{
+//     width: 100%;
+// }
+
+// .elementor-nav-menu > li{
+//     width: 20%;
+    
+// }
+
+// .elementor-nav-menu > li:not(:first-child){
+//     > a{
+//         text-align: right;
+//     }
+// }

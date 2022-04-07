@@ -176,6 +176,9 @@ h6 {
 .otherPagesHeader .menu-item a {
   color: #000;
 }
+.otherPagesHeader .openSearch svg {
+  cursor: pointer;
+}
 
 .home .elementor-section.mobile-nav {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0, transparent);
@@ -185,9 +188,11 @@ h6 {
 }
 
 .homeNavigation .openSearch svg {
+  cursor: pointer;
   filter: brightness(0) invert(1);
 }
 .homeNavigation .searchColored svg {
+  cursor: pointer;
   filter: brightness(1) invert(0) !important;
 }
 .homeNavigation.headerShadowed {
@@ -198,6 +203,10 @@ h6 {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 );
   /* IE6-9 */
+}
+
+.closeSearch svg {
+  cursor: pointer;
 }
 
 .headerOpen {
@@ -469,6 +478,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes showSearch {
   0% {
     left: 38.3vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 3.6vw;
@@ -477,6 +490,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes showSearch {
   0% {
     left: 38.3vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 3.6vw;
@@ -485,6 +502,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes hideSearch {
   0% {
     left: 3.6vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 38.3vw;
@@ -493,6 +514,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes hideSearch {
   0% {
     left: 3.6vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 38.3vw;
@@ -979,6 +1004,9 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   font-size: 1.3125rem;
   line-height: 28px;
   font-weight: 300;
+}
+.parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p b {
+  font-weight: 700;
 }
 .parent-pageid-5730 .elementor-element-populated ul {
   font-family: "Source Sans Pro", Sans-serif;
