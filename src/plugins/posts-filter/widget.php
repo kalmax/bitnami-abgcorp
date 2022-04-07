@@ -66,12 +66,12 @@ class Posts_Filter_Widget extends Widget_Base {
       ]
     );
 
+    
     $this->add_control(
-      'from-posts-filter-title',
+      'from-posts-target-el',
       [
-        'label' => __( 'Filter Title', self::$slug ),
-        'type' => Controls_Manager::TEXT,
-        'default' => 'Filter Title'
+        'label' => __( 'Target Element', self::$slug ),
+        'type' => Controls_Manager::TEXT
       ]
     );
 
@@ -162,63 +162,63 @@ class Posts_Filter_Widget extends Widget_Base {
 
     $this->end_controls_section();
 
-  }
+    $this->start_controls_section(
+      'years_section',
+      [
+        'label' => __( 'Years List', self::$slug ),
+        'tab' => Controls_Manager::TAB_CONTENT,
+      ]
+    );
 
-  protected function get_posts_years_array() {
-      global $wpdb;
-      $result = array();
-      $years = $wpdb->get_results(
-        $wpdb->prepare(
-          "SELECT YEAR(post_date) FROM {$wpdb->posts} WHERE post_status = 'publish' GROUP BY YEAR(post_date) ASC"
-        ),
-        ARRAY_N
-      );
-      if ( is_array( $years ) && count( $years ) > 0 ) {
-        foreach ( $years as $year ) {
-          $result[] = $year[0];
-        }
-      }
-      return $result;
+    $repeater = new \Elementor\Repeater();
+
+    $repeater->add_control(
+      'year', [
+        'label' => esc_html__( 'Year', self::$slug ),
+        'type' => \Elementor\Controls_Manager::TEXT,
+        'default' => esc_html__( '' , self::$slug ),
+        'label_block' => true,
+      ]
+    );
+
+    $this->add_control(
+      'years',
+      [
+        'label' => esc_html__( 'Years', self::$slug ),
+        'type' => \Elementor\Controls_Manager::REPEATER,
+        'fields' => $repeater->get_controls(),
+        'title_field' => '{{{ year }}}',
+      ]
+    );
+
+    $this->end_controls_section();
+
   }
 
   protected function get_posts_months_array() {
 
-      global $wpdb;
+    return array(
+      1 => "January",
+      2 => "February",
+      3 => "March",
+      4 => "April",
+      5 => "May",
+      6 => "June",
+      7 => "July",
+      8 => "August",
+      9 => "September",
+      10 => "October",
+      11 => "November",
+      12 => "December"
+    );
 
-      $months_ref = array(
-        1 => "January",
-        2 => "February",
-        3 => "March",
-        4 => "April",
-        5 => "May",
-        6 => "June",
-        7 => "July",
-        8 => "August",
-        9 => "September",
-        10 => "October",
-        11 => "November",
-        12 => "December"
-      );
-
-      $result = array();
-      $months = $wpdb->get_results(
-        $wpdb->prepare(
-          "SELECT MONTH( post_date ) AS month FROM {$wpdb->posts} WHERE post_status = 'publish' GROUP BY MONTH(post_date) ASC"
-        ),
-        ARRAY_N
-      );
-      if ( is_array( $months ) && count( $months ) > 0 ) {
-        foreach ( $months as $month ) {
-          $result[$month[0]] = $months_ref[$month[0]];
-        }
-      }
-      return $result;
   }
 
   protected function render() {
 
     $settings = $this->get_settings_for_display();
-    $filter_title = $settings['from-posts-filter-title'];
+    $years_list = $settings['years'];
+    $target_element = $settings['from-posts-target-el'];
     $category_id = $settings['from-posts-parent-category'] ? $settings['from-posts-parent-category'] : false;
     $orderBy = $settings['from-posts-order-by'];
     $order = $settings['from-posts-order'] ? $settings['from-posts-order'] : 3;
@@ -265,63 +265,51 @@ class Posts_Filter_Widget extends Widget_Base {
     } ?>
 
     <div class="from-posts-filter from-posts-filter-wrapper">
-      <div class="from-posts-filter-container" data-limit="<?=$limit;?>">
-        <div class="header">
-          <div class="col col-1">
-            <h3 class="title"> <?=$filter_title;?></h3>
-          </div>
-          <div class="col col-2">
-            <div class="filters-container">
-              <?php if($show_category_filter === "yes"):?>
-                <select id="from-posts-filter-select-category" data-nonce="<?=$nonce;?>">
-                  <option value=""> Category</option>
-                  <?php foreach ( $categories as $category ):?>
-                    <option value="<?=$category->term_id;?>"><?=$category->name;?></option>
-                  <?php endforeach; ?>
-                </select>
-              <?php endif;?>
-              <?php if($show_year_filter === "yes"):?>
+      <div class="from-posts-filter-container" data-limit="<?=$limit;?>" data-category_id="<?=$category_id;?>" data-target="<?=$target_element;?>">
+        <div class="from-posts-filter-title-container mobile-container">
+          <h2>Filter<span>X</span></h2>
+        </div>
+        <div class="selectdiv mobile-container">
+          <select id="from-posts-filter-mobile-trigger" data-nonce="<?=$nonce;?>">
+            <option value=""> Filter </option>
+          </select>
+        </div>
+        <div class="filters-container">
+          <?php if($show_category_filter === "yes"):?>
+            <div class="selectdiv">
+              <select id="from-posts-filter-select-category" data-nonce="<?=$nonce;?>">
+                <option value=""> Category</option>
+                <?php foreach ( $categories as $category ):?>
+                  <option value="<?=$category->term_id;?>"><?=$category->name;?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+          <?php endif;?>
+          <?php if($show_year_filter === "yes"):?>
+            <div class="published-area mobile-container"> Published </div>
+            <div class="selectdiv">  
               <select id="from-posts-filter-select-year" data-nonce="<?=$nonce;?>">
                 <option value=""> Year </option>
-                <?php foreach ( self::get_posts_years_array() as $year ):?>
-                <option value="<?=$year;?>"><?=$year;?></option>
+                <?php foreach ( $years_list as $year_item ):?>
+                <option value="<?= $year_item['year'];?>"><?=$year_item['year'];?></option>
                 <?php endforeach; ?>
               </select>
-              <?php endif;?>
-              <?php if($show_month_filter === "yes"):?>
-              <select id="from-posts-filter-select-month" data-nonce="<?=$nonce;?>">
-                <option value=""> Month </option>
-                <?php foreach ( self::get_posts_months_array() as $month_key => $month ):?>
-                <option value="<?=$month_key;?>"><?=$month;?></option>
-                <?php endforeach; ?>
-              </select>
-              <?php endif;?>
             </div>
+          <?php endif;?>
+          <?php if($show_month_filter === "yes"):?>
+          <div class="selectdiv">
+            <select id="from-posts-filter-select-month" data-nonce="<?=$nonce;?>">
+              <option value=""> Month </option>
+              <?php foreach ( self::get_posts_months_array() as $month_key => $month ):?>
+              <option value="<?=$month_key;?>"><?=$month;?></option>
+              <?php endforeach; ?>
+            </select>
           </div>
+          <?php endif;?>
         </div>
-          <hr/>
-        <div class="body">
-          <?php if($posts):
-            foreach ($posts as $post): ?>
-              <?php 
-                $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
-              ?>
-              <div class="from-posts-filter--item-wrapper">
-                <a href="<?= get_permalink($post->ID);?>" class="from-posts-filter--image" style="background-image:url(<?php echo $post_image_url;?>);" ></a> 
-                <div class="from-posts-filter--details">
-                  <h3 class="from-posts-filter--title"><a href="<?= get_permalink($post->ID); ?>" target="_blank" ><?= $post->post_title; ?></a></h3>
-                  <p class="from-posts-filter--date"><?php echo date('F jS, Y', strtotime($post->post_date)) ?></p>
-                  <p class="from-posts-filter--description"><?= $post->post_excerpt; ?></p>
-                  <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-filter--link btn-from btn-from-link">
-                    <span style="text-transform:capitalize"> Find out more </span>
-                    <span class="line"></span>
-                  </a>
-                </div>
-              </div>
-            <?php endforeach;?>
-          <?php endif; ?>
+        <div class="btn-apply mobile-container">
+          <button id="apply-filters">APPLY</button>
         </div>
-        
       </div>
     </div>
 

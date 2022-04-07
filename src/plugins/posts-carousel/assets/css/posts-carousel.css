@@ -12,7 +12,10 @@
     margin-bottom: 0.5rem;
 
 }
-
+.from-posts-carousel--title a {
+  color: #000;
+  border-bottom: 0;
+}
 @media (max-width: 480px){
     .from-posts-carousel--title {
       font-size: 1.1875rem;
@@ -22,6 +25,9 @@
 
 .from-posts-carousel--description {
    margin-bottom: 1.2rem;
+   font-size: 1.125rem;
+   line-height: 1.3rem;
+   color: #000;   
 }
 
 .from-posts-carousel--description p {

@@ -21,19 +21,15 @@
 
   &:after {
     content: ">";
-    font: 25px "Consolas", monospace;
-    font-weight: bolder;
-    /* letter-spacing: 12px; */
-    color: #20438c;
     right: 11px;
-    top: 10px;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    padding: 0 0 2px;
+    top: 22px;
     position: absolute;
     pointer-events: none;
+    background: url(/wp-content/uploads/2022/04/select-carrot@2x.png) no-repeat center center;
+    background-size: contain;
+    text-indent: -1000px;
+    width: 15px;
+    height: 9px;
   }
 
   label {
@@ -54,11 +50,12 @@
     font-size: 16px;
     line-height: 1.75;
     color: #333;
-    background-color: #ffffff;
+    background-color: #fff;
     background-image: none;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     -ms-word-break: normal;
     word-break: normal;
+    min-width: 125px;
   }
 }
 

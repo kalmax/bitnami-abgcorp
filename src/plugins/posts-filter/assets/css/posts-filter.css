@@ -1,110 +1,99 @@
-.from-posts-filter {
-}
-
-.from-posts-filter-container .header {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-}
-.from-posts-filter-container .header div {
+.from-posts-filter-container .filters-container {
   display: flex;
 }
-
-.from-posts-filter-container .header .col {
-  flex-flow: column;
-  width: 50%;
-}
-.from-posts-filter-container .header .col .title {
-  color: #000;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: 1.05;
-}
-
-.from-posts-filter-container .header .col-2 {
-  justify-content: center;
-}
-.from-posts-filter-container .header .filters-container {
-  flex-flow: row;
-  justify-content: space-between;
-}
-.awards-filters .from-posts-filter-container .header .filters-container {
+.awards-filters .from-posts-filter-container .filters-container {
   justify-content: flex-end;
 }
-
-.from-posts-filter-container .header select {
-  flex-flow: column;
-  width: 25%;
+.from-posts-filter-container .selectdiv {
+  margin-right: 2rem;
 }
-.awards-filters .from-posts-filter-container .header select {
+.from-posts-filter-container .selectdiv:last-child {
+  margin-right: 0;
+}
+.awards-filters .from-posts-filter-container select {
   margin-left: 2rem;
 }
 #from-posts-filter-select-category {
   width: fit-content;
 }
-
-.from-posts-filter-container hr {
-  border-top: 0;
-  border-color: #979797;
-  margin: 2rem 0;
+.mobile-container  {
+  display: none;
 }
 
-.from-posts-filter-container .body {
-  display: flex;
-  flex-flow: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-.from-posts-filter-container .body .from-posts-filter--item-wrapper {
-  display: flex;
-  flex-flow: column;
-  width: 30%;
-  margin-right: 2%;
-}
-.from-posts-filter-container .body .from-posts-filter--item-wrapper:nth-child(3) {
-  margin-right: 0;
-}
-.from-posts-filter--image {
-  display: block;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border: none;
-  max-height: 255px;
-  height: 20.564516129vw;
-}
-.from-posts-filter--item-wrapper .from-posts-filter--details {
+@media (max-width: 767px) {
+  .from-posts-filter-wrapper.overlay {
+    position: fixed;
+    width: 100vw;
+    z-index: 1020;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: #fff;
+  }
+  .from-posts-filter-wrapper .btn-apply {
+    width: 100%;
+    padding: 2rem;
+    position: absolute;
+    bottom: 2rem;
+  }
+  .from-posts-filter-wrapper .btn-apply button {
+    color: #FFFFFF;
+    font-family: "Source Sans Pro";
+    font-size: 1.315rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    text-align: center;
+    border: none;
+    width: 100%;
+  }
 
-}
-.from-posts-filter--title a {
-  border: none;
-  color: #000;
-  font-family: "Source Sans Pro";
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.2;
-}
-.from-posts-filter--description {
-  height: 127px;
-  width: 350px;
-  color: #000000;
-  font-family: "Source Sans Pro";
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 28px;
-}
-.from-posts-filter--link {
-  color: #20438C;
-  font-family: "Source Sans Pro";
-  font-size: 1.315rem;
-  font-weight: bold;
-  line-height: 1;
-}
-.from-posts-filter--link .line {
-  background-color: #20438C;
-}
-.from-posts-filter--link:hover .line {
-  background-color: #000;
+  .from-posts-filter-title-container {
+    border-bottom: 1px solid #ccc;
+  }
+  .from-posts-filter-wrapper.overlay h2 {
+    color: #20438C;
+    font-family: "Source Sans Pro";
+    font-size: 1.315rem;
+    font-weight: bold;
+    line-height: 1.1;
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+    position: relative;
+  }
+  .from-posts-filter-wrapper.overlay h2 span {
+    position: absolute;
+    color: #20438C;
+    content: 'X';
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+    right: 2rem;
+
+  }
+  .overlay .mobile-container {
+    display: block;
+  }
+  .from-posts-filter-container .filters-container {
+    display: none;
+    padding: 2rem;
+  }
+  .from-posts-filter-container .selectdiv {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  #from-posts-filter-select-category {
+    width: 100%;
+  }
+  .selectdiv.mobile-container {
+    display: block;
+  }
+  .published-area {
+    display: block;
+    font-family: "Source Sans Pro";
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
 }
