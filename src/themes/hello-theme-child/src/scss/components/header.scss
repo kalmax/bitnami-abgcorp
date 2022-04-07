@@ -77,6 +77,12 @@
         color: #000;
     }
 }
+.home .elementor-section.mobile-nav {
+    background: linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent);
+    .elementor-widget-mobile-menu {
+        background: transparent;
+    }
+}
 
 .homeNavigation {
     .openSearch {
@@ -220,6 +226,19 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     }
 }
 
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+        .searchBox {
+            width: 122% !important;
+            left: 42.5vw;
+        }
+    }
+}
+// @media (max-width: 767px) {
+//     .home .elementor-widget-mobile-menu .header .controls .burger {
+//         background-image: url();
+//     }
+// }
 .showSearch {
     -webkit-animation: showSearch 0.5s forwards;
     -webkit-animation-delay: 1s;
