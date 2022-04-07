@@ -97,3 +97,21 @@
   }
 
 }
+
+.from-posts .from-posts-load-more .btn-load-more {
+  height: 50px;
+  border-radius: 2px;
+  background-color: #20438C;
+  border: none;
+  color: #ffffff;
+  padding-left: 5.3rem;
+  padding-right: 5.3rem;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+
+.from-posts .from-posts-load-more .btn-load-more:hover {
+  border: none;
+}

@@ -137,7 +137,6 @@ class From_Posts_Widget extends Widget_Base {
     $settings = $this->get_settings_for_display();
     $category_id = $settings['from-posts-category'];
     $postsPerPage = $settings['from-posts-widget-columns'];
-    $postsPerPageTablet = isset($settings['from-posts-widget-columns_tablet']) ? $settings['from-posts-widget-columns_tablet'] : $postsPerPage;
     $orderBy = $settings['from-posts-widget-order-by'];
     $order = $settings['from-posts-widget-order'];
     $show_date_field = $settings['show_date'];
@@ -200,7 +199,7 @@ class From_Posts_Widget extends Widget_Base {
       </div>
       <?php endif; ?>
       <div class="from-posts-load-more">
-        <button class="btn-load-more"> Load More </button>
+        <button class="btn-load-more" data-page="1"> Load More </button>
       </div>
     </div>
 

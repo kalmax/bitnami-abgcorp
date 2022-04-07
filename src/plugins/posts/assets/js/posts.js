@@ -32,6 +32,21 @@ jQuery(document).ready(function(){
         }
     });
 
+     function dateFormater(date) {
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      var day = date.getDate();
+      var month = months[date.getMonth()];
+      var year = date.getFullYear();
+    
+      return month + ' ' + ordinal(day) + ', ' + year;
+    }
+    
+    function ordinal (d) {
+      const nth = { '1': 'st', '2': 'nd', '3': 'rd' }
+      return `${d}${nth[d] || 'th'}`
+    }
+
+
     /**
      * @description Events for the widget
      *
@@ -43,14 +58,17 @@ jQuery(document).ready(function(){
 
       if (el && el !== 'undefined') {
         
+        let currentPostPage = 2;
+        let hasMore = false;
 
         // load more button 
         jQuery(el).find(".from-posts-load-more .btn-load-more").click(function(){
 
           let data = {
-            action: "from_posts_filter"
+            action: "from_posts_filter",
+            page: currentPostPage,
+            limit: jQuery(el).data('limit')
           }
-
 
           if(jQuery(el).data('nonce')){
             data['nonce'] = jQuery(el).data('nonce');
@@ -71,38 +89,44 @@ jQuery(document).ready(function(){
             data : data,
             success: function(response) {
               
-                let body = jQuery(el).find(".post-list");
-                  
-                  body.html("");
-                  
-                  console.log(response.posts);
-                  // loop posts and append to body
-                  // for(var post of response.posts) {
+              let body = jQuery(el).find(".post-list");
+              currentPostPage = currentPostPage + 1;
+              
+              if(response.posts.length > 0){
 
-                  //   var postDate  = new Date(post.post_date);
-                  //   postDate = dateFormater(postDate);
+                // loop posts and append to body
+                for(var post of response.posts) {
 
-                  //   var postItemHtml = `<div class="from-posts--item">
-                  //     <a href="${post.page_url}" class="from-posts--image" style="background-image:url(${post.featured_image_thumbnail});" target="_blank" ></a> 
-                  //     <div class="from-posts--details">
-                  //       <h3 class="from-posts--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>
-                  //       <?php if($show_date_field === "yes"):?>
-                  //         <p class="from-posts--date"><?=$post_date;?> </p>
-                  //       <?php endif;?>
-                  //       <a href="${post.page_url}" target="_blank" class="from-posts--link btn-from btn-from-link">
-                  //         <span> Find out more </span>
-                  //         <span class="line"></span>
-                  //       </a>
-                  //     </div>
-                  //   </div>`;
+                  var postDate  = new Date(post.post_date);
+                  postDate = dateFormater(postDate);
 
-                  //   body.append(postItemHtml);
+                  var postItemHtml = `<div class="from-posts--item">
+                    <a href="${post.page_url}" class="from-posts--image" style="background-image:url(${post.featured_image_thumbnail});" target="_blank" ></a> 
+                    <div class="from-posts--details">
+                      <h3 class="from-posts--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>
+                      <?php if($show_date_field === "yes"):?>
+                        <p class="from-posts--date"><?=$post_date;?> </p>
+                      <?php endif;?>
+                      <a href="${post.page_url}" target="_blank" class="from-posts--link btn-from btn-from-link">
+                        <span> Find out more </span>
+                        <span class="line"></span>
+                      </a>
+                    </div>
+                  </div>`;
 
-                  // }
+                  body.append(postItemHtml);
 
-                },
-                error : function(error){ console.log(error) }
-            });
+                }
+
+              } else {
+                hasMore = false
+              }
+
+            },
+            error : function(error){ console.log(error) }
+          });
+
+          console.log(hasMore);
 
 
         });

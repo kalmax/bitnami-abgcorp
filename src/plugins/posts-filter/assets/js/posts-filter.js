@@ -60,13 +60,17 @@ jQuery(document).ready(function(){
           nonce: jQuery(el).data('nonce'),
         };
 
-        // set nonce and default category id on page for load more
+        // set query params on target element on page for load more
         if(queryData.nonce){
           targetEl.attr("data-nonce", queryData.nonce);
         }
             
         if(queryData.category_id){
           targetEl.attr("data-category_id", queryData.category_id);
+        }
+
+        if(queryData.limit){
+          targetEl.attr("data-limit", queryData.limit);
         }
 
         jQuery(el).find("#from-posts-filter-mobile-trigger").on('click',function(e) {
