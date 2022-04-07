@@ -50,13 +50,25 @@ jQuery(document).ready(function(){
     function buildPostFilter(el) {
 
      if (el && el !== 'undefined') {
+        
+        let targetEl = jQuery(`#${jQuery(el).data('target')}`);
 
         let queryData = {
           action: "from_posts_filter",
           limit: jQuery(el).data('limit'),
-          category_id: jQuery(el).data('category_id')
+          category_id: jQuery(el).data('category_id'),
+          nonce: jQuery(el).data('nonce'),
         };
-        
+
+        // set nonce and default category id on page for load more
+        if(queryData.nonce){
+          targetEl.attr("data-nonce", queryData.nonce);
+        }
+            
+        if(queryData.category_id){
+          targetEl.attr("data-category_id", queryData.category_id);
+        }
+
         jQuery(el).find("#from-posts-filter-mobile-trigger").on('click',function(e) {
           jQuery(el).find("#from-posts-filter-mobile-trigger").parent().hide();
           jQuery(el).find("#from-posts-filter-mobile-trigger").closest('.from-posts-filter-wrapper').addClass('overlay');

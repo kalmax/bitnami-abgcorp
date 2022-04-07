@@ -265,7 +265,7 @@ class Posts_Filter_Widget extends Widget_Base {
     } ?>
 
     <div class="from-posts-filter from-posts-filter-wrapper">
-      <div class="from-posts-filter-container" data-limit="<?=$limit;?>" data-category_id="<?=$category_id;?>" data-target="<?=$target_element;?>">
+      <div class="from-posts-filter-container" data-limit="<?=$limit;?>" data-nonce="<?=$nonce;?>" data-category_id="<?=$category_id;?>" data-target="<?=$target_element;?>">
         <div class="from-posts-filter-title-container mobile-container">
           <h2>Filter<span>X</span></h2>
         </div>
