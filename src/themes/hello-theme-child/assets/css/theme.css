@@ -173,11 +173,16 @@ h6 {
 .otherPagesHeader .menu-item a {
   color: #000;
 }
+.otherPagesHeader .openSearch svg {
+  cursor: pointer;
+}
 
 .homeNavigation .openSearch svg {
+  cursor: pointer;
   filter: brightness(0) invert(1);
 }
 .homeNavigation .searchColored svg {
+  cursor: pointer;
   filter: brightness(1) invert(0) !important;
 }
 .homeNavigation.headerShadowed {
@@ -188,6 +193,10 @@ h6 {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=0 );
   /* IE6-9 */
+}
+
+.closeSearch svg {
+  cursor: pointer;
 }
 
 .headerOpen {
@@ -451,6 +460,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes showSearch {
   0% {
     left: 38.3vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 3.6vw;
@@ -459,6 +472,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes showSearch {
   0% {
     left: 38.3vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 3.6vw;
@@ -467,6 +484,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes hideSearch {
   0% {
     left: 3.6vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 38.3vw;
@@ -475,6 +496,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes hideSearch {
   0% {
     left: 3.6vw;
+    display: block;
+  }
+  90% {
+    display: none;
   }
   100% {
     left: 38.3vw;
