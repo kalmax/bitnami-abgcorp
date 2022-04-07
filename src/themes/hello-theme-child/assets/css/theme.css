@@ -980,6 +980,9 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   line-height: 28px;
   font-weight: 300;
 }
+.parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p b {
+  font-weight: 700;
+}
 .parent-pageid-5730 .elementor-element-populated ul {
   font-family: "Source Sans Pro", Sans-serif;
   font-size: 1.15rem;
