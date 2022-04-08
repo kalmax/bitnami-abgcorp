@@ -931,6 +931,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   display: none;
 }
 .selectdiv:after {
+  content: " ";
   right: 11px;
   top: 22px;
   position: absolute;
