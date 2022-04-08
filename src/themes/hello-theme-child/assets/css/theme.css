@@ -266,10 +266,14 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 .elementor-nav-menu > li:hover > a {
   border-bottom: #20438c solid 2px !important;
 }
-.elementor-nav-menu > li.external .sub-arrow i {
+.elementor-nav-menu > li.external .sub-arrow:first-child {
+  position: absolute !important;
+  right: -0.5em;
+}
+.elementor-nav-menu > li.external .sub-arrow:first-child i {
   font-size: 12px;
 }
-.elementor-nav-menu > li.external .sub-arrow i.fa-external-link {
+.elementor-nav-menu > li.external .sub-arrow:first-child i.fa-external-link {
   transform: rotate(0deg) !important;
 }
 
@@ -309,6 +313,17 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   -webkit-animation-delay: 1s;
   animation: hideSearch 0.5s backwards;
   animation-delay: 1s;
+}
+
+.searchAction {
+  position: absolute !important;
+  right: -60px;
+  display: inline-block !important;
+  width: 10% !important;
+  text-align: right;
+  align-content: flex-end;
+  overflow: hidden;
+  padding-top: 6px;
 }
 
 .elementor-location-footer.blue {
