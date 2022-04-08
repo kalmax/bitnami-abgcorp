@@ -59,10 +59,11 @@ jQuery(document).ready(function(){
       if (el && el !== 'undefined') {
         
         let currentPostPage = 2;
-        let hasMore = false;
 
         // load more button 
         jQuery(el).find(".from-posts-load-more .btn-load-more").click(function(){
+          
+          let thisEl = jQuery(this);
 
           let data = {
             action: "from_posts_filter",
@@ -92,6 +93,10 @@ jQuery(document).ready(function(){
               let body = jQuery(el).find(".post-list");
               currentPostPage = currentPostPage + 1;
               
+              if(response.posts.length === 0){
+                thisEl.css({ "display" : "none" });
+              }
+
               if(response.posts.length > 0){
 
                 // loop posts and append to body
@@ -118,16 +123,11 @@ jQuery(document).ready(function(){
 
                 }
 
-              } else {
-                hasMore = false
               }
 
             },
             error : function(error){ console.log(error) }
           });
-
-          console.log(hasMore);
-
 
         });
 
