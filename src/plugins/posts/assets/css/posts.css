@@ -57,27 +57,35 @@
   color: #000;
 }
 
-.from-posts .from-posts--description {
-  margin-bottom: 1.2rem;
-  padding-right: 3rem;
+.from-posts--description {
   font-size: 18px;
   line-height: 28px;
-  color: #000;
+  color: #000;   
+  margin-bottom: 1.2rem;
+  padding-right: 3rem;
 }
 
-@media (max-width: 768px){
-  .from-posts .from-posts--link {
-    font-size: 1.125rem;
-    line-height: 1.3rem;
+@media (max-width: 480px){
+  .from-posts--description {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0;
   }
 }
 
-.from-posts .from-posts--link {
+.from-posts--link {
   font-size: 1.125rem;
-  font-weight: bold;
   line-height: 1.5rem;
+  font-weight: bold;
   border: none;
   background: none;
+}
+
+@media (max-width: 480px){
+  .from-posts--link {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 .from-posts .from-posts--link .line {
@@ -91,13 +99,6 @@
 .from-posts .from-posts--link:link {
   color: #20438C;
   background-color:  transparent;
-}
-
-@media (max-width: 480px){
-  .from-posts .from-posts--link {
-    font-size: 1.125rem;
-    line-height: 1.3rem;
-  }
 }
 
 .from-posts .from-posts--image {
