@@ -169,7 +169,7 @@ class Posts_Carousel_Widget extends Widget_Base {
     $order = $settings['from-posts-order'];
     $show_date_field = $settings['show_date'];
     $show_read_more = $settings['show_read_more'];
-    
+
     $args = array(
       'post_type' => 'post', 
       'post_status' => 'publish',
@@ -205,6 +205,8 @@ class Posts_Carousel_Widget extends Widget_Base {
         data-columns="<?=$postsPerPage;?>"
         data-columnstablet="<?=$postsPerPageTablet;?>"
         data-columnsmobile="<?=$postsPerPageMobile;?>"
+        data-show_date="<?=$show_date_field;?>"
+        data-show_read_more="<?=$show_read_more;?>"
         >
         <?php if($posts):
           foreach ($posts as $post): ?>
