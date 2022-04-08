@@ -780,10 +780,16 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   top: 44%;
   width: 40px;
   height: 40px;
+  background-color: #20438c !important;
+  border-radius: 40px;
+  padding-top: 3px;
 }
 .peakaboo-slider .slick-prev:before,
 .peakaboo-slider .slick-next:before {
   font-size: 40px;
+  font-weight: 900;
+  color: white;
+  opacity: 1;
 }
 .peakaboo-slider::-webkit-scrollbar {
   display: none;
