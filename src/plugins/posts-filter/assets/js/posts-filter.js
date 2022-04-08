@@ -214,21 +214,28 @@ jQuery(document).ready(function(){
                   postItemHtml += `</div>`;
 
                 } else {
-                    
+
                   // FROM Posts Wiget
                   postItemHtml = `<div class="from-posts--item">
                     <a href="${post.page_url}" class="from-posts--image" style="background-image:url(${post.featured_image_thumbnail});" target="_blank" ></a> 
                     <div class="from-posts--details">
-                      <h3 class="from-posts--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>
-                      <?php if($show_date_field === "yes"):?>
-                        <p class="from-posts--date"><?=$post_date;?> </p>
-                      <?php endif;?>
-                      <a href="${post.page_url}" target="_blank" class="from-posts--link btn-from btn-from-link">
-                        <span> Find out more </span>
-                        <span class="line"></span>
-                      </a>
-                    </div>
-                  </div>`;
+                      <h3 class="from-posts--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>`;
+
+                      if(showDateField === "yes"){
+                        postItemHtml +=`<p class="from-posts--date">${postDate}</p>`;
+                      }
+
+                      postItemHtml +=`<p class="from-posts--description">${post.post_excerpt}</p>`;
+
+                      if(showReadMore === "yes"){
+                        postItemHtml +=`<a href="${post.page_url}" target="_blank" class="from-posts--link btn-from btn-from-link">
+                          <span> Find out more </span>
+                          <span class="line"></span>
+                        </a>`;
+                      }
+
+                  postItemHtml += `</div>`;
+                  postItemHtml += `</div>`;
 
                 }
                 
