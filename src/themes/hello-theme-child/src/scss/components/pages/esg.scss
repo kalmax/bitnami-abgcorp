@@ -1,4 +1,4 @@
-.parent-pageid-5730 {
+.parent-pageid-5730, .page-id-5730 {
 
   .elementor-section.elementor-section-full_width.elementor-section-items-stretch {
     max-height: 400px;
@@ -51,7 +51,7 @@
       line-height: 28px;
       font-weight: 300;
 
-      p b {
+      p b, p strong, p:nth-child(3) {
         font-weight: 700;
       }
       // p:last-child, p:nth-child(3) {

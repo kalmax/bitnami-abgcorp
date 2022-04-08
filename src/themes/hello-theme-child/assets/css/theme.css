@@ -968,30 +968,30 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   cursor: pointer;
 }
 
-.parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch {
+.parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch, .page-id-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch {
   max-height: 400px;
 }
-.parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch .elementor-background-overlay {
+.parent-pageid-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch .elementor-background-overlay, .page-id-5730 .elementor-section.elementor-section-full_width.elementor-section-items-stretch .elementor-background-overlay {
   background-position: center center;
 }
 @media (min-width: 1025px) and (max-width: 1366px) {
-  .parent-pageid-5730 .esg-column-content .elementor-widget-wrap {
+  .parent-pageid-5730 .esg-column-content .elementor-widget-wrap, .page-id-5730 .esg-column-content .elementor-widget-wrap {
     padding-top: 0 !important;
   }
-  .parent-pageid-5730 .esg-column-content .elementor-heading-title {
+  .parent-pageid-5730 .esg-column-content .elementor-heading-title, .page-id-5730 .esg-column-content .elementor-heading-title {
     font-size: 30px !important;
     line-height: 42px !important;
   }
-  .parent-pageid-5730 .esg-column-content .elementor-widget-text-editor {
+  .parent-pageid-5730 .esg-column-content .elementor-widget-text-editor, .page-id-5730 .esg-column-content .elementor-widget-text-editor {
     font-size: 16px !important;
     line-height: 26px !important;
   }
-  .parent-pageid-5730 .esg-column-content .btn-from {
+  .parent-pageid-5730 .esg-column-content .btn-from, .page-id-5730 .esg-column-content .btn-from {
     font-size: 1rem;
     line-height: 1.4rem;
   }
 }
-.parent-pageid-5730 .elementor-widget-from-button .btn-from {
+.parent-pageid-5730 .elementor-widget-from-button .btn-from, .page-id-5730 .elementor-widget-from-button .btn-from {
   font-weight: 600;
   font-family: "Source Sans Pro", Sans-serif;
   font-size: 1.14rem;
@@ -999,16 +999,16 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container {
+.parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container, .page-id-5730 .quotes .elementor-widget-text-editor .elementor-widget-container {
   font-family: "Source Sans Pro", Sans-serif;
   font-size: 1.3125rem;
   line-height: 28px;
   font-weight: 300;
 }
-.parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p b {
+.parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p b, .parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p strong, .parent-pageid-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p:nth-child(3), .page-id-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p b, .page-id-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p strong, .page-id-5730 .quotes .elementor-widget-text-editor .elementor-widget-container p:nth-child(3) {
   font-weight: 700;
 }
-.parent-pageid-5730 .elementor-element-populated ul {
+.parent-pageid-5730 .elementor-element-populated ul, .page-id-5730 .elementor-element-populated ul {
   font-family: "Source Sans Pro", Sans-serif;
   font-size: 1.15rem;
   line-height: 2.4;
