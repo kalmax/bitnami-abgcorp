@@ -207,9 +207,9 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     }
 
     &.external {
-        .sub-arrow {
-            // position: absolute;
-            // right: -13px;
+        .sub-arrow:first-child {
+            position: absolute!important;
+            right: -0.5em;
             i {
                 font-size: 12px;
 
@@ -266,6 +266,18 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     animation: hideSearch 0.5s backwards;
     animation-delay: 1s;
 }
+
+.searchAction{
+    position: absolute!important;
+    right: -60px;
+    display: inline-block!important;
+    width: 10%!important;
+    text-align: right;
+    align-content: flex-end;
+    overflow: hidden;
+    padding-top: 6px;
+}
+
 
 // Header nav over ride css
 
