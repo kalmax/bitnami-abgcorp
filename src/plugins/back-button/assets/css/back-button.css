@@ -6,7 +6,7 @@
 
 .btn-back-from {
   position: absolute;
-  top: 0;
+  top: 2rem;
   left: 0;
   z-index: 2;
   display: inline-flex;
@@ -19,7 +19,6 @@
   color: #000;
   border:  none;
   font-weight: bold;
-  margin-top: 1.2rem;
 }
 
 .btn-back-from.light {

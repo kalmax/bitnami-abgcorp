@@ -296,30 +296,29 @@ jQuery(function ($) {
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
+    function esgAnimateEaseImageUp(params) {
+
+      let tl = new TimelineMax();
+      tl
+      .fromTo(
+        params.el,
+        0.5,
+        { y: 30, autoAlpha: 0, ease: Power1.easeOut },
+        { y: 0, autoAlpha: 1 }
+      );
+
+      var scene = new ScrollMagic.Scene({
+        triggerElement: params.triggerElement,
+        offset: params.offset ? params.offset : 0,
+        reverse: false
+      })
+      .setTween(tl)
+      .addTo(controller);
+
+    }
 
     if (window.matchMedia("(min-width: 1366px)").matches) {
-
-      function esgAnimateEaseImageUp(params) {
-
-        let tl = new TimelineMax();
-        tl
-        .fromTo(
-          params.el,
-          0.5,
-          { y: 30, autoAlpha: 0, ease: Power1.easeOut },
-          { y: 0, autoAlpha: 1 }
-        );
-
-        var scene = new ScrollMagic.Scene({
-          triggerElement: params.triggerElement,
-          offset: params.offset ? params.offset : 0,
-          reverse: false
-        })
-        .setTween(tl)
-        .addTo(controller);
-
-      }
-
+      
       function esgAnimateLineNodeDown(params) {
 
         let tl = new TimelineMax();
@@ -392,7 +391,15 @@ jQuery(function ($) {
       });
 
     }
-
+    
+    // section - governance - cover image slide up
+    esgAnimateEaseImageUp({
+      controller: controller,
+      el: ".tab-contents-item.active .thumbnail",
+      triggerElement: ".tab-contents",
+      offset: -100,
+    });
+    
   });
 
 });
@@ -622,7 +629,7 @@ jQuery(function ($) {
    });
 
     $(document).ready(function () {
-        $('.home .elementor-widget-mobile-menu .header .logo a img').attr('src', "http://abgcsi-lb-1321724458.us-west-1.elb.amazonaws.com/wp-content/uploads/2022/01/Assets-Logo.png");
+        $('.home .elementor-widget-mobile-menu .header .logo a img').attr('src', "/wp-content/uploads/2022/01/Assets-Logo.png");
         $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
         $('#headerSection .elementor-item,#headerSection .elementor-sub-item').on('click', () => {
             var offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0

@@ -116,6 +116,7 @@ jQuery(document).ready(function(){
         jQuery(el).on('beforeChange', function(event, slick, currentSlide, nextSlide){
           jQuery(el).find(".tab-contents-mobile-item").each(function(i){
             if(!jQuery(this).find(".content").hasClass('collapsed')){
+              jQuery(this).find(".excerpt").css({ "display": "block"});
               jQuery(this).find(".content").addClass('collapsed');
               jQuery(this).find(".read-more").html("Read More");
             }
@@ -128,12 +129,14 @@ jQuery(document).ready(function(){
           e.preventDefault();
 
           if(jQuery(this).parent().find(".content").hasClass("collapsed")) {
-
+              
+            jQuery(this).parent().find(".excerpt").css({ "display": "none"});
             jQuery(this).parent().find(".content").removeClass("collapsed");   
             jQuery(this).html("Read Less");
 
           } else {
-
+            
+            jQuery(this).parent().find(".excerpt").css({ "display": "block"});
             jQuery(this).parent().find(".content").addClass("collapsed");
             jQuery(this).html("Read More");
 

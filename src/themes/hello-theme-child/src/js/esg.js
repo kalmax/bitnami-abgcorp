@@ -3,30 +3,29 @@ jQuery(function ($) {
   $(document).ready(function () {
     
     let controller = new ScrollMagic.Controller();
+    function esgAnimateEaseImageUp(params) {
+
+      let tl = new TimelineMax();
+      tl
+      .fromTo(
+        params.el,
+        0.5,
+        { y: 30, autoAlpha: 0, ease: Power1.easeOut },
+        { y: 0, autoAlpha: 1 }
+      );
+
+      var scene = new ScrollMagic.Scene({
+        triggerElement: params.triggerElement,
+        offset: params.offset ? params.offset : 0,
+        reverse: false
+      })
+      .setTween(tl)
+      .addTo(controller);
+
+    }
 
     if (window.matchMedia("(min-width: 1366px)").matches) {
-
-      function esgAnimateEaseImageUp(params) {
-
-        let tl = new TimelineMax();
-        tl
-        .fromTo(
-          params.el,
-          0.5,
-          { y: 30, autoAlpha: 0, ease: Power1.easeOut },
-          { y: 0, autoAlpha: 1 }
-        );
-
-        var scene = new ScrollMagic.Scene({
-          triggerElement: params.triggerElement,
-          offset: params.offset ? params.offset : 0,
-          reverse: false
-        })
-        .setTween(tl)
-        .addTo(controller);
-
-      }
-
+      
       function esgAnimateLineNodeDown(params) {
 
         let tl = new TimelineMax();
@@ -99,7 +98,15 @@ jQuery(function ($) {
       });
 
     }
-
+    
+    // section - governance - cover image slide up
+    esgAnimateEaseImageUp({
+      controller: controller,
+      el: ".tab-contents-item.active .thumbnail",
+      triggerElement: ".tab-contents",
+      offset: -100,
+    });
+    
   });
 
 });

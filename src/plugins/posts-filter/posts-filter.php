@@ -40,11 +40,12 @@ function from_posts_filter(){
   $year = $_POST['year'];
   $month = $_POST['month'];
   $limit = $_POST['limit'];
+  $page = $_POST['page'];
 
   $args = array(
     'post_type' => 'post',
     'posts_per_page' => $limit,
-    'date_query' => array(),
+    'date_query' => array()
   );
 
   if($year){
@@ -53,6 +54,10 @@ function from_posts_filter(){
 
   if($month){
     $args['date_query'][0]['month'] = $month;
+  }
+
+  if($page){
+    $args['paged'] = $page;
   }
 
   if($category_id) {
