@@ -127,6 +127,18 @@ class From_Posts_Widget extends Widget_Base {
     );
 
 
+    $this->add_control(
+      'show_read_more',
+      [
+        'label' => esc_html__( 'Show Read More', self::$slug ),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__( 'Show', self::$slug ),
+        'label_off' => esc_html__( 'Hide', self::$slug ),
+        'return_value' => 'yes',
+        'default' => 'no',
+      ]
+    );
+
     $this->end_controls_section();
 
   
@@ -140,7 +152,8 @@ class From_Posts_Widget extends Widget_Base {
     $orderBy = $settings['from-posts-widget-order-by'];
     $order = $settings['from-posts-widget-order'];
     $show_date_field = $settings['show_date'];
-    
+    $show_read_more = $settings['show_read_more']; 
+
     $args = array(
       'post_type' => 'post', 
       'post_status' => 'publish',
@@ -173,7 +186,11 @@ class From_Posts_Widget extends Widget_Base {
 
     <div class="from-posts from-posts-wrapper">
       <?php if($posts):?>
-      <div class="from-posts-inner post-list">
+      <div 
+        class="from-posts-inner post-list"
+        data-show_date="<?=$show_date_field;?>"
+        data-show_read_more="<?=$show_read_more;?>"
+      >
         <?php foreach ($posts as $post): ?>
             <?php 
               $post_image_url = get_the_post_thumbnail_url($post->ID, 'full');
@@ -189,10 +206,13 @@ class From_Posts_Widget extends Widget_Base {
                 <?php if($show_date_field === "yes"):?>
                   <p class="from-posts--date"><?=$post_date;?> </p>
                 <?php endif;?>
-                <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts--link btn-from btn-from-link">
-                  <span> Find out more </span>
-                  <span class="line"></span>
-                </a>
+                <p class="from-posts--description"><?= $post->post_excerpt; ?></p>
+                <?php if($show_read_more === "yes"):?>
+                  <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts--link btn-from btn-from-link">
+                    <span> Find out more </span>
+                    <span class="line"></span>
+                  </a>
+                <?php endif;?>  
               </div>
             </div>
         <?php endforeach;?>
