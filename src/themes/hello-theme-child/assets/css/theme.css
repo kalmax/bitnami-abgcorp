@@ -813,6 +813,22 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
           animation-name: grow;
 }
 
+.timeline-section-container .elementor-column:first-child {
+  width: 34.42% !important;
+}
+.timeline-section-container .elementor-column:nth-child(2) {
+  width: 14% !important;
+}
+.timeline-section-container .elementor-column:nth-child(3) {
+  width: 7.115% !important;
+}
+.timeline-section-container .elementor-column:nth-child(4) {
+  width: 41.92% !important;
+}
+.timeline-section-container .elementor-column .elementor-column {
+  width: 100% !important;
+}
+
 .slick-vertical .timeline-year-slider {
   border: 0;
   outline: none;
@@ -831,6 +847,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   margin-top: 103px;
   padding: 64px 0 62px 0;
   transform: translate3d(0, 0, 0);
+  max-height: 500px;
 }
 @media (max-width: 1024px) {
   .timeline-year-slider .slick-list {
