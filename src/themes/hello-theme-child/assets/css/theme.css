@@ -296,8 +296,11 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 @media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     .searchBox {
-      width: 122% !important;
+      width: 109% !important;
       left: 42.5vw;
+    }
+    .searchBox .elementor-widget-search-form {
+      width: 23vw !important;
     }
   }
 }
@@ -510,9 +513,11 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   0% {
     left: 42.5vw;
     display: block;
+    visibility: visible;
   }
   90% {
     display: none;
+    visibility: hidden;
   }
   100% {
     left: 3.6vw;
@@ -522,9 +527,11 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   0% {
     left: 42.5vw;
     display: block;
+    visibility: visible;
   }
   90% {
     display: none;
+    visibility: hidden;
   }
   100% {
     left: 3.6vw;
@@ -534,9 +541,11 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   0% {
     left: 3.6vw;
     display: block;
+    visibility: visible;
   }
   90% {
     display: none;
+    visibility: hidden;
   }
   100% {
     left: 42.5vw;
@@ -546,9 +555,11 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   0% {
     left: 3.6vw;
     display: block;
+    visibility: visible;
   }
   90% {
     display: none;
+    visibility: hidden;
   }
   100% {
     left: 42.5vw;
@@ -994,7 +1005,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   display: block;
   height: 50px;
   float: right;
-  padding: 0px 24px;
+  padding: 0px 35px 0 24px;
   font-size: 16px;
   line-height: 1.75;
   color: #333;
