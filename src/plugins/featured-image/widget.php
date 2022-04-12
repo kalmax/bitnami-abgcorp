@@ -63,7 +63,7 @@ class Featured_Image_Widget extends Widget_Base {
     } ?>
     <div class="from-featured-image from-featured-image-wrapper">
       <?php 
-        $post_thumbnail_url = get_the_post_thumbnail_url(get_the_ID());
+        $post_thumbnail_url = get_the_post_thumbnail_url(get_the_ID(),'full');
       ?>
         <div class="from-featured-image--inner"
           style="background-image:url('<?php echo $post_thumbnail_url;?>')"
