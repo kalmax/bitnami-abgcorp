@@ -519,6 +519,7 @@ jQuery(function ($) {
     var sliderContent = $('.timeline-content-slider > div > div');
     var sliderImage = $('.timeline-image-slider > div > div');
     var sliderYear = $('.timeline-year-slider > div > div');
+    sliderImage.closest('section').addClass('timeline-section-container');
 
     sliderContent.slick({
       accessibility: false,

@@ -282,7 +282,7 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   display: block;
   position: absolute;
   width: 117% !important;
-  left: 38.3vw;
+  left: 42.5vw;
   top: 0;
   background-color: #20438c;
   height: 73px;
@@ -490,9 +490,25 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     transform: scale(3);
   }
 }
+@-webkit-keyframes growYears {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2.5);
+  }
+}
+@keyframes growYears {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2.5);
+  }
+}
 @-webkit-keyframes showSearch {
   0% {
-    left: 38.3vw;
+    left: 42.5vw;
     display: block;
   }
   90% {
@@ -504,7 +520,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 }
 @keyframes showSearch {
   0% {
-    left: 38.3vw;
+    left: 42.5vw;
     display: block;
   }
   90% {
@@ -523,7 +539,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     display: none;
   }
   100% {
-    left: 38.3vw;
+    left: 42.5vw;
   }
 }
 @keyframes hideSearch {
@@ -535,7 +551,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     display: none;
   }
   100% {
-    left: 38.3vw;
+    left: 42.5vw;
   }
 }
 .elementor-widget:not(:last-child) {
@@ -548,7 +564,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 
 /* Buttons */
 .btn-from {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .home {
@@ -809,8 +825,31 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
           animation-duration: 1s;
   -webkit-animation-timing-function: "linear";
           animation-timing-function: "linear";
-  -webkit-animation-name: grow;
-          animation-name: grow;
+  -webkit-animation-name: growYears;
+          animation-name: growYears;
+}
+
+.timeline-section-container .elementor-column:first-child {
+  width: 34.42% !important;
+}
+.timeline-section-container .elementor-column:nth-child(2) {
+  width: 13% !important;
+}
+.timeline-section-container .elementor-column:nth-child(3) {
+  width: 6.115% !important;
+}
+.timeline-section-container .elementor-column:nth-child(4) {
+  width: 43.92% !important;
+}
+.timeline-section-container .elementor-column .elementor-column {
+  width: 100% !important;
+}
+.timeline-section-container .timeline-image-slider .slick-list article img {
+  max-height: 500px;
+  box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.5);
+}
+.timeline-section-container .timeline-image-slider .elementor-widget-container {
+  box-shadow: none !important;
 }
 
 .slick-vertical .timeline-year-slider {
