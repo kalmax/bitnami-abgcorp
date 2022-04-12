@@ -124,20 +124,6 @@ jQuery(document).ready(function(){
 
     }
 
-    function dateFormater(date) {
-      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      var day = date.getDate();
-      var month = months[date.getMonth()];
-      var year = date.getFullYear();
-    
-      return month + ' ' + ordinal(day) + ', ' + year;
-    }
-    
-    function ordinal (d) {
-      const nth = { '1': 'st', '2': 'nd', '3': 'rd' }
-      return `${d}${nth[d] || 'th'}`
-    }
-
     function ajaxFilterReq(el, data){
 
       jQuery.ajax({
@@ -184,9 +170,6 @@ jQuery(document).ready(function(){
               // loop posts and append to body
               for(var post of response.posts) {
 
-                var postDate  = new Date(post.post_date);
-                postDate = dateFormater(postDate);
-
                 var postItemHtml = "";
 
                 if(isSlider){
@@ -198,7 +181,7 @@ jQuery(document).ready(function(){
                       <h3 class="from-posts-carousel--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>`;
                   
                   if(showDateField === "yes"){
-                    postItemHtml +=`<p class="from-posts-carousel--date">${postDate}</p>`;
+                    postItemHtml +=`<p class="from-posts-carousel--date">${post.post_date}</p>`;
                   }
                       
                   postItemHtml +=`<p class="from-posts-carousel--description">${post.post_excerpt}</p>`;
@@ -222,7 +205,7 @@ jQuery(document).ready(function(){
                       <h3 class="from-posts--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>`;
 
                       if(showDateField === "yes"){
-                        postItemHtml +=`<p class="from-posts--date">${postDate}</p>`;
+                        postItemHtml +=`<p class="from-posts--date">${post.post_date}</p>`;
                       }
 
                       postItemHtml +=`<p class="from-posts--description">${post.post_excerpt}</p>`;

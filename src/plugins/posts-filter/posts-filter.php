@@ -77,11 +77,23 @@ function from_posts_filter(){
 
     $posts = (array) $query->posts;
 
+    // number formatter
+    $nf = new \NumberFormatter('en_US', \NumberFormatter::ORDINAL);
+
     for ($i=0; $i < count($posts) ; $i++) { 
+
       $post_item = (array) $posts[$i];
       $post_item['featured_image_thumbnail'] = get_the_post_thumbnail_url( $post_item['ID'], 'thumbnail' );
       $post_item['page_url'] = get_permalink($post_item['ID']);
+
+      // format date
+      $post_date_year = date( 'Y', strtotime($post_item['post_date']));
+      $post_date_month = date( 'F', strtotime($post_item['post_date']));
+      $post_date_day = $nf->format(date( 'd', strtotime($post_item['post_date']) ));
+      $post_date = $post_date_month . ' ' . $post_date_day . ', ' . $post_date_year;
+      $post_item['post_date'] = $post_date;
       $results[] = $post_item;
+
     }
 
   }
