@@ -20,12 +20,12 @@
   }
 
   &:after {
-    content: ">";
+    content: " ";
     right: 11px;
     top: 22px;
     position: absolute;
     pointer-events: none;
-    background: url(/wp-content/uploads/2022/04/select-carrot@2x.png) no-repeat center center;
+    background: url(/wp-content/themes/hello-theme-child/assets/img/select-carrot@2x.png) no-repeat center center;
     background-size: contain;
     text-indent: -1000px;
     width: 15px;

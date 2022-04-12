@@ -26,6 +26,7 @@
   cursor:pointer;
   font-size: 1.2rem;
   font-weight: bold;
+  color: #000;
 }
 
 @media (min-width: 1024px){
@@ -45,7 +46,7 @@
 }
 
 .from-tabs .tab-indicator .indicator {
-  height: 1px;
+  height: 2.2px;
   background: #EE1C25;
   width: 50%;
   margin: 0 auto;

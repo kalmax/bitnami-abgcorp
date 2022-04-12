@@ -490,6 +490,22 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     transform: scale(3);
   }
 }
+@-webkit-keyframes growYears {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2.5);
+  }
+}
+@keyframes growYears {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2.5);
+  }
+}
 @-webkit-keyframes showSearch {
   0% {
     left: 42.5vw;
@@ -548,7 +564,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 
 /* Buttons */
 .btn-from {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .home {
@@ -780,10 +796,16 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   top: 44%;
   width: 40px;
   height: 40px;
+  background-color: #20438c !important;
+  border-radius: 40px;
+  padding-top: 3px;
 }
 .peakaboo-slider .slick-prev:before,
 .peakaboo-slider .slick-next:before {
   font-size: 40px;
+  font-weight: 900;
+  color: white;
+  opacity: 1;
 }
 .peakaboo-slider::-webkit-scrollbar {
   display: none;
@@ -803,8 +825,31 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
           animation-duration: 1s;
   -webkit-animation-timing-function: "linear";
           animation-timing-function: "linear";
-  -webkit-animation-name: grow;
-          animation-name: grow;
+  -webkit-animation-name: growYears;
+          animation-name: growYears;
+}
+
+.timeline-section-container .elementor-column:first-child {
+  width: 34.42% !important;
+}
+.timeline-section-container .elementor-column:nth-child(2) {
+  width: 13% !important;
+}
+.timeline-section-container .elementor-column:nth-child(3) {
+  width: 6.115% !important;
+}
+.timeline-section-container .elementor-column:nth-child(4) {
+  width: 43.92% !important;
+}
+.timeline-section-container .elementor-column .elementor-column {
+  width: 100% !important;
+}
+.timeline-section-container .timeline-image-slider .slick-list article img {
+  max-height: 500px;
+  box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.5);
+}
+.timeline-section-container .timeline-image-slider .elementor-widget-container {
+  box-shadow: none !important;
 }
 
 .slick-vertical .timeline-year-slider {
@@ -925,12 +970,12 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   display: none;
 }
 .selectdiv:after {
-  content: ">";
+  content: " ";
   right: 11px;
   top: 22px;
   position: absolute;
   pointer-events: none;
-  background: url(/wp-content/uploads/2022/04/select-carrot@2x.png) no-repeat center center;
+  background: url(/wp-content/themes/hello-theme-child/assets/img/select-carrot@2x.png) no-repeat center center;
   background-size: contain;
   text-indent: -1000px;
   width: 15px;

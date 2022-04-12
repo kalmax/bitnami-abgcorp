@@ -56,6 +56,17 @@ jQuery(document).ready(function(){
         tabIndicator.style.left = `calc(calc(100%/${tabLinks.length})*${0})`; 
         
         openTab(el, 0);
+
+        jQuery(el).find(".tab-link").on('mouseover', function (e) {
+          var indicatorNewPosition = jQuery(this).position().left;
+          tabIndicator.style.left = indicatorNewPosition + 'px';
+        });
+
+        jQuery(el).find(".tab-link").on('mouseout', function (e) {
+          var item = jQuery(el).find('.tab-contents-item.active').attr('id').replace(/from-tabs-content-/, '');
+          var indicatorNewPosition = jQuery(el).find('#from-tabs-nav-' + item).position().left;
+          tabIndicator.style.left = indicatorNewPosition + 'px';
+        });
         
         for(let i=0;i<tabLinks.length;i++){
           tabLinks[i].addEventListener("click",function(){

@@ -141,6 +141,18 @@ class Posts_Carousel_Widget extends Widget_Base {
       ]
     );
 
+    $this->add_control(
+      'show_read_more',
+      [
+        'label' => esc_html__( 'Show Read More', self::$slug ),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__( 'Show', self::$slug ),
+        'label_off' => esc_html__( 'Hide', self::$slug ),
+        'return_value' => 'yes',
+        'default' => 'no',
+      ]
+    );
+
     $this->end_controls_section();
 
   
@@ -156,6 +168,7 @@ class Posts_Carousel_Widget extends Widget_Base {
     $orderBy = $settings['from-posts-order-by'];
     $order = $settings['from-posts-order'];
     $show_date_field = $settings['show_date'];
+    $show_read_more = $settings['show_read_more'];
 
     $args = array(
       'post_type' => 'post', 
@@ -192,6 +205,8 @@ class Posts_Carousel_Widget extends Widget_Base {
         data-columns="<?=$postsPerPage;?>"
         data-columnstablet="<?=$postsPerPageTablet;?>"
         data-columnsmobile="<?=$postsPerPageMobile;?>"
+        data-show_date="<?=$show_date_field;?>"
+        data-show_read_more="<?=$show_read_more;?>"
         >
         <?php if($posts):
           foreach ($posts as $post): ?>
@@ -210,10 +225,12 @@ class Posts_Carousel_Widget extends Widget_Base {
                   <p class="from-posts-carousel--date"><?=$post_date;?> </p>
                 <?php endif;?>
                 <p class="from-posts-carousel--description"><?= $post->post_excerpt; ?></p>
-                <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
-                  <span style="text-transform:capitalize"> Find out more </span>
-                  <span class="line"></span>
-                </a>
+                <?php if($show_read_more === "yes"):?>
+                  <a href="<?= get_permalink($post->ID); ?>" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
+                    <span style="text-transform:capitalize"> Find out more </span>
+                    <span class="line"></span>
+                  </a>
+                <?php endif;?>
               </div>
             </div>
           <?php endforeach;

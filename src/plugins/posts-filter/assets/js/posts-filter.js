@@ -150,6 +150,8 @@ jQuery(document).ready(function(){
             let targetEl = jQuery(`#${jQuery(el).data('target')}`);
             let isSlider = targetEl.find(".from-posts-carousel-container").length;
             let body = targetEl.find(".post-list");
+            let showDateField = body.data('show_date');
+            let showReadMore = body.data('show_read_more');
 
             if(data.nonce){
               targetEl.attr("data-nonce", data.nonce);
@@ -193,32 +195,47 @@ jQuery(document).ready(function(){
                   postItemHtml = `<div class="from-posts-carousel--item-wrapper">
                     <a href="${post.page_url}" class="from-posts-carousel--image" style="background-image:url(${post.featured_image_thumbnail});" target="_blank" ></a> 
                     <div class="from-posts-carousel--details">
-                      <h3 class="from-posts-carousel--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>
-                      <p class="from-posts-carousel--date">${postDate}</p>
-                      <p class="from-posts-carousel--description">${post.post_excerpt}</p>
-                      <a href="${post.page_url}" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
-                        <span style="text-transform:capitalize"> Find out more </span>
-                        <span class="line"></span>
-                      </a>
-                    </div>
-                  </div>`;
+                      <h3 class="from-posts-carousel--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>`;
+                  
+                  if(showDateField === "yes"){
+                    postItemHtml +=`<p class="from-posts-carousel--date">${postDate}</p>`;
+                  }
+                      
+                  postItemHtml +=`<p class="from-posts-carousel--description">${post.post_excerpt}</p>`;
+                  
+                  if(showReadMore === "yes"){
+                    postItemHtml +=`<a href="${post.page_url}" target="_blank" class="from-posts-carousel--link btn-from btn-from-link">
+                      <span style="text-transform:capitalize"> Find out more </span>
+                      <span class="line"></span>
+                    </a>`;
+                  }
+                  
+                  postItemHtml += `</div>`;
+                  postItemHtml += `</div>`;
 
                 } else {
-                    
+
                   // FROM Posts Wiget
                   postItemHtml = `<div class="from-posts--item">
                     <a href="${post.page_url}" class="from-posts--image" style="background-image:url(${post.featured_image_thumbnail});" target="_blank" ></a> 
                     <div class="from-posts--details">
-                      <h3 class="from-posts--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>
-                      <?php if($show_date_field === "yes"):?>
-                        <p class="from-posts--date"><?=$post_date;?> </p>
-                      <?php endif;?>
-                      <a href="${post.page_url}" target="_blank" class="from-posts--link btn-from btn-from-link">
-                        <span> Find out more </span>
-                        <span class="line"></span>
-                      </a>
-                    </div>
-                  </div>`;
+                      <h3 class="from-posts--title"><a href="${post.page_url}" target="_blank" >${post.post_title}</a></h3>`;
+
+                      if(showDateField === "yes"){
+                        postItemHtml +=`<p class="from-posts--date">${postDate}</p>`;
+                      }
+
+                      postItemHtml +=`<p class="from-posts--description">${post.post_excerpt}</p>`;
+
+                      if(showReadMore === "yes"){
+                        postItemHtml +=`<a href="${post.page_url}" target="_blank" class="from-posts--link btn-from btn-from-link">
+                          <span> Find out more </span>
+                          <span class="line"></span>
+                        </a>`;
+                      }
+
+                  postItemHtml += `</div>`;
+                  postItemHtml += `</div>`;
 
                 }
                 
