@@ -240,14 +240,14 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     }
 }
 
-@media not all and (min-resolution:.001dpcm) { 
-    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-        .searchBox {
-            width: 122% !important;
-            left: 42.5vw;
-        }
-    }
-}
+// @media not all and (min-resolution:.001dpcm) { 
+//     @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+//         .searchBox {
+//             width: 122% !important;
+//             left: 42.5vw;
+//         }
+//     }
+// }
 // @media (max-width: 767px) {
 //     .home .elementor-widget-mobile-menu .header .controls .burger {
 //         background-image: url();
@@ -277,21 +277,3 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
     overflow: hidden;
     padding-top: 6px;
 }
-
-
-// Header nav over ride css
-
-// .elementor-nav-menu{
-//     width: 100%;
-// }
-
-// .elementor-nav-menu > li{
-//     width: 20%;
-    
-// }
-
-// .elementor-nav-menu > li:not(:first-child){
-//     > a{
-//         text-align: right;
-//     }
-// }
