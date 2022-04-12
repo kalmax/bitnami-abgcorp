@@ -8,7 +8,14 @@
         }
     }
 
-    
+    .elementor-top-column:first-child,
+    .elementor-top-column:last-child{
+        width: 40%!important;
+    }    
+
+    .elementor-top-column:nth-child(2){
+        width: 20%!important;
+    }
 
     .elementor-sub-item {
         @media (min-width: 768px) {
@@ -225,7 +232,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
     overflow: hidden;
-    display: block;
+    display: none;
+    visibility: hidden;
     position: absolute;
     width: 117% !important;
     left: 42.5vw;

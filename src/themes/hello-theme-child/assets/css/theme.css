@@ -126,6 +126,13 @@ h6 {
 #headerSection .elementor-item:hover {
   color: #20438c !important;
 }
+#headerSection .elementor-top-column:first-child,
+#headerSection .elementor-top-column:last-child {
+  width: 40% !important;
+}
+#headerSection .elementor-top-column:nth-child(2) {
+  width: 20% !important;
+}
 @media (min-width: 768px) {
   #headerSection .elementor-sub-item.has-submenu .sub-arrow:last-child:after {
     content: " ";
@@ -279,7 +286,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
   overflow: hidden;
-  display: block;
+  display: none;
+  visibility: hidden;
   position: absolute;
   width: 117% !important;
   left: 42.5vw;
@@ -293,14 +301,6 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   transform: translateY(-50%);
 }
 
-@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .searchBox {
-      width: 122% !important;
-      left: 42.5vw;
-    }
-  }
-}
 .showSearch {
   -webkit-animation: showSearch 0.5s forwards;
   -webkit-animation-delay: 1s;
@@ -509,10 +509,12 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes showSearch {
   0% {
     left: 42.5vw;
-    display: block;
-  }
-  90% {
     display: none;
+    visibility: hidden;
+  }
+  10% {
+    display: block;
+    visibility: visible;
   }
   100% {
     left: 3.6vw;
@@ -521,10 +523,12 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes showSearch {
   0% {
     left: 42.5vw;
-    display: block;
-  }
-  90% {
     display: none;
+    visibility: hidden;
+  }
+  10% {
+    display: block;
+    visibility: visible;
   }
   100% {
     left: 3.6vw;
@@ -534,9 +538,11 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   0% {
     left: 3.6vw;
     display: block;
+    visibility: visible;
   }
   90% {
     display: none;
+    visibility: hidden;
   }
   100% {
     left: 42.5vw;
@@ -546,9 +552,11 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   0% {
     left: 3.6vw;
     display: block;
+    visibility: visible;
   }
   90% {
     display: none;
+    visibility: hidden;
   }
   100% {
     left: 42.5vw;
