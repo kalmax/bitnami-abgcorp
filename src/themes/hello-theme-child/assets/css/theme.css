@@ -765,26 +765,39 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   font-size: 24px;
 }
 
-.tabContent:not(:first-child) {
-  display: none;
+@media (min-width: 1024px) {
+  #who-we-are .from-tabs .tab-contents .tab-contents-item .col-image {
+    order: 2;
+  }
+  #who-we-are .from-tabs .tab-contents .tab-contents-item .col-details {
+    order: 1;
+  }
+  #who-we-are .from-tabs .tab-contents .tab-contents-item .col-details .content {
+    padding-right: 8rem;
+  }
 }
-
-#tabContent1 {
-  display: block;
-}
-
-.btnTab {
-  cursor: pointer;
-}
-
-.btnTab a.elementor-button {
-  border-radius: none;
-  border: none !important;
-}
-
-#tab-indicator {
-  left: 0px;
-  transition: all 500ms ease-in-out;
+@media (max-width: 1024px) {
+  #who-we-are .tab-contents-mobile-item h3.title {
+    display: none;
+  }
+  #who-we-are .tab-contents-mobile-item .excerpt h3 {
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 1.15rem;
+    line-height: 2.4;
+    font-weight: 700;
+  }
+  #who-we-are .tab-contents-mobile-item .content {
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  #who-we-are .tab-contents-mobile-item .content.collapsed {
+    display: block;
+  }
+  #who-we-are .tab-contents-mobile-item a.read-more {
+    display: none;
+  }
 }
 
 .category-aboutus-tabcontent {
