@@ -286,8 +286,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
   overflow: hidden;
-  display: none;
-  visibility: hidden;
+  display: block;
+  visibility: visible;
   position: absolute;
   width: 117% !important;
   left: 42.5vw;
@@ -520,8 +520,6 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes showSearch {
   0% {
     left: 42.5vw;
-    display: none;
-    visibility: hidden;
   }
   10% {
     display: block;
@@ -534,8 +532,6 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes showSearch {
   0% {
     left: 42.5vw;
-    display: none;
-    visibility: hidden;
   }
   10% {
     display: block;
@@ -548,8 +544,6 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes hideSearch {
   0% {
     left: 3.6vw;
-    display: block;
-    visibility: visible;
   }
   90% {
     display: none;
@@ -562,8 +556,6 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes hideSearch {
   0% {
     left: 3.6vw;
-    display: block;
-    visibility: visible;
   }
   90% {
     display: none;

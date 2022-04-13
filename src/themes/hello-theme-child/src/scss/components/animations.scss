@@ -48,8 +48,6 @@
 @keyframes showSearch {
   0% { 
     left: 42.5vw;
-    display: none;
-    visibility: hidden;
     
   }
   10%{
@@ -65,8 +63,6 @@
 @keyframes hideSearch {
   0% { 
     left: 3.6vw;
-    display: block;
-    visibility: visible;
   }
   90%{
     display: none;

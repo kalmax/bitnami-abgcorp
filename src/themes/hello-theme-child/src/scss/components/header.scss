@@ -232,8 +232,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
     overflow: hidden;
-    display: none;
-    visibility: hidden;
+    display: block;
+    visibility: visible;
     position: absolute;
     width: 117% !important;
     left: 42.5vw;
