@@ -126,12 +126,14 @@ h6 {
 #headerSection .elementor-item:hover {
   color: #20438c !important;
 }
-#headerSection .elementor-top-column:first-child,
+@media (min-width: 768px) {
+  #headerSection .elementor-top-column:first-child,
 #headerSection .elementor-top-column:last-child {
-  width: 40% !important;
-}
-#headerSection .elementor-top-column:nth-child(2) {
-  width: 20% !important;
+    width: 40% !important;
+  }
+  #headerSection .elementor-top-column:nth-child(2) {
+    width: 20% !important;
+  }
 }
 @media (min-width: 768px) {
   #headerSection .elementor-sub-item.has-submenu .sub-arrow:last-child:after {
@@ -286,8 +288,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
   overflow: hidden;
-  display: block;
-  visibility: visible;
+  display: none;
+  visibility: hidden;
   position: absolute;
   width: 117% !important;
   left: 42.5vw;
@@ -520,6 +522,8 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes showSearch {
   0% {
     left: 42.5vw;
+    display: none;
+    visibility: hidden;
   }
   10% {
     display: block;
@@ -532,6 +536,8 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes showSearch {
   0% {
     left: 42.5vw;
+    display: none;
+    visibility: hidden;
   }
   10% {
     display: block;
@@ -544,6 +550,8 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes hideSearch {
   0% {
     left: 3.6vw;
+    display: block;
+    visibility: visible;
   }
   90% {
     display: none;
@@ -556,6 +564,8 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @keyframes hideSearch {
   0% {
     left: 3.6vw;
+    display: block;
+    visibility: visible;
   }
   90% {
     display: none;

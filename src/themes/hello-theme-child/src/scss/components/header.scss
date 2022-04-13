@@ -8,14 +8,18 @@
         }
     }
 
-    .elementor-top-column:first-child,
-    .elementor-top-column:last-child{
-        width: 40%!important;
-    }    
+    @media (min-width: 768px) {
+        .elementor-top-column:first-child,
+        .elementor-top-column:last-child{
+            width: 40%!important;
+        }    
+    
+        .elementor-top-column:nth-child(2){
+            width: 20%!important;
+        }
 
-    .elementor-top-column:nth-child(2){
-        width: 20%!important;
     }
+
 
     .elementor-sub-item {
         @media (min-width: 768px) {
