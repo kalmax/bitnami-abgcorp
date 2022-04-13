@@ -288,8 +288,8 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
   overflow: hidden;
-  display: none;
-  visibility: hidden;
+  display: block;
+  visibility: visible;
   position: absolute;
   width: 117% !important;
   left: 42.5vw;
@@ -559,6 +559,8 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   }
   100% {
     left: 42.5vw;
+    display: none;
+    visibility: hidden;
   }
 }
 @keyframes hideSearch {
@@ -573,6 +575,8 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   }
   100% {
     left: 42.5vw;
+    display: none;
+    visibility: hidden;
   }
 }
 .elementor-widget:not(:last-child) {
