@@ -6,7 +6,6 @@ jQuery(function ($) {
     var mobileMenu = $('.elementor-widget-mobile-menu');
     var jumpToMenu = $(".elementor-widget-jump-to-menu");
 
-   
     if (window.matchMedia("(max-width: 1024px)").matches) {
       
        var lastScrollTop = 0;
@@ -20,11 +19,13 @@ jQuery(function ($) {
         }
 
         var st = $(this).scrollTop();
-        
+      
         if (st > lastScrollTop){
           mobileMenu.hide();
+          jumpToMenu.find(".from-jump-to-menu-container").removeClass("hide");
         } else {
           mobileMenu.show();
+          jumpToMenu.find(".from-jump-to-menu-container").addClass("hide");
         }
         lastScrollTop = st;
 

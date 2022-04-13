@@ -52,7 +52,7 @@ class Jump_To_Menu_Widget extends Widget_Base {
     <?php while ( have_posts() ) : the_post(); ?>
       <?php $sections = carbon_get_the_post_meta( 'crb_jump_to_sections' );?>
       <?php if($sections):?>
-        <div class="from-jump-to-menu from-jump-to-menu-container">
+        <div class="from-jump-to-menu from-jump-to-menu-container hide">
           <div class="from-jump-to-menu-inner">
             <div class="dropdown">
               <label> <?=$post_title;?> Overview </label>
