@@ -17,26 +17,45 @@
 }
 
 // About Tab CSS
-.tabContent:not(:first-child) {
-  display: none;
-}
-
-#tabContent1 {
-  display: block;
-}
-
-.btnTab {
-  cursor: pointer;
-}
-
-.btnTab a.elementor-button {
-  border-radius: none;
-  border: none !important;
-}
-
-#tab-indicator {
-  left: 0px;
-  transition: all 500ms ease-in-out;
+#who-we-are {
+  @media (min-width: 1024px) {
+    .from-tabs .tab-contents .tab-contents-item .col-image {
+      order: 2;
+    }
+    .from-tabs .tab-contents .tab-contents-item .col-details {
+      order: 1;
+      .content {
+        padding-right: 8rem;
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .tab-contents-mobile-item {
+      h3.title {
+        display: none;
+      }
+      .excerpt {
+        h3 {
+          font-family: "Source Sans Pro", Sans-serif;
+          font-size: 1.15rem;
+          line-height: 2.4;
+          font-weight: 700;
+        }
+      }
+      .content {
+        font-family: "Source Sans Pro", Sans-serif;
+        font-size: 1rem;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .content.collapsed {
+        display: block;
+      }
+      a.read-more {
+        display: none;
+      }
+    }
+  }
 }
 
 .category-aboutus-tabcontent {

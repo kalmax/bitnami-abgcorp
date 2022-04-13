@@ -465,56 +465,6 @@ jQuery(function ($) {
 
 
 jQuery(function ($) {
-    // about page tab
-    var indicatorInitialPosition, indicatorNewPosition, indicatorTemporaryPosition = 0;
-
-    $('.btnTab').on('click', function () {
-
-      // setting new indicator position if tab is clicked
-      indicatorNewPosition = indicatorTemporaryPosition
-
-      // Hide and Show of tab contents
-      var content = $(this).attr('target')
-      $('.tabContent').css({ 'display': 'none' })
-      $('#' + content).css({ 'display': 'block' })
-      $('#tab-indicator').css({ 'left': indicatorNewPosition + 'px' })
-
-      // setting new initial indicator position
-      indicatorInitialPosition = indicatorNewPosition
-
-
-    });
-
-    // getting inital indicator position
-    if ($('#tab-indicator').length > 0) {
-      indicatorInitialPosition = $('#tab-indicator').position().left;
-    }
-
-    $('.btnTab').hover(function () {
-      // Tab indicator behaviour
-
-      // calculating and applying indicator temporary new position
-      var item = $(this).attr('item')
-      var indicatorWidth = $('#tab-indicator').width()
-      var left = item * indicatorWidth
-      $('#tab-indicator').css({ 'left': left + 'px' })
-
-      indicatorTemporaryPosition = left
-    }, () => {
-
-      if (!indicatorNewPosition) {
-        // returning indicator to its initial position
-        $('#tab-indicator').css({ 'left': indicatorInitialPosition + 'px' })
-      }
-      else {
-        // reseting indicator new and temporary position
-        indicatorNewPosition = 0
-        indicatorTemporaryPosition = 0
-      }
-
-    })
-
-
     // Timeline Slider
     var sliderContent = $('.timeline-content-slider > div > div');
     var sliderImage = $('.timeline-image-slider > div > div');
