@@ -254,10 +254,12 @@
   }
 }
 
-.brandContent{
-    display: none;
-}
-
-#brandContent1{
-  display: block;
+body:not(.elementor-editor-active) {
+  .brandContent{
+      display: none;
+  }
+  
+  #brandContent1{
+    display: block;
+  }
 }

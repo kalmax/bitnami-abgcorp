@@ -36,7 +36,7 @@ class From_Tabs_Widget extends Widget_Base {
 
   public function get_name() { return self::$slug; }
 
-  public function get_title() { return __('Posts Tabs', self::$slug); }
+  public function get_title() { return __('FROM Tabs', self::$slug); }
 
   public function get_icon() { return 'eicon-slider-push'; }
 
