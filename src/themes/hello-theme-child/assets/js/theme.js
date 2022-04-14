@@ -90,7 +90,6 @@ jQuery(function ($) {
           jumpToMenu.find(".from-jump-to-menu-container").removeClass("hide");
         } else {
           mobileMenu.show();
-          jumpToMenu.find(".from-jump-to-menu-container").addClass("hide");
         }
         lastScrollTop = st;
 
