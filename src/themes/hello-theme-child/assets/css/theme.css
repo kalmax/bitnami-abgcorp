@@ -977,11 +977,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   opacity: 1;
 }
 
-.brandContent {
+body:not(.elementor-editor-active) .brandContent {
   display: none;
 }
-
-#brandContent1 {
+body:not(.elementor-editor-active) #brandContent1 {
   display: block;
 }
 

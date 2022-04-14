@@ -552,15 +552,14 @@ jQuery(function ($) {
     $('.swiper-slide-active').addClass('activeBrand')
 
     $('.swiper-slide').click(function() {
-    $('.swiper-slide').removeClass('activeBrand');
-    $(this).addClass('activeBrand');
+      $('.swiper-slide').removeClass('activeBrand');
+      $(this).addClass('activeBrand');
 
-    // Hide and Show of tab contents
-    var content = $(this).attr('data-swiper-slide-index')
-    $('.brandContent').css({ 'display': 'none' })
-    $('.brandContent[data-index="'+ content +'"]').css({ 'display': 'block' })
-    })
-
+      // Hide and Show of tab contents
+      var content = $(this).attr('data-swiper-slide-index')
+      $('.brandContent').css({ 'display': 'none' });
+      $('.brandContent[data-index="'+ content +'"]').css({ 'display': 'block' });
+    });
 });
 jQuery(function ($) {
     // Get the menu instance
