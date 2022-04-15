@@ -48,32 +48,44 @@
 @keyframes showSearch {
   0% { 
     left: 42.5vw;
-    display: none;
     visibility: hidden;
   }
-  10%{
-    display: block; 
-    visibility: visible;
-  }
   100% { 
-    left: 3.6vw; 
-    
+    left: 3.6vw;     
+    visibility: visible;
   }
 }
 
 @keyframes hideSearch {
   0% { 
     left: 3.6vw;
-    display: block; 
     visibility: visible;
   }
-  90%{
-    display: none;
+  100% { 
     visibility: hidden;
   }
+}
+
+@keyframes hideSearchSafari {
+  0% { 
+    left: 3.6vw;
+    visibility: visible;
+  }
   100% { 
-    left: 42.5vw; 
-    display: none;
+    left: 45.6vw;
     visibility: hidden;
+  }
+}
+
+@-webkit-keyframes hideSearchSafari {
+  0% { 
+    left: 3.6vw;
+    // opacity: 1;
+    visibility: visible;
+  }
+  100% { 
+    left: 45.6vw;
+    visibility: hidden;
+    // opacity: 0;
   }
 }

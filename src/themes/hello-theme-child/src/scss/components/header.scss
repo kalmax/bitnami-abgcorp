@@ -1,5 +1,5 @@
 #headerSection {
-    overflow-x: clip;
+    // overflow-x: clip;
     transition: height, background-color 700ms;
 
     .elementor-item {
@@ -236,10 +236,10 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
     overflow: hidden;
-    display: block;
-    visibility: visible;
+    visibility: hidden;
+    display: none;
     position: absolute;
-    width: 117% !important;
+    width: 109% !important;
     left: 42.5vw;
     top: 0;
     background-color: #20438c;
@@ -250,15 +250,36 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
         top: 50%;
         transform: translateY(-50%);
     }
+
+    .elementor-widget-search-form {
+        width: 92% !important;
+        max-width: 100% !important;
+    }
 }
 
 @media not all and (min-resolution:.001dpcm) { 
     @supports (-webkit-appearance: none) and (stroke-color: transparent) {
         .searchBox {
-            width: 109% !important;
-            left: 42.5vw;
-            .elementor-widget-search-form {
-                width: 23vw !important;
+            animation-name: hideSearchSafari;
+            &.hideSearch {
+                animation: hideSearchSafari 2s backwards;
+                animation-name: hideSearchSafari;
+                animation-duration: 0.5s;
+                animation-delay: 0s;
+                animation-iteration-count: 1;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards !important;
+                -webkit-animation-name: hideSearchSafari;
+                -webkit-animation-duration: 0.5s;
+                -webkit-animation-delay: 0s;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-timing-function: linear;
+                -webkit-animation-fill-mode: forwards !important;
+                visibility: visible;
+            }
+            &.showSearch {
+                visibility: visible;
+                display: block;
             }
         }
     }

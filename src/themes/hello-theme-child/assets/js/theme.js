@@ -672,7 +672,20 @@ jQuery(function ($) {
             $(this).children().children().removeClass('fa fa-external-link')
         })
 
+        $('.searchBox').attr('id', 'animated-show-search');
+        var anim = document.getElementById('animated-show-search');
+        anim.addEventListener('animationstart', () => {
+        });
+        anim.addEventListener('animationend', () => {
+            console.log('ADD event listener - animation end on anim element');
+            console.log('HAS CLASS ', $('#animated-show-search').hasClass('hideSearch'));
+            if ($('#animated-show-search').hasClass('hideSearch')) {
+                $('#animated-show-search').css({"display": "none"});
+            }
+        });
+
         $('.openSearch').on('click', () => {
+            $('#animated-show-search').css({"display": "block"});
             $('.searchBox').removeClass('hideSearch')
             $('.searchBox').addClass('showSearch')
         })

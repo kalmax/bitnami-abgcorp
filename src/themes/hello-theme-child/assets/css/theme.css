@@ -120,7 +120,6 @@ h6 {
 }
 
 #headerSection {
-  overflow-x: clip;
   transition: height, background-color 700ms;
 }
 #headerSection .elementor-item:hover {
@@ -288,10 +287,10 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
 
 .searchBox {
   overflow: hidden;
-  display: block;
-  visibility: visible;
+  visibility: hidden;
+  display: none;
   position: absolute;
-  width: 117% !important;
+  width: 109% !important;
   left: 42.5vw;
   top: 0;
   background-color: #20438c;
@@ -302,15 +301,37 @@ body:not(.elementor-editor-active) .elementor-menu-anchor:before {
   top: 50%;
   transform: translateY(-50%);
 }
+.searchBox .elementor-widget-search-form {
+  width: 92% !important;
+  max-width: 100% !important;
+}
 
 @media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     .searchBox {
-      width: 109% !important;
-      left: 42.5vw;
+      -webkit-animation-name: hideSearchSafari;
+              animation-name: hideSearchSafari;
     }
-    .searchBox .elementor-widget-search-form {
-      width: 23vw !important;
+    .searchBox.hideSearch {
+      -webkit-animation: hideSearchSafari 2s backwards;
+              animation: hideSearchSafari 2s backwards;
+      animation-name: hideSearchSafari;
+      animation-duration: 0.5s;
+      animation-delay: 0s;
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards !important;
+      -webkit-animation-name: hideSearchSafari;
+      -webkit-animation-duration: 0.5s;
+      -webkit-animation-delay: 0s;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-fill-mode: forwards !important;
+      visibility: visible;
+    }
+    .searchBox.showSearch {
+      visibility: visible;
+      display: block;
     }
   }
 }
@@ -522,60 +543,58 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 @-webkit-keyframes showSearch {
   0% {
     left: 42.5vw;
-    display: none;
     visibility: hidden;
-  }
-  10% {
-    display: block;
-    visibility: visible;
   }
   100% {
     left: 3.6vw;
+    visibility: visible;
   }
 }
 @keyframes showSearch {
   0% {
     left: 42.5vw;
-    display: none;
     visibility: hidden;
-  }
-  10% {
-    display: block;
-    visibility: visible;
   }
   100% {
     left: 3.6vw;
+    visibility: visible;
   }
 }
 @-webkit-keyframes hideSearch {
   0% {
     left: 3.6vw;
-    display: block;
     visibility: visible;
   }
-  90% {
-    display: none;
-    visibility: hidden;
-  }
   100% {
-    left: 42.5vw;
-    display: none;
     visibility: hidden;
   }
 }
 @keyframes hideSearch {
   0% {
     left: 3.6vw;
-    display: block;
     visibility: visible;
   }
-  90% {
-    display: none;
+  100% {
     visibility: hidden;
   }
+}
+@keyframes hideSearchSafari {
+  0% {
+    left: 3.6vw;
+    visibility: visible;
+  }
   100% {
-    left: 42.5vw;
-    display: none;
+    left: 45.6vw;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes hideSearchSafari {
+  0% {
+    left: 3.6vw;
+    visibility: visible;
+  }
+  100% {
+    left: 45.6vw;
     visibility: hidden;
   }
 }
