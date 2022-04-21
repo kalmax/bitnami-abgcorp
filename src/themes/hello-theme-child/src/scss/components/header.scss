@@ -194,14 +194,14 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
 //     pointer-events: none;
 // }
 
-body:not(.elementor-editor-active) .elementor-menu-anchor:before {
-    content: "";
-    display: block;
-    height: 564px; // fixed header height
-    margin: -564px 0 0; // negative fixed header height
-    visibility: hidden;
-    pointer-events: none;
-}
+// body:not(.elementor-editor-active) .elementor-menu-anchor:before {
+//     content: "";
+//     display: block;
+//     height: 564px; // fixed header height
+//     margin: -564px 0 0; // negative fixed header height
+//     visibility: hidden;
+//     pointer-events: none;
+// }
 
 .externalIcon:after {
     content: " ";
