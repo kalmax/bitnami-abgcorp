@@ -255,15 +255,6 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
   z-index: -1;
 }
 
-body:not(.elementor-editor-active) .elementor-menu-anchor:before {
-  content: "";
-  display: block;
-  height: 564px;
-  margin: -564px 0 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 .externalIcon:after {
   content: " ";
   display: block;
