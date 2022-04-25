@@ -1,3 +1,7 @@
+.from-tabs-carousel .from-tabs-carousel-list {
+  margin-bottom: 5rem;
+}
+
 .from-tabs-carousel .from-tabs-carousel-list--item {
   border: none;
   text-decoration: none;
