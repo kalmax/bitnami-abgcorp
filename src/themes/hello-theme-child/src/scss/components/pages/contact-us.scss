@@ -46,5 +46,23 @@
     max-width: 100%;
   }
 }
-  
-  
+
+@media (min-width: 768px) {
+  .page-id-7377 .elementor-element.hero-header h1.elementor-heading-title {
+    font-size: 3.75rem;
+  }
+  .page-id-7377 .elementor-section.elementor-section-boxed .elementor-widget-text-editor.header-intro p {
+    font-size: 1.5rem;
+  }
+  .page-id-7377 .elementor-element.brands-title h1.elementor-heading-title {
+    font-weight: 700;
+  }
+}
+
+.elementor-section.elementor-section-boxed.contact-form .elementor-widget-text-editor p {
+  font-size: 1.31rem;
+  font-weight: 400;
+  strong {
+    font-weight: 600;
+  }
+}
