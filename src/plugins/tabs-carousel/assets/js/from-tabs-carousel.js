@@ -38,7 +38,7 @@ jQuery(document).ready(function(){
 
         }
     });
-
+    
     /**
      * @description Builds tabs based on posts
      *
@@ -46,6 +46,22 @@ jQuery(document).ready(function(){
      * @return void
      */
     function buildTabs(el) {
+
+      jQuery(window).on('hashchange', function(e){
+        
+        var hash = window.location.hash;
+        let tabIndex = hash.replace('#brands-', ''); 
+
+        jQuery(el).find(".slick-slide").each(function(index){
+          jQuery(this).attr('class', jQuery(this).attr('class').replace(' active', '') );
+        });
+        
+        jQuery(el).find(`[data-slick-index='${tabIndex}']`).addClass("active");
+        openTab(el, tabIndex);
+
+        jQuery(el).slick('slickGoTo', tabIndex - 1);
+    
+      });
    
      if (el && el !== 'undefined') {
         
@@ -77,12 +93,12 @@ jQuery(document).ready(function(){
 
     function openTab(el, tabId) {
       
-      console.log(tabId);
       jQuery(el).find(".from-tabs-carousel-contents--item").each(function(index){
         jQuery(this).attr('class', jQuery(this).attr('class').replace(' active', '') );
       });
+
+      console.log(tabId);
       
-      console.log(jQuery(el).find(`#from-tabs-carousel-content-${tabId}`));
       jQuery(el).find(`#from-tabs-carousel-content-${tabId}`).addClass("active");
 
     }
