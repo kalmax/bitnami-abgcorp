@@ -46,7 +46,7 @@ jQuery(document).ready(function(){
      * @return void
      */
     function buildTabs(el) {
-
+    
       jQuery(window).on('hashchange', function(e){
         
         var hash = window.location.hash;
@@ -59,7 +59,7 @@ jQuery(document).ready(function(){
         jQuery(el).find(`[data-slick-index='${tabIndex}']`).addClass("active");
         openTab(el, tabIndex);
 
-        jQuery(el).slick('slickGoTo', tabIndex - 1);
+        jQuery(el).find('.from-tabs-carousel-list').slick('slickGoTo', parseInt(tabIndex));
     
       });
    
