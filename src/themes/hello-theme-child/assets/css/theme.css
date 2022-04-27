@@ -1202,6 +1202,59 @@ body:not(.elementor-editor-active) #brandContent1 {
   font-weight: 600;
 }
 
+#abg_contact_us .elementor-field.elementor-select-wrapper {
+  position: relative;
+  float: left;
+  width: 100%;
+  /* IE11 hide native button (thanks Matt!) */
+}
+#abg_contact_us .elementor-field.elementor-select-wrapper select::-ms-expand {
+  display: none;
+}
+#abg_contact_us .elementor-field.elementor-select-wrapper:before {
+  display: none;
+}
+#abg_contact_us .elementor-field.elementor-select-wrapper:after {
+  content: " ";
+  right: 11px;
+  top: 22px;
+  position: absolute;
+  pointer-events: none;
+  background: url(/wp-content/themes/hello-theme-child/assets/img/select-carrot@2x.png) no-repeat center center;
+  background-size: contain;
+  text-indent: -1000px;
+  width: 15px;
+  height: 9px;
+}
+#abg_contact_us .elementor-field.elementor-select-wrapper label {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  width: 100%;
+}
+#abg_contact_us .elementor-field.elementor-select-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  height: 50px;
+  float: right;
+  padding: 0px 35px 0 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  -ms-word-break: normal;
+  word-break: normal;
+  min-width: 125px;
+}
+
+#abg_contact_us #btn-contactUs {
+  min-width: 200px;
+}
+
 .search-results main {
   font-family: "Source Sans Pro", sans-serif;
 }
