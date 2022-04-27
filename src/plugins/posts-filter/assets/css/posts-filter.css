@@ -5,16 +5,14 @@
   justify-content: flex-end;
 }
 .from-posts-filter-container .selectdiv {
-  margin-right: 2rem;
+  margin-right: 20px;
+  width: 12rem;
 }
 .from-posts-filter-container .selectdiv:last-child {
   margin-right: 0;
 }
 .awards-filters .from-posts-filter-container select {
   margin-left: 2rem;
-}
-#from-posts-filter-select-category {
-  width: fit-content;
 }
 .mobile-container  {
   display: none;
@@ -81,6 +79,7 @@
   .from-posts-filter-container .selectdiv {
     margin-right: 0;
     margin-bottom: 2rem;
+    width: 100%;
   }
   #from-posts-filter-select-category {
     width: 100%;
