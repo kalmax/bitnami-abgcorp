@@ -59,6 +59,11 @@ jQuery(document).ready(function(){
         jQuery(el).find(`[data-slick-index='${tabIndex}']`).addClass("active");
         openTab(el, tabIndex);
 
+        // go to section
+        jQuery('html, body').animate({
+          scrollTop: jQuery(el).find('.from-tabs-carousel-list').top
+        }, 1000);
+
         jQuery(el).find('.from-tabs-carousel-list').slick('slickGoTo', parseInt(tabIndex));
     
       });
@@ -97,8 +102,6 @@ jQuery(document).ready(function(){
         jQuery(this).attr('class', jQuery(this).attr('class').replace(' active', '') );
       });
 
-      console.log(tabId);
-      
       jQuery(el).find(`#from-tabs-carousel-content-${tabId}`).addClass("active");
 
     }
