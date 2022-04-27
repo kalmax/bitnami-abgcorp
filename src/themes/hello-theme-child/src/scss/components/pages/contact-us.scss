@@ -59,10 +59,71 @@
   }
 }
 
-.elementor-section.elementor-section-boxed.contact-form .elementor-widget-text-editor p {
-  font-size: 1.31rem;
-  font-weight: 400;
-  strong {
-    font-weight: 600;
+.elementor-section.elementor-section-boxed.contact-form {
+  .elementor-background-overlay {
+    height: 115px;
   }
+  .elementor-widget-text-editor p {
+    font-size: 1.31rem;
+    font-weight: 400;
+    strong {
+      font-weight: 600;
+    }
+  }
+}
+
+#abg_contact_us .elementor-field.elementor-select-wrapper {
+  position: relative;
+  float: left;
+  width: 100%;
+  /* IE11 hide native button (thanks Matt!) */
+  select::-ms-expand {
+    display: none;
+  }
+  &:before {
+    display: none;
+
+  }
+  &:after {
+    content: " ";
+    right: 11px;
+    top: 22px;
+    position: absolute;
+    pointer-events: none;
+    background: url(/wp-content/themes/hello-theme-child/assets/img/select-carrot@2x.png) no-repeat center center;
+    background-size: contain;
+    text-indent: -1000px;
+    width: 15px;
+    height: 9px;
+  }
+
+  label {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    height: 50px;
+    float: right;
+    padding: 0px 35px 0 24px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #333;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    -ms-word-break: normal;
+    word-break: normal;
+    min-width: 125px;
+  }
+}
+
+#abg_contact_us  #btn-contactUs {
+  min-width: 200px;
 }
