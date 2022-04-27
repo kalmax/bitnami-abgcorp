@@ -1191,6 +1191,9 @@ body:not(.elementor-editor-active) #brandContent1 {
     font-weight: 700;
   }
 }
+.elementor-section.elementor-section-boxed.contact-form .elementor-background-overlay {
+  height: 115px;
+}
 .elementor-section.elementor-section-boxed.contact-form .elementor-widget-text-editor p {
   font-size: 1.31rem;
   font-weight: 400;

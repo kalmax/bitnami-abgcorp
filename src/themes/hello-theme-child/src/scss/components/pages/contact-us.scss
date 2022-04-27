@@ -59,10 +59,15 @@
   }
 }
 
-.elementor-section.elementor-section-boxed.contact-form .elementor-widget-text-editor p {
-  font-size: 1.31rem;
-  font-weight: 400;
-  strong {
-    font-weight: 600;
+.elementor-section.elementor-section-boxed.contact-form {
+  .elementor-background-overlay {
+    height: 115px;
+  }
+  .elementor-widget-text-editor p {
+    font-size: 1.31rem;
+    font-weight: 400;
+    strong {
+      font-weight: 600;
+    }
   }
 }
