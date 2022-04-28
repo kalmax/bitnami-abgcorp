@@ -1007,6 +1007,7 @@ body:not(.elementor-editor-active) #brandContent1 {
 .selectdiv {
   position: relative;
   float: left;
+  width: 12rem;
   /* IE11 hide native button (thanks Matt!) */
 }
 .selectdiv select::-ms-expand {
