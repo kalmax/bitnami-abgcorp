@@ -63,6 +63,17 @@ class Mobile_Menu_Widget extends Widget_Base {
     );
 
     $this->add_control(
+      'logo_light',
+      [
+        'label' => esc_html__( 'Logo - Light', self::$slug ),
+        'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+          'url' => \Elementor\Utils::get_placeholder_image_src(),
+        ],
+      ]
+    );
+
+    $this->add_control(
       'cta_contact_us',
       [
         'label' => esc_html__( 'Link - Contact Us', self::$slug ),
