@@ -73,4 +73,18 @@
       padding-bottom: 0;
     }
   }
+
+  .slider-three-col-hint .from-carousel .slick-arrow-right {
+    background-color: white;
+    .slick-next {
+      background: url(/wp-content/themes/hello-theme-child/assets/img/Right-Caret@2x.png) no-repeat center center !important;
+      width: 30px;
+      height: 31px;
+      background-size: contain !important;
+      border-radius: 0;
+      &::before {
+        content: '';
+      }
+    }
+  }
 }

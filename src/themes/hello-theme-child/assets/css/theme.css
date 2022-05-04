@@ -1127,6 +1127,19 @@ body:not(.elementor-editor-active) #brandContent1 {
 .parent-pageid-5730 .elementor-widget-text-editor p:last-child, .parent-pageid-5730 .elementor-widget-text-editor p.no-padding, .page-id-5730 .elementor-widget-text-editor p:last-child, .page-id-5730 .elementor-widget-text-editor p.no-padding {
   padding-bottom: 0;
 }
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right {
+  background-color: white;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next {
+  background: url(/wp-content/themes/hello-theme-child/assets/img/Right-Caret@2x.png) no-repeat center center !important;
+  width: 30px;
+  height: 31px;
+  background-size: contain !important;
+  border-radius: 0;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before {
+  content: "";
+}
 
 #brands-gallery .gallery {
   display: flex;
