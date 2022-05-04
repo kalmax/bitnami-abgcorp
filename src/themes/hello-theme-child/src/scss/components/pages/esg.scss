@@ -77,11 +77,10 @@
   .slider-three-col-hint .from-carousel .slick-arrow-right {
     // background-color: white;
     .slick-next {
-      background: white url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
+      background: transparent url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
       width: 40px;
       height: 40px;
       background-size: contain !important;
-      border-radius: 0;
       right: 0%;
       top: 50%;
       &::before {
@@ -96,11 +95,10 @@
   .slider-three-col-hint .from-carousel .slick-arrow-left {
     // background-color: white;
     .slick-prev {
-      background: white url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
+      background: transparent url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
       width: 40px;
       height: 40px;
       background-size: contain !important;
-      border-radius: 0;
       transform: scaleX(-1);
       &::before {
         content: '';
