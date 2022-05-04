@@ -61,7 +61,7 @@ jQuery(document).ready(function(){
 
         // go to section
         jQuery('html, body').animate({
-          scrollTop: jQuery(el).find('.from-tabs-carousel-list').top
+          scrollTop: jQuery(el).find('.from-tabs-carousel-list').offset().top
         }, 1000);
 
         jQuery(el).find('.from-tabs-carousel-list').slick('slickGoTo', parseInt(tabIndex));
