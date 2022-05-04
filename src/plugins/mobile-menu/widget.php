@@ -63,6 +63,19 @@ class Mobile_Menu_Widget extends Widget_Base {
     );
 
     $this->add_control(
+      'menu_bg_type',
+      [
+        'label' => esc_html__( 'Background Type', 'plugin-name' ),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'default' => 'opaque',
+        'options' => [
+          'opaque'  => esc_html__( 'Opaque', self::$slug ),
+          'light' => esc_html__( 'Light', self::$slug )
+        ],
+      ]
+    );
+
+    $this->add_control(
       'logo_light',
       [
         'label' => esc_html__( 'Logo - Light', self::$slug ),
@@ -141,24 +154,30 @@ class Mobile_Menu_Widget extends Widget_Base {
     $menu = $settings['menu_id'] ? wp_get_nav_menu_object( $settings['menu_id'] ) : false;
     $menu_items = $menu ? wp_get_nav_menu_items( $menu->term_id ) : [];
     $menu_items_tree = self::buildTree($menu_items);
+    $menu_bg_type= $settings['menu_bg_type'];
+    $logo_light= $settings['logo_light'];
 
     if (Plugin::$instance->editor->is_edit_mode()) {
       // If the Elementor editor is opened.
 
     } ?>
 
-    <div class="from-mobile-menu from-mobile-menu-container" style="font-family: <?php echo esc_attr( $font_family ); ?>;">
+    <div class="from-mobile-menu from-mobile-menu-container menu-<?=$menu_bg_type;?>" style="font-family: <?php echo esc_attr( $font_family ); ?>;">
       <div class="from-mobile-menu-inner">
         <div class="header">
           <div class="logo">
-           <?php  if ( has_custom_logo() ): ?>
-            <a href="<?=get_site_url();?>"><img src="<?=esc_url( $logo[0] );?>" alt="<?=get_bloginfo( 'name' );?>"></a>
-           <?php else: ?> 
-            <a href="<?=get_site_url();?>"><h1><?=get_bloginfo('name');?></h1></a>  
-           <?php endif;?>
+            <?php  if ( has_custom_logo() ): ?>
+              <?php if( $logo_light && $logo_light['url']) :?>
+                <a href="<?=get_site_url();?>" class="logo-light"><img src="<?=$logo_light['url'];?>" alt="<?=get_bloginfo( 'name' );?>"></a>
+              <?php endif;?>
+              <a href="<?=get_site_url();?>" class="logo-opaque"><img src="<?=esc_url( $logo[0] );?>" alt="<?=get_bloginfo( 'name' );?>"></a>
+            <?php else: ?> 
+              <a href="<?=get_site_url();?>"><h1><?=get_bloginfo('name');?></h1></a>  
+            <?php endif;?>
           </div>
           <div class="controls">
-            <a href="" class="burger" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-burger.svg';?>');"></a>
+            <a href="" class="burger burger-light" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-burger-light.svg';?>');"></a>
+            <a href="" class="burger burger-opaque" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-burger.svg';?>');"></a>
             <a href="" class="close" style="background-image:url('<?php echo plugin_dir_url( __FILE__ ).'assets/images/icon-close.svg';?>');"></a>
           </div>
         </div>

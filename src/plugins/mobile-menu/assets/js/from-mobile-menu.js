@@ -40,20 +40,48 @@ jQuery(document).ready(function(){
     function buildMenu(el) {
    
       if (el && el !== 'undefined') {
+        
+        var bgIsOpaque = true;
+
+        // set menu bg
+        if(jQuery(el).hasClass('menu-light')){
+          bgIsOpaque = false;
+        }
 
         // burger menu
         jQuery(el).find('.header .burger').click(function(e){
+
           e.preventDefault();
           jQuery(el).find('.links-container').removeClass('collapsed');
           jQuery(this).hide();
           jQuery(el).find('.header .close').show();
+
+          if(!bgIsOpaque) {
+            jQuery(el).find('.logo-opaque').css({ "display" : "block"});
+            jQuery(el).find('.logo-light').css({ "display" : "none"});
+          }
+
+          jQuery(el).css({ "background" : "#ffffff" });
+
         });
 
         jQuery(el).find('.header .close').click(function(e){
+
           e.preventDefault();
           jQuery(el).find('.links-container').addClass('collapsed');
           jQuery(this).hide();
           jQuery(el).find('.header .burger').show();
+
+          if(!bgIsOpaque) {
+            jQuery(el).find('.logo-opaque').css({ "display" : "none"});
+            jQuery(el).find('.logo-light').css({ "display" : "block"});
+            jQuery(el).find('.burger-light').css({ "display" : "block"});
+            jQuery(el).find('.burger-opaque').css({ "display" : "none"});
+            jQuery(el).css({ "background-color" : "transparent" });
+            jQuery(el).css({ "background" : "linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent)" });
+            
+          }
+
         });
 
         // menu item click
