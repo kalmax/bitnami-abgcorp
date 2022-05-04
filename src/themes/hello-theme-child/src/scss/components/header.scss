@@ -31,13 +31,26 @@
                         position: relative;
                         width: 16px;
                         height: 16px;
-                        background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+                        background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav-black.png");
                         background-size: contain;
                         background-repeat: no-repeat;
                         pointer-events: none;
                     }
+                    &:hover{
+                        &::after{
+                            background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+                        }
+                    }
+                }
+                &:hover, &.highlighted {
+                    .sub-arrow:last-child {
+                        &::after{
+                            background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+                        }
+                    }
                 }
             }
+            
         }
     }
 

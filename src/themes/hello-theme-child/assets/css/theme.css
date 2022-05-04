@@ -138,10 +138,16 @@ h6 {
     position: relative;
     width: 16px;
     height: 16px;
-    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav-black.png");
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
+  }
+  #headerSection .elementor-sub-item.has-submenu .sub-arrow:last-child:hover::after {
+    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+  }
+  #headerSection .elementor-sub-item.has-submenu:hover .sub-arrow:last-child::after, #headerSection .elementor-sub-item.has-submenu.highlighted .sub-arrow:last-child::after {
+    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
   }
 }
 #headerSection .elementor-button {
