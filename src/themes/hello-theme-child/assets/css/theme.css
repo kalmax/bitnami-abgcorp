@@ -1127,32 +1127,27 @@ body:not(.elementor-editor-active) #brandContent1 {
 .parent-pageid-5730 .elementor-widget-text-editor p:last-child, .parent-pageid-5730 .elementor-widget-text-editor p.no-padding, .page-id-5730 .elementor-widget-text-editor p:last-child, .page-id-5730 .elementor-widget-text-editor p.no-padding {
   padding-bottom: 0;
 }
-.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next {
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left {
+  background-color: transparent;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next {
   background: transparent url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   background-size: contain !important;
   right: 0%;
   top: 50%;
 }
-.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before {
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next::before {
   content: "";
 }
-.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i {
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next i {
   display: none;
 }
 .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev {
-  background: transparent url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
-  width: 40px;
-  height: 40px;
-  background-size: contain !important;
   transform: scaleX(-1);
-}
-.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before {
-  content: "";
-}
-.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev i {
-  display: none;
+  left: -7px;
+  top: -6px;
 }
 
 #brands-gallery .gallery {
