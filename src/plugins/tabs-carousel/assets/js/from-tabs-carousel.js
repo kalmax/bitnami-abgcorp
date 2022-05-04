@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+    console.log('FROM TABS CAROUSEL PAGE');
 
     let selector;
     let tabContainer;
@@ -72,20 +73,21 @@ jQuery(document).ready(function(){
      * @return void
      */
     function buildTabs(el) {
+      console.log('buildTabs - attach events to window');
     
       jQuery(window).on('hashchange', function(e){
         detectHash(el);
       });
 
-      jQuery(window).on('load', function(e){
+      jQuery(window).load(function(e){
         console.log('page load - check if hash present to scroll to page');
-
+  
         if(window.location.hash && window.location.hash.indexOf('#brands') !== -1) {
           detectHash(el);
         }
       });
-   
-     if (el && el !== 'undefined') {
+
+      if (el && el !== 'undefined') {
         
         let tabLink = jQuery(el).find('.from-tabs-carousel-list--item');
        
