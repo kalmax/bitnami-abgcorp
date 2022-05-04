@@ -1128,7 +1128,7 @@ body:not(.elementor-editor-active) #brandContent1 {
   padding-bottom: 0;
 }
 .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next {
-  background: white url(/wp-content/themes/hello-theme-child/assets/images/Right-Carret@2x.png) no-repeat center center !important;
+  background: white url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
   width: 40px;
   height: 40px;
   background-size: contain !important;
@@ -1143,11 +1143,12 @@ body:not(.elementor-editor-active) #brandContent1 {
   display: none;
 }
 .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev {
-  background: white url(/wp-content/themes/hello-theme-child/assets/images/Left-Carret@2x.png) no-repeat center center !important;
+  background: white url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
   width: 40px;
   height: 40px;
   background-size: contain !important;
   border-radius: 0;
+  transform: scaleX(-1);
 }
 .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before {
   content: "";
