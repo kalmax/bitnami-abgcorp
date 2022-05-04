@@ -1121,6 +1121,12 @@ body:not(.elementor-editor-active) #brandContent1 {
   line-height: 2.4;
   font-weight: 600;
 }
+.parent-pageid-5730 .elementor-widget-text-editor p, .page-id-5730 .elementor-widget-text-editor p {
+  padding-bottom: 1.5rem;
+}
+.parent-pageid-5730 .elementor-widget-text-editor p:last-child, .parent-pageid-5730 .elementor-widget-text-editor p.no-padding, .page-id-5730 .elementor-widget-text-editor p:last-child, .page-id-5730 .elementor-widget-text-editor p.no-padding {
+  padding-bottom: 0;
+}
 
 #brands-gallery .gallery {
   display: flex;
