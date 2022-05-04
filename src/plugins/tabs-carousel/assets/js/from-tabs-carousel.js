@@ -40,6 +40,32 @@ jQuery(document).ready(function(){
     });
     
     /**
+     * @description Detect hash to scroll to brands section
+     *
+     * @param {object} $scope
+     * @return void
+     */
+    function detectHash(el) {
+      console.log('DETECT HASH');
+      var hash = window.location.hash;
+      let tabIndex = hash.replace('#brands-', ''); 
+
+      jQuery(el).find(".slick-slide").each(function(index){
+        jQuery(this).attr('class', jQuery(this).attr('class').replace(' active', '') );
+      });
+      
+      jQuery(el).find(`[data-slick-index='${tabIndex}']`).addClass("active");
+      openTab(el, tabIndex);
+
+      // go to section
+      jQuery('html, body').animate({
+        scrollTop: jQuery(el).find('.from-tabs-carousel-list').offset().top
+      }, 1000);
+
+      jQuery(el).find('.from-tabs-carousel-list').slick('slickGoTo', parseInt(tabIndex));
+    }
+
+    /**
      * @description Builds tabs based on posts
      *
      * @param {object} $scope
@@ -48,24 +74,15 @@ jQuery(document).ready(function(){
     function buildTabs(el) {
     
       jQuery(window).on('hashchange', function(e){
-        
-        var hash = window.location.hash;
-        let tabIndex = hash.replace('#brands-', ''); 
+        detectHash(el);
+      });
 
-        jQuery(el).find(".slick-slide").each(function(index){
-          jQuery(this).attr('class', jQuery(this).attr('class').replace(' active', '') );
-        });
-        
-        jQuery(el).find(`[data-slick-index='${tabIndex}']`).addClass("active");
-        openTab(el, tabIndex);
+      jQuery(window).on('load', function(e){
+        console.log('page load - check if hash present to scroll to page');
 
-        // go to section
-        jQuery('html, body').animate({
-          scrollTop: jQuery(el).find('.from-tabs-carousel-list').offset().top
-        }, 1000);
-
-        jQuery(el).find('.from-tabs-carousel-list').slick('slickGoTo', parseInt(tabIndex));
-    
+        if(window.location.hash && window.location.hash.indexOf('#brands') !== -1) {
+          detectHash(el);
+        }
       });
    
      if (el && el !== 'undefined') {
