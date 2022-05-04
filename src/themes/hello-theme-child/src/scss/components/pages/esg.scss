@@ -75,15 +75,37 @@
   }
 
   .slider-three-col-hint .from-carousel .slick-arrow-right {
-    background-color: white;
+    // background-color: white;
     .slick-next {
-      background: url(/wp-content/themes/hello-theme-child/assets/img/Right-Caret@2x.png) no-repeat center center !important;
-      width: 30px;
-      height: 31px;
+      background: white url(/wp-content/themes/hello-theme-child/assets/images/Right-Carret@2x.png) no-repeat center center !important;
+      width: 40px;
+      height: 40px;
+      background-size: contain !important;
+      border-radius: 0;
+      right: 0%;
+      top: 50%;
+      &::before {
+        content: '';
+      }
+      i {
+        display: none;
+      }
+    }
+  }
+
+  .slider-three-col-hint .from-carousel .slick-arrow-left {
+    // background-color: white;
+    .slick-prev {
+      background: white url(/wp-content/themes/hello-theme-child/assets/images/Left-Carret@2x.png) no-repeat center center !important;
+      width: 40px;
+      height: 40px;
       background-size: contain !important;
       border-radius: 0;
       &::before {
         content: '';
+      }
+      i {
+        display: none;
       }
     }
   }

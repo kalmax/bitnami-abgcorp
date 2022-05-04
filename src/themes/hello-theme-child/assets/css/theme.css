@@ -1127,18 +1127,33 @@ body:not(.elementor-editor-active) #brandContent1 {
 .parent-pageid-5730 .elementor-widget-text-editor p:last-child, .parent-pageid-5730 .elementor-widget-text-editor p.no-padding, .page-id-5730 .elementor-widget-text-editor p:last-child, .page-id-5730 .elementor-widget-text-editor p.no-padding {
   padding-bottom: 0;
 }
-.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right {
-  background-color: white;
-}
 .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next {
-  background: url(/wp-content/themes/hello-theme-child/assets/img/Right-Caret@2x.png) no-repeat center center !important;
-  width: 30px;
-  height: 31px;
+  background: white url(/wp-content/themes/hello-theme-child/assets/images/Right-Carret@2x.png) no-repeat center center !important;
+  width: 40px;
+  height: 40px;
   background-size: contain !important;
   border-radius: 0;
+  right: 0%;
+  top: 50%;
 }
 .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before {
   content: "";
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i {
+  display: none;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev {
+  background: white url(/wp-content/themes/hello-theme-child/assets/images/Left-Carret@2x.png) no-repeat center center !important;
+  width: 40px;
+  height: 40px;
+  background-size: contain !important;
+  border-radius: 0;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before {
+  content: "";
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev i {
+  display: none;
 }
 
 #brands-gallery .gallery {
