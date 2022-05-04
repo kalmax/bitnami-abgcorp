@@ -268,6 +268,9 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
 .elementor-nav-menu > li:hover > a {
   border-bottom: #20438c solid 2px !important;
 }
+.elementor-nav-menu > li.external .external a.elementor-sub-item {
+  padding-right: 15px;
+}
 .elementor-nav-menu > li.external .sub-arrow:first-child {
   position: absolute !important;
   right: -0.5em;

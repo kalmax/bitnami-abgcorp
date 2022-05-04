@@ -231,6 +231,11 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
     }
 
     &.external {
+        .external {
+            a.elementor-sub-item {
+                padding-right: 15px;
+            }
+        }
         .sub-arrow:first-child {
             position: absolute!important;
             right: -0.5em;
