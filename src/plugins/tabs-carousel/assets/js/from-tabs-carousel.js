@@ -35,6 +35,12 @@ jQuery(document).ready(function(){
               buildTabs(tabContainer);
               destroyCarousel(tablSlickContainer);
               buildSlickCarousel(tablSlickContainer);
+
+                console.log('page load - check if hash present to scroll to page');
+          
+              if(window.location.hash && window.location.hash.indexOf('#brands') !== -1) {
+                detectHash(el);
+              }
             });
 
         }
@@ -59,6 +65,7 @@ jQuery(document).ready(function(){
       openTab(el, tabIndex);
 
       // go to section
+      console.log('SCROLL TO animation');
       jQuery('html, body').animate({
         scrollTop: jQuery(el).find('.from-tabs-carousel-list').offset().top
       }, 1000);
@@ -77,14 +84,6 @@ jQuery(document).ready(function(){
     
       jQuery(window).on('hashchange', function(e){
         detectHash(el);
-      });
-
-      jQuery(window).load(function(e){
-        console.log('page load - check if hash present to scroll to page');
-  
-        if(window.location.hash && window.location.hash.indexOf('#brands') !== -1) {
-          detectHash(el);
-        }
       });
 
       if (el && el !== 'undefined') {
