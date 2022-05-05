@@ -258,8 +258,17 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
   height: 15px;
 }
 
-.elementor-nav-menu > li:hover > a {
+.elementor-nav-menu > li a.elementor-item {
+  font-weight: normal !important;
+}
+.elementor-nav-menu > li a.elementor-item.elementor-item-active {
+  font-weight: bold !important;
+}
+.elementor-nav-menu > li a.elementor-item:hover {
   border-bottom: #20438c solid 2px !important;
+}
+.elementor-nav-menu > li:hover a.elementor-item {
+  font-weight: bold !important;
 }
 .elementor-nav-menu > li.external .external a.elementor-sub-item {
   padding-right: 15px;

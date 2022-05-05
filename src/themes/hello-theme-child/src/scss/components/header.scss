@@ -217,9 +217,19 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
 }
 
 .elementor-nav-menu > li {
-    &:hover {
-        & > a {
+    a.elementor-item {
+        font-weight: normal !important;
+        &.elementor-item-active {
+            font-weight: bold !important;
+        }
+
+        &:hover {
             border-bottom: #20438c solid 2px !important;
+        }
+    }
+    &:hover {
+        a.elementor-item {
+            font-weight: bold !important;
         }
     }
 
