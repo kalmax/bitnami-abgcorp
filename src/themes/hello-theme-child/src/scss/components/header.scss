@@ -306,3 +306,11 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
     overflow: hidden;
     padding-top: 6px;
 }
+
+
+// header height fix for the mobile menu
+@media (max-width:1024px){
+    .elementor-location-header {
+        height: 0;
+    }
+}
