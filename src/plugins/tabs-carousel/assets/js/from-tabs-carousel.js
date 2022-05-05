@@ -39,7 +39,7 @@ jQuery(document).ready(function(){
                 console.log('page load - check if hash present to scroll to page');
           
               if(window.location.hash && window.location.hash.indexOf('#brands') !== -1) {
-                detectHash(el);
+                detectHash(tabContainer);
               }
             });
 
