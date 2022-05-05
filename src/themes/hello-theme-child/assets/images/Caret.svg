@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>B09D35CE-B8C8-447A-ABB9-F92DA9251C7A</title>
+    <defs>
+        <filter x="-26.0%" y="-26.0%" width="152.0%" height="152.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M22.8151101,8.85682327 C22.1241458,8.15883669 21.0079727,8.15883669 20.3170084,8.85682327 L12.1848899,17.0715884 C11.4939256,17.7695749 11.4939256,18.8970917 12.1848899,19.5950783 L20.3170084,27.8098434 C21.0079727,28.50783 22.1241458,28.50783 22.8151101,27.8098434 C23.5060744,27.1118568 23.5060744,25.98434 22.8151101,25.2863535 L15.940901,18.3243848 L22.8151101,11.3803132 C23.4883574,10.6823266 23.4883574,9.53691275 22.8151101,8.85682327 Z" id="path-2"></path>
+    </defs>
+    <g id="Design-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Content-Page---Diversity-" transform="translate(-1314.000000, -1794.000000)">
+            <g id="Image-Carousel-" transform="translate(0.000000, 1420.000000)">
+                <g id="Caret" transform="translate(1320.000000, 380.000000)">
+                    <g id="Navigation-Icons/-Caret" filter="url(#filter-1)" transform="translate(20.000000, 20.000000) scale(-1, 1) translate(-20.000000, -20.000000) translate(1.666667, 1.666667)">
+                        <circle id="Oval" stroke="#20438C" stroke-width="1.5409152" fill-opacity="0.95" fill="#FFFFFF" cx="18.3333333" cy="18.3333333" r="19.1037909"></circle>
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Path" fill="#000000" fill-rule="nonzero" xlink:href="#path-2"></use>
+                        <g id="Colors/-Primary/-ABG-Blue" mask="url(#mask-3)" fill="#20438C">
+                            <g transform="translate(-1.666667, -1.666667)" id="Rectangle">
+                                <rect x="0" y="0" width="40" height="40" rx="2.0064"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -138,10 +138,16 @@ h6 {
     position: relative;
     width: 16px;
     height: 16px;
-    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav-black.png");
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
+  }
+  #headerSection .elementor-sub-item.has-submenu .sub-arrow:last-child:hover::after {
+    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
+  }
+  #headerSection .elementor-sub-item.has-submenu:hover .sub-arrow:last-child::after, #headerSection .elementor-sub-item.has-submenu.highlighted .sub-arrow:last-child::after {
+    background-image: url("/wp-content/themes/hello-theme-child/assets/images/caretNav.png");
   }
 }
 #headerSection .elementor-button {
@@ -261,6 +267,9 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
 
 .elementor-nav-menu > li:hover > a {
   border-bottom: #20438c solid 2px !important;
+}
+.elementor-nav-menu > li.external .external a.elementor-sub-item {
+  padding-right: 15px;
 }
 .elementor-nav-menu > li.external .sub-arrow:first-child {
   position: absolute !important;
@@ -1120,6 +1129,34 @@ body:not(.elementor-editor-active) #brandContent1 {
   font-size: 1.15rem;
   line-height: 2.4;
   font-weight: 600;
+}
+.parent-pageid-5730 .elementor-widget-text-editor p, .page-id-5730 .elementor-widget-text-editor p {
+  padding-bottom: 1.5rem;
+}
+.parent-pageid-5730 .elementor-widget-text-editor p:last-child, .parent-pageid-5730 .elementor-widget-text-editor p.no-padding, .page-id-5730 .elementor-widget-text-editor p:last-child, .page-id-5730 .elementor-widget-text-editor p.no-padding {
+  padding-bottom: 0;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left {
+  background-color: transparent;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-prev, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-prev, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev {
+  background: transparent url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
+  width: 52px;
+  height: 52px;
+  background-size: contain !important;
+  right: 0%;
+  top: 50%;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-prev::before, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next::before, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-prev::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next::before, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev::before {
+  content: "";
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-prev i, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next i, .parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-next i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-right .slick-prev i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-next i, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev i {
+  display: none;
+}
+.parent-pageid-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev, .page-id-5730 .slider-three-col-hint .from-carousel .slick-arrow-left .slick-prev {
+  transform: scaleX(-1);
+  left: -7px;
+  top: -6px;
 }
 
 #brands-gallery .gallery {

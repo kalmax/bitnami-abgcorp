@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+    console.log('FROM TABS CAROUSEL PAGE');
 
     let selector;
     let tabContainer;
@@ -34,11 +35,44 @@ jQuery(document).ready(function(){
               buildTabs(tabContainer);
               destroyCarousel(tablSlickContainer);
               buildSlickCarousel(tablSlickContainer);
+
+                console.log('page load - check if hash present to scroll to page');
+          
+              if(window.location.hash && window.location.hash.indexOf('#brands') !== -1) {
+                detectHash(tabContainer);
+              }
             });
 
         }
     });
     
+    /**
+     * @description Detect hash to scroll to brands section
+     *
+     * @param {object} $scope
+     * @return void
+     */
+    function detectHash(el) {
+      console.log('DETECT HASH');
+      var hash = window.location.hash;
+      let tabIndex = hash.replace('#brands-', ''); 
+
+      jQuery(el).find(".slick-slide").each(function(index){
+        jQuery(this).attr('class', jQuery(this).attr('class').replace(' active', '') );
+      });
+      
+      jQuery(el).find(`[data-slick-index='${tabIndex}']`).addClass("active");
+      openTab(el, tabIndex);
+
+      // go to section
+      console.log('SCROLL TO animation');
+      jQuery('html, body').animate({
+        scrollTop: jQuery(el).find('.from-tabs-carousel-list').offset().top
+      }, 1000);
+
+      jQuery(el).find('.from-tabs-carousel-list').slick('slickGoTo', parseInt(tabIndex));
+    }
+
     /**
      * @description Builds tabs based on posts
      *
@@ -46,29 +80,13 @@ jQuery(document).ready(function(){
      * @return void
      */
     function buildTabs(el) {
+      console.log('buildTabs - attach events to window');
     
       jQuery(window).on('hashchange', function(e){
-        
-        var hash = window.location.hash;
-        let tabIndex = hash.replace('#brands-', ''); 
-
-        jQuery(el).find(".slick-slide").each(function(index){
-          jQuery(this).attr('class', jQuery(this).attr('class').replace(' active', '') );
-        });
-        
-        jQuery(el).find(`[data-slick-index='${tabIndex}']`).addClass("active");
-        openTab(el, tabIndex);
-
-        // go to section
-        jQuery('html, body').animate({
-          scrollTop: jQuery(el).find('.from-tabs-carousel-list').top
-        }, 1000);
-
-        jQuery(el).find('.from-tabs-carousel-list').slick('slickGoTo', parseInt(tabIndex));
-    
+        detectHash(el);
       });
-   
-     if (el && el !== 'undefined') {
+
+      if (el && el !== 'undefined') {
         
         let tabLink = jQuery(el).find('.from-tabs-carousel-list--item');
        

@@ -66,4 +66,38 @@
     line-height: 2.4;
     font-weight: 600;
   }
+
+  .elementor-widget-text-editor p {
+    padding-bottom: 1.5rem;
+    &:last-child, &.no-padding {
+      padding-bottom: 0;
+    }
+  }
+  .slider-three-col-hint .from-carousel {
+    .slick-arrow-right, .slick-arrow-left {
+      background-color: transparent;
+      .slick-next, .slick-prev {
+        background: transparent url(/wp-content/themes/hello-theme-child/assets/images/Caret@2x.png) no-repeat center center !important;
+        width: 52px;
+        height: 52px;
+        background-size: contain !important;
+        right: 0%;
+        top: 50%;
+        &::before {
+          content: '';
+        }
+        i {
+          display: none;
+        }
+      }
+    }
+
+    .slick-arrow-left {
+      .slick-prev {
+        transform: scaleX(-1);
+        left: -7px;
+        top: -6px;
+      }
+    }
+  }  
 }
