@@ -1,5 +1,4 @@
 .elementor-widget-mobile-menu {
-  position: fixed;
   z-index: 3;
 }
 
@@ -223,7 +222,9 @@
 }
 
 .elementor-widget-mobile-menu .logo .logo-opaque,
-.elementor-widget-mobile-menu .logo .burger-light {
+.elementor-widget-mobile-menu .logo .logo-light,
+.elementor-widget-mobile-menu .logo .burger-light,
+.elementor-widget-mobile-menu .logo .burger-opaque {
   display: none;
 }
 
@@ -236,5 +237,9 @@
 }
 
 .elementor-widget-mobile-menu .menu-opaque .logo-opaque {
+  display: block;
+}
+
+.elementor-widget-mobile-menu .menu-opaque .burger-opaque {
   display: block;
 }

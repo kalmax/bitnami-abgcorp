@@ -63,19 +63,6 @@ class Mobile_Menu_Widget extends Widget_Base {
     );
 
     $this->add_control(
-      'menu_bg_type',
-      [
-        'label' => esc_html__( 'Background Type', 'plugin-name' ),
-        'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => 'opaque',
-        'options' => [
-          'opaque'  => esc_html__( 'Opaque', self::$slug ),
-          'light' => esc_html__( 'Light', self::$slug )
-        ],
-      ]
-    );
-
-    $this->add_control(
       'logo_light',
       [
         'label' => esc_html__( 'Logo - Light', self::$slug ),
@@ -154,7 +141,6 @@ class Mobile_Menu_Widget extends Widget_Base {
     $menu = $settings['menu_id'] ? wp_get_nav_menu_object( $settings['menu_id'] ) : false;
     $menu_items = $menu ? wp_get_nav_menu_items( $menu->term_id ) : [];
     $menu_items_tree = self::buildTree($menu_items);
-    $menu_bg_type= $settings['menu_bg_type'];
     $logo_light= $settings['logo_light'];
 
     if (Plugin::$instance->editor->is_edit_mode()) {
@@ -162,7 +148,7 @@ class Mobile_Menu_Widget extends Widget_Base {
 
     } ?>
 
-    <div class="from-mobile-menu from-mobile-menu-container menu-<?=$menu_bg_type;?>" style="font-family: <?php echo esc_attr( $font_family ); ?>;">
+    <div class="from-mobile-menu from-mobile-menu-container menu" style="font-family: <?php echo esc_attr( $font_family ); ?>;">
       <div class="from-mobile-menu-inner">
         <div class="header">
           <div class="logo">

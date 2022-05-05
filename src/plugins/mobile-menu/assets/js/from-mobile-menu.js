@@ -48,6 +48,10 @@ jQuery(document).ready(function(){
           bgIsOpaque = false;
         }
 
+        if(!jQuery("body").hasClass('home')){
+          bgIsOpaque = true;
+        }
+
         // burger menu
         jQuery(el).find('.header .burger').click(function(e){
 
@@ -125,9 +129,8 @@ jQuery(document).ready(function(){
           jQuery(window).scroll(function(){
             
             if(jQuery(this).scrollTop() >  jQuery(el).outerHeight()) {
-     
+
               if(!bgIsOpaque){
-                console.log("outerheight reached");
                 jQuery(el).find('.logo-opaque').css({ "display" : "block"});
                 jQuery(el).find('.logo-light').css({ "display" : "none"});
                 jQuery(el).find('.burger-light').css({ "display" : "none"});
@@ -135,8 +138,13 @@ jQuery(document).ready(function(){
                 jQuery(el).css({ "background" : "#ffffff" });
               }
 
-            } else {
+              
+              console.log("outerheight reached");
 
+               jQuery(".elementor-widget-mobile-menu").css({ "position" : "relative" });
+
+            } else {
+              
               if(!bgIsOpaque){
                 jQuery(el).css({ "background-color" : "transparent" });
                 jQuery(el).css({ "background" : "linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent)" });
@@ -144,6 +152,7 @@ jQuery(document).ready(function(){
                 jQuery(el).find('.logo-light').css({ "display" : "block"});
                 jQuery(el).find('.burger-light').css({ "display" : "block"});
                 jQuery(el).find('.burger-opaque').css({ "display" : "none"});
+                jQuery(".elementor-widget-mobile-menu").css({ "position" : "fixed" });
               }
 
             }
