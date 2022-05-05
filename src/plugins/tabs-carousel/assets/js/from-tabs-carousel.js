@@ -1,7 +1,6 @@
 jQuery(document).ready(function(){
-    console.log('FROM TABS CAROUSEL PAGE');
 
-    let selector;
+  let selector;
     let tabContainer;
     let tablSlickContainer;
 
@@ -36,8 +35,6 @@ jQuery(document).ready(function(){
               destroyCarousel(tablSlickContainer);
               buildSlickCarousel(tablSlickContainer);
 
-                console.log('page load - check if hash present to scroll to page');
-          
               if(window.location.hash && window.location.hash.indexOf('#brands') !== -1) {
                 detectHash(tabContainer);
               }
@@ -53,7 +50,6 @@ jQuery(document).ready(function(){
      * @return void
      */
     function detectHash(el) {
-      console.log('DETECT HASH');
       var hash = window.location.hash;
       let tabIndex = hash.replace('#brands-', ''); 
 
@@ -65,7 +61,6 @@ jQuery(document).ready(function(){
       openTab(el, tabIndex);
 
       // go to section
-      console.log('SCROLL TO animation');
       jQuery('html, body').animate({
         scrollTop: jQuery(el).find('.from-tabs-carousel-list').offset().top
       }, 1000);
@@ -80,8 +75,6 @@ jQuery(document).ready(function(){
      * @return void
      */
     function buildTabs(el) {
-      console.log('buildTabs - attach events to window');
-    
       jQuery(window).on('hashchange', function(e){
         detectHash(el);
       });
