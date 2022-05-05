@@ -1,5 +1,6 @@
 .elementor-widget-mobile-menu {
-  background-color: #fff;
+  position: fixed;
+  z-index: 3;
 }
 
 .elementor-widget-mobile-menu .from-mobile-menu-inner {
@@ -208,4 +209,32 @@
   margin-top: 1.3rem;
 }
 
-  
+.elementor-widget-mobile-menu .menu-opaque {
+  background: #fff;
+}
+
+.elementor-widget-mobile-menu .menu-light {
+  background: transparent;
+  background: linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent);
+}
+
+.elementor-widget-mobile-menu .burger {
+  display: none;
+}
+
+.elementor-widget-mobile-menu .logo .logo-opaque,
+.elementor-widget-mobile-menu .logo .burger-light {
+  display: none;
+}
+
+.elementor-widget-mobile-menu .menu-light .burger-light {
+  display: block;
+}
+
+.elementor-widget-mobile-menu .menu-light .logo-light {
+  display: block;
+}
+
+.elementor-widget-mobile-menu .menu-opaque .logo-opaque {
+  display: block;
+}

@@ -107,13 +107,6 @@
         }
     }
 }
-.home .elementor-section.mobile-nav {
-    background: linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent);
-    .elementor-widget-mobile-menu {
-        background: transparent;
-    }
-}
-
 .homeNavigation {
     .openSearch {
         svg {
@@ -330,4 +323,12 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
     align-content: flex-end;
     overflow: hidden;
     padding-top: 6px;
+}
+
+
+// header height fix for the mobile menu
+@media (max-width:1024px){
+    .elementor-location-header {
+        height: 0;
+    }
 }

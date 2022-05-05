@@ -191,13 +191,6 @@ h6 {
   cursor: pointer;
 }
 
-.home .elementor-section.mobile-nav {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0, transparent);
-}
-.home .elementor-section.mobile-nav .elementor-widget-mobile-menu {
-  background: transparent;
-}
-
 .homeNavigation .openSearch svg {
   cursor: pointer;
   filter: brightness(0) invert(1);
@@ -357,6 +350,11 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
   padding-top: 6px;
 }
 
+@media (max-width: 1024px) {
+  .elementor-location-header {
+    height: 0;
+  }
+}
 .elementor-location-footer.blue {
   background-color: #20438C;
   color: #fff;
