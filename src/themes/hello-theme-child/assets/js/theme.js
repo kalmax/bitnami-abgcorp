@@ -673,9 +673,10 @@ jQuery(function ($) {
         });
 
         $('.menu-item-has-children > a').mouseover(function () {
-            console.log('MOUSE OVER THe menu has kids');
+            // console.log('MOUSE OVER THe menu has kids');
         }).mouseout(function () {
-            console.log('MOUSE OUT THe menu has kids');
+            // console.log('MOUSE OUT THe menu has kids');
+            /** Force Hide opened submenus - they stick opened while nav arrow is between menu items */
             $(this).removeClass('highlighted');
             if ($('ul.sub-menu', $(this).parent()).length) {
                 $('ul.sub-menu', $(this).parent()).hide();

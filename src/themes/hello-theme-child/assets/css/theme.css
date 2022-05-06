@@ -359,11 +359,6 @@ body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
   padding-top: 6px;
 }
 
-@media (max-width: 1024px) {
-  .elementor-location-header {
-    height: 0;
-  }
-}
 .elementor-location-footer.blue {
   background-color: #20438C;
   color: #fff;
