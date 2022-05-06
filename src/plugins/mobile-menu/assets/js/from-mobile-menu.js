@@ -52,6 +52,11 @@ jQuery(document).ready(function(){
           bgIsOpaque = true;
         }
 
+        if(!bgIsOpaque){
+          jQuery(".elementor-widget-mobile-menu").css({ "position" : "fixed" });
+          jQuery(".elementor-location-header").css({ "height" : 0 });
+        }
+
         // burger menu
         jQuery(el).find('.header .burger').click(function(e){
 
@@ -83,7 +88,6 @@ jQuery(document).ready(function(){
             jQuery(el).find('.burger-opaque').css({ "display" : "none"});
             jQuery(el).css({ "background-color" : "transparent" });
             jQuery(el).css({ "background" : "linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent)" });
-            
           }
 
         });
@@ -138,10 +142,8 @@ jQuery(document).ready(function(){
                 jQuery(el).css({ "background" : "#ffffff" });
               }
 
-              
-              console.log("outerheight reached");
-
-               jQuery(".elementor-widget-mobile-menu").css({ "position" : "relative" });
+              jQuery(".elementor-widget-mobile-menu").css({ "position" : "relative" });
+              jQuery(".elementor-location-header").css({ "height" : "auto" });
 
             } else {
               
@@ -153,6 +155,7 @@ jQuery(document).ready(function(){
                 jQuery(el).find('.burger-light').css({ "display" : "block"});
                 jQuery(el).find('.burger-opaque').css({ "display" : "none"});
                 jQuery(".elementor-widget-mobile-menu").css({ "position" : "fixed" });
+                jQuery(".elementor-location-header").css({ "height" : 0 });
               }
 
             }

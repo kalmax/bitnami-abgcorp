@@ -148,7 +148,7 @@ class Mobile_Menu_Widget extends Widget_Base {
 
     } ?>
 
-    <div class="from-mobile-menu from-mobile-menu-container menu" style="font-family: <?php echo esc_attr( $font_family ); ?>;">
+    <div class="from-mobile-menu from-mobile-menu-container menu-<?=is_front_page() ? 'light' : 'opaque' ?>" style="font-family: <?php echo esc_attr( $font_family ); ?>;">
       <div class="from-mobile-menu-inner">
         <div class="header">
           <div class="logo">
