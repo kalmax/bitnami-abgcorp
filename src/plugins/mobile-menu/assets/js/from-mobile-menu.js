@@ -107,11 +107,23 @@ jQuery(document).ready(function(){
 
         // click outside
         jQuery('html').click(function(event) {
+
             if (jQuery(event.target).closest('.from-mobile-menu, .from-mobile-menu .burger').length === 0) {
+             
               jQuery(el).find('.links-container').addClass('collapsed');
-              jQuery(el).find('.header .burger').show();
+              jQuery(el).find('.header .burger-light').show();
               jQuery(el).find('.header .close').hide();
+              
+              if(!bgIsOpaque) {
+                jQuery(el).find('.header .burger-opaque').hide();
+                jQuery(el).find('.header .burger-light').show();
+              } else {
+                jQuery(el).find('.header .burger-light').hide();
+                jQuery(el).find('.header .burger-opaque').show();
+              }
+
             }
+
         });
 
         // search
