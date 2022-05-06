@@ -79,7 +79,6 @@ jQuery(document).ready(function(){
           e.preventDefault();
           jQuery(el).find('.links-container').addClass('collapsed');
           jQuery(this).hide();
-          jQuery(el).find('.header .burger').show();
 
           if(!bgIsOpaque) {
             jQuery(el).find('.logo-opaque').css({ "display" : "none"});
@@ -88,6 +87,9 @@ jQuery(document).ready(function(){
             jQuery(el).find('.burger-opaque').css({ "display" : "none"});
             jQuery(el).css({ "background-color" : "transparent" });
             jQuery(el).css({ "background" : "linear-gradient(180deg,rgba(0,0,0,.65) 0,transparent)" });
+          } else {
+            jQuery(el).find('.burger-opaque').css({ "display" : "block"});
+            jQuery(el).find('.burger-light').css({ "display" : "none"});
           }
 
         });
