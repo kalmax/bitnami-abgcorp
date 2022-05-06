@@ -140,9 +140,12 @@
     width: 100% !important;
   }
   .timeline-image-slider {
-    .slick-list article img {
-      max-height: 500px;
-      box-shadow: 1px 1px 7px -1px rgb(0 0 0 / 50%);
+    .slick-list {
+      max-height: 601px;
+      article img {
+       max-height: 500px;
+       box-shadow: 1px 1px 7px -1px rgb(0 0 0 / 50%);
+     }
     }
 
     .elementor-widget-container {
@@ -230,6 +233,11 @@
   }
 }
 
+.timeline-content-slider {
+  .slick-slide {
+    min-height: 160px;
+  }
+}
 #timeline-up img,
 #timeline-down img {
   cursor: pointer;

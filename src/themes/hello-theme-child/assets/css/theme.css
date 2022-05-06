@@ -903,6 +903,9 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 .timeline-section-container .elementor-column .elementor-column {
   width: 100% !important;
 }
+.timeline-section-container .timeline-image-slider .slick-list {
+  max-height: 601px;
+}
 .timeline-section-container .timeline-image-slider .slick-list article img {
   max-height: 500px;
   box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.5);
@@ -979,6 +982,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 }
 .timeline-year-slider .slick-list .slick-current p {
   font-weight: bold !important;
+}
+
+.timeline-content-slider .slick-slide {
+  min-height: 160px;
 }
 
 #timeline-up img,
