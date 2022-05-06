@@ -126,15 +126,25 @@
 .timeline-section-container {
   .elementor-column:first-child {
     width: 34.42% !important;
+    @media (max-width: 1023px) {
+      width: 100% !important;
+    }
   }
+
   .elementor-column:nth-child(2) {
     width: 13% !important;
+    @media (max-width: 1023px) {
+      width: 100% !important;
+    }
   }
   .elementor-column:nth-child(3) {
     width: 6.115% !important;
   }
   .elementor-column:nth-child(4) {
     width: 43.92% !important;
+    @media (max-width: 1023px) {
+      width: 100% !important;
+    }
   }
   .elementor-column .elementor-column {
     width: 100% !important;

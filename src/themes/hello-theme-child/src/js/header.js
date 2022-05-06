@@ -81,8 +81,8 @@ jQuery(function ($) {
                 $('div.page-content').addClass('offsetTop')
 
             } else {
-                $('#headerSection').addClass('headerOpen')
-
+                $('#headerSection').addClass('headerOpen');
+                // console.log('Add class headerOpen', $(this));
             }
         })
         .mouseout(function () {
@@ -91,8 +91,15 @@ jQuery(function ($) {
                 $('div.page-content').removeClass('offsetTop')
             }
 
-            $('#headerSection').removeClass('headerOpen')
-
+            $('#headerSection').removeClass('headerOpen');
+            // console.log('Remove class headerOpen', $(this));
+            // console.log(`Let's check if ul is hovered`);
+            // const mainParent = $(this).closest('.menu-item.menu-item-object-page');
+            // $('a.elementor-item', mainParent).removeClass('highlighted').removeClass('hovered');
+            // if ($('ul.sub-menu', mainParent).length) {
+            //     $('ul.sub-menu', mainParent).hide();
+            //     $('ul.sub-menu', mainParent).attr({'aria-hidden': true, 'aria-expanded': false})
+            // }
         });
 
 

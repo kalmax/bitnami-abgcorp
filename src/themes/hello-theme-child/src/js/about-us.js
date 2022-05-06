@@ -6,7 +6,6 @@ jQuery(function ($) {
     sliderImage.closest('section').addClass('timeline-section-container');
 
     const enableSlickTimelineCarousels = () => {
-      console.log('enableSlickTimelineCarousels');
       sliderContent.slick({
         accessibility: false,
         infinite: true,
