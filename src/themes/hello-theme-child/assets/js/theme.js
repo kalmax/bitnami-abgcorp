@@ -471,73 +471,77 @@ jQuery(function ($) {
     var sliderYear = $('.timeline-year-slider > div > div');
     sliderImage.closest('section').addClass('timeline-section-container');
 
-    sliderContent.slick({
-      accessibility: false,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      centerMode: false,
-      arrows: false,
-      draggable: false,
-      vertical: true,
-      asNavFor: '.timeline-image-slider > div > div,.timeline-year-slider > div > div',
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            vertical: false
-          }
-        },
-      ]
-    });
+    const enableSlickTimelineCarousels = () => {
+      sliderContent.slick({
+        accessibility: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+        arrows: false,
+        draggable: false,
+        vertical: true,
+        asNavFor: '.timeline-image-slider > div > div,.timeline-year-slider > div > div',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              vertical: false
+            }
+          },
+        ]
+      });
+  
+      sliderImage.slick({
+        accessibility: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+        arrows: false,
+        draggable: false,
+        vertical: true,
+        asNavFor: '.timeline-content-slider > div > div,.timeline-year-slider > div > div',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              vertical: false
+            }
+          },
+        ]
+      });
+  
+      sliderYear.slick({
+        accessibility: false,
+        infinite: true,
+        centerMode: false,
+        focusOnSelect: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        draggable: false,
+        vertical: true,
+        asNavFor: '.timeline-content-slider > div > div,.timeline-image-slider > div > div',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              vertical: false,
+              arrows: true,
+              centerMode: true,
+              centerPadding: '10px',
+            }
+          },
+        ]
+      });
+    }
 
-    sliderImage.slick({
-      accessibility: false,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      centerMode: false,
-      arrows: false,
-      draggable: false,
-      vertical: true,
-      asNavFor: '.timeline-content-slider > div > div,.timeline-year-slider > div > div',
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            vertical: false
-          }
-        },
-      ]
-    });
-
-    sliderYear.slick({
-      accessibility: false,
-      infinite: true,
-      centerMode: false,
-      focusOnSelect: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: false,
-      draggable: false,
-      vertical: true,
-      asNavFor: '.timeline-content-slider > div > div,.timeline-image-slider > div > div',
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            vertical: false,
-            arrows: true,
-            centerMode: true,
-            centerPadding: '10px',
-          }
-        },
-      ]
-    });
+    setTimeout(enableSlickTimelineCarousels, 500);
 
     $('#timeline-up img').on('click', () => {
       sliderContent.slick('slickPrev')
@@ -547,10 +551,9 @@ jQuery(function ($) {
       sliderContent.slick('slickNext')
     });
 
-
     $('.swiper-slide-active').addClass('activeBrand')
 
-    $('.swiper-slide').click(function() {
+    $('.swiper-slide').on('click', function() {
       $('.swiper-slide').removeClass('activeBrand');
       $(this).addClass('activeBrand');
 
@@ -643,8 +646,8 @@ jQuery(function ($) {
                 $('div.page-content').addClass('offsetTop')
 
             } else {
-                $('#headerSection').addClass('headerOpen')
-
+                $('#headerSection').addClass('headerOpen');
+                // console.log('Add class headerOpen', $(this));
             }
         })
         .mouseout(function () {
@@ -653,8 +656,15 @@ jQuery(function ($) {
                 $('div.page-content').removeClass('offsetTop')
             }
 
-            $('#headerSection').removeClass('headerOpen')
-
+            $('#headerSection').removeClass('headerOpen');
+            // console.log('Remove class headerOpen', $(this));
+            // console.log(`Let's check if ul is hovered`);
+            // const mainParent = $(this).closest('.menu-item.menu-item-object-page');
+            // $('a.elementor-item', mainParent).removeClass('highlighted').removeClass('hovered');
+            // if ($('ul.sub-menu', mainParent).length) {
+            //     $('ul.sub-menu', mainParent).hide();
+            //     $('ul.sub-menu', mainParent).attr({'aria-hidden': true, 'aria-expanded': false})
+            // }
         });
 
 
@@ -672,17 +682,7 @@ jQuery(function ($) {
             $(this).children().children().removeClass('fa fa-external-link')
         });
 
-        $('.menu-item-has-children > a').mouseover(function () {
-            // console.log('MOUSE OVER THe menu has kids');
-        }).mouseout(function () {
-            // console.log('MOUSE OUT THe menu has kids');
-            /** Force Hide opened submenus - they stick opened while nav arrow is between menu items */
-            $(this).removeClass('highlighted');
-            if ($('ul.sub-menu', $(this).parent()).length) {
-                $('ul.sub-menu', $(this).parent()).hide();
-                $('ul.sub-menu', $(this).parent()).attr({'aria-hidden': true, 'aria-expanded': false})
-            }
-        });
+        
 
         $('.searchBox').attr('id', 'animated-show-search');
         var anim = document.getElementById('animated-show-search');

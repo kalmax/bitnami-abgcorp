@@ -81,8 +81,8 @@ jQuery(function ($) {
                 $('div.page-content').addClass('offsetTop')
 
             } else {
-                $('#headerSection').addClass('headerOpen')
-
+                $('#headerSection').addClass('headerOpen');
+                // console.log('Add class headerOpen', $(this));
             }
         })
         .mouseout(function () {
@@ -91,8 +91,15 @@ jQuery(function ($) {
                 $('div.page-content').removeClass('offsetTop')
             }
 
-            $('#headerSection').removeClass('headerOpen')
-
+            $('#headerSection').removeClass('headerOpen');
+            // console.log('Remove class headerOpen', $(this));
+            // console.log(`Let's check if ul is hovered`);
+            // const mainParent = $(this).closest('.menu-item.menu-item-object-page');
+            // $('a.elementor-item', mainParent).removeClass('highlighted').removeClass('hovered');
+            // if ($('ul.sub-menu', mainParent).length) {
+            //     $('ul.sub-menu', mainParent).hide();
+            //     $('ul.sub-menu', mainParent).attr({'aria-hidden': true, 'aria-expanded': false})
+            // }
         });
 
 
@@ -110,17 +117,7 @@ jQuery(function ($) {
             $(this).children().children().removeClass('fa fa-external-link')
         });
 
-        $('.menu-item-has-children > a').mouseover(function () {
-            // console.log('MOUSE OVER THe menu has kids');
-        }).mouseout(function () {
-            // console.log('MOUSE OUT THe menu has kids');
-            /** Force Hide opened submenus - they stick opened while nav arrow is between menu items */
-            $(this).removeClass('highlighted');
-            if ($('ul.sub-menu', $(this).parent()).length) {
-                $('ul.sub-menu', $(this).parent()).hide();
-                $('ul.sub-menu', $(this).parent()).attr({'aria-hidden': true, 'aria-expanded': false})
-            }
-        });
+        
 
         $('.searchBox').attr('id', 'animated-show-search');
         var anim = document.getElementById('animated-show-search');
