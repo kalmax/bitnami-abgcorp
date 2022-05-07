@@ -52,6 +52,26 @@ class Tabs_Carousel_Widget extends Widget_Base {
       ]
     );
 
+    $this->add_responsive_control(
+      'slides',
+      [
+        'label' => __( 'Slides', self::$slug ),
+        'type' => Controls_Manager::SELECT,
+        'multiple' => false,
+        'default' => '3',
+        'options' => [
+          '1' => '1',
+          '2' => '2',
+          '3' => '3',
+          '4' => '4'
+        ],
+        'devices' => [ 'desktop', 'tablet', 'mobile' ],
+        'desktop_default' => '3',
+        'tablet_default' => '3',
+        'mobile_default' => '1'
+      ]
+    );
+
     $repeater = new \Elementor\Repeater();
 
     $repeater->add_control(
@@ -102,7 +122,9 @@ class Tabs_Carousel_Widget extends Widget_Base {
   protected function render() {
 
     $settings = $this->get_settings_for_display();
-
+    $slides = $settings['slides'];
+    $slides_tablet = isset($settings['slides_tablet']) ? $settings['slides_tablet'] : $slides;
+    $slides_mobile = isset($settings['slides_mobile']) ? $settings['slides_mobile'] : $slides_tablet;
     $tabs = $settings['tabs'];
     // echo '<pre>';
     // var_dump($settings);
@@ -114,7 +136,12 @@ class Tabs_Carousel_Widget extends Widget_Base {
     <div class="wrapper">
       <div class="from-tabs-carousel from-tabs-carousel-wrapper">
         <div class="from-tabs-carousel-container">
-          <div class="from-tabs-carousel-list">
+          <div 
+            class="from-tabs-carousel-list"
+            data-slides="<?=$slides;?>" 
+            data-slidesTablet="<?=$slides_tablet;?>" 
+            data-slidesMobile="<?=$slides_mobile;?>"
+          >
             <?php if($tabs):?>
             <?php $tabLinkItemId=0;?>
             <?php foreach ($tabs as $tab): ?>

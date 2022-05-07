@@ -1,8 +1,8 @@
 jQuery(document).ready(function(){
 
-  let selector;
-    let tabContainer;
-    let tablSlickContainer;
+  var selector;
+  var tabContainer;
+  var tablSlickContainer;
 
     // For the editor page
     jQuery(document).ready(function () {
@@ -81,7 +81,7 @@ jQuery(document).ready(function(){
 
       if (el && el !== 'undefined') {
         
-        let tabLink = jQuery(el).find('.from-tabs-carousel-list--item');
+        var tabLink = jQuery(el).find('.from-tabs-carousel-list--item');
        
         // open first tab
         openTab(el, 0);
@@ -138,11 +138,11 @@ jQuery(document).ready(function(){
     function buildSlickCarousel(el) {
    
      if (el && el !== 'undefined') {
-        
-        let sliderParams = {
+       
+        var sliderParams = {
           infinite: true,
           autoplay: false,
-          slidesToShow: 4,
+          slidesToShow: el.dataset.slides,
           slidesToScroll: 1,
           dots: false,
           arrows: true,
@@ -150,9 +150,9 @@ jQuery(document).ready(function(){
           nextArrow:"<div class='elementor-icon slick-arrow-right'><button type='button' class='slick-next pull-right'><i class='fas fa-chevron-right' aria-hidden='true'></i></button></div>",
           responsive: [
             {
-              breakpoint: 769,
+              breakpoint: 1024,
               settings: {
-                slidesToShow: 4,
+                slidesToShow: el.dataset.slidestablet ? el.dataset.slidestablet : el.dataset.slides,
                 slidesToScroll: 1,
                 arrows: false
               }
@@ -160,7 +160,7 @@ jQuery(document).ready(function(){
             {
               breakpoint: 480,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: el.dataset.slidesmobile,
                 slidesToScroll: 1,
                 arrows: false
               }
@@ -169,16 +169,6 @@ jQuery(document).ready(function(){
         };
 
         jQuery(el).not('.slick-initialized').slick(sliderParams); 
-        
-        // jQuery(el).not('.slick-initialized').slick({
-        //   infinite: true,
-        //   autoplay: false,
-        //   slidesToShow: 1,
-        //   slidesToScroll: 1,
-        //   dots: false,
-        //   prevArrow: false,
-        //   nextArrow: false
-        // });
 
         jQuery(el).on('beforeChange', function(event, slick, currentSlide, nextSlide){
           jQuery(el).find(".tab-contents-mobile-item").each(function(i){
