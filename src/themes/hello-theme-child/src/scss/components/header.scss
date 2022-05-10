@@ -1,6 +1,8 @@
 #headerSection {
     // overflow-x: clip;
     transition: height, background-color 700ms;
+    margin-right: 0;
+    padding-right: 10px;
 
     .elementor-item {
         &:hover {
