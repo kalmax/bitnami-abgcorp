@@ -281,3 +281,35 @@ body:not(.elementor-editor-active) {
     display: block;
   }
 }
+
+
+#about-us-section-our-brands {
+
+  .from-tabs-carousel-list {
+
+    @media (max-width: 1024px) {
+      // padding: 0 15% 0 0 !important;
+      // margin: 0 -7px;
+      // width: 100%;
+      // margin-left: 5%;
+    }
+
+  }
+
+  .from-tabs-carousel-contents {
+
+    .elementor-container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      width: 86%;
+      margin: 0 auto;
+    }
+   
+  }
+
+}
+
+    

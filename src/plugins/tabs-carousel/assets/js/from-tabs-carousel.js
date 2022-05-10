@@ -138,7 +138,7 @@ jQuery(document).ready(function(){
     function buildSlickCarousel(el) {
    
      if (el && el !== 'undefined') {
-       
+
         var sliderParams = {
           infinite: true,
           autoplay: false,

@@ -142,11 +142,12 @@
 
   .from-tabs-carousel-container .slick-list {
     padding:0 15% 0 0 !important;
-    margin: 0 -10px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .from-tabs-carousel-container .slick-slide {
     margin: 0 10px;
-  }
+  } 
 
 }

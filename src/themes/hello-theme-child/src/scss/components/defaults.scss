@@ -95,3 +95,16 @@ ul, ol {
   -o-transition: position 10s;
   transition: position 10s;
 }
+
+
+.container-full-width-non-desktop {
+
+  @media (min-width: 1025px) {
+    width: 86% !important;
+    margin: 0 auto;
+  }
+   
+}
+
+
+ 
