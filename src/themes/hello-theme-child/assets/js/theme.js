@@ -657,14 +657,6 @@ jQuery(function ($) {
             }
 
             $('#headerSection').removeClass('headerOpen');
-            // console.log('Remove class headerOpen', $(this));
-            // console.log(`Let's check if ul is hovered`);
-            // const mainParent = $(this).closest('.menu-item.menu-item-object-page');
-            // $('a.elementor-item', mainParent).removeClass('highlighted').removeClass('hovered');
-            // if ($('ul.sub-menu', mainParent).length) {
-            //     $('ul.sub-menu', mainParent).hide();
-            //     $('ul.sub-menu', mainParent).attr({'aria-hidden': true, 'aria-expanded': false})
-            // }
         });
 
 
