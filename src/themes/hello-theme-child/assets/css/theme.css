@@ -493,6 +493,38 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     width: 100%;
   }
 }
+@-webkit-keyframes header_hover_white {
+  from {
+    background-color: transparent !important;
+  }
+  to {
+    background-color: white !important;
+  }
+}
+@keyframes header_hover_white {
+  from {
+    background-color: transparent !important;
+  }
+  to {
+    background-color: white !important;
+  }
+}
+@-webkit-keyframes header_hover_transparent {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@keyframes header_hover_transparent {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
+  }
+}
 @-webkit-keyframes shrink {
   0% {
     transform: scale(3);
@@ -912,7 +944,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     z-index: 2;
   }
   .timeline-section-container .elementor-column:nth-child(2) button.slick-prev.slick-arrow {
-    background-image: url(http://localhost/wp-content/uploads/2022/01/up-arrow-150x150.png) !important;
+    background-image: url(/wp-content/themes/hello-theme-child/assets/images/up-arrow-150x150.png) !important;
     background-repeat: no-repeat !important;
     width: 40px;
     height: 40px;
@@ -924,7 +956,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     display: none;
   }
   .timeline-section-container .elementor-column:nth-child(2) button.slick-next.slick-arrow {
-    background-image: url(http://localhost/wp-content/uploads/2022/01/up-arrow-150x150.png) !important;
+    background-image: url(/wp-content/themes/hello-theme-child/assets/images/up-arrow-150x150.png) !important;
     background-repeat: no-repeat !important;
     width: 40px;
     height: 40px;
