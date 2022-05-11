@@ -1183,9 +1183,6 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   .timeline-year-slider .slick-list .slick-current {
     text-align: right;
   }
-  .timeline-year-slider .slick-list .slick-current p {
-    padding-right: 5vw;
-  }
 }
 .timeline-year-slider .slick-list .slick-current p {
   font-weight: bold !important;
