@@ -15,6 +15,24 @@
   }
 }
 
+@keyframes header_hover_white {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: white;
+  }
+}
+
+@keyframes header_hover_transparent {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
 @keyframes shrink {
   0% {
       transform: scale(3);

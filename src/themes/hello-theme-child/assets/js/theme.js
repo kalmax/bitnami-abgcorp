@@ -582,7 +582,6 @@ jQuery(function ($) {
    });
 
     $(document).ready(function () {
-
         $('body:not(.elementor-editor-active) .elementor-widget-menu-anchor').addClass('fromTop')
         $('#headerSection .elementor-item,#headerSection .elementor-sub-item').on('click', () => {
             var offset = $('#headerSection').data('scroll') ? $('#headerSection').data('scroll') : 0
@@ -705,7 +704,7 @@ jQuery(function ($) {
 
         $('#headerSection').addClass('headerShadowed')
 
-
+        $('body').removeClass('preload-home');
     });
 
     $(document).on('scroll', function () {

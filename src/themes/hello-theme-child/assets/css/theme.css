@@ -218,6 +218,31 @@ h6 {
   /* IE6-9 */
 }
 
+body.home.preload-home .homeNavigation.headerShadowed::before {
+  transition: none !important;
+}
+body.home:not(.preload-home) .homeNavigation.headerShadowed {
+  position: relative;
+}
+body.home:not(.preload-home) .homeNavigation.headerShadowed::before {
+  position: absolute;
+  content: " ";
+  width: 100vw;
+  height: 72px;
+  -webkit-animation-name: header_hover_transparent;
+          animation-name: header_hover_transparent;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 .closeSearch svg {
   cursor: pointer;
 }
@@ -229,6 +254,29 @@ h6 {
 
 .headerHover {
   background-color: #fff !important;
+}
+
+.homeNavigation.headerHover {
+  position: relative;
+  background-color: transparent !important;
+}
+.homeNavigation.headerHover::before {
+  position: absolute;
+  content: " ";
+  width: 100vw;
+  height: 72px;
+  -webkit-animation-name: header_hover_white;
+          animation-name: header_hover_white;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .page-content {
@@ -498,6 +546,38 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
   }
   100% {
     width: 100%;
+  }
+}
+@-webkit-keyframes header_hover_white {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: white;
+  }
+}
+@keyframes header_hover_white {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: white;
+  }
+}
+@-webkit-keyframes header_hover_transparent {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@keyframes header_hover_transparent {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
   }
 }
 @-webkit-keyframes shrink {
