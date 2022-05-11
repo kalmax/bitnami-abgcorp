@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1343625B-90BA-4F40-856E-DC649033AA42</title>
+    <defs>
+        <path d="M24.4817768,10.5234899 C23.7908125,9.82550336 22.6746393,9.82550336 21.983675,10.5234899 L13.8515566,18.738255 C13.1605923,19.4362416 13.1605923,20.5637584 13.8515566,21.261745 L21.983675,29.4765101 C22.6746393,30.1744966 23.7908125,30.1744966 24.4817768,29.4765101 C25.1727411,28.7785235 25.1727411,27.6510067 24.4817768,26.9530201 L17.6075677,19.9910515 L24.4817768,13.0469799 C25.155024,12.3489933 25.155024,11.2035794 24.4817768,10.5234899 Z" id="path-1"></path>
+    </defs>
+    <g id="Design-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About-Us---Our-Services---Single-CTA" transform="translate(-100.000000, -3312.000000)">
+            <g id="Our-Brand" transform="translate(-60.000000, 3157.000000)">
+                <g id="brand" transform="translate(0.000000, 95.000000)">
+                    <g id="Navigation-Icons/-Caret-Copy" transform="translate(160.000000, 60.000000)">
+                        <circle id="Oval" stroke="#20438C" stroke-width="1.672" cx="20" cy="20" r="19.164"></circle>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Path" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g id="Colors/-Primary/-ABG-Blue" mask="url(#mask-2)" fill="#20438C">
+                            <rect id="Rectangle" x="0" y="0" width="40" height="40" rx="2.0064"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
