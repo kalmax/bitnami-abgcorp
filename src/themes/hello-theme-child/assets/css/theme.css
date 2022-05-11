@@ -64,6 +64,13 @@ ul, ol {
   transition: position 10s;
 }
 
+@media (min-width: 1025px) {
+  .container-full-width-non-desktop {
+    width: 86% !important;
+    margin: 0 auto;
+  }
+}
+
 @font-face {
   font-family: "Source Sans Pro";
   src: url("/wp-content/themes/hello-theme-child/assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
@@ -493,38 +500,6 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
     width: 100%;
   }
 }
-@-webkit-keyframes header_hover_white {
-  from {
-    background-color: transparent !important;
-  }
-  to {
-    background-color: white !important;
-  }
-}
-@keyframes header_hover_white {
-  from {
-    background-color: transparent !important;
-  }
-  to {
-    background-color: white !important;
-  }
-}
-@-webkit-keyframes header_hover_transparent {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-@keyframes header_hover_transparent {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: transparent;
-  }
-}
 @-webkit-keyframes shrink {
   0% {
     transform: scale(3);
@@ -903,6 +878,10 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 .peakaboo-slider::-webkit-scrollbar {
   display: none;
 }
+.peakaboo-slider .slick-disabled {
+  display: none !important;
+  pointer-events: none;
+}
 
 .animate--shrink, .timeline-year-slider .slick-list .slick-slide [aria-hidden=false] p {
   -webkit-animation-duration: 1s;
@@ -1143,6 +1122,17 @@ body:not(.elementor-editor-active) .brandContent {
 }
 body:not(.elementor-editor-active) #brandContent1 {
   display: block;
+}
+
+#about-us-section-our-brands .from-tabs-carousel-contents .elementor-container {
+  width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 1024px) {
+  #about-us-section-our-brands .from-tabs-carousel-contents {
+    width: 86%;
+    margin: 0 auto;
+  }
 }
 
 #mediaSection .elementor-gallery__titles-container {
