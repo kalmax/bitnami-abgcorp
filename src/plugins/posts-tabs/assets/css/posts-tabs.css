@@ -13,8 +13,8 @@
     display: none;
   }
 }
-.from-tabs-container p {
-  font-size: 1rem;
+.from-posts-tabs p {
+  font-size: 18px;
 }
 
 .from-posts-tabs a, 

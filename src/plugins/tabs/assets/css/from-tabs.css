@@ -89,7 +89,8 @@
 }
 
 .from-tabs .tab-contents .tab-contents-item .col-details .content {
-  font-size: 0.9rem;
+  font-size: 18px;
+  line-height: 28px;
 }
 
 /* Mobile  */
