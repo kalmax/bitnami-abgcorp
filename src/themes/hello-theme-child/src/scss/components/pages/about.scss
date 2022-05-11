@@ -108,6 +108,11 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  .slick-disabled {
+    display: none !important; 
+    pointer-events:none;
+  }
 }
 
 // timeline slider
