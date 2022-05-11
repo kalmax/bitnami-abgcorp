@@ -69,6 +69,10 @@
 
 }
 
+.from-tabs-carousel .slick-slide img {
+  width: 12rem;
+}
+
 .from-tabs-carousel .slick-slide {
   height: auto;
   display: flex !important;
