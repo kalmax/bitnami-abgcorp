@@ -147,6 +147,15 @@ function edit_social_links() {
 <?php
 }
 
+function home_custom_body_class( array $classes ) {
+	if ( is_front_page() ) {
+		$classes[] = 'preload-home';
+	}
+
+	return $classes;
+}	
+
+add_filter( 'body_class', 'home_custom_body_class' );
 
 // function my_query_by_post_types( $query ){
 // 	$query->set( 'category_name', 'partnerships');
