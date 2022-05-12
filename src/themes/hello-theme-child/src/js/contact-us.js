@@ -40,7 +40,6 @@ jQuery(function ($) {
     }
 
     for (var i = 0; i < filteredImages.length; i++) {
-      console.log('IMAGES TO LINK');
       _loope(i);
     }
 

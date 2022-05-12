@@ -726,6 +726,7 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 }
 @media (max-width: 768px) {
   .home #hero-carousel-brands .from-carousel {
+    padding: 2.3rem 1.8rem;
     background-color: #ffffff;
     padding-right: 0;
   }
@@ -774,6 +775,11 @@ body[data-elementor-device-mode=tablet] .elementor-location-footer.grey .element
 }
 .home #hero-carousel-brands .from-carousel .elementor-icon {
   padding: 0.5rem;
+}
+@media (max-width: 768px) {
+  .home #hero-carousel-brands .from-carousel .from-carousel--image {
+    margin: 0 15px;
+  }
 }
 .home #hero-carousel-brands .from-carousel .from-carousel--image img {
   width: 12rem;
