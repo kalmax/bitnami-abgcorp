@@ -1393,14 +1393,13 @@ body:not(.elementor-editor-active) #brandContent1 {
   top: -6px;
 }
 
-#brands-gallery .gallery {
+.elementor-element.brands-gallery-container .gallery {
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
-#brands-gallery .gallery-item {
+.elementor-element.brands-gallery-container .gallery figure.gallery-item {
   height: 120px;
   width: 30%;
   background-color: #FFFFFF;
@@ -1411,23 +1410,26 @@ body:not(.elementor-editor-active) #brandContent1 {
   flex-flow: column;
 }
 @media (max-width: 767px) {
-  #brands-gallery .gallery-item {
+  .elementor-element.brands-gallery-container .gallery figure.gallery-item {
     height: 92px;
     width: 48%;
   }
 }
-
-#brands-gallery .gallery-item:hover {
+.elementor-element.brands-gallery-container .gallery figure.gallery-item:hover {
   background-color: #F0F0F0;
 }
-
-#brands-gallery .gallery-item img {
+.elementor-element.brands-gallery-container .gallery figure.gallery-item img {
   width: 50%;
 }
 @media (max-width: 767px) {
-  #brands-gallery .gallery-item img {
+  .elementor-element.brands-gallery-container .gallery figure.gallery-item img {
     width: 65%;
   }
+}
+
+#more-brands {
+  display: none;
+  margin-bottom: 3em;
 }
 
 #see-more-brands a.btn-from {

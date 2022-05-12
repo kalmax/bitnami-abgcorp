@@ -3,12 +3,19 @@ jQuery(function ($) {
 
     /* ############# CONTACT US PAGE ############# */
 
-    $('#btn-moreBrands').on('click', (e) => {
+    $('#see-more-brands').on('click', (e) => {
       e.preventDefault();
       console.log('Trigger Load more brands section load');
+
+      $('#more-brands').css('display', 'block');
+      
+      console.log('ELEMENTS: ', $('.gallery-item', $('#more-brands')).length);
+      if ($('.gallery-item', $('#more-brands')).length <= 9) {
+        $('#see-more-brands').hide();
+      }
     });
 
-    var filteredImages = $('#brands-gallery .gallery-item');
+    var filteredImages = $('.brands-gallery-container .gallery-item');
 
     //Edit the links HERE
     var links = [
