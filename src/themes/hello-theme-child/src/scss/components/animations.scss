@@ -62,7 +62,15 @@
       transform: scale(2.5);
   }
 }
+@keyframes growYearsTablet {
+  0% {
+      transform: scale(1);
+  }
 
+  100% {
+      transform: scale(1.5);
+  }
+}
 @keyframes showSearch {
   0% { 
     left: 42.5vw;

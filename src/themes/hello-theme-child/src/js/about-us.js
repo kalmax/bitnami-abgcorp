@@ -18,7 +18,7 @@ jQuery(function ($) {
         asNavFor: '.timeline-image-slider > div > div,.timeline-year-slider > div > div',
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 768,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
@@ -40,7 +40,7 @@ jQuery(function ($) {
         asNavFor: '.timeline-content-slider > div > div,.timeline-year-slider > div > div',
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 768,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
@@ -63,7 +63,7 @@ jQuery(function ($) {
         asNavFor: '.timeline-content-slider > div > div,.timeline-image-slider > div > div',
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 768,
             settings: {
               vertical: false,
               arrows: true,
