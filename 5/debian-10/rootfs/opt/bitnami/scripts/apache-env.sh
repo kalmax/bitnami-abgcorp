@@ -9,6 +9,7 @@
 # 4. Environment variables set externally (i.e. current Bash context/Dockerfile/userdata)
 
 # Load logging library
+# shellcheck disable=SC1090,SC1091
 . /opt/bitnami/scripts/liblog.sh
 
 export BITNAMI_ROOT_DIR="/opt/bitnami"
@@ -23,6 +24,7 @@ export BITNAMI_DEBUG="${BITNAMI_DEBUG:-false}"
 apache_env_vars=(
     APACHE_HTTP_PORT_NUMBER
     APACHE_HTTPS_PORT_NUMBER
+    APACHE_SERVER_TOKENS
     APACHE_HTTP_PORT
     APACHE_HTTPS_PORT
 )
@@ -72,5 +74,6 @@ export WEB_SERVER_HTTP_PORT_NUMBER="$APACHE_HTTP_PORT_NUMBER"
 APACHE_HTTPS_PORT_NUMBER="${APACHE_HTTPS_PORT_NUMBER:-"${APACHE_HTTPS_PORT:-}"}"
 export APACHE_HTTPS_PORT_NUMBER="${APACHE_HTTPS_PORT_NUMBER:-}"
 export WEB_SERVER_HTTPS_PORT_NUMBER="$APACHE_HTTPS_PORT_NUMBER"
+export APACHE_SERVER_TOKENS="${APACHE_SERVER_TOKENS:-Prod}"
 
 # Custom environment variables may be defined below

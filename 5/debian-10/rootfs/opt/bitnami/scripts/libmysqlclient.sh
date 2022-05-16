@@ -132,10 +132,14 @@ mysql_client_initialize() {
 #   None
 #########################
 mysql_client_wrap_binary_for_ssl() {
-    local -r wrapper_file="${DB_BIN_DIR}/mysql"
+    local wrapper_file="${DB_BIN_DIR}/mysql"
+    # In MySQL Client 10.6, mysql is a link to the mariadb binary
+    if [[ -f "${DB_BIN_DIR}/mariadb" ]]; then
+        wrapper_file="${DB_BIN_DIR}/mariadb"
+    fi
     local -r wrapped_binary_file="${DB_BASE_DIR}/.bin/mysql"
     local -a ssl_opts=()
-    read -r -a ssl_opts <<< "$(mysql_client_extra_opts)"
+    read -r -a ssl_opts <<<"$(mysql_client_extra_opts)"
 
     mv "$wrapper_file" "$wrapped_binary_file"
     cat >"$wrapper_file" <<EOF
@@ -241,10 +245,16 @@ mysql_execute_print_output() {
     [[ "${#extra_opts[@]}" -gt 0 ]] && args+=("${extra_opts[@]}")
 
     # Obtain the command specified via stdin
-    local mysql_cmd
-    mysql_cmd="$(</dev/stdin)"
-    debug "Executing SQL command:\n$mysql_cmd"
-    "$DB_BIN_DIR/mysql" "${args[@]}" <<<"$mysql_cmd"
+    if [[ "${BITNAMI_DEBUG:-false}" = true ]]; then
+        local mysql_cmd
+        mysql_cmd="$(</dev/stdin)"
+        debug "Executing SQL command:\n$mysql_cmd"
+        "$DB_BIN_DIR/mysql" "${args[@]}" <<<"$mysql_cmd"
+    else
+        # Do not store the command(s) as a variable, to avoid issues when importing large files
+        # https://github.com/bitnami/bitnami-docker-mariadb/issues/251
+        "$DB_BIN_DIR/mysql" "${args[@]}"
+    fi
 }
 
 ########################
@@ -478,7 +488,7 @@ mysql_upgrade() {
     else
         mysql_start_bg
         is_boolean_yes "${ROOT_AUTH_ENABLED:-false}" && args+=("-p$(get_master_env_var_value ROOT_PASSWORD)")
-        debug_execute "${DB_BIN_DIR}/mysql_upgrade" "${args[@]}"
+        debug_execute "${DB_BIN_DIR}/mysql_upgrade" "${args[@]}" --force
     fi
 }
 
@@ -929,12 +939,17 @@ mysql_conf_set() {
     local -r key="${1:?key missing}"
     local -r value="${2:?value missing}"
     read -r -a sections <<<"${3:-mysqld}"
-    local -r file="${4:-"$DB_CONF_FILE"}"
+    local -r ignore_inline_comments="${4:-no}"
+    local -r file="${5:-"$DB_CONF_FILE"}"
     info "Setting ${key} option"
     debug "Setting ${key} to '${value}' in ${DB_FLAVOR} configuration file ${file}"
     # Check if the configuration exists in the file
     for section in "${sections[@]}"; do
-        ini-file set --section "$section" --key "$key" --value "$value" "$file"
+        if is_boolean_yes "$ignore_inline_comments"; then
+            ini-file set --ignore-inline-comments --section "$section" --key "$key" --value "$value" "$file"
+        else
+            ini-file set --section "$section" --key "$key" --value "$value" "$file"
+        fi
     done
 }
 
@@ -964,6 +979,8 @@ mysql_update_custom_config() {
     ! is_empty_value "$DB_BIND_ADDRESS" && mysql_conf_set "bind_address" "$DB_BIND_ADDRESS"
     ! is_empty_value "$DB_AUTHENTICATION_PLUGIN" && mysql_conf_set "default_authentication_plugin" "$DB_AUTHENTICATION_PLUGIN"
     ! is_empty_value "$DB_SQL_MODE" && mysql_conf_set "sql_mode" "$DB_SQL_MODE"
+    ! is_empty_value "$DB_ENABLE_SLOW_QUERY" && mysql_conf_set "slow_query_log" "$DB_ENABLE_SLOW_QUERY"
+    ! is_empty_value "$DB_LONG_QUERY_TIME" && mysql_conf_set "long_query_time" "$DB_LONG_QUERY_TIME"
 
     # Avoid exit code of previous commands to affect the result of this function
     true

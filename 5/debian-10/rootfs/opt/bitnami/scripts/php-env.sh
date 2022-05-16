@@ -9,6 +9,7 @@
 # 4. Environment variables set externally (i.e. current Bash context/Dockerfile/userdata)
 
 # Load logging library
+# shellcheck disable=SC1090,SC1091
 . /opt/bitnami/scripts/liblog.sh
 
 export BITNAMI_ROOT_DIR="/opt/bitnami"
@@ -24,7 +25,6 @@ php_env_vars=(
     PHP_FPM_LISTEN_ADDRESS
     PHP_DATE_TIMEZONE
     PHP_ENABLE_OPCACHE
-    PHP_EXPOSE_PHP
     PHP_MAX_EXECUTION_TIME
     PHP_MAX_INPUT_TIME
     PHP_MAX_INPUT_VARS
@@ -76,7 +76,7 @@ export PHP_FPM_DAEMON_GROUP="daemon"
 export PHP_DATE_TIMEZONE="${PHP_DATE_TIMEZONE:-}"
 PHP_ENABLE_OPCACHE="${PHP_ENABLE_OPCACHE:-"${PHP_OPCACHE_ENABLED:-}"}"
 export PHP_ENABLE_OPCACHE="${PHP_ENABLE_OPCACHE:-}"
-export PHP_EXPOSE_PHP="${PHP_EXPOSE_PHP:-}"
+export PHP_EXPOSE_PHP="0"
 export PHP_MAX_EXECUTION_TIME="${PHP_MAX_EXECUTION_TIME:-}"
 export PHP_MAX_INPUT_TIME="${PHP_MAX_INPUT_TIME:-}"
 export PHP_MAX_INPUT_VARS="${PHP_MAX_INPUT_VARS:-}"

@@ -113,6 +113,27 @@ apache_configure_https_port() {
 }
 
 ########################
+# Configure Apache's ServerTokens directive
+# Globals:
+#   APACHE_CONF_DIR
+# Arguments:
+#   $1 - Value for ServerTokens directive
+# Returns:
+#   None
+#########################
+apache_configure_server_tokens() {
+    local -r value=${1:?missing value}
+    local -r server_tokens_exp="s|^\s*ServerTokens\s+\w+\s*$|ServerTokens ${value}|"
+    local apache_configuration
+
+     if [[ -w "$APACHE_CONF_FILE" ]]; then
+        debug "Configuring ServerTokens ${value} on file ${APACHE_CONF_FILE}"
+        apache_configuration="$(sed -E -e "$server_tokens_exp" "$APACHE_CONF_FILE")"
+        echo "$apache_configuration" > "$APACHE_CONF_FILE"
+    fi
+}
+
+########################
 # Enable a module in the Apache configuration file
 # Globals:
 #   APACHE_CONF_FILE
@@ -329,6 +350,8 @@ EOF
 #   --https-port - HTTPS port number
 #   --move-htaccess - Move .htaccess files to a common place so they can be loaded during Apache startup (only allowed when type is not defined)
 #   --additional-configuration - Additional vhost configuration (no default)
+#   --additional-http-configuration - Additional HTTP vhost configuration (no default)
+#   --additional-https-configuration - Additional HTTPS vhost configuration (no default)
 #   --before-vhost-configuration - Configuration to add before the <VirtualHost> directive (no default)
 #   --allow-override - Whether to allow .htaccess files (only allowed when --move-htaccess is set to 'no' and type is not defined)
 #   --document-root - Path to document root directory
@@ -345,7 +368,7 @@ ensure_apache_app_configuration_exists() {
     # Default options
     local type=""
     local -a hosts=("127.0.0.1" "_default_")
-    local server_name
+    local server_name="www.example.com" # Default ServerName in httpd.conf
     local -a server_aliases=("*")
     local allow_remote_connections="yes"
     local disable="no"
@@ -354,6 +377,8 @@ ensure_apache_app_configuration_exists() {
     local move_htaccess="yes"
     # Template variables defaults
     export additional_configuration=""
+    export additional_http_configuration=""
+    export additional_https_configuration=""
     export before_vhost_configuration=""
     export allow_override="All"
     export document_root="${BITNAMI_ROOT_DIR}/${app}"
@@ -375,7 +400,7 @@ ensure_apache_app_configuration_exists() {
             | --server-aliases)
                 var_name="$(echo "$1" | sed -e "s/^--//" -e "s/-/_/g")"
                 shift
-                read -r -a "$var_name" <<< "$1"
+                read -r -a "${var_name?}" <<< "$1"
                 ;;
             --disable \
             | --disable-http \
@@ -391,6 +416,8 @@ ensure_apache_app_configuration_exists() {
             | --https-port \
             | --move-htaccess \
             | --additional-configuration \
+            | --additional-http-configuration \
+            | --additional-https-configuration \
             | --before-vhost-configuration \
             | --allow-override \
             | --document-root \
@@ -440,7 +467,7 @@ ensure_apache_app_configuration_exists() {
         allow_override="None"
         htaccess_include="Include \"${APACHE_HTACCESS_DIR}/${app}-htaccess.conf\""
     else
-        allow_override="$allow_override"
+        # allow_override is already set to the expected value
         htaccess_include=""
     fi
     # ACL configuration
@@ -461,6 +488,8 @@ EOF
     # Indent configurations
     server_name_configuration="$(indent $'\n'"$server_name_configuration" 2)"
     additional_configuration="$(indent $'\n'"$additional_configuration" 2)"
+    additional_http_configuration="$(indent $'\n'"$additional_http_configuration" 2)"
+    additional_https_configuration="$(indent $'\n'"$additional_https_configuration" 2)"
     htaccess_include="$(indent $'\n'"$htaccess_include" 2)"
     acl_configuration=""$(indent $'\n'"$acl_configuration" 4)
     extra_directory_configuration="$(indent $'\n'"$extra_directory_configuration" 4)"
@@ -580,7 +609,7 @@ ensure_apache_prefix_configuration_exists() {
         allow_override="None"
         htaccess_include="Include \"${APACHE_HTACCESS_DIR}/${app}-htaccess.conf\""
     else
-        allow_override="$allow_override"
+        # allow_override is already set to the expected value
         htaccess_include=""
     fi
     # ACL configuration
@@ -645,7 +674,7 @@ apache_update_app_configuration() {
     local -r app="${1:?missing app}"
     # Default options
     local -a hosts=("127.0.0.1" "_default_")
-    local server_name
+    local server_name="www.example.com" # Default ServerName in httpd.conf
     local -a server_aliases=()
     local enable_http="no"
     local enable_https="no"
@@ -665,14 +694,18 @@ apache_update_app_configuration() {
             | --server-aliases)
                 var_name="$(echo "$1" | sed -e "s/^--//" -e "s/-/_/g")"
                 shift
-                read -r -a "$var_name" <<< "$1"
+                read -r -a "${var_name?}" <<< "$1"
                 ;;
             # Common flags
-            --server-name \
-            | --enable-http \
+            --enable-http \
             | --enable-https \
             | --disable-http \
             | --disable-https \
+            )
+                var_name="$(echo "$1" | sed -e "s/^--//" -e "s/-/_/g")"
+                declare "${var_name}=yes"
+                ;;
+            --server-name \
             | --http-port \
             | --https-port \
             )
